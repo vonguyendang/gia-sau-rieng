@@ -158,6 +158,7 @@ python3 -m http.server 8080
 1. **Khử trùng lặp:** Video đã quét sẽ được lưu ID vào `processed_videos.json`. Mỗi video chỉ phân tích 1 lần duy nhất.
 2. **Khắc phục lỗi nhận diện giọng nói:** Prompt của Gemini được huấn luyện đặc thù cho phương ngữ Nam Bộ và Tây Nguyên ("di sáu", "mỏn thon", "mút sang kinh").
 3. **Tính giá trung bình chuẩn xác:**
+
    $$
    \text{Giá TB ngày} = \frac{\sum \text{Giá các nguồn hợp lệ}}{\text{Số nguồn nhắc đến giống đó}}
    $$

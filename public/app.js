@@ -6,7 +6,7 @@
 
 let historyData = null;
 let priceChartInstance = null;
-let currentRange = '7'; // '7', '30', 'all'
+let currentRange = '365'; // '7', '30', '90', '365' (1 năm)
 
 // Định dạng số thành tiền tệ VNĐ
 function formatVND(val) {
@@ -279,7 +279,17 @@ function initOrUpdateChart() {
     selectedDays = daysKeys.slice(-7);
   } else if (currentRange === '30') {
     selectedDays = daysKeys.slice(-30);
+  } else if (currentRange === '90') {
+    selectedDays = daysKeys.slice(-90);
+  } else if (currentRange === '365') {
+    selectedDays = daysKeys.slice(-365);
   }
+
+  // Tối ưu hóa kích thước điểm dựa theo số ngày để biểu đồ 1 năm luôn sắc nét
+  const isDense = selectedDays.length > 60;
+  const pRadius = isDense ? 0 : 3.5;
+  const pHoverRadius = isDense ? 5 : 6;
+  const bWidth = isDense ? 2 : 2.5;
 
   const labels = selectedDays.map(d => formatDateStr(d));
   const ri6Data = selectedDays.map(d => historyData.days[d]?.daily_average?.ri6_a ?? null);
@@ -300,77 +310,77 @@ function initOrUpdateChart() {
         data: ri6Data,
         borderColor: '#059669',
         backgroundColor: 'rgba(5, 150, 105, 0.12)',
-        borderWidth: 2.5,
-        tension: 0.35,
+        borderWidth: bWidth,
+        tension: 0.3,
         fill: false,
         spanGaps: true,
         pointBackgroundColor: '#059669',
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        pointRadius: pRadius,
+        pointHoverRadius: pHoverRadius,
       },
       {
         label: 'Thái (Monthong) A',
         data: monthongData,
         borderColor: '#d97706',
         backgroundColor: 'rgba(217, 119, 6, 0.12)',
-        borderWidth: 2.5,
-        tension: 0.35,
+        borderWidth: bWidth,
+        tension: 0.3,
         fill: false,
         spanGaps: true,
         pointBackgroundColor: '#d97706',
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        pointRadius: pRadius,
+        pointHoverRadius: pHoverRadius,
       },
       {
         label: 'Musang King',
         data: musangData,
         borderColor: '#7c3aed',
         backgroundColor: 'rgba(124, 58, 237, 0.08)',
-        borderWidth: 2.5,
-        tension: 0.35,
+        borderWidth: bWidth,
+        tension: 0.3,
         fill: false,
         spanGaps: true,
         pointBackgroundColor: '#7c3aed',
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        pointRadius: pRadius,
+        pointHoverRadius: pHoverRadius,
       },
       {
         label: 'Black Thorn (Gai Đen)',
         data: blackThornData,
         borderColor: '#e11d48',
-        borderWidth: 2.5,
-        tension: 0.35,
+        borderWidth: bWidth,
+        tension: 0.3,
         fill: false,
         spanGaps: true,
         pointBackgroundColor: '#e11d48',
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        pointRadius: pRadius,
+        pointHoverRadius: pHoverRadius,
       },
       {
         label: 'Chuồng Bò',
         data: chuongBoData,
         borderColor: '#0891b2',
-        borderWidth: 2,
+        borderWidth: isDense ? 1.5 : 2,
         borderDash: [4, 4],
-        tension: 0.35,
+        tension: 0.3,
         fill: false,
         spanGaps: true,
         pointBackgroundColor: '#0891b2',
-        pointRadius: 3.5,
-        pointHoverRadius: 5.5,
+        pointRadius: pRadius,
+        pointHoverRadius: pHoverRadius,
       },
       {
         label: 'Sáu Hữu',
         data: sauHuuData,
         borderColor: '#ea580c',
-        borderWidth: 2,
+        borderWidth: isDense ? 1.5 : 2,
         borderDash: [4, 4],
-        tension: 0.35,
+        tension: 0.3,
         fill: false,
         spanGaps: true,
         pointBackgroundColor: '#ea580c',
-        pointRadius: 3.5,
-        pointHoverRadius: 5.5,
+        pointRadius: pRadius,
+        pointHoverRadius: pHoverRadius,
       }
     ]
   };
@@ -416,7 +426,9 @@ function initOrUpdateChart() {
         grid: { display: false },
         ticks: {
           font: { family: '"Be Vietnam Pro"', size: 11 },
-          color: '#64748b'
+          color: '#64748b',
+          maxTicksLimit: isDense ? 12 : 10,
+          maxRotation: 0,
         }
       },
       y: {
