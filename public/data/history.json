@@ -12209,14 +12209,14 @@
     },
     "2026-11-06": {
       "daily_average": {
-        "ri6_a": 85000,
-        "ri6_b": 70000,
-        "monthong_a": 110000,
-        "monthong_b": 95000,
-        "musang_king": 220000,
-        "chuong_bo": 65000,
-        "sau_huu": 85000,
-        "black_thorn": 105000
+        "black_thorn": 115000,
+        "musang_king": 105000,
+        "sau_huu": 92000,
+        "monthong_a": 80000,
+        "monthong_b": 64000,
+        "chuong_bo": 70000,
+        "ri6_a": 56000,
+        "ri6_b": 45000
       },
       "sources": [
         {
@@ -12229,14 +12229,14 @@
           "region": "Tây Nguyên",
           "summary": "Giá sầu riêng đầu tuần ghi nhận sức mua ổn định, vựa gom hàng Monthong đi thị trường Trung Quốc số lượng lớn.",
           "prices": {
-            "ri6_a": 84000,
-            "ri6_b": 70000,
-            "monthong_a": 110000,
-            "monthong_b": 94000,
-            "musang_king": 220000,
-            "chuong_bo": 65000,
-            "sau_huu": 85000,
-            "black_thorn": 105000
+            "black_thorn": 115000,
+            "musang_king": 105000,
+            "sau_huu": 92000,
+            "monthong_a": 80000,
+            "monthong_b": 64000,
+            "chuong_bo": 70000,
+            "ri6_a": 56000,
+            "ri6_b": 45000
           }
         },
         {
@@ -12249,28 +12249,28 @@
           "region": "Miền Tây",
           "summary": "Vườn Tiền Giang và Bến Tre bắt đầu có hàng chín sớm, thương lái chốt cọc nhanh.",
           "prices": {
-            "ri6_a": 86000,
-            "ri6_b": 70000,
-            "monthong_a": 110000,
-            "monthong_b": 96000,
-            "musang_king": null,
-            "chuong_bo": 65000,
-            "sau_huu": 85000,
-            "black_thorn": 105000
+            "black_thorn": 115000,
+            "musang_king": 105000,
+            "sau_huu": 92000,
+            "monthong_a": 80000,
+            "monthong_b": 64000,
+            "chuong_bo": 70000,
+            "ri6_a": 56000,
+            "ri6_b": 45000
           }
         }
       ]
     },
     "2026-11-07": {
       "daily_average": {
-        "ri6_a": 87000,
-        "ri6_b": 72000,
-        "monthong_a": 112000,
-        "monthong_b": 96000,
-        "musang_king": 225000,
-        "chuong_bo": 67000,
-        "sau_huu": 86000,
-        "black_thorn": 105000
+        "black_thorn": 114000,
+        "musang_king": 104000,
+        "sau_huu": 92000,
+        "monthong_a": 80000,
+        "monthong_b": 63000,
+        "chuong_bo": 70000,
+        "ri6_a": 55000,
+        "ri6_b": 44000
       },
       "sources": [
         {
@@ -12283,28 +12283,28 @@
           "region": "Tây Nguyên",
           "summary": "Nguồn cung sầu riêng loại A khá khan hiếm khiến giá tăng từ 2.000 đến 3.000 đ/kg.",
           "prices": {
-            "ri6_a": 87000,
-            "ri6_b": 72000,
-            "monthong_a": 112000,
-            "monthong_b": 96000,
-            "musang_king": 225000,
-            "chuong_bo": 67000,
-            "sau_huu": 86000,
-            "black_thorn": 105000
+            "black_thorn": 114000,
+            "musang_king": 104000,
+            "sau_huu": 92000,
+            "monthong_a": 80000,
+            "monthong_b": 63000,
+            "chuong_bo": 70000,
+            "ri6_a": 55000,
+            "ri6_b": 44000
           }
         }
       ]
     },
     "2026-11-08": {
       "daily_average": {
-        "ri6_a": 88000,
-        "ri6_b": 73000,
-        "monthong_a": 115000,
-        "monthong_b": 98000,
-        "musang_king": 230000,
-        "chuong_bo": 68000,
-        "sau_huu": 88000,
-        "black_thorn": 108000
+        "black_thorn": 113000,
+        "musang_king": 103000,
+        "sau_huu": 91000,
+        "monthong_a": 79000,
+        "monthong_b": 62000,
+        "chuong_bo": 69000,
+        "ri6_a": 55000,
+        "ri6_b": 44000
       },
       "sources": [
         {
@@ -12317,28 +12317,28 @@
           "region": "Đông Nam Bộ",
           "summary": "Xuất khẩu qua các cửa khẩu phía Bắc thông thoáng kích thích các vựa nâng giá gom hàng Monthong.",
           "prices": {
-            "ri6_a": 88000,
-            "ri6_b": 73000,
-            "monthong_a": 115000,
-            "monthong_b": 98000,
-            "musang_king": 230000,
-            "chuong_bo": 68000,
-            "sau_huu": 88000,
-            "black_thorn": 108000
+            "black_thorn": 113000,
+            "musang_king": 103000,
+            "sau_huu": 91000,
+            "monthong_a": 79000,
+            "monthong_b": 62000,
+            "chuong_bo": 69000,
+            "ri6_a": 55000,
+            "ri6_b": 44000
           }
         }
       ]
     },
     "2026-11-09": {
       "daily_average": {
-        "ri6_a": 86000,
-        "ri6_b": 71000,
-        "monthong_a": 114000,
-        "monthong_b": 97000,
-        "musang_king": 230000,
-        "chuong_bo": 66000,
-        "sau_huu": 87000,
-        "black_thorn": 108000
+        "black_thorn": 112000,
+        "musang_king": 102000,
+        "sau_huu": 91000,
+        "monthong_a": 79000,
+        "monthong_b": 62000,
+        "chuong_bo": 69000,
+        "ri6_a": 54000,
+        "ri6_b": 43000
       },
       "sources": [
         {
@@ -12351,28 +12351,28 @@
           "region": "Miền Tây",
           "summary": "Giá Ri6 hạ nhiệt nhẹ khoảng 1.000 - 2.000 đ/kg do sản lượng cắt rộ tại Tiền Giang.",
           "prices": {
-            "ri6_a": 86000,
-            "ri6_b": 71000,
-            "monthong_a": 114000,
-            "monthong_b": 97000,
-            "musang_king": 230000,
-            "chuong_bo": 66000,
-            "sau_huu": 87000,
-            "black_thorn": 108000
+            "black_thorn": 112000,
+            "musang_king": 102000,
+            "sau_huu": 91000,
+            "monthong_a": 79000,
+            "monthong_b": 62000,
+            "chuong_bo": 69000,
+            "ri6_a": 54000,
+            "ri6_b": 43000
           }
         }
       ]
     },
     "2026-11-10": {
       "daily_average": {
-        "ri6_a": 88000,
-        "ri6_b": 74000,
-        "monthong_a": 118000,
-        "monthong_b": 100000,
-        "musang_king": 240000,
-        "chuong_bo": 68000,
+        "black_thorn": 111000,
+        "musang_king": 101000,
         "sau_huu": 90000,
-        "black_thorn": 110000
+        "monthong_a": 78000,
+        "monthong_b": 61000,
+        "chuong_bo": 68000,
+        "ri6_a": 54000,
+        "ri6_b": 43000
       },
       "sources": [
         {
@@ -12385,28 +12385,28 @@
           "region": "Tây Nguyên",
           "summary": "Đơn hàng xuất khẩu cuối năm tăng tốc, các kho tranh nhau chốt vườn Monthong đẹp trên 2.7 hộc.",
           "prices": {
-            "ri6_a": 88000,
-            "ri6_b": 74000,
-            "monthong_a": 118000,
-            "monthong_b": 100000,
-            "musang_king": 240000,
-            "chuong_bo": 68000,
+            "black_thorn": 111000,
+            "musang_king": 101000,
             "sau_huu": 90000,
-            "black_thorn": 110000
+            "monthong_a": 78000,
+            "monthong_b": 61000,
+            "chuong_bo": 68000,
+            "ri6_a": 54000,
+            "ri6_b": 43000
           }
         }
       ]
     },
     "2026-11-11": {
       "daily_average": {
-        "ri6_a": 90000,
-        "ri6_b": 75000,
-        "monthong_a": 120000,
-        "monthong_b": 102000,
-        "musang_king": 245000,
-        "chuong_bo": 70000,
-        "sau_huu": 92000,
-        "black_thorn": 110000
+        "black_thorn": 110000,
+        "musang_king": 100000,
+        "sau_huu": 90000,
+        "monthong_a": 78000,
+        "monthong_b": 60000,
+        "chuong_bo": 68000,
+        "ri6_a": 53000,
+        "ri6_b": 42000
       },
       "sources": [
         {
@@ -12419,28 +12419,28 @@
           "region": "Miền Tây",
           "summary": "Giá sầu riêng loại A tăng liên tục trong 3 ngày qua, hàng tuyển lựa rất được ưa chuộng.",
           "prices": {
-            "ri6_a": 90000,
-            "ri6_b": 75000,
-            "monthong_a": 120000,
-            "monthong_b": 102000,
-            "musang_king": 245000,
-            "chuong_bo": 70000,
-            "sau_huu": 92000,
-            "black_thorn": 110000
+            "black_thorn": 110000,
+            "musang_king": 100000,
+            "sau_huu": 90000,
+            "monthong_a": 78000,
+            "monthong_b": 60000,
+            "chuong_bo": 68000,
+            "ri6_a": 53000,
+            "ri6_b": 42000
           }
         }
       ]
     },
     "2026-11-12": {
       "daily_average": {
-        "ri6_a": 53000,
-        "ri6_b": 42000,
+        "black_thorn": 110000,
+        "musang_king": 100000,
+        "sau_huu": 90000,
         "monthong_a": 78000,
         "monthong_b": 60000,
-        "musang_king": 100000,
-        "black_thorn": 110000,
         "chuong_bo": 68000,
-        "sau_huu": 90000
+        "ri6_a": 53000,
+        "ri6_b": 42000
       },
       "sources": [
         {
@@ -12453,14 +12453,14 @@
           "region": "Miền Tây",
           "summary": "Cập nhật giá sầu riêng trưa 12/11 từ vựa uy tín: Ri6 loại A cắt tại vườn 53.000 đ/kg (tỉ lệ 8:2), Thái A đạt 78.000 đ/kg. Sầu riêng Gai Đen (Black Thorn) hàng đẹp 110.000 đ/kg, Chuồng Bò 68.000 đ/kg.",
           "prices": {
-            "ri6_a": 53000,
-            "ri6_b": 42000,
+            "black_thorn": 110000,
+            "musang_king": 100000,
+            "sau_huu": 90000,
             "monthong_a": 78000,
             "monthong_b": 60000,
-            "musang_king": 100000,
-            "black_thorn": 110000,
             "chuong_bo": 68000,
-            "sau_huu": 90000
+            "ri6_a": 53000,
+            "ri6_b": 42000
           }
         },
         {
@@ -12473,14 +12473,14 @@
           "region": "Chung",
           "summary": "Sầu riêng Ri6 có xu hướng giảm nhẹ (40.000 - 53.000 đ/kg), Thái (Monthong) ổn định 60.000 - 80.000 đ/kg. Musang King neo mức 100.000 đ/kg, Black Thorn lập đỉnh cao nhất thị trường 110.000 đ/kg.",
           "prices": {
-            "ri6_a": 53000,
-            "ri6_b": 42000,
+            "black_thorn": 110000,
+            "musang_king": 100000,
+            "sau_huu": 90000,
             "monthong_a": 78000,
             "monthong_b": 60000,
-            "musang_king": 100000,
-            "black_thorn": 110000,
             "chuong_bo": 68000,
-            "sau_huu": 90000
+            "ri6_a": 53000,
+            "ri6_b": 42000
           }
         }
       ]

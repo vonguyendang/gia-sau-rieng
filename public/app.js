@@ -156,39 +156,39 @@ function renderPriceCards() {
     };
   }
 
-  // 4 Thẻ giá chính (Xuất khẩu & Thị trường lớn)
+  // 4 Thẻ giá cao cấp & xuất khẩu chủ lực (Sắp xếp theo thứ tự phân cấp giá từ CAO đến THẤP)
   const mainCardsConfig = [
     {
-      title: 'Ri6 Loại A',
-      sub: 'Cơm vàng hạt lép, từ 2.5 - 3 hộc trở lên',
-      key: 'ri6_a',
-      accentColor: 'border-l-4 border-emerald-500',
-      badgeColor: 'bg-emerald-100 text-emerald-800',
-      icon: 'fa-solid fa-award',
+      title: '1. Black Thorn (Gai Đen)',
+      sub: 'Đỉnh cao thị trường, dòng sầu riêng đắt nhất',
+      key: 'black_thorn',
+      accentColor: 'border-l-4 border-rose-500',
+      badgeColor: 'bg-rose-100 text-rose-900',
+      icon: 'fa-solid fa-fire',
     },
     {
-      title: 'Thái (Monthong / Dona) A',
-      sub: 'Chuẩn cơm xuất khẩu, hộc tròn đều',
-      key: 'monthong_a',
-      accentColor: 'border-l-4 border-amber-500',
-      badgeColor: 'bg-amber-100 text-amber-900',
-      icon: 'fa-solid fa-crown',
-    },
-    {
-      title: 'Musang King',
-      sub: 'Vua sầu riêng nhập khẩu / ghép tại vườn',
+      title: '2. Musang King',
+      sub: 'Vua sầu riêng, thơm béo nồng nàn',
       key: 'musang_king',
       accentColor: 'border-l-4 border-purple-500',
       badgeColor: 'bg-purple-100 text-purple-900',
       icon: 'fa-solid fa-gem',
     },
     {
-      title: 'Black Thorn (Gai Đen)',
-      sub: 'Dòng cực phẩm phân khúc cao nhất',
-      key: 'black_thorn',
-      accentColor: 'border-l-4 border-rose-500',
-      badgeColor: 'bg-rose-100 text-rose-900',
-      icon: 'fa-solid fa-fire',
+      title: '3. Sầu riêng Sáu Hữu',
+      sub: 'Cơm vàng óng, dẻo ngọt đặc sản hạt lép',
+      key: 'sau_huu',
+      accentColor: 'border-l-4 border-orange-500',
+      badgeColor: 'bg-orange-100 text-orange-900',
+      icon: 'fa-solid fa-star',
+    },
+    {
+      title: '4. Thái (Monthong) A',
+      sub: 'Chuẩn cơm xuất khẩu, hộc tròn đều',
+      key: 'monthong_a',
+      accentColor: 'border-l-4 border-amber-500',
+      badgeColor: 'bg-amber-100 text-amber-900',
+      icon: 'fa-solid fa-crown',
     }
   ];
 
@@ -236,10 +236,10 @@ function renderPriceCards() {
   const subContainer = document.getElementById('price-subcards-container');
   if (subContainer) {
     const subCards = [
-      { title: 'Sầu riêng Chuồng Bò', desc: 'Đặc sản truyền thống vị béo ngậy', key: 'chuong_bo', icon: 'fa-leaf', color: 'text-cyan-700' },
-      { title: 'Sầu riêng Sáu Hữu', desc: 'Cơm vàng óng, dẻo ngọt đậm đà', key: 'sau_huu', icon: 'fa-star', color: 'text-orange-700' },
-      { title: 'Ri6 Loại B (Dạt/Xô)', desc: 'Trái méo, lệch hộc hoặc nhẹ cân', key: 'ri6_b', icon: 'fa-boxes-stacked', color: 'text-slate-600' },
-      { title: 'Monthong Loại B (Dạt)', desc: 'Hàng tuyển dạt, hộc lép', key: 'monthong_b', icon: 'fa-boxes-stacked', color: 'text-slate-600' }
+      { title: '5. Sầu riêng Chuồng Bò', desc: 'Đặc sản truyền thống vị béo ngậy', key: 'chuong_bo', icon: 'fa-leaf', color: 'text-cyan-700' },
+      { title: '6. Sầu riêng Ri6 Loại A', desc: 'Cơm vàng hạt lép phổ biến', key: 'ri6_a', icon: 'fa-award', color: 'text-emerald-700' },
+      { title: '7. Monthong Loại B (Dạt)', desc: 'Hàng tuyển dạt, hộc lép', key: 'monthong_b', icon: 'fa-boxes-stacked', color: 'text-slate-600' },
+      { title: '8. Ri6 Loại B (Dạt/Xô)', desc: 'Trái méo, lệch hộc hoặc nhẹ cân', key: 'ri6_b', icon: 'fa-boxes-stacked', color: 'text-slate-600' }
     ];
 
     subContainer.innerHTML = subCards.map(c => {
@@ -306,33 +306,19 @@ function initOrUpdateChart() {
     labels: labels,
     datasets: [
       {
-        label: 'Ri6 Loại A',
-        data: ri6Data,
-        borderColor: '#059669',
-        backgroundColor: 'rgba(5, 150, 105, 0.12)',
+        label: '1. Black Thorn (Gai Đen)',
+        data: blackThornData,
+        borderColor: '#e11d48',
         borderWidth: bWidth,
         tension: 0.3,
         fill: false,
         spanGaps: true,
-        pointBackgroundColor: '#059669',
+        pointBackgroundColor: '#e11d48',
         pointRadius: pRadius,
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: 'Thái (Monthong) A',
-        data: monthongData,
-        borderColor: '#d97706',
-        backgroundColor: 'rgba(217, 119, 6, 0.12)',
-        borderWidth: bWidth,
-        tension: 0.3,
-        fill: false,
-        spanGaps: true,
-        pointBackgroundColor: '#d97706',
-        pointRadius: pRadius,
-        pointHoverRadius: pHoverRadius,
-      },
-      {
-        label: 'Musang King',
+        label: '2. Musang King',
         data: musangData,
         borderColor: '#7c3aed',
         backgroundColor: 'rgba(124, 58, 237, 0.08)',
@@ -345,19 +331,33 @@ function initOrUpdateChart() {
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: 'Black Thorn (Gai Đen)',
-        data: blackThornData,
-        borderColor: '#e11d48',
-        borderWidth: bWidth,
+        label: '3. Sáu Hữu',
+        data: sauHuuData,
+        borderColor: '#ea580c',
+        borderWidth: isDense ? 1.5 : 2,
+        borderDash: [4, 4],
         tension: 0.3,
         fill: false,
         spanGaps: true,
-        pointBackgroundColor: '#e11d48',
+        pointBackgroundColor: '#ea580c',
         pointRadius: pRadius,
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: 'Chuồng Bò',
+        label: '4. Thái (Monthong) A',
+        data: monthongData,
+        borderColor: '#d97706',
+        backgroundColor: 'rgba(217, 119, 6, 0.12)',
+        borderWidth: bWidth,
+        tension: 0.3,
+        fill: false,
+        spanGaps: true,
+        pointBackgroundColor: '#d97706',
+        pointRadius: pRadius,
+        pointHoverRadius: pHoverRadius,
+      },
+      {
+        label: '5. Chuồng Bò',
         data: chuongBoData,
         borderColor: '#0891b2',
         borderWidth: isDense ? 1.5 : 2,
@@ -370,15 +370,15 @@ function initOrUpdateChart() {
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: 'Sáu Hữu',
-        data: sauHuuData,
-        borderColor: '#ea580c',
-        borderWidth: isDense ? 1.5 : 2,
-        borderDash: [4, 4],
+        label: '6. Ri6 Loại A',
+        data: ri6Data,
+        borderColor: '#059669',
+        backgroundColor: 'rgba(5, 150, 105, 0.12)',
+        borderWidth: bWidth,
         tension: 0.3,
         fill: false,
         spanGaps: true,
-        pointBackgroundColor: '#ea580c',
+        pointBackgroundColor: '#059669',
         pointRadius: pRadius,
         pointHoverRadius: pHoverRadius,
       }
@@ -402,11 +402,17 @@ function initOrUpdateChart() {
         }
       },
       tooltip: {
-        backgroundColor: 'rgba(15, 23, 42, 0.92)',
+        backgroundColor: 'rgba(15, 23, 42, 0.94)',
         titleFont: { family: '"Be Vietnam Pro"', size: 13, weight: '700' },
         bodyFont: { family: '"Be Vietnam Pro"', size: 12 },
         padding: 12,
         cornerRadius: 8,
+        // Tự động sắp xếp các dòng trong tooltip theo giá giảm dần (Cao nhất xếp trên cùng)
+        itemSort: function(a, b) {
+          const valA = a.parsed.y !== null ? a.parsed.y : -1;
+          const valB = b.parsed.y !== null ? b.parsed.y : -1;
+          return valB - valA;
+        },
         callbacks: {
           label: function(context) {
             let label = context.dataset.label || '';
@@ -521,14 +527,14 @@ function renderSources(selectedDay) {
     const prices = src.prices || {};
 
     const priceChips = [
-      { label: 'Ri6 A', val: prices.ri6_a, bg: 'bg-emerald-50 text-emerald-800' },
-      { label: 'Ri6 B', val: prices.ri6_b, bg: 'bg-slate-50 text-slate-700' },
-      { label: 'Thái A', val: prices.monthong_a, bg: 'bg-amber-50 text-amber-900' },
-      { label: 'Thái B', val: prices.monthong_b, bg: 'bg-slate-50 text-slate-700' },
-      { label: 'Musang King', val: prices.musang_king, bg: 'bg-purple-50 text-purple-900' },
-      { label: 'Black Thorn', val: prices.black_thorn, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
-      { label: 'Chuồng Bò', val: prices.chuong_bo, bg: 'bg-cyan-50 text-cyan-900' },
-      { label: 'Sáu Hữu', val: prices.sau_huu, bg: 'bg-orange-50 text-orange-900' },
+      { label: '1. Black Thorn', val: prices.black_thorn, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
+      { label: '2. Musang King', val: prices.musang_king, bg: 'bg-purple-50 text-purple-900 font-bold border-purple-200' },
+      { label: '3. Sáu Hữu', val: prices.sau_huu, bg: 'bg-orange-50 text-orange-900 font-bold border-orange-200' },
+      { label: '4. Thái A', val: prices.monthong_a, bg: 'bg-amber-50 text-amber-900 font-bold border-amber-200' },
+      { label: '5. Chuồng Bò', val: prices.chuong_bo, bg: 'bg-cyan-50 text-cyan-900 font-medium border-cyan-200' },
+      { label: '6. Ri6 A', val: prices.ri6_a, bg: 'bg-emerald-50 text-emerald-800 font-medium border-emerald-200' },
+      { label: '7. Thái B', val: prices.monthong_b, bg: 'bg-slate-50 text-slate-700' },
+      { label: '8. Ri6 B', val: prices.ri6_b, bg: 'bg-slate-50 text-slate-700' },
     ].filter(p => p.val !== null && p.val !== undefined && p.val > 0);
 
     const cardBorder = isPriority 
