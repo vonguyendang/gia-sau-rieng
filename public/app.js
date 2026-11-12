@@ -504,7 +504,19 @@ function renderSources(selectedDay) {
     'Chung': 'bg-slate-100 text-slate-700 border-slate-200',
   };
 
-  container.innerHTML = dayData.sources.map(src => {
+  const PRIORITY_CHANNEL_ID = 'UCX11-9EVu6AzLYorQNoLzRA';
+
+  // Sắp xếp nguồn ưu tiên lên vị trí đầu tiên
+  const sortedSources = [...dayData.sources].sort((a, b) => {
+    const aIsPri = a.channel_id === PRIORITY_CHANNEL_ID;
+    const bIsPri = b.channel_id === PRIORITY_CHANNEL_ID;
+    if (aIsPri && !bIsPri) return -1;
+    if (!aIsPri && bIsPri) return 1;
+    return 0;
+  });
+
+  container.innerHTML = sortedSources.map(src => {
+    const isPriority = src.channel_id === PRIORITY_CHANNEL_ID;
     const regionBadge = regionColors[src.region] || regionColors['Chung'];
     const prices = src.prices || {};
 
@@ -519,14 +531,25 @@ function renderSources(selectedDay) {
       { label: 'Sáu Hữu', val: prices.sau_huu, bg: 'bg-orange-50 text-orange-900' },
     ].filter(p => p.val !== null && p.val !== undefined && p.val > 0);
 
+    const cardBorder = isPriority 
+      ? 'border-2 border-amber-400/90 shadow-md ring-2 ring-amber-100/80 bg-gradient-to-b from-amber-50/20 to-white' 
+      : 'border border-slate-200 shadow-sm bg-white';
+
     return `
-      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+      <div class="${cardBorder} rounded-2xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
         <div>
           <!-- Header Card -->
           <div class="flex items-center justify-between gap-2 mb-2.5">
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full border ${regionBadge}">
-              <i class="fa-solid fa-location-dot mr-1"></i> ${src.region || 'Toàn quốc'}
-            </span>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full border ${regionBadge}">
+                <i class="fa-solid fa-location-dot mr-1"></i> ${src.region || 'Toàn quốc'}
+              </span>
+              ${isPriority ? `
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-400 text-slate-900 border border-amber-500 shadow-xs flex items-center gap-1">
+                  <i class="fa-solid fa-star text-amber-950 text-[9px]"></i> Kênh Nguồn Ưu Tiên
+                </span>
+              ` : ''}
+            </div>
             <span class="text-[11px] text-slate-400 flex items-center gap-1">
               <i class="fa-regular fa-clock"></i>
               ${src.published_at ? new Date(src.published_at).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }) : ''}
@@ -539,7 +562,7 @@ function renderSources(selectedDay) {
           </h3>
           <div class="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
             <i class="fa-brands fa-youtube text-red-500"></i>
-            <span class="font-medium">${src.channel_name}</span>
+            <span class="font-bold text-slate-700">${src.channel_name}</span>
           </div>
 
           <!-- AI Summary -->

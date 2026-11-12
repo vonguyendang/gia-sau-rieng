@@ -12444,6 +12444,26 @@
       },
       "sources": [
         {
+          "video_id": "evb1bxSBpS0",
+          "title": "Báo giá sầu riêng trưa nay ngày 12/11/2026: Ri6, Monthong, Gai Đen tại Tiền Giang",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=evb1bxSBpS0",
+          "published_at": "2026-11-12T11:45:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Cập nhật giá sầu riêng trưa 12/11 từ vựa uy tín: Ri6 loại A cắt tại vườn 53.000 đ/kg (tỉ lệ 8:2), Thái A đạt 78.000 đ/kg. Sầu riêng Gai Đen (Black Thorn) hàng đẹp 110.000 đ/kg, Chuồng Bò 68.000 đ/kg.",
+          "prices": {
+            "ri6_a": 53000,
+            "ri6_b": 42000,
+            "monthong_a": 78000,
+            "monthong_b": 60000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 68000,
+            "sau_huu": 90000
+          }
+        },
+        {
           "video_id": "real_video_20261112_01",
           "title": "Cập nhật giá sầu riêng thực tế ngày 12/11/2026: Miền Tây, Miền Đông, Tây Nguyên",
           "channel_name": "VTC Nông Nghiệp Xanh",

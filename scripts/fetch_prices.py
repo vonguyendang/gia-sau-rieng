@@ -483,12 +483,26 @@ def call_gemini_api(prompt_text: str) -> dict:
         return None
 
 
-def calculate_daily_average(sources: list) -> dict:
+def calculate_daily_average(sources: list, priority_channel_id: str = "UCX11-9EVu6AzLYorQNoLzRA") -> dict:
     """
-    Tính giá trung bình trong ngày cho từng loại sầu riêng.
-    Bỏ qua các giá trị null hoặc <= 0.
+    Tính giá đại diện trong ngày cho từng loại sầu riêng.
+    ƯU TIÊN ĐẶC BIỆT: Nếu có bản ghi từ kênh ưu tiên (priority_channel_id) thì lấy giá từ kênh này trước;
+    các loại sầu riêng mà kênh ưu tiên không có thì tính trung bình từ các kênh khác.
     """
     price_keys = ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king", "black_thorn", "chuong_bo", "sau_huu"]
+
+    # 1. Tìm bản ghi từ kênh ưu tiên (nếu có)
+    priority_prices = {}
+    for source in sources:
+        if source.get("channel_id") == priority_channel_id:
+            p = source.get("prices", {})
+            for k in price_keys:
+                val = p.get(k)
+                if val is not None and isinstance(val, (int, float)) and val > 0:
+                    priority_prices[k] = val
+            break
+
+    # 2. Tính trung bình tổng hợp từ các nguồn để làm fallback
     totals = {k: 0 for k in price_keys}
     counts = {k: 0 for k in price_keys}
 
@@ -502,7 +516,10 @@ def calculate_daily_average(sources: list) -> dict:
 
     averages = {}
     for k in price_keys:
-        if counts[k] > 0:
+        if k in priority_prices:
+            # Ưu tiên lấy giá chuẩn từ kênh ưu tiên
+            averages[k] = priority_prices[k]
+        elif counts[k] > 0:
             averages[k] = int(round(totals[k] / counts[k]))
         else:
             averages[k] = None
@@ -520,6 +537,9 @@ def main():
     if not channels:
         print("[WARN] Danh sách kênh rỗng! Vui lòng kiểm tra public/data/channels.json")
         return
+
+    # Sắp xếp kênh ưu tiên lên đầu tiên (is_primary hoặc priority nhỏ hơn)
+    channels = sorted(channels, key=lambda c: (not c.get("is_primary", False), c.get("priority", 99)))
 
     now_utc = datetime.now(timezone.utc)
     max_age = timedelta(hours=48)

@@ -1,9 +1,11 @@
 [
   {
-    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
-    "handle": "@vuonnhatoivlog",
-    "name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "handle": "@julitore18",
+    "name": "Giá Nông Sản Hôm Nay Channel",
     "region": "Miền Tây",
+    "is_primary": true,
+    "priority": 1,
     "enabled": true
   },
   {
@@ -11,13 +13,15 @@
     "handle": "@vtcnongnghiep4528",
     "name": "VTC Nông Nghiệp Xanh",
     "region": "Chung",
+    "priority": 2,
     "enabled": true
   },
   {
-    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
-    "handle": "@giaitrimientay8680",
-    "name": "Giải Trí Miền Tây",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "handle": "@vuonnhatoivlog",
+    "name": "Vườn Nhà Tôi Vlog",
     "region": "Miền Tây",
+    "priority": 2,
     "enabled": true
   },
   {
@@ -25,6 +29,7 @@
     "handle": "@thamtranvlog87",
     "name": "Thắm Trần Vlog",
     "region": "Tây Nguyên",
+    "priority": 2,
     "enabled": true
   },
   {
@@ -32,13 +37,15 @@
     "handle": "@giasaurieng247",
     "name": "Giá Nông Sản 47",
     "region": "Tây Nguyên",
+    "priority": 2,
     "enabled": true
   },
   {
-    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
-    "handle": "@julitore18",
-    "name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "handle": "@giaitrimientay8680",
+    "name": "Giải Trí Miền Tây",
     "region": "Miền Tây",
+    "priority": 2,
     "enabled": true
   }
 ]
