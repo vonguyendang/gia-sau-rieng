@@ -150,6 +150,20 @@ def main():
                 safe_sleep(3.0, 5.0, msg="chờ sau khi video không có phụ đề")
                 continue
 
+            # Kiểm tra an toàn phụ đề
+            if not has_durian_content(title, transcript):
+                print("       -> Phụ đề không chứa thông tin về sầu riêng. Ghi nhận bỏ qua.")
+                processed_videos[vid] = {
+                    "channel_id": cid,
+                    "title": title,
+                    "processed_at": datetime.now(VN_TZ).isoformat(),
+                    "has_transcript": True,
+                    "is_price_video": False,
+                }
+                save_json(PROCESSED_FILE, processed_videos)
+                safe_sleep(2.0, 4.0, msg="nghỉ ngắn")
+                continue
+
             print(f"       -> Lấy được phụ đề ({len(transcript)} ký tự). Đang gửi Gemini phân tích giá xô...")
 
             prompt = f"""

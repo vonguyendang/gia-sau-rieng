@@ -80,13 +80,20 @@ def safe_requests_get(url: str, timeout: int = 15, max_retries: int = 3):
             time.sleep(wait_time)
     return None
 
+# Regex lọc nghiêm ngặt tiêu đề: BẮT BUỘC có cụm từ "sầu riêng" hoặc "sau rieng" (hỗ trợ mọi biến thể dấu & hoa/thường)
+DURIAN_TITLE_REGEX = re.compile(r"s[aàảãáạăằẳẵắặâầẩẫấậ]u\s*ri[eèẻẽéẹêềểễếệ]ng", re.IGNORECASE)
+
 def is_durian_title(title: str) -> bool:
-    """Lọc nghiêm ngặt: Tiêu đề video BẮT BUỘC phải chứa chữ 'sầu riêng' hoặc 'sau rieng'."""
-    t = (title or "").lower()
-    return "sầu riêng" in t or "sau rieng" in t
+    """
+    Lọc nghiêm ngặt: Tiêu đề video BẮT BUỘC phải chứa chữ 'sầu riêng' hoặc 'sau rieng'
+    (chấp nhận mọi biến thể có dấu/không dấu/hoa/thường). Tuyệt đối bỏ qua video mít, ớt, phân bón.
+    """
+    if not title:
+        return False
+    return bool(DURIAN_TITLE_REGEX.search(title))
 
 def has_durian_content(title: str, transcript: str = "") -> bool:
-    """Lọc video có nội dung sầu riêng: Bắt buộc tiêu đề có 'sầu riêng' để tránh video mít, ớt, phân bón."""
+    """Lọc video có nội dung sầu riêng: Tiêu đề BẮT BUỘC có 'sầu riêng' / 'sau rieng'."""
     if not is_durian_title(title):
         return False
     if not transcript:
