@@ -388,6 +388,106 @@ def fetch_channel_videos_via_page(channel_id: str, handle: str = "") -> list:
         return []
 
 
+def fetch_channel_videos_via_playlist(channel_id: str) -> list:
+    """
+    Lấy danh sách lên đến 100 video gần nhất từ Uploads Playlist đặc biệt (UU...) của YouTube.
+    Thay thế 'UC' bằng 'UU' ở channel_id để lấy toàn bộ danh mục video tải lên của kênh.
+    """
+    if not channel_id or not channel_id.startswith("UC"):
+        return []
+
+    playlist_id = "UU" + channel_id[2:]
+    url = f"https://www.youtube.com/playlist?list={playlist_id}"
+
+    try:
+        resp = safe_requests_get(url, timeout=15)
+        if not resp or resp.status_code != 200:
+            return []
+
+        match = re.search(r"var ytInitialData = ({.*?});</script>", resp.text)
+        if not match:
+            return []
+
+        data = json.loads(match.group(1))
+        extracted = []
+
+        def find_lv(node):
+            if isinstance(node, dict):
+                if "lockupViewModel" in node:
+                    lvm = node["lockupViewModel"]
+                    vid = lvm.get("contentId")
+                    meta = lvm.get("metadata", {}).get("lockupMetadataViewModel", {})
+                    title = meta.get("title", {}).get("content", "")
+                    if vid and title:
+                        extracted.append({"vid": vid, "title": title})
+                for v in node.values():
+                    find_lv(v)
+            elif isinstance(node, list):
+                for i in node:
+                    find_lv(i)
+
+        find_lv(data)
+
+        seen = set()
+        videos = []
+        now = datetime.now(timezone.utc)
+        for item in extracted:
+            vid = item["vid"]
+            if vid in seen:
+                continue
+            seen.add(vid)
+            videos.append({
+                "video_id": vid,
+                "title": item["title"],
+                "link": f"https://www.youtube.com/watch?v={vid}",
+                "published_dt": now,
+                "published_at": now.astimezone(VN_TZ).isoformat(),
+            })
+        return videos
+    except Exception as e:
+        print(f"[INFO] Không thể lấy uploads playlist UU cho {channel_id}: {e}")
+        return []
+
+
+def fetch_all_channel_videos(channel_id: str, handle: str = "") -> list:
+    """
+    Lấy tối đa danh sách video của kênh (kết hợp Uploads Playlist UU + RSS + Trang /videos).
+    Phục vụ cào lùi lịch sử sâu với hàng chục đến 100 video.
+    """
+    combined = []
+    seen = set()
+
+    # 1. Thử lấy từ Uploads playlist UU (cho tới 100 video)
+    pl_videos = fetch_channel_videos_via_playlist(channel_id)
+    for v in pl_videos:
+        if v["video_id"] not in seen:
+            seen.add(v["video_id"])
+            combined.append(v)
+
+    # 2. Thử lấy từ RSS để cập nhật ngày đăng chuẩn xác
+    rss_videos = fetch_channel_videos(channel_id, handle)
+    for v in rss_videos:
+        if v["video_id"] not in seen:
+            seen.add(v["video_id"])
+            combined.append(v)
+        else:
+            for c in combined:
+                if c["video_id"] == v["video_id"]:
+                    c["published_dt"] = v["published_dt"]
+                    c["published_at"] = v["published_at"]
+                    break
+
+    # 3. Quét thêm từ trang kênh nếu còn ít
+    if len(combined) < 20:
+        page_videos = fetch_channel_videos_via_page(channel_id, handle)
+        for v in page_videos:
+            if v["video_id"] not in seen:
+                seen.add(v["video_id"])
+                combined.append(v)
+
+    return combined
+
+
 def fetch_channel_videos(channel_id: str, handle: str = ""):
     """
     Lấy danh sách video từ RSS feed của YouTube.

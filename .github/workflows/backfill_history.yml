@@ -1,12 +1,17 @@
-name: "Cào lùi dữ liệu lịch sử thật (Backfill)"
+name: "Cào lùi dữ liệu lịch sử tự động (Backfill)"
 
 on:
+  schedule:
+    # Tự động cào lùi tích lũy chậm 2 lần mỗi ngày (Giờ VN = UTC + 7):
+    # - 08:00 UTC -> 15:00 VN (Đầu giờ chiều sau phiên cập nhật trưa)
+    # - 19:00 UTC -> 02:00 VN (Nửa đêm, an toàn và mạng thông thoáng nhất)
+    - cron: '0 8,19 * * *'
   workflow_dispatch:
     inputs:
       limit_per_channel:
-        description: 'Số video sầu riêng tối đa cào lùi trên mỗi kênh (mặc định 10)'
+        description: 'Số video sầu riêng tối đa cào lùi trên mỗi kênh (mặc định 6)'
         required: false
-        default: '10'
+        default: '6'
 
 concurrency:
   group: data-pipeline
@@ -37,12 +42,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Chạy script cào lùi lịch sử thật
+      - name: Chạy script cào lùi lịch sử tự động
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-3.8-flash"
         run: |
-          python scripts/backfill_history.py ${{ github.event.inputs.limit_per_channel || '10' }}
+          LIMIT="${{ github.event.inputs.limit_per_channel }}"
+          if [ -z "$LIMIT" ]; then
+            LIMIT="6"
+          fi
+          echo "Bắt đầu cào lùi tích lũy với định mức tối đa $LIMIT video/kênh..."
+          python scripts/backfill_history.py "$LIMIT"
 
       - name: Tự động commit và push dữ liệu lịch sử thật
         run: |

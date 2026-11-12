@@ -39,9 +39,13 @@ if ENV_FILE.exists():
     except Exception:
         pass
 
+# Đảm bảo thư mục scripts nằm trong sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 # Import các hàm từ fetch_prices
 from fetch_prices import (
     fetch_channel_videos,
+    fetch_all_channel_videos,
     get_video_transcript,
     call_gemini_api,
     calculate_daily_average,
@@ -104,7 +108,7 @@ def main():
         region = ch.get("region", "Chung")
 
         print(f"\n>> Đang lấy danh sách video cũ từ: {name} ({handle or cid})")
-        videos = fetch_channel_videos(cid, handle)
+        videos = fetch_all_channel_videos(cid, handle)
         print(f"   Tìm thấy {len(videos)} video trên kênh.")
 
         # Lọc nghiêm ngặt: CHỈ lấy các video mà trong TIÊU ĐỀ có chữ "sầu riêng" (hoặc "sau rieng")
@@ -114,14 +118,21 @@ def main():
         ]
         print(f"   -> Có {len(durian_videos)} video có chữ 'sầu riêng' trong tiêu đề.")
 
-        for v in durian_videos[:max_videos_per_channel]:
+        # Lọc ra các video CHƯA TỪNG xử lý để cào lùi tích lũy dần về quá khứ
+        unprocessed_videos = [
+            v for v in durian_videos
+            if v["video_id"] not in processed_videos or processed_videos[v["video_id"]].get("has_transcript") is None
+        ]
+        print(f"   -> Có {len(unprocessed_videos)} video sầu riêng chưa xử lý (sẽ xử lý tối đa {max_videos_per_channel} video đợt này).")
+
+        if not unprocessed_videos:
+            print("   -> Kênh này đã xử lý hết các video sầu riêng tìm thấy. Bỏ qua.")
+            continue
+
+        for v in unprocessed_videos[:max_videos_per_channel]:
             vid = v["video_id"]
             title = v["title"]
             pub_dt = v["published_dt"]
-
-            # Bỏ qua nếu đã xử lý
-            if vid in processed_videos and processed_videos[vid].get("has_transcript") is not None:
-                continue
 
             print(f"\n   [+] Đang xử lý: [{vid}] {title}")
             transcript = get_video_transcript(vid)
