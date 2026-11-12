@@ -150,9 +150,11 @@ LƯU Ý CỰC KỲ QUAN TRỌNG VỀ NHẬN DIỆN GIỌNG NÓI VÀ TỪ ĐỊA 
    - Nếu video nói "tám lăm", "85 nghìn", "85k", "tám mươi lăm ngàn" -> giá là 85000 (VNĐ/kg).
    - "trăm hai", "120 nghìn", "120k" -> 120000 (VNĐ/kg).
    - "hai trăm rưỡi", "250k" -> 250000 (VNĐ/kg).
-3. Quy tắc phân loại A / B:
+3. Quy tắc phân loại A / B và Tỉ lệ cắt xô (CỰC KỲ QUAN TRỌNG):
    - Loại A thường là hàng tuyển, hàng đẹp, từ 2.5 - 3 hộc trở lên (hoặc từ 1.8kg - 5kg).
    - Loại B thường là hàng dạt, méo, hộc không đều, hoặc giá thấp hơn rõ rệt.
+   - TỈ LỆ TRÁI (8:2, 7:3, 9:1...): Trong thu mua sầu riêng, "tỉ lệ 8:2" hay "7:3" là TỈ LỆ PHÂN LOẠI TRÁI KHI MUA XÔ (ví dụ 8:2 = 80% loại A và 20% loại B; 7:3 = 70% loại A và 30% loại B). Tuyệt đối KHÔNG nhầm các con số tỉ lệ này thành giá tiền!
+   - Nếu video nhắc đến tỉ lệ xô (8:2 hay 7:3), hãy đưa chi tiết này vào phần 'summary' để người nông dân hiểu rõ điều kiện giá mua của thương lái.
    - Nếu trong video chỉ nhắc chung 1 mức giá cho giống đó mà không chia A/B, hãy gán giá đó cho loại A, còn loại B để null.
 4. Bắt buộc:
    - Nếu giống sầu riêng nào không được nhắc đến, giá trị BẮT BUỘC là null (tuyệt đối không để 0).
