@@ -92,3 +92,4 @@ Nếu bạn sở hữu tên miền riêng (ví dụ: `giasaurieng.vn` hoặc `gi
 1. Trong dashboard của Cloudflare Pages, chọn project vừa tạo $\rightarrow$ tab **Custom domains**.
 2. Nhấn **Set up a custom domain** và nhập tên miền của bạn.
 3. Làm theo hướng dẫn trỏ bản ghi CNAME hoặc DNS. Cloudflare sẽ tự động kích hoạt chứng chỉ bảo mật **SSL / HTTPS miễn phí**.
+

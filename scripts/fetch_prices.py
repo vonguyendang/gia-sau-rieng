@@ -16,9 +16,74 @@ import sys
 import json
 import time
 import re
+import random
+import shutil
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import xml.etree.ElementTree as ET
+
+# Pool User-Agent chuẩn từ các trình duyệt phổ biến
+USER_AGENTS = [
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0",
+]
+
+# Từ khóa nhận diện sầu riêng trước khi gọi AI (tiết kiệm Quota & Token)
+DURIAN_KEYWORDS = [
+    "sầu riêng", "sau rieng", "ri6", "ri 6", "di 6", "zi 6",
+    "monthong", "mỏn thon", "mon thong", "thái", "dona",
+    "musang", "mút sang", "black thorn", "gai đen", "chuồng bò", "sáu hữu",
+    "báo giá", "giá xô", "cắt xô", "tại vườn"
+]
+
+def get_safe_headers():
+    """Tạo headers giả lập trình duyệt thật, xoay vòng User-Agent."""
+    return {
+        "User-Agent": random.choice(USER_AGENTS),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Upgrade-Insecure-Requests": "1",
+    }
+
+def safe_sleep(min_sec: float = 3.0, max_sec: float = 6.0, msg: str = ""):
+    """Tạm dừng ngẫu nhiên kèm Jitter để tránh bị phát hiện bot."""
+    duration = round(random.uniform(min_sec, max_sec), 2)
+    if msg:
+        print(f"       -> [An toàn] Tạm dừng {duration}s ({msg})...")
+    time.sleep(duration)
+
+def safe_requests_get(url: str, timeout: int = 15, max_retries: int = 3):
+    """Gửi HTTP request với cơ chế Exponential Backoff & Retry an toàn."""
+    for attempt in range(1, max_retries + 1):
+        try:
+            headers = get_safe_headers()
+            resp = requests.get(url, headers=headers, timeout=timeout)
+            if resp.status_code == 429:
+                wait_time = attempt * 8 + random.uniform(1, 4)
+                print(f"[CẢNH BÁO] Gặp 429 Rate Limit. Tự động chờ {wait_time:.1f}s trước khi thử lại (lần {attempt}/{max_retries})...")
+                time.sleep(wait_time)
+                continue
+            return resp
+        except Exception as e:
+            if attempt == max_retries:
+                print(f"[ERR] Thất bại sau {max_retries} lần thử: {e}")
+                return None
+            wait_time = attempt * 3 + random.uniform(1, 2)
+            time.sleep(wait_time)
+    return None
+
+def has_durian_content(title: str, transcript: str = "") -> bool:
+    """Lọc nhanh video có nội dung sầu riêng để tránh lãng phí Gemini Quota."""
+    content = (title + " " + transcript[:2000]).lower()
+    return any(kw in content for kw in DURIAN_KEYWORDS)
 
 import requests
 try:
@@ -185,6 +250,15 @@ def load_json(file_path: Path, default):
 
 def save_json(file_path: Path, data):
     file_path.parent.mkdir(parents=True, exist_ok=True)
+    # 1. Tạo bản sao lưu an toàn nếu file đã tồn tại
+    if file_path.exists():
+        backup_file = file_path.with_suffix(".json.bak")
+        try:
+            shutil.copy2(file_path, backup_file)
+        except Exception:
+            pass
+
+    # 2. Ghi ra file tạm rồi atomic rename để chống hỏng file
     temp_file = file_path.with_suffix(".tmp")
     with open(temp_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -235,14 +309,9 @@ def fetch_channel_videos_via_page(channel_id: str, handle: str = "") -> list:
     else:
         url = f"https://www.youtube.com/channel/{channel_id}/videos"
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
-    }
-
     try:
-        resp = requests.get(url, headers=headers, timeout=15)
-        if resp.status_code != 200:
+        resp = safe_requests_get(url, timeout=15)
+        if not resp or resp.status_code != 200:
             return []
 
         match = re.search(r"var ytInitialData = ({.*?});</script>", resp.text)
@@ -285,7 +354,6 @@ def fetch_channel_videos_via_page(channel_id: str, handle: str = "") -> list:
 
         find_nodes(data)
 
-        # Khử trùng lặp
         seen = set()
         videos = []
         for item in extracted:
@@ -312,17 +380,14 @@ def fetch_channel_videos_via_page(channel_id: str, handle: str = "") -> list:
 def fetch_channel_videos(channel_id: str, handle: str = ""):
     """
     Lấy danh sách video từ RSS feed của YouTube.
-    Nếu RSS trả về rỗng hoặc 404, tự động fallback sang bóc tách trang kênh trực tiếp.
+    Nếu RSS trả về rỗng hoặc 404, tự động fallback sang bóc tách trang kênh an toàn.
     """
     rss_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-    }
 
     videos = []
     try:
-        resp = requests.get(rss_url, headers=headers, timeout=10)
-        if resp.status_code == 200:
+        resp = safe_requests_get(rss_url, timeout=12)
+        if resp and resp.status_code == 200:
             if HAS_FEEDPARSER:
                 feed = feedparser.parse(resp.content)
                 for entry in feed.entries:
@@ -578,13 +643,20 @@ def main():
 
         print(f"\n>> Đang quét kênh: {channel_name} ({handle or channel_id})")
         videos = fetch_channel_videos(channel_id, handle)
-        print(f"   Tìm thấy {len(videos)} video từ RSS feed.")
+        print(f"   Tìm thấy {len(videos)} video từ RSS/Trang kênh.")
+
+        consecutive_errors = 0
 
         for vid in videos:
             video_id = vid["video_id"]
             title = vid["title"]
             pub_dt = vid["published_dt"]
             pub_at_iso = vid["published_at"]
+
+            # Circuit breaker: Nếu kênh bị lỗi liên tiếp 3 lần, tạm dừng kênh này
+            if consecutive_errors >= 3:
+                print(f"   [CẢNH BÁO AN TOÀN] Kênh {channel_name} gặp lỗi phụ đề liên tiếp {consecutive_errors} lần. Tạm dừng quét kênh để bảo vệ an toàn IP.")
+                break
 
             # 1. Bỏ qua nếu đã từng xử lý
             if video_id in processed_videos:
@@ -594,9 +666,22 @@ def main():
             if (now_utc - pub_dt) > max_age:
                 continue
 
+            # 3. Lọc an toàn từ khóa sầu riêng trước khi xử lý (tiết kiệm Quota & Token)
+            if not has_durian_content(title, ""):
+                print(f"   [-] Bỏ qua (không liên quan sầu riêng): {title}")
+                processed_videos[video_id] = {
+                    "channel_id": channel_id,
+                    "title": title,
+                    "processed_at": datetime.now(VN_TZ).isoformat(),
+                    "has_transcript": None,
+                    "is_price_video": False,
+                }
+                save_json(PROCESSED_FILE, processed_videos)
+                continue
+
             print(f"   [+] Video mới phát hiện: {title} (ID: {video_id})")
 
-            # 3. Lấy phụ đề tiếng Việt
+            # 4. Lấy phụ đề tiếng Việt an toàn
             transcript = get_video_transcript(video_id)
             if not transcript:
                 print(f"       -> Không có phụ đề. Đánh dấu đã quét để bỏ qua lần sau.")
@@ -608,10 +693,27 @@ def main():
                     "is_price_video": False,
                 }
                 save_json(PROCESSED_FILE, processed_videos)
-                time.sleep(5)
+                consecutive_errors += 1
+                safe_sleep(3.0, 5.0, msg="chờ an toàn sau khi không có phụ đề")
                 continue
 
-            # 4. Chuẩn bị prompt gửi Gemini
+            consecutive_errors = 0
+
+            # 5. Kiểm tra lại phụ đề có nhắc sầu riêng không
+            if not has_durian_content(title, transcript):
+                print("       -> Phụ đề không chứa thông tin sầu riêng. Bỏ qua.")
+                processed_videos[video_id] = {
+                    "channel_id": channel_id,
+                    "title": title,
+                    "processed_at": datetime.now(VN_TZ).isoformat(),
+                    "has_transcript": True,
+                    "is_price_video": False,
+                }
+                save_json(PROCESSED_FILE, processed_videos)
+                safe_sleep(2.0, 4.0, msg="nghỉ ngắn")
+                continue
+
+            # 6. Chuẩn bị prompt gửi Gemini
             prompt = f"""
 KÊNH: {channel_name} (Khu vực mặc định: {default_region})
 TIÊU ĐỀ VIDEO: {title}
@@ -619,12 +721,12 @@ NGÀY ĐĂNG: {pub_at_iso}
 NỘI DUNG PHỤ ĐỀ:
 \"\"\"{transcript[:8000]}\"\"\"
 """
-            print("       -> Đang gửi phụ đề cho Gemini phân tích & trích xuất bảng giá...")
+            print("       -> Đang gửi phụ đề cho Gemini phân tích & trích xuất khoảng giá xô...")
             extracted = call_gemini_api(prompt)
 
             if not extracted:
                 print("       -> [LỖI] Không nhận được phản hồi hợp lệ từ Gemini. Bỏ qua video này.")
-                time.sleep(5)
+                safe_sleep(4.0, 7.0, msg="chờ sau lỗi AI")
                 continue
 
             is_price_video = extracted.get("is_price_video", False)
@@ -647,7 +749,6 @@ NỘI DUNG PHỤ ĐỀ:
                 print("       -> Gemini xác nhận: Đây không phải video báo giá sầu riêng.")
             else:
                 print(f"       -> Trích xuất thành công: {prices}")
-                # Xác định ngày theo giờ Việt Nam
                 pub_vn_dt = pub_dt.astimezone(VN_TZ)
                 day_key = pub_vn_dt.strftime("%Y-%m-%d")
 
@@ -669,23 +770,20 @@ NỘI DUNG PHỤ ĐỀ:
                     "prices": prices,
                 }
 
-                # Thêm hoặc cập nhật bản ghi trong sources
                 sources = history_data["days"][day_key].setdefault("sources", [])
-                # Kiểm tra tránh trùng lặp trong sources
                 if not any(s.get("video_id") == video_id for s in sources):
                     sources.append(source_record)
                     new_price_records += 1
 
-                # Tính lại giá trung bình của ngày đó
                 history_data["days"][day_key]["daily_average"] = calculate_daily_average(sources)
-
-                # Cập nhật thời gian
                 history_data["last_updated"] = datetime.now(VN_TZ).isoformat()
                 save_json(HISTORY_FILE, history_data)
 
-            # Nghỉ 5 giây giữa mỗi video để tránh rate limit YouTube / Gemini
-            print("       -> Tạm nghỉ 5 giây...")
-            time.sleep(5)
+            # Nghỉ ngẫu nhiên kèm jitter giữa các video để đảm bảo an toàn tuyệt đối
+            safe_sleep(3.5, 6.5, msg="giãn cách an toàn giữa các video")
+
+        # Nghỉ an toàn khi chuyển sang kênh tiếp theo
+        safe_sleep(4.0, 8.0, msg="chuyển kênh tiếp theo")
 
     # Cập nhật lại thời gian kiểm tra cuối cùng
     history_data["last_updated"] = datetime.now(VN_TZ).isoformat()

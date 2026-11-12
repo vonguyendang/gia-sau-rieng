@@ -162,3 +162,4 @@ Script có thiết lập cơ chế nghỉ (`sleep`) an toàn giữa các video �
 | **`Address already in use` khi bật server** | Cổng mạng (ví dụ 8080 hoặc 5050) đang bị chiếm dụng bởi ứng dụng khác | Đổi sang cổng khác, ví dụ: `python3 -m http.server 5055 --directory public`. |
 | **Không lấy được phụ đề YouTube** | Video không có phụ đề tiếng Việt hoặc YouTube chặn IP do gửi request quá nhanh | Script sẽ tự động ghi nhận và bỏ qua video này, không làm crash toàn bộ tiến trình. |
 | **Biểu đồ hiển thị trống** | File `public/data/history.json` chưa có dữ liệu hoặc bị lỗi cú pháp | Chạy lại `python3 scripts/fetch_prices.py` để tạo dữ liệu mới. |
+

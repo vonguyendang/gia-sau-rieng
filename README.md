@@ -31,6 +31,7 @@
 
 * 📖 **[Hướng dẫn cài đặt chi tiết trên máy tính (Local Installation Guide)](docs/INSTALLATION.md)**
 * ☁️ **[Hướng dẫn triển khai CI/CD GitHub Actions & Cloudflare Pages](docs/DEPLOYMENT.md)**
+* 🛡️ **[Cấu hình & Cơ chế cào dữ liệu an toàn (Safe Scraping Architecture)](docs/SAFE_SCRAPING.md)**
 
 ---
 

@@ -7,8 +7,8 @@ on:
   workflow_dispatch: # Cho phép kích hoạt thủ công từ giao diện GitHub Actions
 
 concurrency:
-  group: update-prices
-  cancel-in-progress: true
+  group: data-pipeline
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -16,6 +16,7 @@ permissions:
 jobs:
   fetch-and-update:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Checkout mã nguồn
         uses: actions/checkout@v4
@@ -51,6 +52,7 @@ jobs:
             echo "Phát hiện dữ liệu mới trong public/data/. Tiến hành commit..."
             git add public/data/
             git commit -m "chore(data): tự động cập nhật giá sầu riêng [skip ci]"
+            git pull --rebase origin main || true
             git push
           else
             echo "Không có thay đổi dữ liệu nào. Bỏ qua commit."

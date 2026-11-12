@@ -47,6 +47,8 @@ from fetch_prices import (
     calculate_daily_average,
     load_json,
     save_json,
+    safe_sleep,
+    has_durian_content,
     VN_TZ,
 )
 
@@ -135,7 +137,7 @@ def main():
                     "is_price_video": False,
                 }
                 save_json(PROCESSED_FILE, processed_videos)
-                time.sleep(3)
+                safe_sleep(3.0, 5.0, msg="chờ sau khi video không có phụ đề")
                 continue
 
             print(f"       -> Lấy được phụ đề ({len(transcript)} ký tự). Đang gửi Gemini phân tích giá xô...")
@@ -150,7 +152,7 @@ NỘI DUNG PHỤ ĐỀ:
 
             if not extracted:
                 print("       -> [LỖI] Gemini API không trả về kết quả.")
-                time.sleep(4)
+                safe_sleep(4.0, 7.0, msg="chờ sau lỗi AI")
                 continue
 
             is_price_video = extracted.get("is_price_video", False)
@@ -202,9 +204,11 @@ NỘI DUNG PHỤ ĐỀ:
             else:
                 print("       -> Video không chứa thông tin báo giá sầu riêng.")
 
-            # Nghỉ 5 giây giữa các video để an toàn tuyệt đối
-            print("       -> Nghỉ 5 giây an toàn...")
-            time.sleep(5)
+            # Nghỉ ngẫu nhiên an toàn giữa các video
+            safe_sleep(3.5, 6.5, msg="giãn cách an toàn giữa các video cũ")
+
+        # Nghỉ an toàn khi chuyển kênh
+        safe_sleep(4.0, 8.0, msg="chuyển kênh tiếp theo")
 
     # Sắp xếp lại danh sách ngày theo thứ tự thời gian
     history_data["days"] = dict(sorted(history_data["days"].items()))
