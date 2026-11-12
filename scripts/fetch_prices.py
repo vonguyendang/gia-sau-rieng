@@ -80,9 +80,18 @@ def safe_requests_get(url: str, timeout: int = 15, max_retries: int = 3):
             time.sleep(wait_time)
     return None
 
+def is_durian_title(title: str) -> bool:
+    """Lọc nghiêm ngặt: Tiêu đề video BẮT BUỘC phải chứa chữ 'sầu riêng' hoặc 'sau rieng'."""
+    t = (title or "").lower()
+    return "sầu riêng" in t or "sau rieng" in t
+
 def has_durian_content(title: str, transcript: str = "") -> bool:
-    """Lọc nhanh video có nội dung sầu riêng để tránh lãng phí Gemini Quota."""
-    content = (title + " " + transcript[:2000]).lower()
+    """Lọc video có nội dung sầu riêng: Bắt buộc tiêu đề có 'sầu riêng' để tránh video mít, ớt, phân bón."""
+    if not is_durian_title(title):
+        return False
+    if not transcript:
+        return True
+    content = transcript[:3000].lower()
     return any(kw in content for kw in DURIAN_KEYWORDS)
 
 import requests
@@ -668,9 +677,9 @@ def main():
             if (now_utc - pub_dt) > max_age:
                 continue
 
-            # 3. Lọc an toàn từ khóa sầu riêng trước khi xử lý (tiết kiệm Quota & Token)
-            if not has_durian_content(title, ""):
-                print(f"   [-] Bỏ qua (không liên quan sầu riêng): {title}")
+            # 3. Lọc nghiêm ngặt: TIÊU ĐỀ PHẢI CÓ CHỮ 'SẦU RIÊNG' (bỏ qua giá mít, ớt, phân bón...)
+            if not is_durian_title(title):
+                print(f"   [-] Bỏ qua (tiêu đề không chứa chữ 'sầu riêng'): {title}")
                 processed_videos[video_id] = {
                     "channel_id": channel_id,
                     "title": title,

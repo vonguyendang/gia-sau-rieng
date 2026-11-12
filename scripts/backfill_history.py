@@ -48,6 +48,7 @@ from fetch_prices import (
     load_json,
     save_json,
     safe_sleep,
+    is_durian_title,
     has_durian_content,
     VN_TZ,
 )
@@ -106,14 +107,12 @@ def main():
         videos = fetch_channel_videos(cid, handle)
         print(f"   Tìm thấy {len(videos)} video trên kênh.")
 
-        # Lọc các video liên quan đến sầu riêng
-        durian_videos = []
-        for v in videos:
-            t_low = v["title"].lower()
-            if any(kw in t_low for kw in ["sầu riêng", "sau rieng", "ri6", "monthong", "musang", "black thorn"]):
-                durian_videos.append(v)
-
-        print(f"   -> Có {len(durian_videos)} video chuyên về sầu riêng.")
+        # Lọc nghiêm ngặt: CHỈ lấy các video mà trong TIÊU ĐỀ có chữ "sầu riêng" (hoặc "sau rieng")
+        durian_videos = [
+            v for v in videos
+            if is_durian_title(v.get("title", ""))
+        ]
+        print(f"   -> Có {len(durian_videos)} video có chữ 'sầu riêng' trong tiêu đề.")
 
         for v in durian_videos[:max_videos_per_channel]:
             vid = v["video_id"]
