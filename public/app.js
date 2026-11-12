@@ -6,7 +6,7 @@
 
 let historyData = null;
 let priceChartInstance = null;
-let currentRange = '365'; // '7', '30', '90', '365' (1 năm)
+let currentRange = '7'; // '7', '30', 'all'
 
 // Định dạng số thành tiền tệ VNĐ
 function formatVND(val) {
@@ -279,10 +279,8 @@ function initOrUpdateChart() {
     selectedDays = daysKeys.slice(-7);
   } else if (currentRange === '30') {
     selectedDays = daysKeys.slice(-30);
-  } else if (currentRange === '90') {
-    selectedDays = daysKeys.slice(-90);
-  } else if (currentRange === '365') {
-    selectedDays = daysKeys.slice(-365);
+  } else {
+    selectedDays = daysKeys;
   }
 
   // Tối ưu hóa kích thước điểm dựa theo số ngày để biểu đồ 1 năm luôn sắc nét

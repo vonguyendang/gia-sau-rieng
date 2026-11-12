@@ -66,7 +66,7 @@ VN_TZ = timezone(timedelta(hours=7))
 
 # Cấu hình Gemini
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 PRICE_SCHEMA = {
     "type": "OBJECT",
@@ -385,16 +385,25 @@ def fetch_channel_videos(channel_id: str, handle: str = ""):
 def get_video_transcript(video_id: str) -> str:
     """
     Lấy phụ đề tiếng Việt của video bằng youtube-transcript-api.
-    Thử cả phụ đề tạo thủ công và phụ đề auto-generated tiếng Việt.
+    Hỗ trợ cả version 1.2+ mới nhất (api.fetch) lẫn các version trước đó.
     """
     if not HAS_TRANSCRIPT_API:
         print("[WARN] Chưa cài đặt youtube-transcript-api. Chạy 'pip install -r scripts/requirements.txt'.")
         return ""
 
+    # Cách 1: Thử api.fetch (youtube-transcript-api >= 1.2.0)
+    try:
+        api = YouTubeTranscriptApi()
+        fetched = api.fetch(video_id, languages=["vi"])
+        if hasattr(fetched, "snippets"):
+            return " ".join([s.text for s in fetched.snippets if getattr(s, "text", "")]).strip()
+    except Exception:
+        pass
+
+    # Cách 2: Thử list_transcripts / find_transcript
     try:
         transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
         transcript = None
-
         try:
             transcript = transcript_list.find_transcript(["vi"])
         except Exception:
@@ -403,17 +412,21 @@ def get_video_transcript(video_id: str) -> str:
             except Exception:
                 pass
 
-        if not transcript:
+        if transcript:
+            data = transcript.fetch()
+            return " ".join([item.get("text", "") for item in data]).strip()
+    except Exception:
+        pass
+
+    # Cách 3: Thử get_transcript trực tiếp (version < 1.0)
+    try:
+        if hasattr(YouTubeTranscriptApi, "get_transcript"):
             data = YouTubeTranscriptApi.get_transcript(video_id, languages=["vi"])
-            return " ".join([item.get("text", "") for item in data])
-
-        data = transcript.fetch()
-        full_text = " ".join([item.get("text", "") for item in data])
-        return full_text.strip()
-
+            return " ".join([item.get("text", "") for item in data]).strip()
     except Exception as e:
         print(f"[INFO] Video {video_id} không có phụ đề tiếng Việt khả dụng ({type(e).__name__})")
-        return ""
+
+    return ""
 
 
 def call_gemini_api(prompt_text: str) -> dict:
