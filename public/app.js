@@ -259,26 +259,26 @@ function renderPriceCards() {
     return `
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/90 ${c.accentColor} hover:shadow-md transition-shadow flex flex-col justify-between">
         <div>
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold px-2.5 py-1 rounded-lg ${c.badgeColor} flex items-center gap-1.5">
-              <i class="${c.icon}"></i> ${c.orderNum}. ${c.title}
+          <div class="flex items-start justify-between gap-1.5 mb-2">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-lg ${c.badgeColor} flex items-center gap-1.5 leading-snug">
+              <i class="${c.icon} shrink-0"></i> <span>${c.orderNum}. ${c.title}</span>
             </span>
-            <span class="text-[10px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+            <span class="text-[10px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 shrink-0 whitespace-nowrap">
               ${c.tag}
             </span>
           </div>
 
-          <div class="mt-3 flex items-baseline justify-between">
+          <div class="mt-2.5 flex items-baseline justify-between">
             <div>
-              <span class="text-[11px] font-semibold text-slate-500 uppercase block tracking-wider">Khoảng giá xô vườn:</span>
+              <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase block tracking-wider">Khoảng giá xô vườn:</span>
               <div class="text-2xl sm:text-[26px] font-black text-slate-900 tracking-tight leading-none mt-1">
                 ${priceDisplay}
               </div>
             </div>
-            <span class="text-xs font-bold text-slate-500">đ / kg</span>
+            <span class="text-xs font-bold text-slate-500 shrink-0">đ / kg</span>
           </div>
 
-          <div class="mt-3.5 p-2.5 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-600">
+          <div class="mt-3 p-2.5 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-600">
             <i class="fa-solid fa-circle-info text-slate-400 mr-1"></i> ${c.note}
           </div>
         </div>
@@ -286,7 +286,7 @@ function renderPriceCards() {
         <div>
           <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
             <span class="text-slate-500 text-[11px]">So với hôm qua:</span>
-            <span class="font-semibold text-[11px] flex items-center gap-1 ${diffInfo.class}">
+            <span class="font-bold text-[11px] flex items-center gap-1 ${diffInfo.class} whitespace-nowrap">
               <i class="fa-solid ${diffInfo.icon} text-[9px]"></i>
               ${diffInfo.text}
             </span>
@@ -342,16 +342,16 @@ function renderComparisonTable() {
 
   function formatDiffCell(todayVal, pastVal) {
     if (!todayVal || !pastVal) {
-      return '<span class="text-slate-400 text-xs italic bg-slate-50 px-2 py-0.5 rounded border border-slate-100">Đang tích lũy</span>';
+      return '<span class="text-slate-400 text-xs italic bg-slate-50 px-2 py-0.5 rounded border border-slate-100 whitespace-nowrap">Đang tích lũy</span>';
     }
     const diff = todayVal - pastVal;
     const pct = ((diff / pastVal) * 100).toFixed(1);
     if (diff > 0) {
-      return `<span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-emerald-200"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +${new Intl.NumberFormat('vi-VN').format(diff)} đ (+${pct}%)</span>`;
+      return `<span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-emerald-200 whitespace-nowrap"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +${new Intl.NumberFormat('vi-VN').format(diff)} đ (+${pct}%)</span>`;
     } else if (diff < 0) {
-      return `<span class="text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-rose-200"><i class="fa-solid fa-arrow-trend-down text-[10px]"></i> ${new Intl.NumberFormat('vi-VN').format(diff)} đ (${pct}%)</span>`;
+      return `<span class="text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-rose-200 whitespace-nowrap"><i class="fa-solid fa-arrow-trend-down text-[10px]"></i> ${new Intl.NumberFormat('vi-VN').format(diff)} đ (${pct}%)</span>`;
     }
-    return '<span class="text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full font-medium text-xs">Đứng giá</span>';
+    return '<span class="text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full font-medium text-xs whitespace-nowrap">Đứng giá</span>';
   }
 
   const items = [
@@ -419,14 +419,14 @@ function renderComparisonTable() {
 
   tableBody.innerHTML = items.map(item => `
     <tr class="hover:bg-slate-50/80 transition-colors">
-      <td class="py-3 px-4 font-bold text-slate-800 flex items-center gap-2">
-        <i class="fa-solid ${item.icon}"></i> ${item.name}
+      <td class="py-3 px-3.5 font-bold text-slate-800 whitespace-nowrap">
+        <span class="inline-flex items-center gap-1.5"><i class="fa-solid ${item.icon}"></i> ${item.name}</span>
       </td>
-      <td class="py-3 px-3 font-extrabold text-slate-900">${item.todayDisplay}</td>
-      <td class="py-3 px-3">${formatDiffCell(item.val, item.t1Val)}</td>
-      <td class="py-3 px-3">${formatDiffCell(item.val, item.t7Val)}</td>
-      <td class="py-3 px-3">${formatDiffCell(item.val, item.t30Val)}</td>
-      <td class="py-3 px-4">${formatDiffCell(item.val, item.tYoYVal)}</td>
+      <td class="py-3 px-3 font-extrabold text-slate-900 whitespace-nowrap">${item.todayDisplay}</td>
+      <td class="py-3 px-3 whitespace-nowrap">${formatDiffCell(item.val, item.t1Val)}</td>
+      <td class="py-3 px-3 whitespace-nowrap">${formatDiffCell(item.val, item.t7Val)}</td>
+      <td class="py-3 px-3 whitespace-nowrap">${formatDiffCell(item.val, item.t30Val)}</td>
+      <td class="py-3 px-3.5 whitespace-nowrap">${formatDiffCell(item.val, item.tYoYVal)}</td>
     </tr>
   `).join('');
 }
@@ -473,7 +473,7 @@ function initOrUpdateChart() {
     labels: labels,
     datasets: [
       {
-        label: '1. Sầu riêng Ri6',
+        label: 'Ri6',
         data: ri6Data,
         borderColor: '#059669',
         backgroundColor: 'rgba(5, 150, 105, 0.08)',
@@ -486,7 +486,7 @@ function initOrUpdateChart() {
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: '2. Sầu riêng Thái (Monthong)',
+        label: 'Thái Monthong',
         data: monthongData,
         borderColor: '#d97706',
         backgroundColor: 'rgba(217, 119, 6, 0.08)',
@@ -499,7 +499,7 @@ function initOrUpdateChart() {
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: '3. Sầu riêng Musang King',
+        label: 'Musang King',
         data: musangData,
         borderColor: '#7c3aed',
         backgroundColor: 'rgba(124, 58, 237, 0.08)',
@@ -512,7 +512,7 @@ function initOrUpdateChart() {
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: '4. Sầu riêng Black Thorn (Gai Đen)',
+        label: 'Black Thorn',
         data: blackThornData,
         borderColor: '#e11d48',
         backgroundColor: 'rgba(225, 29, 72, 0.08)',
@@ -525,7 +525,7 @@ function initOrUpdateChart() {
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: '5. Sầu riêng Chuồng Bò',
+        label: 'Chuồng Bò',
         data: chuongBoData,
         borderColor: '#0891b2',
         borderWidth: isDense ? 1.5 : 2,
@@ -537,7 +537,7 @@ function initOrUpdateChart() {
         pointHoverRadius: pHoverRadius,
       },
       {
-        label: '6. Sầu riêng Sáu Hữu',
+        label: 'Sáu Hữu',
         data: sauHuuData,
         borderColor: '#ea580c',
         borderWidth: isDense ? 1.5 : 2,
@@ -561,10 +561,14 @@ function initOrUpdateChart() {
     plugins: {
       legend: {
         position: 'top',
+        align: 'center',
         labels: {
-          font: { family: '"Be Vietnam Pro"', size: 12, weight: '600' },
+          font: { family: '"Be Vietnam Pro"', size: 11, weight: '600' },
           usePointStyle: true,
-          padding: 16,
+          pointStyle: 'circle',
+          boxWidth: 7,
+          boxHeight: 7,
+          padding: 8,
         }
       },
       tooltip: {
@@ -589,6 +593,26 @@ function initOrUpdateChart() {
               const low = avg.monthong_b ? formatNumber(avg.monthong_b) : '70.000';
               const high = avg.monthong_a ? formatNumber(avg.monthong_a) : '75.000';
               return `2. Sầu riêng Thái: ${low} – ${high} đ/kg (xô tại vườn)`;
+            }
+
+            if (lbl.includes('Musang')) {
+              const val = avg.musang_king ? formatNumber(avg.musang_king) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
+              return `3. Sầu riêng Musang King: ${val} đ/kg`;
+            }
+
+            if (lbl.includes('Black Thorn')) {
+              const val = avg.black_thorn ? formatNumber(avg.black_thorn) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
+              return `4. Sầu riêng Black Thorn: ${val} đ/kg`;
+            }
+
+            if (lbl.includes('Chuồng Bò')) {
+              const val = avg.chuong_bo ? formatNumber(avg.chuong_bo) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
+              return `5. Sầu riêng Chuồng Bò: ${val} đ/kg`;
+            }
+
+            if (lbl.includes('Sáu Hữu')) {
+              const val = avg.sau_huu ? formatNumber(avg.sau_huu) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
+              return `6. Sầu riêng Sáu Hữu: ${val} đ/kg`;
             }
 
             if (context.parsed.y !== null) {

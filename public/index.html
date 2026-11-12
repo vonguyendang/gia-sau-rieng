@@ -46,47 +46,47 @@
 
   <!-- TOP BANNER & NAVBAR -->
   <header class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 text-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-amber-400 text-emerald-950 flex items-center justify-center font-bold text-2xl shadow-md">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex items-center justify-between gap-3">
+      <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-400 text-emerald-950 flex items-center justify-center font-bold text-xl sm:text-2xl shadow-md shrink-0">
           🍈
         </div>
-        <div>
-          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+        <div class="min-w-0">
+          <h1 class="text-base sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2 truncate">
             Giá Sầu Riêng Xô Tại Vườn
             <span class="text-xs bg-amber-400 text-emerald-950 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider hidden sm:inline-block">Giá Xô</span>
           </h1>
-          <p class="text-xs text-emerald-200">Tổng hợp giá thương lái cắt xô tận vườn (tỉ lệ 8:2, 7:3)</p>
+          <p class="text-[11px] sm:text-xs text-emerald-200 truncate">Tổng hợp giá thương lái cắt xô tận vườn (tỉ lệ 8:2, 7:3)</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2.5 shrink-0">
         <div class="text-right hidden md:block">
           <div class="text-xs text-emerald-200">Cập nhật lần cuối</div>
           <div id="last-updated-text" class="text-xs font-semibold text-amber-300">Đang đồng bộ...</div>
         </div>
-        <button id="btn-refresh" title="Tải lại dữ liệu" class="p-2.5 rounded-lg bg-emerald-700/60 hover:bg-emerald-600 text-emerald-100 hover:text-white transition-all shadow-sm">
-          <i class="fa-solid fa-arrows-rotate" id="refresh-icon"></i>
+        <button id="btn-refresh" title="Tải lại dữ liệu" class="p-2 sm:p-2.5 rounded-xl bg-emerald-700/70 hover:bg-emerald-600 text-emerald-100 hover:text-white transition-all shadow-sm">
+          <i class="fa-solid fa-arrows-rotate text-sm sm:text-base" id="refresh-icon"></i>
         </button>
       </div>
     </div>
   </header>
 
   <!-- MAIN CONTENT CONTAINER -->
-  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full space-y-8">
+  <main class="flex-grow max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-6 w-full space-y-6 sm:space-y-8">
 
     <!-- SUBHEADER / STATUS NOTIFICATION -->
-    <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div class="flex items-center space-x-3">
-        <span class="relative flex h-3.5 w-3.5">
+    <div class="bg-white rounded-2xl p-3.5 sm:p-5 shadow-sm border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4">
+      <div class="flex items-center space-x-2.5">
+        <span class="relative flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
         </span>
-        <span class="text-sm font-medium text-slate-700">
-          Thị trường giao dịch ngày: <strong id="current-day-label" class="text-emerald-800">--/--/----</strong>
+        <span class="text-xs sm:text-sm font-medium text-slate-700">
+          Thị trường giao dịch ngày: <strong id="current-day-label" class="text-emerald-800 font-bold">--/--/----</strong>
         </span>
       </div>
-      <div class="flex items-center space-x-2 text-xs text-slate-500 bg-slate-100 px-3 py-1.5 rounded-lg">
+      <div class="flex items-center space-x-1.5 text-[11px] sm:text-xs text-slate-500 bg-slate-50 border border-slate-200/60 px-2.5 py-1 rounded-lg">
         <i class="fa-solid fa-shield-halved text-emerald-600"></i>
         <span>Dữ liệu xử lý bởi <strong>Gemini AI</strong> & GitHub Actions</span>
       </div>
@@ -94,78 +94,85 @@
 
     <!-- KHU VỰC 1: CÁC THẺ GIÁ HÔM NAY (PRICE CARDS) -->
     <section>
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3.5">
+        <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
           <i class="fa-solid fa-scale-balanced text-amber-500"></i>
           Bảng Giá Cắt Xô Tại Vườn Hôm Nay
         </h2>
-        <span class="text-xs text-slate-500 font-medium bg-amber-50 text-amber-900 border border-amber-200 px-2.5 py-1 rounded-lg">
+        <span class="text-[11px] sm:text-xs text-amber-900 font-medium bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-lg self-start sm:self-auto">
           Đơn vị: VNĐ / kg (Giá cắt xô mua tại vườn)
         </span>
       </div>
 
       <!-- Lưới 6 Thẻ Giống Sầu Riêng Chuẩn Giá Xô Tại Vườn -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="price-cards-container">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4" id="price-cards-container">
         <!-- Render tự động bởi app.js cho 6 giống: Black Thorn, Musang King, Sáu Hữu, Thái Monthong, Chuồng Bò, Ri6 -->
       </div>
     </section>
 
     <!-- KHU VỰC 2: BIỂU ĐỒ BIẾN ĐỘNG GIÁ (CHART SECTION) -->
-    <section class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200/80">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-slate-100 gap-4">
+    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 sm:pb-5 mb-3.5 sm:mb-5 border-b border-slate-100 gap-3">
         <div>
-          <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+          <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
             <i class="fa-solid fa-chart-line text-emerald-600"></i>
             Biểu Đồ Xu Hướng Giá Xô Tại Vườn
           </h2>
-          <p class="text-xs text-slate-500 mt-0.5">Biến động giá thương lái cắt xô tại vườn qua các ngày</p>
+          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Biến động giá thương lái cắt xô tại vườn qua các ngày</p>
         </div>
 
         <!-- Filter nút bấm thời gian -->
-        <div class="inline-flex p-1 bg-slate-100 rounded-xl space-x-1" role="group">
-          <button type="button" data-range="7" class="chart-filter-btn px-3 py-1.5 text-xs font-semibold rounded-lg transition-all bg-white text-emerald-800 shadow-sm">
+        <div class="inline-flex p-1 bg-slate-100 rounded-xl space-x-1 self-start sm:self-auto" role="group">
+          <button type="button" data-range="7" class="chart-filter-btn px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-lg transition-all bg-white text-emerald-800 shadow-sm">
             7 ngày gần nhất
           </button>
-          <button type="button" data-range="30" class="chart-filter-btn px-3 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
+          <button type="button" data-range="30" class="chart-filter-btn px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
             30 ngày
           </button>
-          <button type="button" data-range="all" class="chart-filter-btn px-3 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
+          <button type="button" data-range="all" class="chart-filter-btn px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900">
             Tất cả dữ liệu thật
           </button>
         </div>
       </div>
 
       <!-- Khung Canvas biểu đồ -->
-      <div class="relative w-full h-[320px] sm:h-[380px] lg:h-[420px]">
+      <div class="relative w-full h-[360px] sm:h-[400px] lg:h-[430px]">
         <canvas id="priceChart"></canvas>
       </div>
     </section>
 
     <!-- KHU VỰC 3: ĐỐI CHIẾU GIÁ SO VỚI CÙNG KỲ (COMPARISON TABLE) -->
-    <section class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200/80">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-100 gap-2">
+    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-3.5 border-b border-slate-100 gap-2">
         <div>
-          <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
-            <i class="fa-solid fa-arrows-split-up-and-left text-amber-500"></i>
-            Bảng Đối Chiếu Giá So Với Cùng Kỳ
-          </h2>
-          <p class="text-xs text-slate-500 mt-0.5">So sánh biến động giá xô hôm nay với các mốc chu kỳ (Hôm qua, Tuần trước, Tháng trước, Cùng kỳ năm trước)</p>
+          <div class="flex items-center gap-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+              <i class="fa-solid fa-arrows-split-up-and-left text-amber-500"></i>
+              Bảng Đối Chiếu Giá So Với Cùng Kỳ
+            </h2>
+          </div>
+          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">So sánh biến động giá xô hôm nay với các mốc chu kỳ (Hôm qua, Tuần trước, Tháng trước, Cùng kỳ năm trước)</p>
         </div>
-        <span class="text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg self-start sm:self-auto">
-          Tự động đối chiếu theo dữ liệu thực tế
-        </span>
+        <div class="flex items-center gap-2 self-start sm:self-auto">
+          <span class="text-[11px] text-slate-500 sm:hidden flex items-center gap-1 font-medium bg-slate-100 px-2.5 py-1 rounded-lg">
+            <i class="fa-solid fa-arrows-left-right text-emerald-600"></i> Vuốt ngang để xem đủ
+          </span>
+          <span class="hidden sm:inline-block text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+            Tự động đối chiếu theo dữ liệu thực tế
+          </span>
+        </div>
       </div>
 
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+      <div class="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+        <table class="min-w-[650px] w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
             <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 text-xs uppercase tracking-wider">
-              <th class="py-3 px-4 font-bold rounded-l-xl">Giống Sầu Riêng</th>
+              <th class="py-3 px-3.5 font-bold rounded-l-xl">Giống Sầu Riêng</th>
               <th class="py-3 px-3 font-bold text-slate-900">Giá Hôm Nay</th>
               <th class="py-3 px-3 font-bold">So Hôm Qua (T-1)</th>
               <th class="py-3 px-3 font-bold">Cùng Kỳ Tuần Trước (T-7)</th>
               <th class="py-3 px-3 font-bold">Cùng Kỳ Tháng Trước (T-30)</th>
-              <th class="py-3 px-4 font-bold rounded-r-xl">Cùng Kỳ Năm Trước (YoY)</th>
+              <th class="py-3 px-3.5 font-bold rounded-r-xl">Cùng Kỳ Năm Trước (YoY)</th>
             </tr>
           </thead>
           <tbody id="comparison-table-body" class="divide-y divide-slate-100 font-medium text-slate-700">
@@ -175,19 +182,19 @@
       </div>
     </section>
 
-    <!-- KHU VỰC 3: CHI TIẾT NGUỒN TIN THEO KÊNH (YOUTUBE SOURCES) -->
+    <!-- KHU VỰC 4: CHI TIẾT NGUỒN TIN THEO KÊNH (YOUTUBE SOURCES) -->
     <section class="space-y-4">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3.5">
         <div>
-          <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+          <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
             <i class="fa-brands fa-youtube text-red-600"></i>
             Bản Tin & Chi Tiết Nguồn Thu Thập Mới Nhất
           </h2>
-          <p class="text-xs text-slate-500">Thông tin trích xuất từ các video báo giá tại vườn</p>
+          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Thông tin trích xuất từ các video báo giá tại vườn</p>
         </div>
-        <div class="flex items-center gap-2">
-          <label for="date-select" class="text-xs font-medium text-slate-600">Chọn ngày:</label>
-          <select id="date-select" class="text-xs font-medium bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm">
+        <div class="flex items-center gap-2 self-start sm:self-auto">
+          <label for="date-select" class="text-xs font-semibold text-slate-600">Chọn ngày:</label>
+          <select id="date-select" class="text-xs font-semibold bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm">
             <!-- Render danh sách ngày -->
           </select>
         </div>
