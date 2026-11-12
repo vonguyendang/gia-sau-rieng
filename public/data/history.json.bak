@@ -1,0 +1,179 @@
+{
+  "last_updated": "2026-11-12T12:47:00+07:00",
+  "days": {
+    "2026-11-10": {
+      "daily_average": {
+        "ri6_min": 49000,
+        "ri6_max": 54000,
+        "monthong_min": 71000,
+        "monthong_max": 76000,
+        "musang_king_min": 100000,
+        "musang_king_max": 100000,
+        "black_thorn_min": 110000,
+        "black_thorn_max": 110000,
+        "chuong_bo_min": 48000,
+        "chuong_bo_max": 52000,
+        "sau_huu_min": 90000,
+        "sau_huu_max": 90000,
+        "ri6_a": 54000,
+        "ri6_b": 49000,
+        "monthong_a": 76000,
+        "monthong_b": 71000,
+        "musang_king": 100000,
+        "black_thorn": 110000,
+        "chuong_bo": 50000,
+        "sau_huu": 90000
+      },
+      "sources": [
+        {
+          "video_id": "TPNLVzGIxVU",
+          "title": "Giá sầu riêng ngày 10/11/2026: Diễn biến thị trường đầu vụ nghịch miền Tây",
+          "channel_name": "VTC Nông Nghiệp Xanh",
+          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+          "video_url": "https://www.youtube.com/watch?v=TPNLVzGIxVU",
+          "published_at": "2026-11-10T08:30:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng xô tại vườn ngày 10/11: Ri6 xô A/B min 49.000 - max 54.000 đ/kg; Thái xô A/B min 71.000 - max 76.000 đ/kg. Black Thorn 110.000 đ/kg, Musang King 100.000 đ/kg.",
+          "prices": {
+            "ri6_min": 49000,
+            "ri6_max": 54000,
+            "monthong_min": 71000,
+            "monthong_max": 76000,
+            "musang_king_min": 100000,
+            "musang_king_max": 100000,
+            "black_thorn_min": 110000,
+            "black_thorn_max": 110000,
+            "chuong_bo_min": 48000,
+            "chuong_bo_max": 52000,
+            "sau_huu_min": 90000,
+            "sau_huu_max": 90000,
+            "ri6_a": 54000,
+            "ri6_b": 49000,
+            "monthong_a": 76000,
+            "monthong_b": 71000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 90000
+          }
+        }
+      ]
+    },
+    "2026-11-11": {
+      "daily_average": {
+        "ri6_min": 48000,
+        "ri6_max": 53000,
+        "monthong_min": 70000,
+        "monthong_max": 75000,
+        "musang_king_min": 100000,
+        "musang_king_max": 100000,
+        "black_thorn_min": 110000,
+        "black_thorn_max": 110000,
+        "chuong_bo_min": 45000,
+        "chuong_bo_max": 50000,
+        "sau_huu_min": 90000,
+        "sau_huu_max": 90000,
+        "ri6_a": 53000,
+        "ri6_b": 48000,
+        "monthong_a": 75000,
+        "monthong_b": 70000,
+        "musang_king": 100000,
+        "black_thorn": 110000,
+        "chuong_bo": 48000,
+        "sau_huu": 90000
+      },
+      "sources": [
+        {
+          "video_id": "wwWXVj3ELw0",
+          "title": "giá sầu riêng trưa nay ngày 11/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=wwWXVj3ELw0",
+          "published_at": "2026-11-11T11:30:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng cắt xô tại vườn trưa 11/11: Ri6 xô A/B min 48.000 - max 53.000 đ/kg (Tiền Giang 48-53k, Cần Thơ 48-50k). Thái xô A/B min 70.000 - max 75.000 đ/kg. Chuồng bò 45.000 - 50.000 đ/kg. Musang King 100.000 đ/kg, Black Thorn 110.000 đ/kg.",
+          "prices": {
+            "ri6_min": 48000,
+            "ri6_max": 53000,
+            "monthong_min": 70000,
+            "monthong_max": 75000,
+            "musang_king_min": 100000,
+            "musang_king_max": 100000,
+            "black_thorn_min": 110000,
+            "black_thorn_max": 110000,
+            "chuong_bo_min": 45000,
+            "chuong_bo_max": 50000,
+            "sau_huu_min": 90000,
+            "sau_huu_max": 90000,
+            "ri6_a": 53000,
+            "ri6_b": 48000,
+            "monthong_a": 75000,
+            "monthong_b": 70000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 48000,
+            "sau_huu": 90000
+          }
+        }
+      ]
+    },
+    "2026-11-12": {
+      "daily_average": {
+        "ri6_min": 45000,
+        "ri6_max": 50000,
+        "monthong_min": 70000,
+        "monthong_max": 75000,
+        "musang_king_min": 100000,
+        "musang_king_max": 100000,
+        "black_thorn_min": 105000,
+        "black_thorn_max": 110000,
+        "chuong_bo_min": 45000,
+        "chuong_bo_max": 50000,
+        "sau_huu_min": 85000,
+        "sau_huu_max": 90000,
+        "ri6_a": 50000,
+        "ri6_b": 45000,
+        "monthong_a": 75000,
+        "monthong_b": 70000,
+        "musang_king": 100000,
+        "black_thorn": 110000,
+        "chuong_bo": 50000,
+        "sau_huu": 90000
+      },
+      "sources": [
+        {
+          "video_id": "evb1bxSBpS0",
+          "title": "Báo giá sầu riêng trưa nay ngày 12/11/2026: Ri6, Monthong, Gai Đen tại Tiền Giang",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=evb1bxSBpS0",
+          "published_at": "2026-11-12T11:45:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng cắt xô tại vườn trưa 12/11: Ri6 xô A/B min 45.000 - max 50.000 đ/kg. Thái xô A/B min 70.000 - max 75.000 đ/kg. Musang King 100.000 đ/kg. Black Thorn min 105.000 - max 110.000 đ/kg. Chuồng bò min 45.000 - max 50.000 đ/kg.",
+          "prices": {
+            "ri6_min": 45000,
+            "ri6_max": 50000,
+            "monthong_min": 70000,
+            "monthong_max": 75000,
+            "musang_king_min": 100000,
+            "musang_king_max": 100000,
+            "black_thorn_min": 105000,
+            "black_thorn_max": 110000,
+            "chuong_bo_min": 45000,
+            "chuong_bo_max": 50000,
+            "sau_huu_min": 85000,
+            "sau_huu_max": 90000,
+            "ri6_a": 50000,
+            "ri6_b": 45000,
+            "monthong_a": 75000,
+            "monthong_b": 70000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 90000
+          }
+        }
+      ]
+    }
+  }
+}

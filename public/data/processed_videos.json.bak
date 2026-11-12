@@ -1,0 +1,345 @@
+{
+  "sample_video_20261111": {
+    "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+    "title": "Giá sầu riêng ngày 11/11: Ri6 và Monthong tại vườn ổn định",
+    "processed_at": "2026-11-11T19:00:00+07:00",
+    "has_transcript": true,
+    "is_price_video": true
+  },
+  "sample_video_20261112": {
+    "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
+    "title": "Báo giá sầu riêng ngày 12/11 mới nhất: Lái cắt tại vườn Tiền Giang",
+    "processed_at": "2026-11-12T07:30:00+07:00",
+    "has_transcript": true,
+    "is_price_video": true
+  },
+  "T7Q4Pb8-8bo": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá ớt hôm nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:23.762483+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "9Hv4qZJHuZo": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá phân bón hôm nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:23.763035+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "3CR-evfk8ls": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít trưa nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:23.763593+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "evb1bxSBpS0": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá sầu riêng trưa nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:24.824541+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "KctqTQTidYQ": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít hôm nay mới ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:28.825526+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "ht3Ymk1UIto": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít hôm nay ngày 12/11/20266",
+    "processed_at": "2026-11-12T13:04:28.826492+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "R7uHEX-3fkc": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá dừa hôm nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:28.827046+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "Gg-RyNh3DpQ": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít hôm nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:28.827654+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "kqqH363Mx20": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá tiêu hôm nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:28.828622+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "P1wQ22IPJgY": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá cà phê hôm nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:28.829335+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "hhHzWJvXFYQ": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "cập nhật giá mít cuối ngày 11/11/2026",
+    "processed_at": "2026-11-12T13:04:28.829989+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "hx2WOrXLRtg": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá dừa chiều nay ngày 11/11/2026",
+    "processed_at": "2026-11-12T13:04:28.830679+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "aq681d_gLsU": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá sầu riêng hôm nay ngày 12/11/2026",
+    "processed_at": "2026-11-12T13:04:29.792304+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "jjUY32QqbKk": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít cuối ngày 11/11/2026",
+    "processed_at": "2026-11-12T13:04:33.123279+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "lsoZUfwm2DE": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít chiều nay ngày 11/11/2026",
+    "processed_at": "2026-11-12T13:04:33.124395+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "wwWXVj3ELw0": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá sầu riêng trưa nay ngày 11/11/2026",
+    "processed_at": "2026-11-12T13:04:34.059959+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "EWkyi3GT97M": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "cắt cỏ mô sầu riêng cực nhanh #videoshort #fyp",
+    "processed_at": "2026-11-12T13:04:45.364604+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "2XB8lCnvq30": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "giá sầu riêng hôm nay 11/11/2026 cập nhật giá sầu riêng, giá sầu riêng xô lùa ",
+    "processed_at": "2026-11-12T13:04:50.810790+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "PFOqtvhaOn0": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "giá sầu riêng hôm nay 10/11/2026 giá sầu riêng thái, giá sầu riêng tăng xô lùa ",
+    "processed_at": "2026-11-12T13:04:56.425053+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "bWy9mNmxO1I": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá sầu riêng hôm nay ngày 12/11/2026: Giảm ở khu vực Đồng bằng sông Cửu Long.",
+    "processed_at": "2026-11-12T13:05:08.411719+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "vhGYRTIQ7zI": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá heo hơi hôm nay ngày 12/11/2026: Tăng rải rác ở cả ba miền.",
+    "processed_at": "2026-11-12T13:05:12.045230+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "SQVIEGeI5Go": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Vì Sao Người Nông Dân Làm Lụng Vất Vả Mà Vẫn Nghèo? Sự Thật Đằng Sau Nghề Nông",
+    "processed_at": "2026-11-12T13:05:12.046285+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "BqwJIVEEG7o": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá heo hơi hôm nay ngày 11/11/2026: Miền Bắc trở lại đà tăng.",
+    "processed_at": "2026-11-12T13:05:12.047241+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "Rog1zPPop9w": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá sầu riêng hôm nay ngày 11/11/2026: Thị trường biến động tại nhiều địa phương.",
+    "processed_at": "2026-11-12T13:05:12.987382+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "JQ3pXXwpp4s": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Hướng Dẫn Nuôi Cá Rô Đồng Trong Ruộng Lúa | Kỹ Thuật Dễ Áp Dụng Cho Nhà Nông",
+    "processed_at": "2026-11-12T13:05:17.718491+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "1Qsa3wO_O88": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá heo hơi hôm nay ngày 10/11/2026: Đà tăng lan rộng ở khu vực miền Trung và miền Nam.",
+    "processed_at": "2026-11-12T13:05:17.719599+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "TPNLVzGIxVU": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá sầu riêng hôm nay ngày 10/11/2026: Thị trường tăng tại nhiều khu vực.",
+    "processed_at": "2026-11-12T13:05:18.691453+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "QNjk-Ndm_DU": {
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "title": "Giá lúa gạo hôm nay ngày 12 tháng 11, 2026, lúa OM18, lúa đài thơm 8, lúa OM5451 ,ST24, ST25 ",
+    "processed_at": "2026-11-12T13:05:29.647390+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "irJ_Gm4ru3s": {
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "title": "giá sầu riêng tây hôm nay 12/11/2026 giá sầu riêng miền tây, giá sầu riêng xô lùa ",
+    "processed_at": "2026-11-12T13:05:30.512542+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "Nkd0MknnHVk": {
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "title": " Giá lúa gạo hôm nay ngày 11 tháng 11, 2026, lúa OM18, lúa đài thơm 8, lúa OM 34, lúa ST25 , ST24 ",
+    "processed_at": "2026-11-12T13:05:35.153944+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "Cz3bH3j7Zd8": {
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "title": " Giá sầu riêng hôm nay ngày 11tháng 11, 2026 thị trường sầu riêng, sầu riêng miền tây ",
+    "processed_at": "2026-11-12T13:05:35.952527+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "sBTUBNXhZF0": {
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "title": "Giá lúa gạo hôm nay ngày 11tháng 11, 2026, lúa OM18, lúa đài thơm 8, lúa đài Loan, lúa OM 34, lúa ",
+    "processed_at": "2026-11-12T13:05:39.303661+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "t334bzZfQys": {
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "title": "Giá sầu riêng hôm nay ngày 10tháng 11, 2026 , thị trường sầu riêng, giá thay đổi bất ngờ ",
+    "processed_at": "2026-11-12T13:05:40.046818+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "XLp96BIy5F8": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Cà Phê Hôm Nay 12/11/2026: Lo Ngại New York Yếu, Giá Nhà Đứng Vững",
+    "processed_at": "2026-11-12T13:05:48.989604+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "8OrrgFWombk": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Tiêu Hôm Nay 12/11/2026: Bất Ngờ Yên Ắng, Tiêu Vẫn Giữ Mốc Cao",
+    "processed_at": "2026-11-12T13:05:48.990731+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "c8b5rj6p2i8": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 12/11/2026: Khởi Sắc Đồng Loạt, Musang King Dẫn Nhịp",
+    "processed_at": "2026-11-12T13:05:49.761277+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "3bqKnG8kNuU": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Cà Phê Hôm Nay 11/11/2026: Nội Địa Đứng Yên, Arabica Lùi Nhẹ",
+    "processed_at": "2026-11-12T13:05:53.862441+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "dmjRIKiGLls": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Tiêu Hôm Nay 11/11/2026: Hồi Hộp Chờ Sóng, Tiêu Chưa Hạ Nhiệt",
+    "processed_at": "2026-11-12T13:05:53.863612+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "irv-y5uRqbY": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 11/11/2026: Hoang Mang Giống Đặc Sản Giảm Sâu",
+    "processed_at": "2026-11-12T13:05:54.665049+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "I0sWLL3WJgU": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Cà Phê Hôm Nay 10/11/2026: Áp Lực Mạnh Arabica Giảm Sâu Phiên Qua",
+    "processed_at": "2026-11-12T13:05:58.616290+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "301OjCja-Lc": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Tiêu Hôm Nay 10/11/2026: Lo Ngại Đà Chững, Giá Tiêu Còn Giữ Mốc Cao",
+    "processed_at": "2026-11-12T13:05:58.617503+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "W_wSUnh8tis": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 10/11/2026: Bất Ngờ Ri6 Hồi Phục, Musang King Rớt Sâu",
+    "processed_at": "2026-11-12T13:05:59.542570+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "7m5grFuypYU": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ CHIỀU HÔM NAY THỨ NĂM NGÀY /12/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-12T13:06:11.059689+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "frAMDY8trBY": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "LÚA CHƯA CẮT XONG ĐÃ DẦM MƯA LỚN NĂNG SUẤT THẤP HƠN DỰ TÍNH |GIẢI TRÍ MIỀN TÂY",
+    "processed_at": "2026-11-12T13:06:15.960941+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "HrQzHpwEEPw": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ TRƯA HÔM NAY THỨ NĂM NGÀY /12/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-12T13:06:17.258880+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "kei1rw52rcM": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ PHÂN BÓN VÀ THUỐC BVTV MỖI NGÀY| TRƯA HÔM NAY THỨ NĂM NGÀY /12/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-12T13:06:21.700127+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "5wTwAfBXtEk": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ TRƯA HÔM NAY THỨ NĂM NGÀY /12/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-12T13:06:22.465456+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  }
+}
