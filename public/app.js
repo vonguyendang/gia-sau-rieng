@@ -560,24 +560,20 @@ function initOrUpdateChart() {
     },
     plugins: {
       legend: {
-        position: 'top',
-        align: 'center',
-        labels: {
-          font: { family: '"Be Vietnam Pro"', size: 11, weight: '600' },
-          usePointStyle: true,
-          pointStyle: 'circle',
-          boxWidth: 7,
-          boxHeight: 7,
-          padding: 8,
-        }
+        display: false, // TẮT legend mặc định trên canvas để dọn sạch 100% không gian, không che khuất đường vẽ
       },
       tooltip: {
         backgroundColor: 'rgba(15, 23, 42, 0.95)',
-        titleFont: { family: '"Be Vietnam Pro"', size: 13, weight: '700' },
-        bodyFont: { family: '"Be Vietnam Pro"', size: 12 },
-        padding: 12,
+        titleFont: { family: '"Be Vietnam Pro"', size: 11, weight: '700' },
+        bodyFont: { family: '"Be Vietnam Pro"', size: 10.5 },
+        padding: 8,
         cornerRadius: 8,
+        boxWidth: 6,
+        boxHeight: 6,
         callbacks: {
+          title: function(items) {
+            return items[0] ? `Ngày ${items[0].label} (xô tại vườn)` : '';
+          },
           label: function(context) {
             const dayKey = selectedDays[context.dataIndex];
             const avg = historyData.days[dayKey]?.daily_average || {};
@@ -586,39 +582,19 @@ function initOrUpdateChart() {
             if (lbl.includes('Ri6')) {
               const low = avg.ri6_b ? formatNumber(avg.ri6_b) : '45.000';
               const high = avg.ri6_a ? formatNumber(avg.ri6_a) : '50.000';
-              return `1. Sầu riêng Ri6: ${low} – ${high} đ/kg (xô tại vườn)`;
+              return `Ri6: ${low} – ${high} đ`;
             }
 
             if (lbl.includes('Thái')) {
               const low = avg.monthong_b ? formatNumber(avg.monthong_b) : '70.000';
               const high = avg.monthong_a ? formatNumber(avg.monthong_a) : '75.000';
-              return `2. Sầu riêng Thái: ${low} – ${high} đ/kg (xô tại vườn)`;
-            }
-
-            if (lbl.includes('Musang')) {
-              const val = avg.musang_king ? formatNumber(avg.musang_king) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
-              return `3. Sầu riêng Musang King: ${val} đ/kg`;
-            }
-
-            if (lbl.includes('Black Thorn')) {
-              const val = avg.black_thorn ? formatNumber(avg.black_thorn) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
-              return `4. Sầu riêng Black Thorn: ${val} đ/kg`;
-            }
-
-            if (lbl.includes('Chuồng Bò')) {
-              const val = avg.chuong_bo ? formatNumber(avg.chuong_bo) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
-              return `5. Sầu riêng Chuồng Bò: ${val} đ/kg`;
-            }
-
-            if (lbl.includes('Sáu Hữu')) {
-              const val = avg.sau_huu ? formatNumber(avg.sau_huu) : (context.parsed.y ? formatNumber(context.parsed.y) : '---');
-              return `6. Sầu riêng Sáu Hữu: ${val} đ/kg`;
+              return `Thái: ${low} – ${high} đ`;
             }
 
             if (context.parsed.y !== null) {
-              return `${lbl}: ${new Intl.NumberFormat('vi-VN').format(context.parsed.y)} đ/kg (xô tại vườn)`;
+              return `${lbl}: ${formatNumber(context.parsed.y)} đ`;
             }
-            return `${lbl}: Đang cập nhật`;
+            return `${lbl}: ---`;
           }
         }
       }
@@ -657,7 +633,44 @@ function initOrUpdateChart() {
       options: chartOptions,
     });
   }
+
+  renderChartLegend();
 }
+
+function renderChartLegend() {
+  const container = document.getElementById('chart-legend-container');
+  if (!container || !priceChartInstance) return;
+
+  const metaList = [
+    { label: '1. Ri6', color: '#059669', index: 0 },
+    { label: '2. Thái Monthong', color: '#d97706', index: 1 },
+    { label: '3. Musang King', color: '#7c3aed', index: 2 },
+    { label: '4. Black Thorn', color: '#e11d48', index: 3 },
+    { label: '5. Chuồng Bò', color: '#0891b2', index: 4 },
+    { label: '6. Sáu Hữu', color: '#ea580c', index: 5 },
+  ];
+
+  container.innerHTML = metaList.map(item => {
+    const isVisible = priceChartInstance.isDatasetVisible(item.index);
+    const stateClass = isVisible 
+      ? 'bg-slate-50 border-slate-200/90 text-slate-800 shadow-xs' 
+      : 'bg-slate-100/80 border-dashed border-slate-300 text-slate-400 line-through opacity-50';
+    return `
+      <button type="button" onclick="toggleDataset(${item.index})" class="px-2 py-1 rounded-lg border text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer ${stateClass}">
+        <span class="w-2 h-2 rounded-full shrink-0" style="background-color: ${item.color}"></span>
+        <span class="truncate">${item.label}</span>
+      </button>
+    `;
+  }).join('');
+}
+
+window.toggleDataset = function(index) {
+  if (!priceChartInstance) return;
+  const isVisible = priceChartInstance.isDatasetVisible(index);
+  priceChartInstance.setDatasetVisibility(index, !isVisible);
+  priceChartInstance.update();
+  renderChartLegend();
+};
 
 function updateChart() {
   initOrUpdateChart();
