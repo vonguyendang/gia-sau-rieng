@@ -147,7 +147,7 @@ VN_TZ = timezone(timedelta(hours=7))
 
 # Cấu hình Gemini
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
 
 PRICE_SCHEMA = {
     "type": "OBJECT",
@@ -570,69 +570,116 @@ def fetch_channel_videos(channel_id: str, handle: str = ""):
     return videos
 
 
+def get_transcript_via_ytdlp(video_id: str) -> str:
+    """
+    Fallback trích xuất phụ đề tiếng Việt bằng yt-dlp khi YouTube chặn IP datacenter/cloud.
+    """
+    import tempfile, glob, shutil
+    tmpdir = tempfile.mkdtemp(prefix="ytdlp_sub_")
+    try:
+        import yt_dlp
+        ydl_opts = {
+            "skip_download": True,
+            "writesubtitles": True,
+            "writeautomaticsub": True,
+            "subtitleslangs": ["vi"],
+            "quiet": True,
+            "no_warnings": True,
+            "outtmpl": os.path.join(tmpdir, "%(id)s"),
+        }
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([f"https://www.youtube.com/watch?v={video_id}"])
+        
+        vtt_files = glob.glob(os.path.join(tmpdir, "*.vtt")) + glob.glob(os.path.join(tmpdir, "*.srv3"))
+        if vtt_files:
+            with open(vtt_files[0], "r", encoding="utf-8", errors="ignore") as f:
+                content = f.read()
+            lines = []
+            for line in content.splitlines():
+                line = line.strip()
+                if not line or line.startswith("WEBVTT") or line.startswith("Kind:") or line.startswith("Language:") or "-->" in line:
+                    continue
+                cleaned = re.sub(r"<[^>]+>", "", line).strip()
+                if cleaned and (not lines or lines[-1] != cleaned):
+                    lines.append(cleaned)
+            result = " ".join(lines).strip()
+            if result:
+                print(f"        -> [yt-dlp fallback] Thành công trích xuất {len(result)} ký tự phụ đề!")
+                return result
+    except Exception as e:
+        print(f"        [DEBUG yt-dlp fallback] {type(e).__name__}: {e}")
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+    return ""
+
+
 def get_video_transcript(video_id: str) -> str:
     """
     Lấy phụ đề tiếng Việt của video bằng youtube-transcript-api.
-    Hỗ trợ cả version 1.2+ mới nhất (api.fetch) lẫn các version trước đó.
+    Hỗ trợ cả version 1.2+ mới nhất (api.fetch), class methods cũ,
+    và fallback sang yt-dlp khi YouTube chặn dải IP cloud datacenter.
     """
-    if not HAS_TRANSCRIPT_API:
-        print("[WARN] Chưa cài đặt youtube-transcript-api. Chạy 'pip install -r scripts/requirements.txt'.")
-        return ""
-
-    # Cách 1: Thử api.fetch (youtube-transcript-api >= 1.2.0)
-    try:
-        api = YouTubeTranscriptApi()
-        fetched = api.fetch(video_id, languages=["vi"])
-        if hasattr(fetched, "snippets"):
-            return " ".join([s.text for s in fetched.snippets if getattr(s, "text", "")]).strip()
-    except Exception as e:
-        print(f"        [DEBUG TRANSCRIPT api.fetch] {type(e).__name__}: {e}")
-
-    # Cách 2: Thử list / find_transcript trên instance api
-    try:
-        api = YouTubeTranscriptApi()
-        t_list = api.list(video_id)
-        transcript = None
+    if HAS_TRANSCRIPT_API:
+        # Cách 1: Thử api.fetch (youtube-transcript-api >= 1.2.0)
         try:
-            transcript = t_list.find_transcript(["vi"])
-        except Exception:
-            try:
-                transcript = t_list.find_generated_transcript(["vi"])
-            except Exception:
-                pass
-        if transcript:
-            fetched = transcript.fetch()
+            api = YouTubeTranscriptApi()
+            fetched = api.fetch(video_id, languages=["vi"])
             if hasattr(fetched, "snippets"):
                 return " ".join([s.text for s in fetched.snippets if getattr(s, "text", "")]).strip()
-            elif isinstance(fetched, list):
-                return " ".join([item.get("text", "") for item in fetched]).strip()
-    except Exception as e:
-        print(f"        [DEBUG TRANSCRIPT api.list] {type(e).__name__}: {e}")
+        except Exception:
+            pass
 
-    # Cách 3: Thử class methods (version cũ < 1.0)
-    try:
-        if hasattr(YouTubeTranscriptApi, "list_transcripts"):
-            t_list = YouTubeTranscriptApi.list_transcripts(video_id)
-            transcript = t_list.find_transcript(["vi"])
-            data = transcript.fetch()
-            return " ".join([item.get("text", "") for item in data]).strip()
-        elif hasattr(YouTubeTranscriptApi, "get_transcript"):
-            data = YouTubeTranscriptApi.get_transcript(video_id, languages=["vi"])
-            return " ".join([item.get("text", "") for item in data]).strip()
-    except Exception as e:
-        print(f"        [DEBUG TRANSCRIPT legacy] {type(e).__name__}: {e}")
+        # Cách 2: Thử list / find_transcript trên instance api
+        try:
+            api = YouTubeTranscriptApi()
+            t_list = api.list(video_id)
+            transcript = None
+            try:
+                transcript = t_list.find_transcript(["vi"])
+            except Exception:
+                try:
+                    transcript = t_list.find_generated_transcript(["vi"])
+                except Exception:
+                    pass
+            if transcript:
+                fetched = transcript.fetch()
+                if hasattr(fetched, "snippets"):
+                    return " ".join([s.text for s in fetched.snippets if getattr(s, "text", "")]).strip()
+                elif isinstance(fetched, list):
+                    return " ".join([item.get("text", "") for item in fetched]).strip()
+        except Exception:
+            pass
 
-    return ""
+        # Cách 3: Thử class methods (version cũ < 1.0)
+        try:
+            if hasattr(YouTubeTranscriptApi, "list_transcripts"):
+                t_list = YouTubeTranscriptApi.list_transcripts(video_id)
+                transcript = t_list.find_transcript(["vi"])
+                data = transcript.fetch()
+                return " ".join([item.get("text", "") for item in data]).strip()
+            elif hasattr(YouTubeTranscriptApi, "get_transcript"):
+                data = YouTubeTranscriptApi.get_transcript(video_id, languages=["vi"])
+                return " ".join([item.get("text", "") for item in data]).strip()
+        except Exception:
+            pass
+
+    # Cách 4 (Vũ khí dự phòng mạnh nhất): yt-dlp vượt rào chặn IP datacenter
+    return get_transcript_via_ytdlp(video_id)
 
 
 def call_gemini_api(prompt_text: str) -> dict:
     """
     Gọi Gemini API với Structured Outputs (JSON Schema).
-    Thử qua google-genai SDK, nếu chưa cài sẽ gọi REST API trực tiếp.
+    Thử qua google-genai SDK, nếu lỗi hoặc 503 sẽ thử REST API với danh sách model dự phòng.
     """
     if not GEMINI_API_KEY:
         print("[WARN] Chưa cấu hình GEMINI_API_KEY. Bỏ qua bước gọi AI.")
         return None
+
+    candidate_models = [GEMINI_MODEL, "gemini-3.5-flash", "gemini-flash-latest"]
+    # Loại bỏ trùng lặp giữ nguyên thứ tự
+    seen = set()
+    candidate_models = [m for m in candidate_models if not (m in seen or seen.add(m))]
 
     # Cách 1: Thử sử dụng google-genai SDK mới nhất
     try:
@@ -640,60 +687,63 @@ def call_gemini_api(prompt_text: str) -> dict:
         from google.genai import types
 
         client = genai.Client(api_key=GEMINI_API_KEY)
-        response = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=prompt_text,
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM_INSTRUCTION,
-                response_mime_type="application/json",
-                temperature=0.1,
-            ),
-        )
-        raw_text = response.text.strip()
-        # Xóa markdown block nếu có
-        raw_text = re.sub(r"^```(?:json)?\s*", "", raw_text)
-        raw_text = re.sub(r"\s*```$", "", raw_text)
-        return json.loads(raw_text)
+        for model in candidate_models:
+            try:
+                response = client.models.generate_content(
+                    model=model,
+                    contents=prompt_text,
+                    config=types.GenerateContentConfig(
+                        system_instruction=SYSTEM_INSTRUCTION,
+                        response_mime_type="application/json",
+                        temperature=0.1,
+                    ),
+                )
+                raw_text = response.text.strip()
+                raw_text = re.sub(r"^```(?:json)?\s*", "", raw_text)
+                raw_text = re.sub(r"\s*```$", "", raw_text)
+                return json.loads(raw_text)
+            except Exception as e:
+                print(f"[WARN] SDK model {model} lỗi ({type(e).__name__}): {e}. Đang thử tiếp...")
     except ImportError:
         pass
-    except Exception as e:
-        print(f"[WARN] Lỗi khi gọi qua google-genai SDK: {e}. Thử fallback REST API...")
 
-    # Cách 2: Gọi trực tiếp Google Gemini REST API
-    try:
-        endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
-        payload = {
-            "contents": [
-                {
-                    "parts": [{"text": prompt_text}]
-                }
-            ],
-            "systemInstruction": {
-                "parts": [{"text": SYSTEM_INSTRUCTION}]
-            },
-            "generationConfig": {
-                "responseMimeType": "application/json",
-                "temperature": 0.1,
-            },
-        }
+    # Cách 2: Gọi trực tiếp Google Gemini REST API qua danh sách model
+    for model in candidate_models:
+        try:
+            endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
+            payload = {
+                "contents": [
+                    {
+                        "parts": [{"text": prompt_text}]
+                    }
+                ],
+                "systemInstruction": {
+                    "parts": [{"text": SYSTEM_INSTRUCTION}]
+                },
+                "generationConfig": {
+                    "responseMimeType": "application/json",
+                    "temperature": 0.1,
+                },
+            }
 
-        resp = requests.post(endpoint, json=payload, timeout=30)
-        if resp.status_code != 200:
-            print(f"[ERR] Gemini REST API lỗi HTTP {resp.status_code}: {resp.text[:200]}")
-            return None
+            resp = requests.post(endpoint, json=payload, timeout=30)
+            if resp.status_code != 200:
+                print(f"[ERR] Gemini REST API model {model} lỗi HTTP {resp.status_code}. Đang thử model tiếp theo...")
+                continue
 
-        result = resp.json()
-        candidates = result.get("candidates", [])
-        if not candidates:
-            return None
+            result = resp.json()
+            candidates = result.get("candidates", [])
+            if not candidates:
+                continue
 
-        part_text = candidates[0]["content"]["parts"][0]["text"]
-        part_text = re.sub(r"^```(?:json)?\s*", "", part_text.strip())
-        part_text = re.sub(r"\s*```$", "", part_text)
-        return json.loads(part_text)
-    except Exception as e:
-        print(f"[ERR] Không thể trích xuất qua Gemini REST API: {e}")
-        return None
+            part_text = candidates[0]["content"]["parts"][0]["text"]
+            part_text = re.sub(r"^```(?:json)?\s*", "", part_text.strip())
+            part_text = re.sub(r"\s*```$", "", part_text)
+            return json.loads(part_text)
+        except Exception as e:
+            print(f"[ERR] Không thể trích xuất qua Gemini REST API model {model}: {e}")
+
+    return None
 
 
 def calculate_daily_average(sources: list, priority_channel_id: str = "UCX11-9EVu6AzLYorQNoLzRA") -> dict:
