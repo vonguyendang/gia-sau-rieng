@@ -45,6 +45,21 @@ DATA_DIR = ROOT_DIR / "public" / "data"
 CHANNELS_FILE = DATA_DIR / "channels.json"
 PROCESSED_FILE = DATA_DIR / "processed_videos.json"
 HISTORY_FILE = DATA_DIR / "history.json"
+ENV_FILE = ROOT_DIR / ".env"
+
+# Tự động nạp file .env nếu có (dành cho chạy local)
+if ENV_FILE.exists():
+    try:
+        with open(ENV_FILE, "r", encoding="utf-8") as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line and not _line.startswith("#") and "=" in _line:
+                    _k, _v = _line.split("=", 1)
+                    _k, _v = _k.strip(), _v.strip().strip('"').strip("'")
+                    if _k and not os.getenv(_k):
+                        os.environ[_k] = _v
+    except Exception:
+        pass
 
 # Múi giờ Việt Nam (UTC+7)
 VN_TZ = timezone(timedelta(hours=7))
