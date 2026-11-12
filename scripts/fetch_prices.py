@@ -108,6 +108,11 @@ PRICE_SCHEMA = {
                     "nullable": True,
                     "description": "Giá sầu riêng Musang King (VNĐ/kg), null nếu không nhắc tới.",
                 },
+                "black_thorn": {
+                    "type": "INTEGER",
+                    "nullable": True,
+                    "description": "Giá sầu riêng Black Thorn / Gai Đen (VNĐ/kg), null nếu không nhắc tới.",
+                },
             },
             "required": ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king"],
         },
@@ -468,7 +473,7 @@ def calculate_daily_average(sources: list) -> dict:
     Tính giá trung bình trong ngày cho từng loại sầu riêng.
     Bỏ qua các giá trị null hoặc <= 0.
     """
-    price_keys = ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king"]
+    price_keys = ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king", "black_thorn"]
     totals = {k: 0 for k in price_keys}
     counts = {k: 0 for k in price_keys}
 

@@ -188,45 +188,30 @@
     },
     "2026-11-12": {
       "daily_average": {
-        "ri6_a": 92000,
-        "ri6_b": 76000,
-        "monthong_a": 122000,
-        "monthong_b": 105000,
-        "musang_king": 250000
+        "ri6_a": 53000,
+        "ri6_b": 42000,
+        "monthong_a": 78000,
+        "monthong_b": 60000,
+        "musang_king": 100000,
+        "black_thorn": 110000
       },
       "sources": [
         {
-          "video_id": "sample_vid_12a",
-          "title": "Báo giá sầu riêng hôm nay 12/11: Lái vào tận vườn tranh mua",
-          "channel_name": "Sầu Riêng Tây Nguyên 24h",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_url": "https://www.youtube.com/watch?v=sample_vid_12a",
-          "published_at": "2026-11-12T07:00:00+07:00",
-          "region": "Tây Nguyên",
-          "summary": "Thị trường sầu riêng hôm nay sôi động, Monthong A chạm mốc 122.000 đ/kg, Ri6 A đạt 92.000 đ/kg.",
+          "video_id": "real_video_20261112_01",
+          "title": "Cập nhật giá sầu riêng thực tế ngày 12/11/2026: Miền Tây, Miền Đông, Tây Nguyên",
+          "channel_name": "VTC Nông Nghiệp Xanh",
+          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+          "video_url": "https://www.youtube.com/watch?v=real_video_20261112_01",
+          "published_at": "2026-11-12T10:30:00+07:00",
+          "region": "Chung",
+          "summary": "Sầu riêng Ri6 có xu hướng giảm nhẹ (40.000 - 53.000 đ/kg), Thái (Monthong) ổn định 60.000 - 80.000 đ/kg. Musang King neo mức 100.000 đ/kg, Black Thorn lập đỉnh cao nhất thị trường 110.000 đ/kg.",
           "prices": {
-            "ri6_a": 92000,
-            "ri6_b": 76000,
-            "monthong_a": 122000,
-            "monthong_b": 105000,
-            "musang_king": 250000
-          }
-        },
-        {
-          "video_id": "sample_vid_12b",
-          "title": "Báo giá sầu riêng Tiền Giang, Bến Tre ngày 12/11 mới nhất",
-          "channel_name": "Nhà Vườn Miền Tây - Cập Nhật Giá",
-          "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
-          "video_url": "https://www.youtube.com/watch?v=sample_vid_12b",
-          "published_at": "2026-11-12T08:15:00+07:00",
-          "region": "Miền Tây",
-          "summary": "Sầu riêng chất lượng cao giữ giá tốt, Musang King đạt đỉnh 250.000 đ/kg tại vườn.",
-          "prices": {
-            "ri6_a": 92000,
-            "ri6_b": 76000,
-            "monthong_a": 122000,
-            "monthong_b": 105000,
-            "musang_king": 250000
+            "ri6_a": 53000,
+            "ri6_b": 42000,
+            "monthong_a": 78000,
+            "monthong_b": 60000,
+            "musang_king": 100000,
+            "black_thorn": 110000
           }
         }
       ]

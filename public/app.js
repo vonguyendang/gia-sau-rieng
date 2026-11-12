@@ -443,6 +443,7 @@ function renderSources(selectedDay) {
       { label: 'Monthong A', val: prices.monthong_a, bg: 'bg-amber-50 text-amber-900' },
       { label: 'Monthong B', val: prices.monthong_b, bg: 'bg-slate-50 text-slate-700' },
       { label: 'Musang King', val: prices.musang_king, bg: 'bg-purple-50 text-purple-900' },
+      { label: 'Black Thorn (Gai Đen)', val: prices.black_thorn, bg: 'bg-stone-800 text-amber-300 border-stone-700' },
     ].filter(p => p.val !== null && p.val !== undefined && p.val > 0);
 
     return `
