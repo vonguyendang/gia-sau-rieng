@@ -1,6 +1,7 @@
 /**
  * public/app.js
  * Quản lý logic hiển thị dữ liệu giá sầu riêng, vẽ biểu đồ Chart.js và danh sách nguồn tin.
+ * Hỗ trợ đầy đủ: Ri6, Monthong/Dona, Musang King, Black Thorn, Chuồng Bò, Sáu Hữu.
  */
 
 let historyData = null;
@@ -155,19 +156,19 @@ function renderPriceCards() {
     };
   }
 
-  // 3 Thẻ giá chính
+  // 4 Thẻ giá chính (Xuất khẩu & Thị trường lớn)
   const mainCardsConfig = [
     {
       title: 'Ri6 Loại A',
-      sub: 'Trái tròn đẹp, từ 2.5 - 3 hộc trở lên',
+      sub: 'Cơm vàng hạt lép, từ 2.5 - 3 hộc trở lên',
       key: 'ri6_a',
       accentColor: 'border-l-4 border-emerald-500',
       badgeColor: 'bg-emerald-100 text-emerald-800',
       icon: 'fa-solid fa-award',
     },
     {
-      title: 'Monthong (Thái) Loại A',
-      sub: 'Hàng xuất khẩu chuẩn cơm vàng ngọt',
+      title: 'Thái (Monthong / Dona) A',
+      sub: 'Chuẩn cơm xuất khẩu, hộc tròn đều',
       key: 'monthong_a',
       accentColor: 'border-l-4 border-amber-500',
       badgeColor: 'bg-amber-100 text-amber-900',
@@ -180,6 +181,14 @@ function renderPriceCards() {
       accentColor: 'border-l-4 border-purple-500',
       badgeColor: 'bg-purple-100 text-purple-900',
       icon: 'fa-solid fa-gem',
+    },
+    {
+      title: 'Black Thorn (Gai Đen)',
+      sub: 'Dòng cực phẩm phân khúc cao nhất',
+      key: 'black_thorn',
+      accentColor: 'border-l-4 border-rose-500',
+      badgeColor: 'bg-rose-100 text-rose-900',
+      icon: 'fa-solid fa-fire',
     }
   ];
 
@@ -191,40 +200,46 @@ function renderPriceCards() {
       const diffInfo = getDiff(val, prevVal);
 
       return `
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/90 ${c.accentColor} hover:shadow-md transition-shadow">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold px-2.5 py-1 rounded-lg ${c.badgeColor}">
-              <i class="${c.icon} mr-1"></i> ${c.title}
-            </span>
-            <span class="text-[11px] font-medium text-slate-400">Giá TB hôm nay</span>
-          </div>
-          <div class="mt-2 flex items-baseline justify-between">
-            <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              ${val ? new Intl.NumberFormat('vi-VN').format(val) : '<span class="text-slate-400 text-lg">Chưa có giá</span>'}
+        <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200/90 ${c.accentColor} hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-lg ${c.badgeColor} truncate max-w-[170px]">
+                <i class="${c.icon} mr-1"></i> ${c.title}
+              </span>
+              <span class="text-[10px] font-medium text-slate-400">TB Hôm nay</span>
             </div>
-            ${val ? '<span class="text-xs font-semibold text-slate-500">đ / kg</span>' : ''}
+            <div class="mt-2 flex items-baseline justify-between">
+              <div class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                ${val ? new Intl.NumberFormat('vi-VN').format(val) : '<span class="text-slate-400 text-base">Chưa có giá</span>'}
+              </div>
+              ${val ? '<span class="text-xs font-semibold text-slate-500">đ / kg</span>' : ''}
+            </div>
           </div>
-          <div class="mt-3 flex items-center justify-between text-xs pt-3 border-t border-slate-100">
-            <span class="text-slate-500">So với hôm qua:</span>
-            <span class="font-semibold flex items-center gap-1 ${diffInfo.class}">
-              <i class="fa-solid ${diffInfo.icon} text-[10px]"></i>
-              ${diffInfo.text}
-            </span>
-          </div>
-          <div class="mt-1 text-[11px] text-slate-400 truncate">
-            ${c.sub}
+          <div>
+            <div class="mt-2.5 flex items-center justify-between text-xs pt-2.5 border-t border-slate-100">
+              <span class="text-slate-500 text-[11px]">So với hôm qua:</span>
+              <span class="font-semibold text-[11px] flex items-center gap-1 ${diffInfo.class}">
+                <i class="fa-solid ${diffInfo.icon} text-[9px]"></i>
+                ${diffInfo.text}
+              </span>
+            </div>
+            <div class="mt-1 text-[11px] text-slate-400 truncate">
+              ${c.sub}
+            </div>
           </div>
         </div>
       `;
     }).join('');
   }
 
-  // 2 Thẻ phụ cho Loại B
+  // 4 Thẻ phụ: Đặc sản truyền thống (Chuồng Bò, Sáu Hữu) & Hàng Loại B
   const subContainer = document.getElementById('price-subcards-container');
   if (subContainer) {
     const subCards = [
-      { title: 'Ri6 Loại B (Dạt / Nhẹ cân)', key: 'ri6_b' },
-      { title: 'Monthong Loại B (Dạt / Méo)', key: 'monthong_b' }
+      { title: 'Sầu riêng Chuồng Bò', desc: 'Đặc sản truyền thống vị béo ngậy', key: 'chuong_bo', icon: 'fa-leaf', color: 'text-cyan-700' },
+      { title: 'Sầu riêng Sáu Hữu', desc: 'Cơm vàng óng, dẻo ngọt đậm đà', key: 'sau_huu', icon: 'fa-star', color: 'text-orange-700' },
+      { title: 'Ri6 Loại B (Dạt/Xô)', desc: 'Trái méo, lệch hộc hoặc nhẹ cân', key: 'ri6_b', icon: 'fa-boxes-stacked', color: 'text-slate-600' },
+      { title: 'Monthong Loại B (Dạt)', desc: 'Hàng tuyển dạt, hộc lép', key: 'monthong_b', icon: 'fa-boxes-stacked', color: 'text-slate-600' }
     ];
 
     subContainer.innerHTML = subCards.map(c => {
@@ -233,17 +248,20 @@ function renderPriceCards() {
       const diffInfo = getDiff(val, prevVal);
 
       return `
-        <div class="bg-slate-100/80 rounded-xl p-3.5 px-4 flex items-center justify-between border border-slate-200 text-sm">
-          <div>
-            <div class="font-bold text-slate-800 text-xs sm:text-sm">${c.title}</div>
-            <div class="text-xs font-medium ${diffInfo.class} mt-0.5 inline-block">
-              <i class="fa-solid ${diffInfo.icon} text-[9px] mr-0.5"></i> ${diffInfo.text}
-            </div>
+        <div class="bg-slate-100/80 rounded-xl p-3 px-3.5 flex flex-col justify-between border border-slate-200 text-sm">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-800 text-xs flex items-center gap-1.5">
+              <i class="fa-solid ${c.icon} ${c.color} text-[11px]"></i> ${c.title}
+            </span>
+            <span class="text-xs font-black ${c.color}">
+              ${val ? new Intl.NumberFormat('vi-VN').format(val) + ' đ' : '---'}
+            </span>
           </div>
-          <div class="text-right">
-            <div class="text-base sm:text-lg font-extrabold text-emerald-800">
-              ${val ? new Intl.NumberFormat('vi-VN').format(val) + ' đ/kg' : '---'}
-            </div>
+          <div class="mt-1.5 flex items-center justify-between text-[11px]">
+            <span class="text-slate-400 truncate text-[10px]">${c.desc}</span>
+            <span class="${diffInfo.class} text-[10px] px-1.5 py-0.2 rounded font-medium">
+              ${diffInfo.text}
+            </span>
           </div>
         </div>
       `;
@@ -267,6 +285,9 @@ function initOrUpdateChart() {
   const ri6Data = selectedDays.map(d => historyData.days[d]?.daily_average?.ri6_a ?? null);
   const monthongData = selectedDays.map(d => historyData.days[d]?.daily_average?.monthong_a ?? null);
   const musangData = selectedDays.map(d => historyData.days[d]?.daily_average?.musang_king ?? null);
+  const blackThornData = selectedDays.map(d => historyData.days[d]?.daily_average?.black_thorn ?? null);
+  const chuongBoData = selectedDays.map(d => historyData.days[d]?.daily_average?.chuong_bo ?? null);
+  const sauHuuData = selectedDays.map(d => historyData.days[d]?.daily_average?.sau_huu ?? null);
 
   const ctx = document.getElementById('priceChart');
   if (!ctx) return;
@@ -281,20 +302,20 @@ function initOrUpdateChart() {
         backgroundColor: 'rgba(5, 150, 105, 0.12)',
         borderWidth: 2.5,
         tension: 0.35,
-        fill: true,
-        spanGaps: true, // Không bị đứt đường khi có ngày null
+        fill: false,
+        spanGaps: true,
         pointBackgroundColor: '#059669',
         pointRadius: 4,
         pointHoverRadius: 6,
       },
       {
-        label: 'Monthong (Thái) A',
+        label: 'Thái (Monthong) A',
         data: monthongData,
         borderColor: '#d97706',
         backgroundColor: 'rgba(217, 119, 6, 0.12)',
         borderWidth: 2.5,
         tension: 0.35,
-        fill: true,
+        fill: false,
         spanGaps: true,
         pointBackgroundColor: '#d97706',
         pointRadius: 4,
@@ -307,11 +328,49 @@ function initOrUpdateChart() {
         backgroundColor: 'rgba(124, 58, 237, 0.08)',
         borderWidth: 2.5,
         tension: 0.35,
-        fill: true,
+        fill: false,
         spanGaps: true,
         pointBackgroundColor: '#7c3aed',
         pointRadius: 4,
         pointHoverRadius: 6,
+      },
+      {
+        label: 'Black Thorn (Gai Đen)',
+        data: blackThornData,
+        borderColor: '#e11d48',
+        borderWidth: 2.5,
+        tension: 0.35,
+        fill: false,
+        spanGaps: true,
+        pointBackgroundColor: '#e11d48',
+        pointRadius: 4,
+        pointHoverRadius: 6,
+      },
+      {
+        label: 'Chuồng Bò',
+        data: chuongBoData,
+        borderColor: '#0891b2',
+        borderWidth: 2,
+        borderDash: [4, 4],
+        tension: 0.35,
+        fill: false,
+        spanGaps: true,
+        pointBackgroundColor: '#0891b2',
+        pointRadius: 3.5,
+        pointHoverRadius: 5.5,
+      },
+      {
+        label: 'Sáu Hữu',
+        data: sauHuuData,
+        borderColor: '#ea580c',
+        borderWidth: 2,
+        borderDash: [4, 4],
+        tension: 0.35,
+        fill: false,
+        spanGaps: true,
+        pointBackgroundColor: '#ea580c',
+        pointRadius: 3.5,
+        pointHoverRadius: 5.5,
       }
     ]
   };
@@ -327,13 +386,13 @@ function initOrUpdateChart() {
       legend: {
         position: 'top',
         labels: {
-          font: { family: '"Be Vietnam Pro"', size: 12, weight: '600' },
+          font: { family: '"Be Vietnam Pro"', size: 11, weight: '600' },
           usePointStyle: true,
-          padding: 18,
+          padding: 14,
         }
       },
       tooltip: {
-        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+        backgroundColor: 'rgba(15, 23, 42, 0.92)',
         titleFont: { family: '"Be Vietnam Pro"', size: 13, weight: '700' },
         bodyFont: { family: '"Be Vietnam Pro"', size: 12 },
         padding: 12,
@@ -440,10 +499,12 @@ function renderSources(selectedDay) {
     const priceChips = [
       { label: 'Ri6 A', val: prices.ri6_a, bg: 'bg-emerald-50 text-emerald-800' },
       { label: 'Ri6 B', val: prices.ri6_b, bg: 'bg-slate-50 text-slate-700' },
-      { label: 'Monthong A', val: prices.monthong_a, bg: 'bg-amber-50 text-amber-900' },
-      { label: 'Monthong B', val: prices.monthong_b, bg: 'bg-slate-50 text-slate-700' },
+      { label: 'Thái A', val: prices.monthong_a, bg: 'bg-amber-50 text-amber-900' },
+      { label: 'Thái B', val: prices.monthong_b, bg: 'bg-slate-50 text-slate-700' },
       { label: 'Musang King', val: prices.musang_king, bg: 'bg-purple-50 text-purple-900' },
-      { label: 'Black Thorn (Gai Đen)', val: prices.black_thorn, bg: 'bg-stone-800 text-amber-300 border-stone-700' },
+      { label: 'Black Thorn', val: prices.black_thorn, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
+      { label: 'Chuồng Bò', val: prices.chuong_bo, bg: 'bg-cyan-50 text-cyan-900' },
+      { label: 'Sáu Hữu', val: prices.sau_huu, bg: 'bg-orange-50 text-orange-900' },
     ].filter(p => p.val !== null && p.val !== undefined && p.val > 0);
 
     return `
@@ -504,4 +565,3 @@ function renderSources(selectedDay) {
     `;
   }).join('');
 }
-

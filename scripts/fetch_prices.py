@@ -113,6 +113,16 @@ PRICE_SCHEMA = {
                     "nullable": True,
                     "description": "Giá sầu riêng Black Thorn / Gai Đen (VNĐ/kg), null nếu không nhắc tới.",
                 },
+                "chuong_bo": {
+                    "type": "INTEGER",
+                    "nullable": True,
+                    "description": "Giá sầu riêng Chuồng Bò (VNĐ/kg), null nếu không nhắc tới.",
+                },
+                "sau_huu": {
+                    "type": "INTEGER",
+                    "nullable": True,
+                    "description": "Giá sầu riêng Sáu Hữu (VNĐ/kg), null nếu không nhắc tới.",
+                },
             },
             "required": ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king"],
         },
@@ -133,6 +143,9 @@ LƯU Ý CỰC KỲ QUAN TRỌNG VỀ NHẬN DIỆN GIỌNG NÓI VÀ TỪ ĐỊA 
    - "di sáu", "zi sáu", "ri 6", "sáu ri" -> Sầu riêng Ri6.
    - "mỏn thon", "mỏn", "mon thong", "thái", "dona" -> Sầu riêng Monthong (Thái/Dona).
    - "mút sang kinh", "mút san king", "musang", "mu sang" -> Sầu riêng Musang King.
+   - "gai đen", "blách thon", "black thorn", "bờ lách thon" -> Sầu riêng Black Thorn.
+   - "chuồng bò", "chuồn bò" -> Sầu riêng Chuồng Bò.
+   - "sáu hữu", "6 hữu", "sáu hửu" -> Sầu riêng Sáu Hữu.
 2. Quy đổi đơn vị tiền tệ:
    - Nếu video nói "tám lăm", "85 nghìn", "85k", "tám mươi lăm ngàn" -> giá là 85000 (VNĐ/kg).
    - "trăm hai", "120 nghìn", "120k" -> 120000 (VNĐ/kg).
@@ -473,7 +486,7 @@ def calculate_daily_average(sources: list) -> dict:
     Tính giá trung bình trong ngày cho từng loại sầu riêng.
     Bỏ qua các giá trị null hoặc <= 0.
     """
-    price_keys = ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king", "black_thorn"]
+    price_keys = ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king", "black_thorn", "chuong_bo", "sau_huu"]
     totals = {k: 0 for k in price_keys}
     counts = {k: 0 for k in price_keys}
 

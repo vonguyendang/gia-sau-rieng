@@ -7,7 +7,10 @@
         "ri6_b": 70000,
         "monthong_a": 110000,
         "monthong_b": 95000,
-        "musang_king": 220000
+        "musang_king": 220000,
+        "chuong_bo": 65000,
+        "sau_huu": 85000,
+        "black_thorn": 105000
       },
       "sources": [
         {
@@ -24,7 +27,10 @@
             "ri6_b": 70000,
             "monthong_a": 110000,
             "monthong_b": 94000,
-            "musang_king": 220000
+            "musang_king": 220000,
+            "chuong_bo": 65000,
+            "sau_huu": 85000,
+            "black_thorn": 105000
           }
         },
         {
@@ -41,7 +47,10 @@
             "ri6_b": 70000,
             "monthong_a": 110000,
             "monthong_b": 96000,
-            "musang_king": null
+            "musang_king": null,
+            "chuong_bo": 65000,
+            "sau_huu": 85000,
+            "black_thorn": 105000
           }
         }
       ]
@@ -52,7 +61,10 @@
         "ri6_b": 72000,
         "monthong_a": 112000,
         "monthong_b": 96000,
-        "musang_king": 225000
+        "musang_king": 225000,
+        "chuong_bo": 67000,
+        "sau_huu": 86000,
+        "black_thorn": 105000
       },
       "sources": [
         {
@@ -69,7 +81,10 @@
             "ri6_b": 72000,
             "monthong_a": 112000,
             "monthong_b": 96000,
-            "musang_king": 225000
+            "musang_king": 225000,
+            "chuong_bo": 67000,
+            "sau_huu": 86000,
+            "black_thorn": 105000
           }
         }
       ]
@@ -80,7 +95,10 @@
         "ri6_b": 73000,
         "monthong_a": 115000,
         "monthong_b": 98000,
-        "musang_king": 230000
+        "musang_king": 230000,
+        "chuong_bo": 68000,
+        "sau_huu": 88000,
+        "black_thorn": 108000
       },
       "sources": [
         {
@@ -97,7 +115,10 @@
             "ri6_b": 73000,
             "monthong_a": 115000,
             "monthong_b": 98000,
-            "musang_king": 230000
+            "musang_king": 230000,
+            "chuong_bo": 68000,
+            "sau_huu": 88000,
+            "black_thorn": 108000
           }
         }
       ]
@@ -108,7 +129,10 @@
         "ri6_b": 71000,
         "monthong_a": 114000,
         "monthong_b": 97000,
-        "musang_king": 230000
+        "musang_king": 230000,
+        "chuong_bo": 66000,
+        "sau_huu": 87000,
+        "black_thorn": 108000
       },
       "sources": [
         {
@@ -125,7 +149,10 @@
             "ri6_b": 71000,
             "monthong_a": 114000,
             "monthong_b": 97000,
-            "musang_king": 230000
+            "musang_king": 230000,
+            "chuong_bo": 66000,
+            "sau_huu": 87000,
+            "black_thorn": 108000
           }
         }
       ]
@@ -136,7 +163,10 @@
         "ri6_b": 74000,
         "monthong_a": 118000,
         "monthong_b": 100000,
-        "musang_king": 240000
+        "musang_king": 240000,
+        "chuong_bo": 68000,
+        "sau_huu": 90000,
+        "black_thorn": 110000
       },
       "sources": [
         {
@@ -153,7 +183,10 @@
             "ri6_b": 74000,
             "monthong_a": 118000,
             "monthong_b": 100000,
-            "musang_king": 240000
+            "musang_king": 240000,
+            "chuong_bo": 68000,
+            "sau_huu": 90000,
+            "black_thorn": 110000
           }
         }
       ]
@@ -164,7 +197,10 @@
         "ri6_b": 75000,
         "monthong_a": 120000,
         "monthong_b": 102000,
-        "musang_king": 245000
+        "musang_king": 245000,
+        "chuong_bo": 70000,
+        "sau_huu": 92000,
+        "black_thorn": 110000
       },
       "sources": [
         {
@@ -181,7 +217,10 @@
             "ri6_b": 75000,
             "monthong_a": 120000,
             "monthong_b": 102000,
-            "musang_king": 245000
+            "musang_king": 245000,
+            "chuong_bo": 70000,
+            "sau_huu": 92000,
+            "black_thorn": 110000
           }
         }
       ]
@@ -193,7 +232,9 @@
         "monthong_a": 78000,
         "monthong_b": 60000,
         "musang_king": 100000,
-        "black_thorn": 110000
+        "black_thorn": 110000,
+        "chuong_bo": 68000,
+        "sau_huu": 90000
       },
       "sources": [
         {
@@ -211,7 +252,9 @@
             "monthong_a": 78000,
             "monthong_b": 60000,
             "musang_king": 100000,
-            "black_thorn": 110000
+            "black_thorn": 110000,
+            "chuong_bo": 68000,
+            "sau_huu": 90000
           }
         }
       ]

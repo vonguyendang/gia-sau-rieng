@@ -1,6 +1,8 @@
+ba
+
 # 🍈 Gia Sau Rieng Tracker (`gia-sau-rieng-tracker`)
 
-> Hệ thống tự động thu thập, phân tích và theo dõi biến động giá sầu riêng (Ri6, Monthong Thái, Musang King) hàng ngày từ các kênh YouTube uy tín tại Miền Tây & Tây Nguyên.  
+> Hệ thống tự động thu thập, phân tích và theo dõi biến động giá sầu riêng (Ri6, Monthong Thái, Musang King) hàng ngày từ các kênh YouTube uy tín tại Miền Tây & Tây Nguyên.
 > **100% Tự động & Hoàn toàn miễn phí** thông qua **GitHub Actions**, **Google Gemini AI**, và **Cloudflare Pages**.
 
 ---
@@ -9,7 +11,7 @@
 
 - ⏱ **Cập nhật tự động định kỳ:** GitHub Actions tự động kích hoạt mỗi 3 tiếng (`0 */3 * * *`), không tốn server riêng.
 - ⚡ **Thu thập thông minh không tốn quota:** Lấy video mới nhất qua YouTube RSS Feeds mà không bị giới hạn quota của YouTube Data API v3.
-- 🧠 **Trích xuất bằng Google Gemini AI:** 
+- 🧠 **Trích xuất bằng Google Gemini AI:**
   - Lấy phụ đề tiếng Việt tự động bằng `youtube-transcript-api`.
   - Gemini Flash tự động hiểu ngữ điệu và phát âm địa phương ("di sáu" → Ri6, "mỏn thon/thái" → Monthong, "mút sang kinh" → Musang King).
   - Trả về JSON chuẩn (Structured Outputs) với các loại giá: Ri6 A/B, Monthong A/B, Musang King.
@@ -51,6 +53,7 @@ gia-sau-rieng-tracker/
 File `public/data/channels.json` lưu danh sách các kênh YouTube bạn muốn AI quét phụ đề và lấy giá.
 
 #### Cách lấy Channel ID YouTube (`UC...`):
+
 1. Mở kênh YouTube muốn theo dõi trên trình duyệt (ví dụ: kênh của vựa thu mua hoặc nhà vườn).
 2. Nhấn chuột phải vào khoảng trống trên trang kênh $\rightarrow$ Chọn **"Xem nguồn trang"** (View Page Source).
 3. Nhấn `Ctrl + F` (hoặc `Cmd + F` trên Mac) và tìm kiếm chuỗi: `itemprop="channelId"` hoặc `externalId`.
@@ -81,20 +84,21 @@ File `public/data/channels.json` lưu danh sách các kênh YouTube bạn muốn
 Google cung cấp miễn phí quota cho Gemini Flash trên Google AI Studio.
 
 1. **Lấy API Key:**
+
    - Truy cập **[Google AI Studio](https://aistudio.google.com/)**.
    - Đăng nhập bằng tài khoản Google.
    - Nhấn **"Get API key"** $\rightarrow$ **"Create API key"**.
    - Sao chép khóa bí mật vừa tạo.
-
 2. **Thêm vào GitHub Repository Secrets:**
+
    - Đẩy (push) mã nguồn dự án lên repository của bạn trên GitHub.
    - Truy cập repository trên GitHub: **Settings** $\rightarrow$ **Secrets and variables** $\rightarrow$ **Actions**.
    - Nhấn **New repository secret**.
    - **Name:** Điền chính xác `GEMINI_API_KEY`.
    - **Secret:** Dán mã API Key bạn vừa sao chép ở trên.
    - Nhấn **Add secret**.
-
 3. **Cấp quyền ghi cho GitHub Actions Bot:**
+
    - Tại trang repo: Vào **Settings** $\rightarrow$ **Actions** $\rightarrow$ **General**.
    - Cuộn xuống phần **Workflow permissions**.
    - Chọn **Read and write permissions**.
@@ -117,7 +121,7 @@ Cloudflare Pages hỗ trợ hosting các trang web tĩnh toàn cầu với tốc
    - **Build command:** Để trống (vì web tĩnh thuần HTML/JS, không cần bước build).
    - **Build output directory:** Điền chính xác `public`.
 5. Nhấn **Save and Deploy**.
-6. Chỉ sau khoảng 15-30 giây, website của bạn sẽ hoạt động với tên miền miễn phí dạng:  
+6. Chỉ sau khoảng 15-30 giây, website của bạn sẽ hoạt động với tên miền miễn phí dạng:
    `https://gia-sau-rieng-tracker.pages.dev`
 
 > **Lưu ý:** Khi GitHub Actions tự động commit dữ liệu mới vào `public/data/`, Cloudflare Pages sẽ tự động kích hoạt triển khai lại phiên bản mới nhất ngay lập tức!
@@ -154,12 +158,15 @@ python3 -m http.server 8080
 1. **Khử trùng lặp:** Video đã quét sẽ được lưu ID vào `processed_videos.json`. Mỗi video chỉ phân tích 1 lần duy nhất.
 2. **Khắc phục lỗi nhận diện giọng nói:** Prompt của Gemini được huấn luyện đặc thù cho phương ngữ Nam Bộ và Tây Nguyên ("di sáu", "mỏn thon", "mút sang kinh").
 3. **Tính giá trung bình chuẩn xác:**
-   $$\text{Giá TB ngày} = \frac{\sum \text{Giá các nguồn hợp lệ}}{\text{Số nguồn nhắc đến giống đó}}$$
+   $$
+   \text{Giá TB ngày} = \frac{\sum \text{Giá các nguồn hợp lệ}}{\text{Số nguồn nhắc đến giống đó}}
+   $$
+
    Các trường hợp `null` được loại bỏ hoàn toàn khỏi mẫu số, không bị tính nhầm thành giá 0.
 4. **Giữ liền mạch biểu đồ:** Cấu hình `spanGaps: true` trong Chart.js giúp đường đồ thị không bị gián đoạn ngay cả khi có ngày không phát sinh giao dịch của một giống sầu riêng hiếm.
 
 ---
 
 ## 📄 Bản Quyền & Giấy Phép
-Dự án được phát hành theo giấy phép mã nguồn mở MIT. Bạn được toàn quyền tùy biến, chia sẻ và phát triển cho các loại nông sản khác (cà phê, tiêu, lúa gạo,...).
 
+Dự án được phát hành theo giấy phép mã nguồn mở MIT. Bạn được toàn quyền tùy biến, chia sẻ và phát triển cho các loại nông sản khác (cà phê, tiêu, lúa gạo,...).
