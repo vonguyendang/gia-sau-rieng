@@ -105,3 +105,4 @@ Trong file `.github/workflows/update_prices.yml` và `backfill_history.yml`:
 * Đảm bảo **chỉ duy nhất 1 tiến trình** cào dữ liệu được chạy tại một thời điểm, tránh tình trạng 2 workflow chạy song song gây xung đột git commit (`merge conflict`).
 * Trước khi push code, luôn tự động chạy `git pull --rebase origin main || true` để đồng bộ lịch sử commit mới nhất.
 * Thiết lập `timeout-minutes: 25` để tự động hủy nếu có tác vụ bị treo mạng.
+
