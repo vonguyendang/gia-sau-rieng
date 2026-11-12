@@ -503,3 +503,4 @@ function renderSources(selectedDay) {
     `;
   }).join('');
 }
+

@@ -162,3 +162,4 @@ python3 -m http.server 8080
 
 ## 📄 Bản Quyền & Giấy Phép
 Dự án được phát hành theo giấy phép mã nguồn mở MIT. Bạn được toàn quyền tùy biến, chia sẻ và phát triển cho các loại nông sản khác (cà phê, tiêu, lúa gạo,...).
+

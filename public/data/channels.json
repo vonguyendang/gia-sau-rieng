@@ -1,20 +1,44 @@
 [
   {
-    "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-    "name": "Sầu Riêng Tây Nguyên 24h",
-    "region": "Tây Nguyên",
-    "enabled": true
-  },
-  {
-    "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
-    "name": "Nhà Vườn Miền Tây - Cập Nhật Giá",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "handle": "@vuonnhatoivlog",
+    "name": "Vườn Nhà Tôi Vlog",
     "region": "Miền Tây",
     "enabled": true
   },
   {
-    "channel_id": "UC4R8DWoMoI7CAwX8_BQ5Q5w",
-    "name": "Thị Trường Nông Sản Nam Bộ",
-    "region": "Đông Nam Bộ",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "handle": "@vtcnongnghiep4528",
+    "name": "VTC Nông Nghiệp Xanh",
+    "region": "Chung",
+    "enabled": true
+  },
+  {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "handle": "@giaitrimientay8680",
+    "name": "Giải Trí Miền Tây",
+    "region": "Miền Tây",
+    "enabled": true
+  },
+  {
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "handle": "@thamtranvlog87",
+    "name": "Thắm Trần Vlog",
+    "region": "Tây Nguyên",
+    "enabled": true
+  },
+  {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "handle": "@giasaurieng247",
+    "name": "Giá Nông Sản 47",
+    "region": "Tây Nguyên",
+    "enabled": true
+  },
+  {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "handle": "@julitore18",
+    "name": "Giá Nông Sản Hôm Nay Channel",
+    "region": "Miền Tây",
     "enabled": true
   }
 ]

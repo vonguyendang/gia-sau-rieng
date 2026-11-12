@@ -147,85 +147,200 @@ def save_json(file_path: Path, data):
     temp_file.replace(file_path)
 
 
-def fetch_channel_videos(channel_id: str):
+def parse_relative_time(time_str: str) -> datetime:
+    """
+    Chuyển đổi chuỗi thời gian tương đối (vd: '42 phút trước', '18 giờ trước', '1 ngày trước')
+    thành datetime UTC.
+    """
+    now = datetime.now(timezone.utc)
+    if not time_str:
+        return now
+
+    s = time_str.lower().strip()
+    match = re.search(r"(\d+)", s)
+    if not match:
+        return now
+
+    val = int(match.group(1))
+    if "giây" in s or "second" in s:
+        return now - timedelta(seconds=val)
+    if "phút" in s or "minute" in s:
+        return now - timedelta(minutes=val)
+    if "giờ" in s or "hour" in s:
+        return now - timedelta(hours=val)
+    if "ngày" in s or "day" in s:
+        return now - timedelta(days=val)
+    if "tuần" in s or "week" in s:
+        return now - timedelta(weeks=val)
+    if "tháng" in s or "month" in s:
+        return now - timedelta(days=val * 30)
+    if "năm" in s or "year" in s:
+        return now - timedelta(days=val * 365)
+
+    return now
+
+
+def fetch_channel_videos_via_page(channel_id: str, handle: str = "") -> list:
+    """
+    Fallback bóc tách video trực tiếp từ trang /videos của kênh
+    khi RSS feed bị YouTube chặn hoặc 404.
+    Hỗ trợ cả lockupViewModel mới và videoRenderer.
+    """
+    if handle:
+        url = f"https://www.youtube.com/{handle}/videos"
+    else:
+        url = f"https://www.youtube.com/channel/{channel_id}/videos"
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
+    }
+
+    try:
+        resp = requests.get(url, headers=headers, timeout=15)
+        if resp.status_code != 200:
+            return []
+
+        match = re.search(r"var ytInitialData = ({.*?});</script>", resp.text)
+        if not match:
+            return []
+
+        data = json.loads(match.group(1))
+        extracted = []
+
+        def find_nodes(node):
+            if isinstance(node, dict):
+                if "lockupViewModel" in node:
+                    lvm = node["lockupViewModel"]
+                    vid = lvm.get("contentId")
+                    meta = lvm.get("metadata", {}).get("lockupMetadataViewModel", {})
+                    title = meta.get("title", {}).get("content", "")
+                    time_str = ""
+                    try:
+                        rows = meta.get("metadata", {}).get("contentMetadataViewModel", {}).get("metadataRows", [])
+                        for row in rows:
+                            parts = row.get("metadataParts", [])
+                            if len(parts) >= 2:
+                                time_str = parts[1].get("text", {}).get("content", "")
+                    except Exception:
+                        pass
+                    if vid and title:
+                        extracted.append({"vid": vid, "title": title, "time_str": time_str})
+                elif "videoRenderer" in node:
+                    vr = node["videoRenderer"]
+                    vid = vr.get("videoId")
+                    title = vr.get("title", {}).get("runs", [{}])[0].get("text", "")
+                    time_str = vr.get("publishedTimeText", {}).get("simpleText", "")
+                    if vid and title:
+                        extracted.append({"vid": vid, "title": title, "time_str": time_str})
+                for v in node.values():
+                    find_nodes(v)
+            elif isinstance(node, list):
+                for item in node:
+                    find_nodes(item)
+
+        find_nodes(data)
+
+        # Khử trùng lặp
+        seen = set()
+        videos = []
+        for item in extracted:
+            vid = item["vid"]
+            if vid in seen:
+                continue
+            seen.add(vid)
+
+            pub_dt = parse_relative_time(item["time_str"])
+            videos.append({
+                "video_id": vid,
+                "title": item["title"],
+                "link": f"https://www.youtube.com/watch?v={vid}",
+                "published_dt": pub_dt,
+                "published_at": pub_dt.astimezone(VN_TZ).isoformat(),
+            })
+
+        return videos
+    except Exception as e:
+        print(f"[ERR] Không thể bóc tách trang kênh {channel_id}: {e}")
+        return []
+
+
+def fetch_channel_videos(channel_id: str, handle: str = ""):
     """
     Lấy danh sách video từ RSS feed của YouTube.
-    Không tốn quota YouTube Data API v3.
-    Hỗ trợ cả feedparser lẫn thư viện chuẩn xml.etree.ElementTree.
+    Nếu RSS trả về rỗng hoặc 404, tự động fallback sang bóc tách trang kênh trực tiếp.
     """
     rss_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
 
+    videos = []
     try:
-        resp = requests.get(rss_url, headers=headers, timeout=15)
-        if resp.status_code != 200:
-            print(f"[WARN] Kênh {channel_id} trả về HTTP {resp.status_code}")
-            return []
+        resp = requests.get(rss_url, headers=headers, timeout=10)
+        if resp.status_code == 200:
+            if HAS_FEEDPARSER:
+                feed = feedparser.parse(resp.content)
+                for entry in feed.entries:
+                    video_id = entry.get("yt_videoid")
+                    if not video_id and "link" in entry:
+                        match = re.search(r"v=([a-zA-Z0-9_-]+)", entry["link"])
+                        if match:
+                            video_id = match.group(1)
 
-        videos = []
+                    if not video_id:
+                        continue
 
-        if HAS_FEEDPARSER:
-            feed = feedparser.parse(resp.content)
-            for entry in feed.entries:
-                video_id = entry.get("yt_videoid")
-                if not video_id and "link" in entry:
-                    match = re.search(r"v=([a-zA-Z0-9_-]+)", entry["link"])
-                    if match:
-                        video_id = match.group(1)
+                    published_str = entry.get("published", "")
+                    try:
+                        pub_dt = datetime.fromisoformat(published_str.replace("Z", "+00:00"))
+                    except Exception:
+                        pub_dt = datetime.now(timezone.utc)
 
-                if not video_id:
-                    continue
+                    videos.append({
+                        "video_id": video_id,
+                        "title": entry.get("title", ""),
+                        "link": entry.get("link", f"https://www.youtube.com/watch?v={video_id}"),
+                        "published_dt": pub_dt,
+                        "published_at": pub_dt.astimezone(VN_TZ).isoformat(),
+                    })
+            else:
+                root = ET.fromstring(resp.content)
+                atom_ns = {"atom": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
+                for entry in root.findall("atom:entry", atom_ns):
+                    vid_el = entry.find("yt:videoId", atom_ns)
+                    title_el = entry.find("atom:title", atom_ns)
+                    pub_el = entry.find("atom:published", atom_ns)
+                    link_el = entry.find("atom:link", atom_ns)
 
-                published_str = entry.get("published", "")
-                try:
-                    pub_dt = datetime.fromisoformat(published_str.replace("Z", "+00:00"))
-                except Exception:
-                    pub_dt = datetime.now(timezone.utc)
+                    video_id = vid_el.text if vid_el is not None else ""
+                    title = title_el.text if title_el is not None else ""
+                    published_str = pub_el.text if pub_el is not None else ""
+                    link = link_el.attrib.get("href", f"https://www.youtube.com/watch?v={video_id}") if link_el is not None else f"https://www.youtube.com/watch?v={video_id}"
 
-                videos.append({
-                    "video_id": video_id,
-                    "title": entry.get("title", ""),
-                    "link": entry.get("link", f"https://www.youtube.com/watch?v={video_id}"),
-                    "published_dt": pub_dt,
-                    "published_at": pub_dt.astimezone(VN_TZ).isoformat(),
-                })
-        else:
-            # Fallback parsing bằng xml.etree.ElementTree
-            root = ET.fromstring(resp.content)
-            atom_ns = {"atom": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
-            for entry in root.findall("atom:entry", atom_ns):
-                vid_el = entry.find("yt:videoId", atom_ns)
-                title_el = entry.find("atom:title", atom_ns)
-                pub_el = entry.find("atom:published", atom_ns)
-                link_el = entry.find("atom:link", atom_ns)
+                    if not video_id:
+                        continue
 
-                video_id = vid_el.text if vid_el is not None else ""
-                title = title_el.text if title_el is not None else ""
-                published_str = pub_el.text if pub_el is not None else ""
-                link = link_el.attrib.get("href", f"https://www.youtube.com/watch?v={video_id}") if link_el is not None else f"https://www.youtube.com/watch?v={video_id}"
+                    try:
+                        pub_dt = datetime.fromisoformat(published_str.replace("Z", "+00:00"))
+                    except Exception:
+                        pub_dt = datetime.now(timezone.utc)
 
-                if not video_id:
-                    continue
-
-                try:
-                    pub_dt = datetime.fromisoformat(published_str.replace("Z", "+00:00"))
-                except Exception:
-                    pub_dt = datetime.now(timezone.utc)
-
-                videos.append({
-                    "video_id": video_id,
-                    "title": title,
-                    "link": link,
-                    "published_dt": pub_dt,
-                    "published_at": pub_dt.astimezone(VN_TZ).isoformat(),
-                })
-
-        return videos
+                    videos.append({
+                        "video_id": video_id,
+                        "title": title,
+                        "link": link,
+                        "published_dt": pub_dt,
+                        "published_at": pub_dt.astimezone(VN_TZ).isoformat(),
+                    })
     except Exception as e:
-        print(f"[ERR] Không thể tải RSS cho kênh {channel_id}: {e}")
-        return []
+        print(f"[INFO] RSS feed không khả dụng ({e}), chuyển sang chế độ quét trực tiếp...")
+
+    # Nếu RSS không lấy được video nào, dùng fallback quét trực tiếp từ trang kênh
+    if not videos:
+        videos = fetch_channel_videos_via_page(channel_id, handle)
+
+    return videos
 
 
 def get_video_transcript(video_id: str) -> str:
@@ -380,11 +495,12 @@ def main():
             continue
 
         channel_id = ch.get("channel_id")
+        handle = ch.get("handle", "")
         channel_name = ch.get("name", "Kênh YouTube")
         default_region = ch.get("region", "Chung")
 
-        print(f"\n>> Đang quét kênh: {channel_name} ({channel_id})")
-        videos = fetch_channel_videos(channel_id)
+        print(f"\n>> Đang quét kênh: {channel_name} ({handle or channel_id})")
+        videos = fetch_channel_videos(channel_id, handle)
         print(f"   Tìm thấy {len(videos)} video từ RSS feed.")
 
         for vid in videos:
