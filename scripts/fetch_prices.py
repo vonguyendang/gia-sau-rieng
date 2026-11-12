@@ -585,34 +585,42 @@ def get_video_transcript(video_id: str) -> str:
         fetched = api.fetch(video_id, languages=["vi"])
         if hasattr(fetched, "snippets"):
             return " ".join([s.text for s in fetched.snippets if getattr(s, "text", "")]).strip()
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"        [DEBUG TRANSCRIPT api.fetch] {type(e).__name__}: {e}")
 
-    # Cách 2: Thử list_transcripts / find_transcript
+    # Cách 2: Thử list / find_transcript trên instance api
     try:
-        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        api = YouTubeTranscriptApi()
+        t_list = api.list(video_id)
         transcript = None
         try:
-            transcript = transcript_list.find_transcript(["vi"])
+            transcript = t_list.find_transcript(["vi"])
         except Exception:
             try:
-                transcript = transcript_list.find_generated_transcript(["vi"])
+                transcript = t_list.find_generated_transcript(["vi"])
             except Exception:
                 pass
-
         if transcript:
+            fetched = transcript.fetch()
+            if hasattr(fetched, "snippets"):
+                return " ".join([s.text for s in fetched.snippets if getattr(s, "text", "")]).strip()
+            elif isinstance(fetched, list):
+                return " ".join([item.get("text", "") for item in fetched]).strip()
+    except Exception as e:
+        print(f"        [DEBUG TRANSCRIPT api.list] {type(e).__name__}: {e}")
+
+    # Cách 3: Thử class methods (version cũ < 1.0)
+    try:
+        if hasattr(YouTubeTranscriptApi, "list_transcripts"):
+            t_list = YouTubeTranscriptApi.list_transcripts(video_id)
+            transcript = t_list.find_transcript(["vi"])
             data = transcript.fetch()
             return " ".join([item.get("text", "") for item in data]).strip()
-    except Exception:
-        pass
-
-    # Cách 3: Thử get_transcript trực tiếp (version < 1.0)
-    try:
-        if hasattr(YouTubeTranscriptApi, "get_transcript"):
+        elif hasattr(YouTubeTranscriptApi, "get_transcript"):
             data = YouTubeTranscriptApi.get_transcript(video_id, languages=["vi"])
             return " ".join([item.get("text", "") for item in data]).strip()
     except Exception as e:
-        print(f"[INFO] Video {video_id} không có phụ đề tiếng Việt khả dụng ({type(e).__name__})")
+        print(f"        [DEBUG TRANSCRIPT legacy] {type(e).__name__}: {e}")
 
     return ""
 
