@@ -118,10 +118,10 @@ def main():
         ]
         print(f"   -> Có {len(durian_videos)} video có chữ 'sầu riêng' trong tiêu đề.")
 
-        # Lọc ra các video CHƯA TỪNG xử lý để cào lùi tích lũy dần về quá khứ
+        # Lọc ra các video CHƯA TỪNG xử lý hoặc trước đó chưa kịp có phụ đề (cho phép thử lại)
         unprocessed_videos = [
             v for v in durian_videos
-            if v["video_id"] not in processed_videos or processed_videos[v["video_id"]].get("has_transcript") is None
+            if v["video_id"] not in processed_videos or processed_videos[v["video_id"]].get("has_transcript") is not True
         ]
         print(f"   -> Có {len(unprocessed_videos)} video sầu riêng chưa xử lý (sẽ xử lý tối đa {max_videos_per_channel} video đợt này).")
 

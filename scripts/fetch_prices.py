@@ -776,9 +776,18 @@ def main():
                 print(f"   [CẢNH BÁO AN TOÀN] Kênh {channel_name} gặp lỗi phụ đề liên tiếp {consecutive_errors} lần. Tạm dừng quét kênh để bảo vệ an toàn IP.")
                 break
 
-            # 1. Bỏ qua nếu đã từng xử lý
+            # 1. Kiểm tra video đã xử lý
             if video_id in processed_videos:
-                continue
+                pv = processed_videos[video_id]
+                # Nếu đã có phụ đề (đã bóc tách giá hoặc xác nhận không phải video giá) -> Bỏ qua
+                if pv.get("has_transcript") is True:
+                    continue
+                # Nếu trước đó chưa có phụ đề: Cho phép thử lại tối đa 5 lần nếu video còn mới (< 36 giờ)
+                retries = pv.get("transcript_retries", 1)
+                is_fresh = (now_utc - pub_dt) < timedelta(hours=36)
+                if not is_fresh or retries >= 5:
+                    continue
+                print(f"   [Thử lại #{retries + 1}] Video '{title}' trước đó chưa có phụ đề, đang thử lại...")
 
             # 2. Bỏ qua nếu video cũ hơn 48 giờ
             if (now_utc - pub_dt) > max_age:
@@ -802,17 +811,19 @@ def main():
             # 4. Lấy phụ đề tiếng Việt an toàn
             transcript = get_video_transcript(video_id)
             if not transcript:
-                print(f"       -> Không có phụ đề. Đánh dấu đã quét để bỏ qua lần sau.")
+                prev_retries = processed_videos.get(video_id, {}).get("transcript_retries", 0)
+                print(f"       -> Chưa có phụ đề tiếng Việt (Lần thử {prev_retries + 1}/5). Sẽ tự động quét lại ở phiên kế tiếp.")
                 processed_videos[video_id] = {
                     "channel_id": channel_id,
                     "title": title,
                     "processed_at": datetime.now(VN_TZ).isoformat(),
                     "has_transcript": False,
+                    "transcript_retries": prev_retries + 1,
                     "is_price_video": False,
                 }
                 save_json(PROCESSED_FILE, processed_videos)
                 consecutive_errors += 1
-                safe_sleep(3.0, 5.0, msg="chờ an toàn sau khi không có phụ đề")
+                safe_sleep(2.0, 4.0, msg="chờ an toàn sau khi chưa có phụ đề")
                 continue
 
             consecutive_errors = 0
