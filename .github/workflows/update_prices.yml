@@ -2,11 +2,11 @@ name: "Cập nhật giá sầu riêng tự động"
 
 on:
   schedule:
-    # Chạy 3 lần/ngày vào đúng các khung giờ vàng ra video của thương lái (Giờ VN = UTC + 7):
-    # - 04:30 UTC -> 11:30 VN (Giờ vựa chốt giá trưa)
-    # - 06:30 UTC -> 13:30 VN (Quét vét các kênh đăng đầu chiều)
-    # - 11:30 UTC -> 18:30 VN (Tổng kết thị trường chiều tối)
-    - cron: '30 4,6,11 * * *'
+    # Chạy 3 lần/ngày vào các khung giờ vàng ra video của thương lái (Giờ VN = UTC + 7).
+    # Đặt phút lẻ (35) để tránh nghẽn hàng đợi chung của GitHub Actions vào phút tròn:
+    - cron: '35 4 * * *'   # 04:35 UTC -> 11:35 VN (Giờ vựa chốt giá trưa)
+    - cron: '35 6 * * *'   # 06:35 UTC -> 13:35 VN (Quét vét các kênh đăng đầu chiều)
+    - cron: '35 11 * * *'  # 11:35 UTC -> 18:35 VN (Tổng kết thị trường chiều tối)
   workflow_dispatch: # Cho phép kích hoạt thủ công từ giao diện GitHub Actions
 
 concurrency:
