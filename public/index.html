@@ -141,6 +141,40 @@
       </div>
     </section>
 
+    <!-- KHU VỰC 3: ĐỐI CHIẾU GIÁ SO VỚI CÙNG KỲ (COMPARISON TABLE) -->
+    <section class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200/80">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-100 gap-2">
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-arrows-split-up-and-left text-amber-500"></i>
+            Bảng Đối Chiếu Giá So Với Cùng Kỳ
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">So sánh biến động giá xô hôm nay với các mốc chu kỳ (Hôm qua, Tuần trước, Tháng trước, Cùng kỳ năm trước)</p>
+        </div>
+        <span class="text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg self-start sm:self-auto">
+          Tự động đối chiếu theo dữ liệu thực tế
+        </span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 text-xs uppercase tracking-wider">
+              <th class="py-3 px-4 font-bold rounded-l-xl">Giống Sầu Riêng</th>
+              <th class="py-3 px-3 font-bold text-slate-900">Giá Hôm Nay</th>
+              <th class="py-3 px-3 font-bold">So Hôm Qua (T-1)</th>
+              <th class="py-3 px-3 font-bold">Cùng Kỳ Tuần Trước (T-7)</th>
+              <th class="py-3 px-3 font-bold">Cùng Kỳ Tháng Trước (T-30)</th>
+              <th class="py-3 px-4 font-bold rounded-r-xl">Cùng Kỳ Năm Trước (YoY)</th>
+            </tr>
+          </thead>
+          <tbody id="comparison-table-body" class="divide-y divide-slate-100 font-medium text-slate-700">
+            <!-- Render tự động bởi app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- KHU VỰC 3: CHI TIẾT NGUỒN TIN THEO KÊNH (YOUTUBE SOURCES) -->
     <section class="space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
