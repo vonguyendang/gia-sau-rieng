@@ -21,7 +21,7 @@
   Hiển thị đúng khoảng giá cắt xô (Min – Max) theo tỉ lệ phân loại trái (8:2, 7:3), không tự ý phân loại thành giá bán lẻ từng trái A hay B.
 * 📈 **Bảng đối chiếu giá so với cùng kỳ:**
   Tự động so sánh biến động hôm nay với **Hôm qua ($T-1$)**, **Tuần trước ($T-7$)**, **Tháng trước ($T-30$)**, và **Cùng kỳ năm trước ($\text{YoY}$)**.
-* ⏱ **Cập nhật tự động 24/7:** GitHub Actions tự động quét video định kỳ mỗi 3 tiếng (`0 */3 * * *`), không tốn server riêng.
+* ⏱ **Cập nhật tự động theo khung giờ vàng:** GitHub Actions tự động quét video 3 lần/ngày (11h30, 13h30, 18h30 đúng các thời điểm thương lái và vựa chốt giá), không tốn server riêng.
 * 🧠 **Trích xuất thông minh bằng Gemini 3.8 Flash:** Tự động lấy phụ đề tiếng Việt qua `youtube-transcript-api` và phân tích khoảng giá chuẩn xác.
 * 📊 **Giao diện hiện đại & không cần build:** Viết bằng HTML5 thuần, Tailwind CSS và Chart.js, deploy tức thì lên Cloudflare Pages.
 

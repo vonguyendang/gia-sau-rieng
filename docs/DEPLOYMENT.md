@@ -36,8 +36,8 @@ GitHub Actions cần quyền ghi (`write permissions`) để tự động commit
 
 ### Bước 3: Kiểm Tra Hoặc Kích Hoạt Thủ Công Workflow
 
-* **Lịch chạy tự động:** Workflow `fetch_prices.yml` được cấu hình chạy tự động mỗi 3 tiếng:
-  `cron: '0 */3 * * *'` (theo giờ UTC).
+* **Lịch chạy tự động:** Workflow `update_prices.yml` được cấu hình chạy tự động 3 lần/ngày đúng các khung giờ thương lái đăng giá:
+  `cron: '30 4,6,11 * * *'` (tương ứng **11h30**, **13h30** và **18h30** giờ Việt Nam).
 * **Kích hoạt thủ công ngay lập tức:**
   1. Vào tab **Actions** trên repository GitHub.
   2. Tại danh sách bên trái, chọn **Auto Fetch Durian Prices**.
