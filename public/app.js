@@ -206,7 +206,7 @@ function renderPriceCards() {
               <span class="text-xs font-bold px-2 py-0.5 rounded-lg ${c.badgeColor} truncate max-w-[170px]">
                 <i class="${c.icon} mr-1"></i> ${c.title}
               </span>
-              <span class="text-[10px] font-medium text-slate-400">TB Hôm nay</span>
+              <span class="text-[10px] font-semibold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">Xô tại vườn</span>
             </div>
             <div class="mt-2 flex items-baseline justify-between">
               <div class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
@@ -418,7 +418,7 @@ function initOrUpdateChart() {
             let label = context.dataset.label || '';
             if (label) label += ': ';
             if (context.parsed.y !== null) {
-              label += new Intl.NumberFormat('vi-VN').format(context.parsed.y) + ' đ/kg';
+              label += new Intl.NumberFormat('vi-VN').format(context.parsed.y) + ' đ/kg (xô tại vườn)';
             } else {
               label += 'Không có dữ liệu';
             }
