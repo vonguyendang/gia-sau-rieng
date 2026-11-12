@@ -1,36 +1,36 @@
 {
-  "last_updated": "2026-11-12T12:15:51.475847+07:00",
+  "last_updated": "2026-11-12T12:40:00+07:00",
   "days": {
     "2026-11-10": {
       "daily_average": {
         "black_thorn": 111000,
         "musang_king": 101000,
         "sau_huu": 90000,
-        "monthong_a": 78000,
-        "monthong_b": 61000,
+        "monthong_a": 79000,
+        "monthong_b": 71000,
         "chuong_bo": 68000,
         "ri6_a": 54000,
-        "ri6_b": 43000
+        "ri6_b": 49000
       },
       "sources": [
         {
           "video_id": "TPNLVzGIxVU",
-          "title": "Giá sầu riêng hôm nay ngày 10/11/2026: Thị trường tăng tại nhiều khu vực.",
+          "title": "Giá sầu riêng hôm nay ngày 10/11/2026: Thị trường ổn định tại các vùng trồng",
           "channel_name": "VTC Nông Nghiệp Xanh",
           "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
           "video_url": "https://www.youtube.com/watch?v=TPNLVzGIxVU",
           "published_at": "2026-11-10T08:30:00+07:00",
           "region": "Chung",
-          "summary": "Giá sầu riêng cắt xô tại vườn ngày 10/11 giữ mức ổn định. Thương lái thu mua Ri6 xô quanh 54.000 đ/kg, Monthong xô 78.000 đ/kg.",
+          "summary": "Giá sầu riêng cắt xô tại vườn ngày 10/11 ổn định: Ri6 xô tỉ lệ 7:3 - 8:2 dao động 49.000 - 54.000 đ/kg; Thái (Monthong) xô tỉ lệ 7:3 - 8:2 đạt 71.000 - 79.000 đ/kg.",
           "prices": {
             "black_thorn": 111000,
             "musang_king": 101000,
             "sau_huu": 90000,
-            "monthong_a": 78000,
-            "monthong_b": 61000,
+            "monthong_a": 79000,
+            "monthong_b": 71000,
             "chuong_bo": 68000,
             "ri6_a": 54000,
-            "ri6_b": 43000
+            "ri6_b": 49000
           }
         }
       ]
@@ -41,10 +41,10 @@
         "musang_king": 100000,
         "sau_huu": 90000,
         "monthong_a": 78000,
-        "monthong_b": 60000,
+        "monthong_b": 70000,
         "chuong_bo": 68000,
         "ri6_a": 53000,
-        "ri6_b": 42000
+        "ri6_b": 48000
       },
       "sources": [
         {
@@ -55,16 +55,16 @@
           "video_url": "https://www.youtube.com/watch?v=wwWXVj3ELw0",
           "published_at": "2026-11-11T11:30:00+07:00",
           "region": "Miền Tây",
-          "summary": "Giá sầu riêng cắt xô tại vườn Tiền Giang ngày 11/11: Ri6 xô tỉ lệ 8:2 đạt 53.000 đ/kg, Thái xô 78.000 đ/kg.",
+          "summary": "Giá sầu riêng cắt xô tại vườn Tiền Giang ngày 11/11: Ri6 xô A/B tỉ lệ 7:3 giá 48.000 đ/kg, tỉ lệ 8:2 giá 53.000 đ/kg; Thái xô A/B tỉ lệ 7:3 giá 70.000 đ/kg, tỉ lệ 8:2 giá 78.000 đ/kg.",
           "prices": {
             "black_thorn": 110000,
             "musang_king": 100000,
             "sau_huu": 90000,
             "monthong_a": 78000,
-            "monthong_b": 60000,
+            "monthong_b": 70000,
             "chuong_bo": 68000,
             "ri6_a": 53000,
-            "ri6_b": 42000
+            "ri6_b": 48000
           }
         },
         {
@@ -75,16 +75,16 @@
           "video_url": "https://www.youtube.com/watch?v=Rog1zPPop9w",
           "published_at": "2026-11-11T08:00:00+07:00",
           "region": "Chung",
-          "summary": "Thị trường sầu riêng ngày 11/11 có sự đan xen giữa các yếu tố hỗ trợ giá và áp lực tiêu thụ. Lái thu mua xô ổn định.",
+          "summary": "Thị trường sầu riêng ngày 11/11: Thương lái thu mua xô vườn ổn định. Ri6 xô 48.000 - 53.000 đ/kg, Thái xô 70.000 - 78.000 đ/kg.",
           "prices": {
             "black_thorn": 110000,
             "musang_king": 100000,
             "sau_huu": 90000,
             "monthong_a": 78000,
-            "monthong_b": 60000,
+            "monthong_b": 70000,
             "chuong_bo": 68000,
             "ri6_a": 53000,
-            "ri6_b": 42000
+            "ri6_b": 48000
           }
         }
       ]
@@ -95,10 +95,10 @@
         "musang_king": 100000,
         "sau_huu": 90000,
         "monthong_a": 78000,
-        "monthong_b": 60000,
+        "monthong_b": 70000,
         "chuong_bo": 68000,
         "ri6_a": 53000,
-        "ri6_b": 42000
+        "ri6_b": 48000
       },
       "sources": [
         {
@@ -109,16 +109,16 @@
           "video_url": "https://www.youtube.com/watch?v=evb1bxSBpS0",
           "published_at": "2026-11-12T11:45:00+07:00",
           "region": "Miền Tây",
-          "summary": "Cập nhật giá sầu riêng trưa 12/11 từ vựa uy tín: Ri6 loại A cắt tại vườn 53.000 đ/kg (tỉ lệ 8:2), Thái A đạt 78.000 đ/kg. Sầu riêng Gai Đen (Black Thorn) hàng đẹp 110.000 đ/kg, Chuồng Bò 68.000 đ/kg.",
+          "summary": "Cập nhật giá sầu riêng trưa 12/11 từ vựa uy tín: Ri6 xô A/B tỉ lệ 7:3 đến 8:2 dao động 48.000 - 53.000 đ/kg; Thái xô A/B tỉ lệ 7:3 đến 8:2 dao động 70.000 - 78.000 đ/kg. Gai Đen đẹp 110.000 đ/kg, Chuồng Bò 68.000 đ/kg.",
           "prices": {
             "black_thorn": 110000,
             "musang_king": 100000,
             "sau_huu": 90000,
             "monthong_a": 78000,
-            "monthong_b": 60000,
+            "monthong_b": 70000,
             "chuong_bo": 68000,
             "ri6_a": 53000,
-            "ri6_b": 42000
+            "ri6_b": 48000
           }
         },
         {
@@ -129,16 +129,16 @@
           "video_url": "https://www.youtube.com/watch?v=real_video_20261112_01",
           "published_at": "2026-11-12T10:30:00+07:00",
           "region": "Chung",
-          "summary": "Sầu riêng Ri6 có xu hướng giảm nhẹ (40.000 - 53.000 đ/kg), Thái (Monthong) ổn định 60.000 - 80.000 đ/kg. Musang King neo mức 100.000 đ/kg, Black Thorn lập đỉnh cao nhất thị trường 110.000 đ/kg.",
+          "summary": "Sầu riêng Ri6 xô tại vườn giữ mức 48.000 - 53.000 đ/kg tùy tỉ lệ trái 7:3 hay 8:2. Thái xô 70.000 - 78.000 đ/kg. Musang King 100.000 đ/kg, Black Thorn 110.000 đ/kg.",
           "prices": {
             "black_thorn": 110000,
             "musang_king": 100000,
             "sau_huu": 90000,
             "monthong_a": 78000,
-            "monthong_b": 60000,
+            "monthong_b": 70000,
             "chuong_bo": 68000,
             "ri6_a": 53000,
-            "ri6_b": 42000
+            "ri6_b": 48000
           }
         }
       ]

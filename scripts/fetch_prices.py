@@ -86,22 +86,22 @@ PRICE_SCHEMA = {
                 "ri6_a": {
                     "type": "INTEGER",
                     "nullable": True,
-                    "description": "Giá sầu riêng Ri6 loại A (VNĐ/kg), null nếu không nhắc tới.",
+                    "description": "Giá sầu riêng Ri6 xô tỉ lệ 8:2 (vườn đẹp, VNĐ/kg, vd: 53000), null nếu không nhắc tới.",
                 },
                 "ri6_b": {
                     "type": "INTEGER",
                     "nullable": True,
-                    "description": "Giá sầu riêng Ri6 loại B (VNĐ/kg), null nếu không nhắc tới.",
+                    "description": "Giá sầu riêng Ri6 xô tỉ lệ 7:3 (vườn trung bình, VNĐ/kg, vd: 48000), null nếu không nhắc tới.",
                 },
                 "monthong_a": {
                     "type": "INTEGER",
                     "nullable": True,
-                    "description": "Giá sầu riêng Monthong (Thái/Dona) loại A (VNĐ/kg), null nếu không nhắc tới.",
+                    "description": "Giá sầu riêng Monthong (Thái/Dona) xô tỉ lệ 8:2 (vườn đẹp, VNĐ/kg, vd: 78000), null nếu không nhắc tới.",
                 },
                 "monthong_b": {
                     "type": "INTEGER",
                     "nullable": True,
-                    "description": "Giá sầu riêng Monthong (Thái/Dona) loại B (VNĐ/kg), null nếu không nhắc tới.",
+                    "description": "Giá sầu riêng Monthong (Thái/Dona) xô tỉ lệ 7:3 (vườn trung bình, VNĐ/kg, vd: 70000), null nếu không nhắc tới.",
                 },
                 "musang_king": {
                     "type": "INTEGER",
@@ -138,9 +138,17 @@ SYSTEM_INSTRUCTION = """
 Bạn là một chuyên gia phân tích dữ liệu thị trường nông sản Việt Nam, chuyên về sầu riêng.
 Nhiệm vụ của bạn là đọc phụ đề và thông tin video YouTube để trích xuất bảng GIÁ SẦU RIÊNG CẮT XÔ TẠI VƯỜN (Farm-gate Bulk Price) chuẩn xác nhất cho bà con nông dân.
 
-QUY TẮC QUAN TRỌNG HÀNG ĐẦU VỀ LOẠI GIÁ:
+QUY TẮC QUAN TRỌNG HÀNG ĐẦU VỀ GIÁ CẮT XÔ TẠI VƯỜN (FARM-GATE BULK PRICE):
 - BẮT BUỘC ƯU TIÊN GIÁ CẮT XÔ TẠI VƯỜN: Khi trong video đề cập đến nhiều mức giá (giá tại vựa/kho, giá xuất khẩu, giá sạp chợ, giá cắt xô tại vườn), bạn BẮT BUỘC lấy GIÁ CẮT XÔ LÁI MUA TẠI VƯỜN của nông dân.
-- Nếu video chỉ báo giá mua xô chung (ví dụ "Ri6 xô 50k", "Thái xô 75k"), hãy gán giá đó cho loại A, còn loại B để null hoặc phân chia theo khoảng xô nếu có.
+- GIÁ CẮT XÔ LÀ GIÁ MUA NGUYÊN VƯỜN THEO TỈ LỆ TRÁI (8:2 hoặc 7:3), KHÔNG PHẢI GIÁ BÁN LẺ TỪNG TRÁI LOẠI A HAY LOẠI B:
+  + Khi video nói "Ri6 xô 48 - 53", hoặc "Ri6 xô tỉ lệ 7:3 giá 48, tỉ lệ 8:2 giá 53":
+    * Giá 53k là giá mua xô vườn đẹp (tỉ lệ 8:2 -> 80% trái A, 20% trái B). Gán vào `ri6_a`.
+    * Giá 48k là giá mua xô vườn thường (tỉ lệ 7:3 -> 70% trái A, 30% trái B). Gán vào `ri6_b`.
+    * TUYỆT ĐỐI KHÔNG HIỂU NHẦM 53k là trái A, 48k là trái B! Cả hai đều là giá cắt xô cả vườn!
+  + Tương tự với Thái (Monthong / Dona):
+    * Giá 78k là giá xô tỉ lệ 8:2 -> gán vào `monthong_a`.
+    * Giá 70k là giá xô tỉ lệ 7:3 -> gán vào `monthong_b`.
+- Nếu video chỉ báo một mức giá xô duy nhất (ví dụ "Ri6 xô 50k", "Thái xô 75k"), hãy gán giá đó cho loại A (8:2), còn loại B để null.
 
 LƯU Ý CỰC KỲ QUAN TRỌNG VỀ NHẬN DIỆN GIỌNG NÓI VÀ TỪ ĐỊA PHƯƠNG (Miền Tây & Tây Nguyên):
 1. Phụ đề tự động thường bị sai chính tả do nhận diện âm giọng địa phương:
