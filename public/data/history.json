@@ -1,0 +1,235 @@
+{
+  "last_updated": "2026-11-12T10:51:16.368481+07:00",
+  "days": {
+    "2026-11-06": {
+      "daily_average": {
+        "ri6_a": 85000,
+        "ri6_b": 70000,
+        "monthong_a": 110000,
+        "monthong_b": 95000,
+        "musang_king": 220000
+      },
+      "sources": [
+        {
+          "video_id": "sample_vid_06a",
+          "title": "Báo giá sầu riêng 06/11: Thương lái đẩy mạnh thu mua tại vườn",
+          "channel_name": "Sầu Riêng Tây Nguyên 24h",
+          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_06a",
+          "published_at": "2026-11-06T09:15:00+07:00",
+          "region": "Tây Nguyên",
+          "summary": "Giá sầu riêng đầu tuần ghi nhận sức mua ổn định, vựa gom hàng Monthong đi thị trường Trung Quốc số lượng lớn.",
+          "prices": {
+            "ri6_a": 84000,
+            "ri6_b": 70000,
+            "monthong_a": 110000,
+            "monthong_b": 94000,
+            "musang_king": 220000
+          }
+        },
+        {
+          "video_id": "sample_vid_06b",
+          "title": "Giá sầu riêng miền Tây ngày 06/11: Ri6 loại A neo mức cao",
+          "channel_name": "Nhà Vườn Miền Tây - Cập Nhật Giá",
+          "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_06b",
+          "published_at": "2026-11-06T11:00:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Vườn Tiền Giang và Bến Tre bắt đầu có hàng chín sớm, thương lái chốt cọc nhanh.",
+          "prices": {
+            "ri6_a": 86000,
+            "ri6_b": 70000,
+            "monthong_a": 110000,
+            "monthong_b": 96000,
+            "musang_king": null
+          }
+        }
+      ]
+    },
+    "2026-11-07": {
+      "daily_average": {
+        "ri6_a": 87000,
+        "ri6_b": 72000,
+        "monthong_a": 112000,
+        "monthong_b": 96000,
+        "musang_king": 225000
+      },
+      "sources": [
+        {
+          "video_id": "sample_vid_07a",
+          "title": "Cập nhật giá sầu riêng 07/11: Ri6 nhích giá nhẹ",
+          "channel_name": "Sầu Riêng Tây Nguyên 24h",
+          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_07a",
+          "published_at": "2026-11-07T08:30:00+07:00",
+          "region": "Tây Nguyên",
+          "summary": "Nguồn cung sầu riêng loại A khá khan hiếm khiến giá tăng từ 2.000 đến 3.000 đ/kg.",
+          "prices": {
+            "ri6_a": 87000,
+            "ri6_b": 72000,
+            "monthong_a": 112000,
+            "monthong_b": 96000,
+            "musang_king": 225000
+          }
+        }
+      ]
+    },
+    "2026-11-08": {
+      "daily_average": {
+        "ri6_a": 88000,
+        "ri6_b": 73000,
+        "monthong_a": 115000,
+        "monthong_b": 98000,
+        "musang_king": 230000
+      },
+      "sources": [
+        {
+          "video_id": "sample_vid_08a",
+          "title": "Báo giá sầu riêng 08/11: Monthong Thái vượt mốc 115.000đ/kg",
+          "channel_name": "Thị Trường Nông Sản Nam Bộ",
+          "channel_id": "UC4R8DWoMoI7CAwX8_BQ5Q5w",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_08a",
+          "published_at": "2026-11-08T10:00:00+07:00",
+          "region": "Đông Nam Bộ",
+          "summary": "Xuất khẩu qua các cửa khẩu phía Bắc thông thoáng kích thích các vựa nâng giá gom hàng Monthong.",
+          "prices": {
+            "ri6_a": 88000,
+            "ri6_b": 73000,
+            "monthong_a": 115000,
+            "monthong_b": 98000,
+            "musang_king": 230000
+          }
+        }
+      ]
+    },
+    "2026-11-09": {
+      "daily_average": {
+        "ri6_a": 86000,
+        "ri6_b": 71000,
+        "monthong_a": 114000,
+        "monthong_b": 97000,
+        "musang_king": 230000
+      },
+      "sources": [
+        {
+          "video_id": "sample_vid_09a",
+          "title": "Giá sầu riêng ngày 09/11: Thị trường chững lại phiên đầu tuần",
+          "channel_name": "Nhà Vườn Miền Tây - Cập Nhật Giá",
+          "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_09a",
+          "published_at": "2026-11-09T08:00:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá Ri6 hạ nhiệt nhẹ khoảng 1.000 - 2.000 đ/kg do sản lượng cắt rộ tại Tiền Giang.",
+          "prices": {
+            "ri6_a": 86000,
+            "ri6_b": 71000,
+            "monthong_a": 114000,
+            "monthong_b": 97000,
+            "musang_king": 230000
+          }
+        }
+      ]
+    },
+    "2026-11-10": {
+      "daily_average": {
+        "ri6_a": 88000,
+        "ri6_b": 74000,
+        "monthong_a": 118000,
+        "monthong_b": 100000,
+        "musang_king": 240000
+      },
+      "sources": [
+        {
+          "video_id": "sample_vid_10a",
+          "title": "Báo giá sầu riêng 10/11: Monthong Thái và Musang King bật tăng",
+          "channel_name": "Sầu Riêng Tây Nguyên 24h",
+          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_10a",
+          "published_at": "2026-11-10T09:30:00+07:00",
+          "region": "Tây Nguyên",
+          "summary": "Đơn hàng xuất khẩu cuối năm tăng tốc, các kho tranh nhau chốt vườn Monthong đẹp trên 2.7 hộc.",
+          "prices": {
+            "ri6_a": 88000,
+            "ri6_b": 74000,
+            "monthong_a": 118000,
+            "monthong_b": 100000,
+            "musang_king": 240000
+          }
+        }
+      ]
+    },
+    "2026-11-11": {
+      "daily_average": {
+        "ri6_a": 90000,
+        "ri6_b": 75000,
+        "monthong_a": 120000,
+        "monthong_b": 102000,
+        "musang_king": 245000
+      },
+      "sources": [
+        {
+          "video_id": "sample_vid_11a",
+          "title": "Giá sầu riêng ngày 11/11: Ri6 chạm đỉnh 90.000 đ/kg",
+          "channel_name": "Nhà Vườn Miền Tây - Cập Nhật Giá",
+          "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_11a",
+          "published_at": "2026-11-11T07:45:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng loại A tăng liên tục trong 3 ngày qua, hàng tuyển lựa rất được ưa chuộng.",
+          "prices": {
+            "ri6_a": 90000,
+            "ri6_b": 75000,
+            "monthong_a": 120000,
+            "monthong_b": 102000,
+            "musang_king": 245000
+          }
+        }
+      ]
+    },
+    "2026-11-12": {
+      "daily_average": {
+        "ri6_a": 92000,
+        "ri6_b": 76000,
+        "monthong_a": 122000,
+        "monthong_b": 105000,
+        "musang_king": 250000
+      },
+      "sources": [
+        {
+          "video_id": "sample_vid_12a",
+          "title": "Báo giá sầu riêng hôm nay 12/11: Lái vào tận vườn tranh mua",
+          "channel_name": "Sầu Riêng Tây Nguyên 24h",
+          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_12a",
+          "published_at": "2026-11-12T07:00:00+07:00",
+          "region": "Tây Nguyên",
+          "summary": "Thị trường sầu riêng hôm nay sôi động, Monthong A chạm mốc 122.000 đ/kg, Ri6 A đạt 92.000 đ/kg.",
+          "prices": {
+            "ri6_a": 92000,
+            "ri6_b": 76000,
+            "monthong_a": 122000,
+            "monthong_b": 105000,
+            "musang_king": 250000
+          }
+        },
+        {
+          "video_id": "sample_vid_12b",
+          "title": "Báo giá sầu riêng Tiền Giang, Bến Tre ngày 12/11 mới nhất",
+          "channel_name": "Nhà Vườn Miền Tây - Cập Nhật Giá",
+          "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
+          "video_url": "https://www.youtube.com/watch?v=sample_vid_12b",
+          "published_at": "2026-11-12T08:15:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Sầu riêng chất lượng cao giữ giá tốt, Musang King đạt đỉnh 250.000 đ/kg tại vườn.",
+          "prices": {
+            "ri6_a": 92000,
+            "ri6_b": 76000,
+            "monthong_a": 122000,
+            "monthong_b": 105000,
+            "musang_king": 250000
+          }
+        }
+      ]
+    }
+  }
+}

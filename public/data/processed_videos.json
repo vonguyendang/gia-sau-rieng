@@ -1,0 +1,16 @@
+{
+  "sample_video_20261111": {
+    "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+    "title": "Giá sầu riêng ngày 11/11: Ri6 và Monthong tại vườn ổn định",
+    "processed_at": "2026-11-11T19:00:00+07:00",
+    "has_transcript": true,
+    "is_price_video": true
+  },
+  "sample_video_20261112": {
+    "channel_id": "UCfEtwgGq1e3Lq7Y2aC5N_tg",
+    "title": "Báo giá sầu riêng ngày 12/11 mới nhất: Lái cắt tại vườn Tiền Giang",
+    "processed_at": "2026-11-12T07:30:00+07:00",
+    "has_transcript": true,
+    "is_price_video": true
+  }
+}
