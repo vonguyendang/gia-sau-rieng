@@ -140,15 +140,12 @@ Nhiệm vụ của bạn là đọc phụ đề và thông tin video YouTube đ�
 
 QUY TẮC QUAN TRỌNG HÀNG ĐẦU VỀ GIÁ CẮT XÔ TẠI VƯỜN (FARM-GATE BULK PRICE):
 - BẮT BUỘC ƯU TIÊN GIÁ CẮT XÔ TẠI VƯỜN: Khi trong video đề cập đến nhiều mức giá (giá tại vựa/kho, giá xuất khẩu, giá sạp chợ, giá cắt xô tại vườn), bạn BẮT BUỘC lấy GIÁ CẮT XÔ LÁI MUA TẠI VƯỜN của nông dân.
-- GIÁ CẮT XÔ LÀ GIÁ MUA NGUYÊN VƯỜN THEO TỈ LỆ TRÁI (8:2 hoặc 7:3), KHÔNG PHẢI GIÁ BÁN LẺ TỪNG TRÁI LOẠI A HAY LOẠI B:
-  + Khi video nói "Ri6 xô 48 - 53", hoặc "Ri6 xô tỉ lệ 7:3 giá 48, tỉ lệ 8:2 giá 53":
-    * Giá 53k là giá mua xô vườn đẹp (tỉ lệ 8:2 -> 80% trái A, 20% trái B). Gán vào `ri6_a`.
-    * Giá 48k là giá mua xô vườn thường (tỉ lệ 7:3 -> 70% trái A, 30% trái B). Gán vào `ri6_b`.
-    * TUYỆT ĐỐI KHÔNG HIỂU NHẦM 53k là trái A, 48k là trái B! Cả hai đều là giá cắt xô cả vườn!
-  + Tương tự với Thái (Monthong / Dona):
-    * Giá 78k là giá xô tỉ lệ 8:2 -> gán vào `monthong_a`.
-    * Giá 70k là giá xô tỉ lệ 7:3 -> gán vào `monthong_b`.
-- Nếu video chỉ báo một mức giá xô duy nhất (ví dụ "Ri6 xô 50k", "Thái xô 75k"), hãy gán giá đó cho loại A (8:2), còn loại B để null.
+- ĐẶC BIỆT LƯU Ý VỀ KHOẢNG GIÁ MIN - MAX:
+  "Ri6 xô A/B tỉ lệ 7:3 8:2 giá 48-53" có nghĩa là giá mua xô cả vườn dao động từ MIN 48.000 đến MAX 53.000 đ/kg (tùy khu vực, chất lượng trái, thương lượng), TUYỆT ĐỐI KHÔNG HIỂU LÀ giá loại A 53, loại B 48!
+  + Giá thấp hơn trong khoảng (vd 48.000) là min: gán vào `ri6_b` (hoặc `ri6_min`).
+  + Giá cao hơn trong khoảng (vd 53.000) là max: gán vào `ri6_a` (hoặc `ri6_max`).
+  Tương tự với Thái (Monthong / Dona): "Thái xô 70 - 75" có nghĩa là min 70.000 đ/kg, max 75.000 đ/kg.
+- Nếu video chỉ báo một mức giá xô duy nhất (ví dụ "Musang King 100k", "Ri6 xô 50k"), gán cả min và max bằng mức giá đó (hoặc gán vào loại A/max, còn min để null nếu chỉ có 1 mức).
 
 LƯU Ý CỰC KỲ QUAN TRỌNG VỀ NHẬN DIỆN GIỌNG NÓI VÀ TỪ ĐỊA PHƯƠNG (Miền Tây & Tây Nguyên):
 1. Phụ đề tự động thường bị sai chính tả do nhận diện âm giọng địa phương:

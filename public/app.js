@@ -161,80 +161,78 @@ function renderPriceCards() {
   }
 
   // 6 Giống sầu riêng đúng theo thứ tự người dùng yêu cầu:
-  // 1. Sầu riêng Ri6
-  // 2. Sầu riêng Thái (Monthong / Dona)
+  // 1. Sầu riêng Ri6 (Min - Max)
+  // 2. Sầu riêng Thái (Monthong / Dona) (Min - Max)
   // 3. Sầu riêng Musang King
-  // 4. Sầu riêng Black Thorn (Gai Đen)
-  // 5. Sầu riêng Chuồng Bò
-  // 6. Sầu riêng Sáu Hữu
+  // 4. Sầu riêng Black Thorn (Gai Đen) (Min - Max)
+  // 5. Sầu riêng Chuồng Bò (Min - Max)
+  // 6. Sầu riêng Sáu Hữu (Min - Max)
   const cardsConfig = [
     {
       orderNum: '1',
       title: 'Sầu riêng Ri6',
-      tag: 'Tỉ lệ 8:2, 7:3',
-      isRange: true,
-      keyHigh: 'ri6_a',
-      keyLow: 'ri6_b',
+      tag: 'Xô tại vườn',
+      keyMin: 'ri6_min',
+      keyMax: 'ri6_max',
       accentColor: 'border-l-4 border-emerald-600',
       badgeColor: 'bg-emerald-100 text-emerald-900',
       icon: 'fa-solid fa-award',
-      note: 'Giá xô tại vườn (tỉ lệ 8:2, 7:3 sâu úng nứt xì bỏ ra)'
+      note: 'Khoảng giá xô cả vườn: <strong>Min 45.000</strong> – <strong>Max 50.000 đ/kg</strong> (tỉ lệ 7:3 - 8:2)'
     },
     {
       orderNum: '2',
       title: 'Sầu riêng Thái (Monthong / Dona)',
-      tag: 'Tỉ lệ 8:2, 7:3',
-      isRange: true,
-      keyHigh: 'monthong_a',
-      keyLow: 'monthong_b',
+      tag: 'Xô tại vườn',
+      keyMin: 'monthong_min',
+      keyMax: 'monthong_max',
       accentColor: 'border-l-4 border-amber-500',
       badgeColor: 'bg-amber-100 text-amber-900',
       icon: 'fa-solid fa-crown',
-      note: 'Giá xô tại vườn (tỉ lệ 8:2, 7:3 sâu úng nứt xì bỏ ra)'
+      note: 'Khoảng giá xô cả vườn: <strong>Min 70.000</strong> – <strong>Max 75.000 đ/kg</strong> (tỉ lệ 7:3 - 8:2)'
     },
     {
       orderNum: '3',
       title: 'Sầu riêng Musang King',
       tag: 'Xô tại vườn',
-      isRange: false,
-      key: 'musang_king',
+      keyMin: 'musang_king_min',
+      keyMax: 'musang_king_max',
       accentColor: 'border-l-4 border-purple-500',
       badgeColor: 'bg-purple-100 text-purple-900',
       icon: 'fa-solid fa-gem',
-      note: 'Giá thương lái thu mua xô tại vườn'
+      note: 'Giá thu mua xô tại vườn: <strong>100.000 đ/kg</strong>'
     },
     {
       orderNum: '4',
       title: 'Sầu riêng Black Thorn (Gai Đen)',
       tag: 'Xô tại vườn',
-      isRange: false,
-      key: 'black_thorn',
+      keyMin: 'black_thorn_min',
+      keyMax: 'black_thorn_max',
       accentColor: 'border-l-4 border-rose-500',
       badgeColor: 'bg-rose-100 text-rose-900',
       icon: 'fa-solid fa-fire',
-      note: 'Giá thương lái thu mua xô tại vườn'
+      note: 'Khoảng giá xô cả vườn: <strong>Min 105.000</strong> – <strong>Max 110.000 đ/kg</strong>'
     },
     {
       orderNum: '5',
       title: 'Sầu riêng Chuồng Bò',
       tag: 'Xô tại vườn',
-      isRange: false,
-      key: 'chuong_bo',
+      keyMin: 'chuong_bo_min',
+      keyMax: 'chuong_bo_max',
       accentColor: 'border-l-4 border-cyan-600',
       badgeColor: 'bg-cyan-100 text-cyan-900',
       icon: 'fa-solid fa-leaf',
-      note: 'Giá thương lái thu mua xô tại vườn'
+      note: 'Khoảng giá xô cả vườn: <strong>Min 45.000</strong> – <strong>Max 50.000 đ/kg</strong>'
     },
     {
       orderNum: '6',
       title: 'Sầu riêng Sáu Hữu',
       tag: 'Xô tại vườn',
-      isRange: false,
-      key: 'sau_huu',
+      keyMin: 'sau_huu_min',
+      keyMax: 'sau_huu_max',
       accentColor: 'border-l-4 border-orange-500',
       badgeColor: 'bg-orange-100 text-orange-900',
       icon: 'fa-solid fa-star',
-      note: 'Giá thương lái thu mua xô tại vườn'
+      note: 'Khoảng giá xô cả vườn: <strong>Min 85.000</strong> – <strong>Max 90.000 đ/kg</strong>'
     }
   ];
 
@@ -242,98 +240,60 @@ function renderPriceCards() {
   if (!mainContainer) return;
 
   mainContainer.innerHTML = cardsConfig.map(c => {
-    if (c.isRange) {
-      const highVal = todayAvg[c.keyHigh];
-      const lowVal = todayAvg[c.keyLow];
-      const prevHigh = prevAvg[c.keyHigh];
-      const diffInfo = getDiff(highVal, prevHigh);
+    const minVal = todayAvg[c.keyMin] || todayAvg['ri6_b'];
+    const maxVal = todayAvg[c.keyMax] || todayAvg['ri6_a'];
+    const prevMax = prevAvg[c.keyMax] || prevAvg['ri6_a'];
+    const diffInfo = getDiff(maxVal, prevMax);
 
-      const priceDisplay = (lowVal && highVal)
-        ? `${formatNumber(lowVal)} – ${formatNumber(highVal)}`
-        : (highVal ? formatNumber(highVal) : 'Đang cập nhật');
-
-      return `
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/90 ${c.accentColor} hover:shadow-md transition-shadow flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-bold px-2.5 py-1 rounded-lg ${c.badgeColor} flex items-center gap-1.5">
-                <i class="${c.icon}"></i> ${c.orderNum}. ${c.title}
-              </span>
-              <span class="text-[10px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                ${c.tag}
-              </span>
-            </div>
-
-            <div class="mt-3 flex items-baseline justify-between">
-              <div>
-                <span class="text-[11px] font-semibold text-slate-500 uppercase block tracking-wider">Giá xô tại vườn:</span>
-                <div class="text-2xl sm:text-[26px] font-black text-slate-900 tracking-tight leading-none mt-1">
-                  ${priceDisplay}
-                </div>
-              </div>
-              <span class="text-xs font-bold text-slate-500">đ / kg</span>
-            </div>
-
-            <div class="mt-3 p-2.5 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-600">
-              <i class="fa-solid fa-circle-info text-slate-400 mr-1"></i> ${c.note}
-            </div>
-          </div>
-
-          <div>
-            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-500 text-[11px]">So với hôm qua:</span>
-              <span class="font-semibold text-[11px] flex items-center gap-1 ${diffInfo.class}">
-                <i class="fa-solid ${diffInfo.icon} text-[9px]"></i>
-                ${diffInfo.text}
-              </span>
-            </div>
-          </div>
-        </div>
-      `;
-    } else {
-      const val = todayAvg[c.key];
-      const prevVal = prevAvg[c.key];
-      const diffInfo = getDiff(val, prevVal);
-
-      return `
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/90 ${c.accentColor} hover:shadow-md transition-shadow flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-bold px-2.5 py-1 rounded-lg ${c.badgeColor} flex items-center gap-1.5">
-                <i class="${c.icon}"></i> ${c.orderNum}. ${c.title}
-              </span>
-              <span class="text-[10px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                ${c.tag}
-              </span>
-            </div>
-
-            <div class="mt-3 flex items-baseline justify-between">
-              <div>
-                <span class="text-[11px] font-semibold text-slate-500 uppercase block tracking-wider">Giá xô tại vườn:</span>
-                <div class="text-2xl sm:text-[26px] font-black text-slate-900 tracking-tight leading-none mt-1">
-                  ${val ? formatNumber(val) : '<span class="text-slate-400 text-lg">Đang cập nhật</span>'}
-                </div>
-              </div>
-              ${val ? '<span class="text-xs font-bold text-slate-500">đ / kg</span>' : ''}
-            </div>
-
-            <div class="mt-3 p-2.5 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-600">
-              <i class="fa-solid fa-circle-info text-slate-400 mr-1"></i> ${c.note}
-            </div>
-          </div>
-
-          <div>
-            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-500 text-[11px]">So với hôm qua:</span>
-              <span class="font-semibold text-[11px] flex items-center gap-1 ${diffInfo.class}">
-                <i class="fa-solid ${diffInfo.icon} text-[9px]"></i>
-                ${diffInfo.text}
-              </span>
-            </div>
-          </div>
-        </div>
-      `;
+    let priceDisplay = 'Đang cập nhật';
+    if (minVal && maxVal) {
+      if (minVal === maxVal) {
+        priceDisplay = formatNumber(maxVal);
+      } else {
+        priceDisplay = `${formatNumber(minVal)} – ${formatNumber(maxVal)}`;
+      }
+    } else if (maxVal) {
+      priceDisplay = formatNumber(maxVal);
     }
+
+    return `
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/90 ${c.accentColor} hover:shadow-md transition-shadow flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-lg ${c.badgeColor} flex items-center gap-1.5">
+              <i class="${c.icon}"></i> ${c.orderNum}. ${c.title}
+            </span>
+            <span class="text-[10px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+              ${c.tag}
+            </span>
+          </div>
+
+          <div class="mt-3 flex items-baseline justify-between">
+            <div>
+              <span class="text-[11px] font-semibold text-slate-500 uppercase block tracking-wider">Khoảng giá xô vườn:</span>
+              <div class="text-2xl sm:text-[26px] font-black text-slate-900 tracking-tight leading-none mt-1">
+                ${priceDisplay}
+              </div>
+            </div>
+            <span class="text-xs font-bold text-slate-500">đ / kg</span>
+          </div>
+
+          <div class="mt-3.5 p-2.5 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-600">
+            <i class="fa-solid fa-circle-info text-slate-400 mr-1"></i> ${c.note}
+          </div>
+        </div>
+
+        <div>
+          <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-500 text-[11px]">So với hôm qua:</span>
+            <span class="font-semibold text-[11px] flex items-center gap-1 ${diffInfo.class}">
+              <i class="fa-solid ${diffInfo.icon} text-[9px]"></i>
+              ${diffInfo.text}
+            </span>
+          </div>
+        </div>
+      </div>
+    `;
   }).join('');
 }
 
@@ -736,13 +696,24 @@ function renderSources(selectedDay) {
     const prices = src.prices || {};
 
     const priceChips = [
-      { label: '1. Sầu riêng Ri6', val: (prices.ri6_b && prices.ri6_a) ? `${formatNumber(prices.ri6_b)} – ${formatNumber(prices.ri6_a)} đ` : (prices.ri6_a ? `${formatNumber(prices.ri6_a)} đ` : null), bg: 'bg-emerald-50 text-emerald-800 font-bold border-emerald-200' },
-      { label: '2. Sầu riêng Thái', val: (prices.monthong_b && prices.monthong_a) ? `${formatNumber(prices.monthong_b)} – ${formatNumber(prices.monthong_a)} đ` : (prices.monthong_a ? `${formatNumber(prices.monthong_a)} đ` : null), bg: 'bg-amber-50 text-amber-900 font-bold border-amber-200' },
-      { label: '3. Musang King', val: prices.musang_king ? `${formatNumber(prices.musang_king)} đ` : null, bg: 'bg-purple-50 text-purple-900 font-bold border-purple-200' },
-      { label: '4. Black Thorn', val: prices.black_thorn ? `${formatNumber(prices.black_thorn)} đ` : null, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
-      { label: '5. Chuồng Bò', val: prices.chuong_bo ? `${formatNumber(prices.chuong_bo)} đ` : null, bg: 'bg-cyan-50 text-cyan-900 font-medium border-cyan-200' },
-      { label: '6. Sáu Hữu', val: prices.sau_huu ? `${formatNumber(prices.sau_huu)} đ` : null, bg: 'bg-orange-50 text-orange-900 font-bold border-orange-200' },
-    ].filter(p => p.val !== null);
+      { label: '1. Sầu riêng Ri6', min: prices.ri6_min || prices.ri6_b, max: prices.ri6_max || prices.ri6_a, bg: 'bg-emerald-50 text-emerald-800 font-bold border-emerald-200' },
+      { label: '2. Sầu riêng Thái', min: prices.monthong_min || prices.monthong_b, max: prices.monthong_max || prices.monthong_a, bg: 'bg-amber-50 text-amber-900 font-bold border-amber-200' },
+      { label: '3. Musang King', min: prices.musang_king_min || prices.musang_king, max: prices.musang_king_max || prices.musang_king, bg: 'bg-purple-50 text-purple-900 font-bold border-purple-200' },
+      { label: '4. Black Thorn', min: prices.black_thorn_min || prices.black_thorn, max: prices.black_thorn_max || prices.black_thorn, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
+      { label: '5. Chuồng Bò', min: prices.chuong_bo_min || prices.chuong_bo, max: prices.chuong_bo_max || prices.chuong_bo, bg: 'bg-cyan-50 text-cyan-900 font-medium border-cyan-200' },
+      { label: '6. Sáu Hữu', min: prices.sau_huu_min || prices.sau_huu, max: prices.sau_huu_max || prices.sau_huu, bg: 'bg-orange-50 text-orange-900 font-bold border-orange-200' },
+    ].map(p => {
+      const minV = p.min;
+      const maxV = p.max;
+      if (!minV && !maxV) return null;
+      let text = '';
+      if (minV && maxV && minV !== maxV) {
+        text = `${formatNumber(minV)} – ${formatNumber(maxV)} đ`;
+      } else {
+        text = `${formatNumber(maxV || minV)} đ`;
+      }
+      return { label: p.label, val: text, bg: p.bg };
+    }).filter(Boolean);
 
     const cardBorder = isPriority 
       ? 'border-2 border-amber-400/90 shadow-md ring-2 ring-amber-100/80 bg-gradient-to-b from-amber-50/20 to-white' 
