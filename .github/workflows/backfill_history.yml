@@ -49,13 +49,34 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          if [ -n "$(git status --porcelain public/data/)" ]; then
-            echo "Phát hiện dữ liệu lịch sử mới trong public/data/. Tiến hành commit..."
-            git add public/data/
-            git commit -m "chore(data): cào lùi dữ liệu lịch sử thật từ YouTube [skip ci]"
-            git pull --rebase origin main || true
-            git push
-          else
-            echo "Không có thay đổi dữ liệu nào. Bỏ qua commit."
+          # Chỉ add các file JSON trong public/data/ (loại trừ hoàn toàn các file tạm/bak)
+          git add public/data/*.json
+
+          if git diff --staged --quiet; then
+            echo "Không có thay đổi dữ liệu mới. Bỏ qua commit."
+            exit 0
           fi
+
+          echo "Phát hiện dữ liệu lịch sử mới trong public/data/. Tiến hành commit..."
+          git commit -m "chore(data): cào lùi dữ liệu lịch sử thật từ YouTube [skip ci]"
+
+          # Cơ chế đẩy an toàn kèm tự động đồng bộ lại nếu remote có commit mới
+          MAX_RETRIES=4
+          COUNT=0
+          until git push origin main; do
+            COUNT=$((COUNT + 1))
+            if [ $COUNT -ge $MAX_RETRIES ]; then
+              echo "[LỖI] Không thể push sau $MAX_RETRIES lần thử."
+              exit 1
+            fi
+            echo "Phát hiện nhánh remote có commit mới, đang đồng bộ và thử lại ($COUNT/$MAX_RETRIES)..."
+            git fetch origin main
+            git rebase -X theirs origin/main || {
+              git rebase --abort
+              git reset --soft origin/main
+              git add public/data/*.json
+              git commit -m "chore(data): cào lùi dữ liệu lịch sử thật từ YouTube [skip ci]"
+            }
+          done
+          echo "Đã push dữ liệu lịch sử mới thành công!"
 

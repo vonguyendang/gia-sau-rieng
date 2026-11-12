@@ -250,9 +250,11 @@ def load_json(file_path: Path, default):
 
 def save_json(file_path: Path, data):
     file_path.parent.mkdir(parents=True, exist_ok=True)
-    # 1. Tạo bản sao lưu an toàn nếu file đã tồn tại
+    # 1. Tạo bản sao lưu an toàn trong .cache/backups/ (không làm rác public/ hay Git)
     if file_path.exists():
-        backup_file = file_path.with_suffix(".json.bak")
+        backup_dir = ROOT_DIR / ".cache" / "backups"
+        backup_dir.mkdir(parents=True, exist_ok=True)
+        backup_file = backup_dir / f"{file_path.name}.bak"
         try:
             shutil.copy2(file_path, backup_file)
         except Exception:
