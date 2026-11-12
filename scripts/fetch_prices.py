@@ -676,7 +676,7 @@ def call_gemini_api(prompt_text: str) -> dict:
         print("[WARN] Chưa cấu hình GEMINI_API_KEY. Bỏ qua bước gọi AI.")
         return None
 
-    candidate_models = [GEMINI_MODEL, "gemini-3.5-flash", "gemini-flash-latest"]
+    candidate_models = ["gemini-3.5-flash", "gemini-3.1-flash-lite"]
     # Loại bỏ trùng lặp giữ nguyên thứ tự
     seen = set()
     candidate_models = [m for m in candidate_models if not (m in seen or seen.add(m))]
@@ -701,7 +701,10 @@ def call_gemini_api(prompt_text: str) -> dict:
                 raw_text = response.text.strip()
                 raw_text = re.sub(r"^```(?:json)?\s*", "", raw_text)
                 raw_text = re.sub(r"\s*```$", "", raw_text)
-                return json.loads(raw_text)
+                parsed = json.loads(raw_text)
+                if isinstance(parsed, list):
+                    parsed = parsed[0] if len(parsed) > 0 and isinstance(parsed[0], dict) else {}
+                return parsed
             except Exception as e:
                 print(f"[WARN] SDK model {model} lỗi ({type(e).__name__}): {e}. Đang thử tiếp...")
     except ImportError:
@@ -739,7 +742,10 @@ def call_gemini_api(prompt_text: str) -> dict:
             part_text = candidates[0]["content"]["parts"][0]["text"]
             part_text = re.sub(r"^```(?:json)?\s*", "", part_text.strip())
             part_text = re.sub(r"\s*```$", "", part_text)
-            return json.loads(part_text)
+            parsed = json.loads(part_text)
+            if isinstance(parsed, list):
+                parsed = parsed[0] if len(parsed) > 0 and isinstance(parsed[0], dict) else {}
+            return parsed
         except Exception as e:
             print(f"[ERR] Không thể trích xuất qua Gemini REST API model {model}: {e}")
 
@@ -914,6 +920,13 @@ NỘI DUNG PHỤ ĐỀ:
             if not extracted:
                 print("       -> [LỖI] Không nhận được phản hồi hợp lệ từ Gemini. Bỏ qua video này.")
                 safe_sleep(4.0, 7.0, msg="chờ sau lỗi AI")
+                continue
+
+            if isinstance(extracted, list):
+                extracted = extracted[0] if len(extracted) > 0 and isinstance(extracted[0], dict) else {}
+
+            if not isinstance(extracted, dict):
+                print("       -> [LỖI] Dữ liệu từ Gemini không phải dictionary. Bỏ qua.")
                 continue
 
             is_price_video = extracted.get("is_price_video", False)
