@@ -93,3 +93,74 @@ Nếu bạn sở hữu tên miền riêng (ví dụ: `giasaurieng.vn` hoặc `gi
 2. Nhấn **Set up a custom domain** và nhập tên miền của bạn.
 3. Làm theo hướng dẫn trỏ bản ghi CNAME hoặc DNS. Cloudflare sẽ tự động kích hoạt chứng chỉ bảo mật **SSL / HTTPS miễn phí**.
 
+---
+
+## ⏱️ Phần 3: Cấu Hình Chạy Tự Động Chuẩn Từng Giây Qua Cron-job.org (Triệt Tiêu 100% Delay)
+
+### Tại sao nên dùng Cron-job.org kết hợp GitHub Actions?
+
+* Tính năng `schedule` mặc định của GitHub Actions thường xuyên bị trễ hàng đợi từ 30 phút đến vài tiếng (do hàng triệu workflow toàn cầu cùng tranh giành máy chủ ảo).
+* Ngược lại, lệnh gọi API **`workflow_dispatch`** luôn được GitHub ưu tiên cấp máy chủ và chạy **ngay lập tức trong vòng 5 – 10 giây**.
+* **[cron-job.org](https://cron-job.org/)** là dịch vụ hẹn giờ miễn phí, ổn định và chính xác đến từng giây. Dịch vụ này sẽ đóng vai trò người "bấm nút hộ bạn" đúng vào các khung giờ vàng trong ngày.
+
+---
+
+### Bước 1: Tạo GitHub Personal Access Token (PAT)
+
+1. Mở trang quản lý token trên GitHub: [https://github.com/settings/tokens](https://github.com/settings/tokens).
+2. Nhấn nút **Generate new token** $\rightarrow$ Chọn **Generate new token (classic)**.
+3. Điền các thông tin:
+   * **Note:** `Cronjob Price Tracker`
+   * **Expiration:** Chọn `No expiration` (hoặc thời hạn tùy bạn muốn).
+   * **Select scopes (Phân quyền):** Tích chọn 2 ô sau:
+     * ✅ **`repo`** *(Full control of private repositories - Toàn quyền thao tác kho lưu trữ)*
+     * ✅ **`workflow`** *(Update GitHub Action workflows - Quyền kích hoạt chạy tiến trình)*
+4. Cuộn xuống cuối trang và nhấn nút xanh **Generate token**.
+5. **Sao chép và lưu lại mã token vừa tạo** (có dạng `ghp_xxxxxxxxxxxxxxxxxxxx`).  
+   *(Lưu ý: Mã này chỉ hiển thị một lần duy nhất, hãy lưu vào nơi an toàn).*
+
+---
+
+### Bước 2: Tạo Lịch Hẹn Trên Cron-job.org
+
+1. Truy cập [https://cron-job.org/](https://cron-job.org/) và đăng ký/đăng nhập tài khoản miễn phí.
+2. Tại bảng điều khiển (Dashboard), nhấn nút **Create Cronjob** và điền theo bảng sau:
+
+| Trường Thông Tin | Giá Trị Cần Điền | Ghi Chú |
+| :--- | :--- | :--- |
+| **Title** | `Cập nhật giá sầu riêng tự động` | Tên gợi nhớ |
+| **URL** | `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/update_prices.yml/dispatches` | Endpoint API kích hoạt workflow |
+| **Execution schedule** | Chọn **User-defined** (hoặc Custom) | Chọn chạy vào **11:35**, **13:35**, **18:35** hàng ngày |
+| **Timezone** | `Asia/Bangkok` hoặc `Asia/Ho_Chi_Minh` | Múi giờ Việt Nam (UTC+7) |
+| **Request Method** | Chọn **POST** | Bắt buộc chọn POST |
+
+3. Kéo xuống mục **Advanced Settings** (Cài đặt nâng cao):
+   * **Headers:** Thêm 3 dòng sau:
+     * Header 1: Key = `Accept`, Value = `application/vnd.github.v3+json`
+     * Header 2: Key = `Authorization`, Value = `Bearer ghp_MÃ_TOKEN_CỦA_BẠN` *(thay `ghp_...` bằng token đã copy ở Bước 1)*
+     * Header 3: Key = `User-Agent`, Value = `Durian-Tracker`
+   * **Request Body:** Điền chính xác chuỗi JSON sau:
+     ```json
+     {"ref": "main"}
+     ```
+4. Nhấn **Create** để lưu cronjob.
+
+---
+
+### Bước 3: Kiểm Tra Thử Nghiệm Ngay Lập Tức
+
+1. Trong danh sách Cronjob trên `cron-job.org`, tìm dòng vừa tạo và nhấn vào biểu tượng **Chạy thử (Run now / Test)**.
+2. Kiểm tra cột kết quả:
+   * Nếu hiện **Status: 204 No Content** (hoặc `204 OK`) màu xanh $\rightarrow$ **Cấu hình thành công 100%!**
+3. Mở tab **Actions** trên GitHub: Bạn sẽ thấy ngay lập tức một tiến trình **"Cập nhật giá sầu riêng tự động"** đang quay vòng vàng chạy tức thì mà không hề bị delay!
+
+---
+
+### Bước 4 (Tùy Chọn): Tạo Thêm Cronjob Cho Tiến Trình Cào Lùi Lịch Sử (Backfill)
+
+Bạn có thể tạo thêm một cronjob thứ hai cho tác vụ tích lũy lịch sử:
+* **URL:** `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/backfill_history.yml/dispatches`
+* **Lịch chạy:** 1 lần/ngày lúc `02:15` sáng.
+* **Headers & Body:** Tương tự như trên.
+
+

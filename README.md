@@ -31,6 +31,7 @@
 
 * 📖 **[Hướng dẫn cài đặt chi tiết trên máy tính (Local Installation Guide)](docs/INSTALLATION.md)**
 * ☁️ **[Hướng dẫn triển khai CI/CD GitHub Actions & Cloudflare Pages](docs/DEPLOYMENT.md)**
+* ⏱️ **[Hướng dẫn cấu hình Cron-job.org chạy tự động chuẩn xác từng giây (0% Delay)](docs/DEPLOYMENT.md#-phần-3-cấu-hình-chạy-tự-động-chuẩn-từng-giây-qua-cron-joborg-triệt-tiêu-100-delay)**
 * 🛡️ **[Cấu hình & Cơ chế cào dữ liệu an toàn (Safe Scraping Architecture)](docs/SAFE_SCRAPING.md)**
 
 ---
