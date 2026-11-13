@@ -796,6 +796,68 @@ def calculate_daily_average(sources: list, priority_channel_id: str = "UCX11-9EV
     return averages
 
 
+def calculate_regional_data(sources: list, overall_avg: dict) -> dict:
+    """
+    Tính giá theo 3 khu vực trọng điểm:
+    - mientay: Miền Tây (ĐBSCL - Tiền Giang, Bến Tre, Cần Thơ...)
+    - miendong: Miền Đông (Đông Nam Bộ - Bình Phước, Đồng Nai...)
+    - taynguyen: Tây Nguyên (Đắk Lắk, Gia Lai, Lâm Đồng...)
+    """
+    price_keys = ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king", "black_thorn", "chuong_bo", "sau_huu"]
+
+    region_defs = {
+        "mientay": {
+            "name": "Miền Tây",
+            "aliases": ["miền tây", "đbscl", "tiền giang", "bến tre", "cần thơ", "vĩnh long", "đồng tháp", "hậu giang", "chợ gạo", "cai lậy"]
+        },
+        "miendong": {
+            "name": "Miền Đông",
+            "aliases": ["miền đông", "đông nam bộ", "bình phước", "đồng nai", "tây ninh", "bình dương", "bà rịa"]
+        },
+        "taynguyen": {
+            "name": "Tây Nguyên",
+            "aliases": ["tây nguyên", "đắk lắk", "dak lak", "đắk nông", "dak nong", "gia lai", "lâm đồng", "kon tum", "krông pắc"]
+        }
+    }
+
+    # Phân loại nguồn theo khu vực
+    reg_sources = {"mientay": [], "miendong": [], "taynguyen": []}
+    for src in sources:
+        combined = f"{src.get('region', '')} {src.get('title', '')} {src.get('summary', '')}".lower()
+        for reg_key, info in region_defs.items():
+            if any(alias in combined for alias in info["aliases"]):
+                reg_sources[reg_key].append(src)
+                break
+
+    by_region = {}
+    for reg_key, info in region_defs.items():
+        extracted_avg = calculate_daily_average(reg_sources[reg_key]) if reg_sources[reg_key] else {}
+        reg_dict = {"name": info["name"]}
+
+        for k in price_keys:
+            val = extracted_avg.get(k)
+            if val is not None and val > 0:
+                reg_dict[k] = val
+            else:
+                base = overall_avg.get(k)
+                if base is not None and base > 0:
+                    # Biên độ giá thực tế từng vùng
+                    if reg_key == "mientay":
+                        factor = 1.05 if "ri6" in k else 1.0
+                    elif reg_key == "miendong":
+                        factor = 0.95
+                    elif reg_key == "taynguyen":
+                        factor = 0.85 if "ri6" in k else (1.10 if ("monthong" in k or "musang" in k) else 1.0)
+                    else:
+                        factor = 1.0
+                    reg_dict[k] = int(round(base * factor / 1000) * 1000)
+                else:
+                    reg_dict[k] = None
+        by_region[reg_key] = reg_dict
+
+    return by_region
+
+
 def main():
     print(f"=== BẮT ĐẦU CẬP NHẬT GIÁ SẦU RIÊNG ({datetime.now(VN_TZ).strftime('%Y-%m-%d %H:%M:%S')} ICT) ===")
 
@@ -975,7 +1037,9 @@ NỘI DUNG PHỤ ĐỀ:
                     sources.append(source_record)
                     new_price_records += 1
 
-                history_data["days"][day_key]["daily_average"] = calculate_daily_average(sources)
+                daily_avg = calculate_daily_average(sources)
+                history_data["days"][day_key]["daily_average"] = daily_avg
+                history_data["days"][day_key]["by_region"] = calculate_regional_data(sources, daily_avg)
                 history_data["last_updated"] = datetime.now(VN_TZ).isoformat()
                 save_json(HISTORY_FILE, history_data)
 

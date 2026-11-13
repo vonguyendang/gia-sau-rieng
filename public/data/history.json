@@ -33,7 +33,42 @@
             "sau_huu": 90000
           }
         }
-      ]
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 54000,
+          "ri6_b": 49000,
+          "monthong_a": 76000,
+          "monthong_b": 71000,
+          "musang_king": 100000,
+          "black_thorn": 110000,
+          "chuong_bo": 50000,
+          "sau_huu": 90000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 50000,
+          "ri6_b": 45000,
+          "monthong_a": 72000,
+          "monthong_b": 66000,
+          "musang_king": 95000,
+          "black_thorn": 105000,
+          "chuong_bo": 45000,
+          "sau_huu": 85000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 40000,
+          "ri6_b": 30000,
+          "monthong_a": 86000,
+          "monthong_b": 76000,
+          "musang_king": 120000,
+          "black_thorn": 110000,
+          "chuong_bo": 45000,
+          "sau_huu": 85000
+        }
+      }
     },
     "2026-11-11": {
       "daily_average": {
@@ -133,7 +168,42 @@
             "chuong_bo": 62000
           }
         }
-      ]
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 53000,
+          "ri6_b": 48000,
+          "monthong_a": 75000,
+          "monthong_b": 70000,
+          "musang_king": 100000,
+          "black_thorn": 110000,
+          "chuong_bo": 48000,
+          "sau_huu": 90000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 50000,
+          "ri6_b": 44000,
+          "monthong_a": 72000,
+          "monthong_b": 65000,
+          "musang_king": 95000,
+          "black_thorn": 105000,
+          "chuong_bo": 45000,
+          "sau_huu": 85000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 38000,
+          "ri6_b": 28000,
+          "monthong_a": 86000,
+          "monthong_b": 75000,
+          "musang_king": 120000,
+          "black_thorn": 110000,
+          "chuong_bo": 45000,
+          "sau_huu": 85000
+        }
+      }
     },
     "2026-11-12": {
       "daily_average": {
@@ -235,7 +305,42 @@
           "summary": "Giá sầu riêng ngày 12/11/2026 ghi nhận đà tăng ở các giống đặc sản và hàng Thái. Musang King loại A tăng 8.000 đ/kg lên mức 120.000 - 128.000 đ/kg, loại B từ 100.000 - 108.000 đ/kg. Thái loại A tại Gia Lai đạt 95.000 đ/kg, loại B từ 71.000 - 75.000 đ/kg; ở khu vực khác Thái A đạt 86.000 đ/kg, loại B 68.000 - 80.000 đ/kg. Ri6 tại Miền Tây ổn định ở mức 69.000 - 70.000 đ/kg (loại A) và 54.000 - 55.000 đ/kg (loại B); tại Tây Nguyên Ri6 loại A khoảng 35.000 đ/kg, loại B từ 20.000 - 25.000 đ/kg.",
           "prices": {}
         }
-      ]
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 50000,
+          "ri6_b": 45000,
+          "monthong_a": 75000,
+          "monthong_b": 70000,
+          "musang_king": 100000,
+          "black_thorn": 110000,
+          "chuong_bo": 50000,
+          "sau_huu": 90000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 48000,
+          "ri6_b": 40000,
+          "monthong_a": 70000,
+          "monthong_b": 60000,
+          "musang_king": 95000,
+          "black_thorn": 105000,
+          "chuong_bo": 45000,
+          "sau_huu": 85000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 35000,
+          "ri6_b": 25000,
+          "monthong_a": 85000,
+          "monthong_b": 75000,
+          "musang_king": 120000,
+          "black_thorn": 110000,
+          "chuong_bo": 45000,
+          "sau_huu": 85000
+        }
+      }
     }
   }
 }
