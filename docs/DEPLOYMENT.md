@@ -1,6 +1,7 @@
 # ☁️ Hướng Dẫn Triển Khai Toàn Diện (Deployment Guide)
 
 Dự án **Gia Sau Rieng Tracker** được thiết kế theo kiến trúc **Serverless 100% Miễn Phí**:
+
 1. **GitHub Actions:** Tự động chạy script cào giá và commit dữ liệu định kỳ mỗi 3 tiếng.
 2. **Cloudflare Pages:** Hosting website tĩnh toàn cầu tốc độ cao, tự động deploy mỗi khi có commit mới.
 
@@ -64,14 +65,14 @@ Cloudflare Pages là giải pháp hosting web tĩnh hàng đầu thế giới v�
 
 Tại màn hình cấu hình, điền chính xác các thông số:
 
-| Cấu Hình | Giá Trị Điền | Giải Thích |
-| :--- | :--- | :--- |
-| **Project name** | `gia-sau-rieng` *(tùy chọn)* | Tên project trên Cloudflare |
-| **Production branch** | `main` | Nhánh chứa mã nguồn chính thức |
-| **Framework preset** | **None** | Website tĩnh thuần HTML/JS |
-| **Build command** | *(Để trống hoàn toàn)* | Không cần lệnh build (không dùng Node.js) |
-| **Build output directory** | `public` | Thư mục chứa `index.html`, `app.js` và `data/` |
-| **Root directory** | `/` *(hoặc để trống)* | Thư mục gốc |
+| Cấu Hình                       | Giá Trị Điền                   | Giải Thích                                             |
+| :------------------------------- | :--------------------------------- | :------------------------------------------------------- |
+| **Project name**           | `gia-sau-rieng` *(tùy chọn)* | Tên project trên Cloudflare                            |
+| **Production branch**      | `main`                           | Nhánh chứa mã nguồn chính thức                     |
+| **Framework preset**       | **None**                     | Website tĩnh thuần HTML/JS                             |
+| **Build command**          | *(Để trống hoàn toàn)*      | Không cần lệnh build (không dùng Node.js)           |
+| **Build output directory** | `public`                         | Thư mục chứa `index.html`, `app.js` và `data/` |
+| **Root directory**         | `/` *(hoặc để trống)*      | Thư mục gốc                                           |
 
 Nhấn **Save and Deploy**.
 
@@ -89,6 +90,7 @@ Nhấn **Save and Deploy**.
 ### Bước 4 (Tùy Chọn): Gắn Tên Miền Riêng (Custom Domain)
 
 Nếu bạn sở hữu tên miền riêng (ví dụ: `giasaurieng.vn` hoặc `gia-sr.com`):
+
 1. Trong dashboard của Cloudflare Pages, chọn project vừa tạo $\rightarrow$ tab **Custom domains**.
 2. Nhấn **Set up a custom domain** và nhập tên miền của bạn.
 3. Làm theo hướng dẫn trỏ bản ghi CNAME hoặc DNS. Cloudflare sẽ tự động kích hoạt chứng chỉ bảo mật **SSL / HTTPS miễn phí**.
@@ -110,6 +112,7 @@ Nếu bạn sở hữu tên miền riêng (ví dụ: `giasaurieng.vn` hoặc `gi
 Bạn có thể tạo theo 1 trong 2 cách sau:
 
 #### Cách 1: Fine-grained Token (Bảo mật tối đa — Khuyên dùng)
+
 1. Mở trang tạo token: [https://github.com/settings/tokens?type=beta](https://github.com/settings/tokens?type=beta) (hoặc vào **Settings** $\rightarrow$ **Developer Settings** $\rightarrow$ **Personal access tokens** $\rightarrow$ **Fine-grained tokens** $\rightarrow$ **Generate new token**).
 2. Điền các trường cơ bản:
    * **Token name:** `Cronjob Price Tracker`
@@ -125,6 +128,7 @@ Bạn có thể tạo theo 1 trong 2 cách sau:
 5. Cuộn xuống cuối trang nhấn nút xanh **Generate token** và **Sao chép mã token** (có dạng `github_pat_...`).
 
 #### Cách 2: Classic Token (Truyền thống, thiết lập nhanh)
+
 1. Mở: [https://github.com/settings/tokens](https://github.com/settings/tokens) $\rightarrow$ **Generate new token (classic)**.
 2. Note: `Cronjob Price Tracker` $\rightarrow$ Expiration: `No expiration`.
 3. Tích chọn 2 ô: ✅ **`repo`** và ✅ **`workflow`**.
@@ -153,15 +157,32 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
      * `... 1:35 PM` (Đầu giờ chiều)
      * `... 6:35 PM` (Chiều tối — tổng kết thị trường cả ngày)
 * **Timezone:** Kiểm tra đảm bảo đang là `Asia/Ho_Chi_Minh` hoặc `Asia/Bangkok` (GMT+7).
-* **Request Method:** Chọn **`POST`**.
-* **Headers (thêm 3 dòng trong mục tab ADVANCED phía trên):**
-  * `Accept`: `application/vnd.github.v3+json`
-  * `Authorization`: `Bearer MÃ_TOKEN_CỦA_BẠN` *(lưu ý: có chữ Bearer và 1 khoảng trắng trước mã token `ghp_...` hoặc `github_pat_...`)*
-  * `User-Agent`: `Durian-Tracker`
-* **Request Body:**
-  ```json
-  {"ref": "main"}
-  ```
+* **Cách 1: Sử dụng tính năng `<> IMPORT FROM CURL` (Nhanh và tránh lỗi định dạng nhất - Khuyên dùng):**
+  1. Ở góc dưới bên trái màn hình, nhấn nút **`<> IMPORT FROM CURL`**.
+  2. Dán đoạn lệnh sau vào (thay `MÃ_TOKEN_CỦA_BẠN` bằng token `github_pat_...` hoặc `ghp_...`):
+     ```bash
+     curl -X POST https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/update_prices.yml/dispatches \
+       -H "Accept: application/vnd.github+json" \
+       -H "Authorization: Bearer MÃ_TOKEN_CỦA_BẠN" \
+       -H "X-GitHub-Api-Version: 2022-11-28" \
+       -H "User-Agent: Durian-Tracker" \
+       -H "Content-Type: application/json" \
+       -d '{"ref":"main"}'
+     ```
+  3. Bấm **Import**, hệ thống sẽ tự động điền URL, Method POST, Headers và Body chuẩn 100%.
+
+* **Cách 2: Cấu hình thủ công trong tab ADVANCED:**
+  * **Headers:**
+    * `Accept`: `application/vnd.github+json`
+    * `Authorization`: `Bearer MÃ_TOKEN_CỦA_BẠN` *(lưu ý: có chữ Bearer và 1 khoảng trắng trước mã token)*
+    * `User-Agent`: `Durian-Tracker`
+    * `Content-Type`: `application/json`
+    * `X-GitHub-Api-Version`: `2022-11-28`
+  * **Request Body:**
+    ```json
+    {"ref":"main"}
+    ```
+    *(Lưu ý: Dấu ngoặc kép phải là chuẩn thẳng `"` ASCII, không dùng dấu ngoặc cong `“` `”` để tránh lỗi 400 Bad Request).*
 * Bấm nút màu cam **CREATE** (góc dưới bên phải) để lưu.
 
 ---
@@ -175,15 +196,26 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
   * Cách 1: Tích chọn nút tròn **`Every day at`** $\rightarrow$ chọn giờ là **`2` : `15`**.
   * Cách 2: Tích chọn **`Custom`** $\rightarrow$ điền Crontab expression: `15 2 * * *`.
 * **Timezone:** Chọn `Asia/Ho_Chi_Minh` (GMT+7).
-* **Request Method:** Chọn **`POST`**.
-* **Headers (thêm 3 dòng tương tự Cronjob 1 trong tab ADVANCED):**
-  * `Accept`: `application/vnd.github.v3+json`
-  * `Authorization`: `Bearer MÃ_TOKEN_CỦA_BẠN`
-  * `User-Agent`: `Durian-Tracker`
-* **Request Body:**
-  ```json
-  {"ref": "main", "inputs": {"limit_per_channel": "6"}}
-  ```
+* **Cách 1: Sử dụng tính năng `<> IMPORT FROM CURL` (Khuyên dùng):**
+  1. Nhấn nút **`<> IMPORT FROM CURL`** (góc dưới bên trái).
+  2. Dán đoạn lệnh sau:
+     ```bash
+     curl -X POST https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/backfill_history.yml/dispatches \
+       -H "Accept: application/vnd.github+json" \
+       -H "Authorization: Bearer MÃ_TOKEN_CỦA_BẠN" \
+       -H "X-GitHub-Api-Version: 2022-11-28" \
+       -H "User-Agent: Durian-Tracker" \
+       -H "Content-Type: application/json" \
+       -d '{"ref":"main","inputs":{"limit_per_channel":"6"}}'
+     ```
+  3. Bấm **Import**.
+
+* **Cách 2: Cấu hình thủ công trong tab ADVANCED:**
+  * **Headers:** Thêm 5 headers tương tự như Cronjob 1.
+  * **Request Body:**
+    ```json
+    {"ref":"main","inputs":{"limit_per_channel":"6"}}
+    ```
 * Bấm nút màu cam **CREATE** để lưu.
 
 ---
@@ -194,5 +226,3 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
 2. Kiểm tra cột kết quả thực thi:
    * Nếu hiện **Status: 204 No Content** (hoặc `204 OK`) màu xanh lá $\rightarrow$ **Cấu hình chuẩn xác 100%!**
 3. Mở tab **Actions** trên GitHub: Bạn sẽ thấy ngay lập tức tiến trình tương ứng đang quay vòng vàng chạy tức thì mà không hề bị delay dù chỉ 1 giây!
-
-
