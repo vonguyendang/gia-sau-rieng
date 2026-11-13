@@ -107,60 +107,84 @@ Nếu bạn sở hữu tên miền riêng (ví dụ: `giasaurieng.vn` hoặc `gi
 
 ### Bước 1: Tạo GitHub Personal Access Token (PAT)
 
-1. Mở trang quản lý token trên GitHub: [https://github.com/settings/tokens](https://github.com/settings/tokens).
-2. Nhấn nút **Generate new token** $\rightarrow$ Chọn **Generate new token (classic)**.
-3. Điền các thông tin:
-   * **Note:** `Cronjob Price Tracker`
-   * **Expiration:** Chọn `No expiration` (hoặc thời hạn tùy bạn muốn).
-   * **Select scopes (Phân quyền):** Tích chọn 2 ô sau:
-     * ✅ **`repo`** *(Full control of private repositories - Toàn quyền thao tác kho lưu trữ)*
-     * ✅ **`workflow`** *(Update GitHub Action workflows - Quyền kích hoạt chạy tiến trình)*
-4. Cuộn xuống cuối trang và nhấn nút xanh **Generate token**.
-5. **Sao chép và lưu lại mã token vừa tạo** (có dạng `ghp_xxxxxxxxxxxxxxxxxxxx`).  
-   *(Lưu ý: Mã này chỉ hiển thị một lần duy nhất, hãy lưu vào nơi an toàn).*
+Bạn có thể tạo theo 1 trong 2 cách sau:
+
+#### Cách 1: Fine-grained Token (Bảo mật tối đa — Khuyên dùng)
+1. Mở trang tạo token: [https://github.com/settings/tokens?type=beta](https://github.com/settings/tokens?type=beta) (hoặc vào **Settings** $\rightarrow$ **Developer Settings** $\rightarrow$ **Personal access tokens** $\rightarrow$ **Fine-grained tokens** $\rightarrow$ **Generate new token**).
+2. Điền các trường cơ bản:
+   * **Token name:** `Cronjob Price Tracker`
+   * **Expiration:** Chọn `90 days` hoặc thời hạn bạn muốn.
+3. **Tại mục Repository access (Quyền truy cập kho chứa):**
+   * Đánh dấu chọn: **`Only select repositories`**.
+   * Bấm nút **Select repositories** ngay bên dưới $\rightarrow$ Tìm và tích chọn đúng repo **`gia-sau-rieng`** (hoặc `vonguyendang/gia-sau-rieng`).
+4. **Tại mục Permissions (Phân quyền):**
+   * Nhấn mở rộng mục **Repository permissions**.
+   * Tìm và cấp quyền **Read and write** cho 2 mục sau:
+     * ✅ **Actions:** Chọn **`Read and write`** *(Bắt buộc — để kích hoạt chạy workflow qua API)*.
+     * ✅ **Workflows:** Chọn **`Read and write`** *(Bắt buộc — để tương tác với các file workflow)*.
+5. Cuộn xuống cuối trang nhấn nút xanh **Generate token** và **Sao chép mã token** (có dạng `github_pat_...`).
+
+#### Cách 2: Classic Token (Truyền thống, thiết lập nhanh)
+1. Mở: [https://github.com/settings/tokens](https://github.com/settings/tokens) $\rightarrow$ **Generate new token (classic)**.
+2. Note: `Cronjob Price Tracker` $\rightarrow$ Expiration: `No expiration`.
+3. Tích chọn 2 ô: ✅ **`repo`** và ✅ **`workflow`**.
+4. Nhấn **Generate token** $\rightarrow$ **Sao chép mã token** (dạng `ghp_...`).
 
 ---
 
-### Bước 2: Tạo Lịch Hẹn Trên Cron-job.org
+### Bước 2: Tạo 2 Lịch Hẹn Riêng Biệt Trên Cron-job.org
 
-1. Truy cập [https://cron-job.org/](https://cron-job.org/) và đăng ký/đăng nhập tài khoản miễn phí.
-2. Tại bảng điều khiển (Dashboard), nhấn nút **Create Cronjob** và điền theo bảng sau:
+Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Create Cronjob** 2 lần trên [cron-job.org](https://cron-job.org/):
 
-| Trường Thông Tin | Giá Trị Cần Điền | Ghi Chú |
-| :--- | :--- | :--- |
-| **Title** | `Cập nhật giá sầu riêng tự động` | Tên gợi nhớ |
-| **URL** | `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/update_prices.yml/dispatches` | Endpoint API kích hoạt workflow |
-| **Execution schedule** | Chọn **User-defined** (hoặc Custom) | Chọn chạy vào **11:35**, **13:35**, **18:35** hàng ngày |
-| **Timezone** | `Asia/Bangkok` hoặc `Asia/Ho_Chi_Minh` | Múi giờ Việt Nam (UTC+7) |
-| **Request Method** | Chọn **POST** | Bắt buộc chọn POST |
+#### 1️⃣ Cronjob 1: Cập nhật giá sầu riêng mới nhất hàng ngày
 
-3. Kéo xuống mục **Advanced Settings** (Cài đặt nâng cao):
-   * **Headers:** Thêm 3 dòng sau:
-     * Header 1: Key = `Accept`, Value = `application/vnd.github.v3+json`
-     * Header 2: Key = `Authorization`, Value = `Bearer ghp_MÃ_TOKEN_CỦA_BẠN` *(thay `ghp_...` bằng token đã copy ở Bước 1)*
-     * Header 3: Key = `User-Agent`, Value = `Durian-Tracker`
-   * **Request Body:** Điền chính xác chuỗi JSON sau:
-     ```json
-     {"ref": "main"}
-     ```
-4. Nhấn **Create** để lưu cronjob.
+* **Title:** `Cập nhật giá sầu riêng hàng ngày`
+* **URL:**  
+  `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/update_prices.yml/dispatches`
+* **Execution schedule (Giờ chạy):** Chọn **User-defined** (chạy **3 lần/ngày** vào đúng các khung giờ vựa chốt giá):
+  * **`11:35`** (Trưa — thương lái chốt giá sáng)
+  * **`13:35`** (Đầu giờ chiều)
+  * **`18:35`** (Chiều tối — tổng kết thị trường cả ngày)
+* **Timezone:** Chọn `Asia/Ho_Chi_Minh` hoặc `Asia/Bangkok` (GMT+7).
+* **Request Method:** Chọn **`POST`**.
+* **Headers (thêm 3 dòng trong mục Advanced Settings):**
+  * `Accept`: `application/vnd.github.v3+json`
+  * `Authorization`: `Bearer MÃ_TOKEN_CỦA_BẠN` *(lưu ý: có chữ Bearer và 1 khoảng trắng trước mã token `ghp_...` hoặc `github_pat_...`)*
+  * `User-Agent`: `Durian-Tracker`
+* **Request Body:**
+  ```json
+  {"ref": "main"}
+  ```
+* Bấm **Create** để lưu.
+
+---
+
+#### 2️⃣ Cronjob 2: Cào lùi dữ liệu lịch sử tự động (Backfill)
+
+* **Title:** `Cào lùi dữ liệu lịch sử (Backfill)`
+* **URL:**  
+  `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/backfill_history.yml/dispatches`
+* **Execution schedule (Giờ chạy):** Tác vụ này quét tích lũy quá khứ, chỉ cần chạy vào khung giờ mạng thông thoáng:
+  * **`02:15`** sáng (hoặc thêm **`15:15`** chiều).
+* **Timezone:** Chọn `Asia/Ho_Chi_Minh` (GMT+7).
+* **Request Method:** Chọn **`POST`**.
+* **Headers (thêm 3 dòng tương tự Cronjob 1):**
+  * `Accept`: `application/vnd.github.v3+json`
+  * `Authorization`: `Bearer MÃ_TOKEN_CỦA_BẠN`
+  * `User-Agent`: `Durian-Tracker`
+* **Request Body:**
+  ```json
+  {"ref": "main", "inputs": {"limit_per_channel": "6"}}
+  ```
+* Bấm **Create** để lưu.
 
 ---
 
 ### Bước 3: Kiểm Tra Thử Nghiệm Ngay Lập Tức
 
-1. Trong danh sách Cronjob trên `cron-job.org`, tìm dòng vừa tạo và nhấn vào biểu tượng **Chạy thử (Run now / Test)**.
-2. Kiểm tra cột kết quả:
-   * Nếu hiện **Status: 204 No Content** (hoặc `204 OK`) màu xanh $\rightarrow$ **Cấu hình thành công 100%!**
-3. Mở tab **Actions** trên GitHub: Bạn sẽ thấy ngay lập tức một tiến trình **"Cập nhật giá sầu riêng tự động"** đang quay vòng vàng chạy tức thì mà không hề bị delay!
-
----
-
-### Bước 4 (Tùy Chọn): Tạo Thêm Cronjob Cho Tiến Trình Cào Lùi Lịch Sử (Backfill)
-
-Bạn có thể tạo thêm một cronjob thứ hai cho tác vụ tích lũy lịch sử:
-* **URL:** `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/backfill_history.yml/dispatches`
-* **Lịch chạy:** 1 lần/ngày lúc `02:15` sáng.
-* **Headers & Body:** Tương tự như trên.
+1. Trong danh sách Cronjob trên `cron-job.org`, bạn tìm từng cronjob vừa tạo và nhấn vào biểu tượng **Chạy thử (Run now / biểu tượng Play $\blacktriangleright$)**.
+2. Kiểm tra cột kết quả thực thi:
+   * Nếu hiện **Status: 204 No Content** (hoặc `204 OK`) màu xanh lá $\rightarrow$ **Cấu hình chuẩn xác 100%!**
+3. Mở tab **Actions** trên GitHub: Bạn sẽ thấy ngay lập tức tiến trình tương ứng đang quay vòng vàng chạy tức thì mà không hề bị delay dù chỉ 1 giây!
 
 
