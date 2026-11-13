@@ -172,67 +172,63 @@ function renderPriceCards() {
       orderNum: '1',
       title: 'Sầu riêng Ri6',
       tag: 'Xô tại vườn',
-      keyMin: 'ri6_min',
-      keyMax: 'ri6_max',
+      keyMin: 'ri6_b',
+      keyMax: 'ri6_a',
       accentColor: 'border-l-4 border-emerald-600',
       badgeColor: 'bg-emerald-100 text-emerald-900',
       icon: 'fa-solid fa-award',
-      note: 'Khoảng giá xô cả vườn: <strong>Min 45.000</strong> – <strong>Max 50.000 đ/kg</strong> (tỉ lệ 7:3 - 8:2)'
+      ratio: 'tỉ lệ 7:3 - 8:2'
     },
     {
       orderNum: '2',
       title: 'Sầu riêng Thái (Monthong / Dona)',
       tag: 'Xô tại vườn',
-      keyMin: 'monthong_min',
-      keyMax: 'monthong_max',
+      keyMin: 'monthong_b',
+      keyMax: 'monthong_a',
       accentColor: 'border-l-4 border-amber-500',
       badgeColor: 'bg-amber-100 text-amber-900',
       icon: 'fa-solid fa-crown',
-      note: 'Khoảng giá xô cả vườn: <strong>Min 70.000</strong> – <strong>Max 75.000 đ/kg</strong> (tỉ lệ 7:3 - 8:2)'
+      ratio: 'tỉ lệ 7:3 - 8:2'
     },
     {
       orderNum: '3',
       title: 'Sầu riêng Musang King',
       tag: 'Xô tại vườn',
-      keyMin: 'musang_king_min',
-      keyMax: 'musang_king_max',
+      keyMin: 'musang_king',
+      keyMax: 'musang_king',
       accentColor: 'border-l-4 border-purple-500',
       badgeColor: 'bg-purple-100 text-purple-900',
-      icon: 'fa-solid fa-gem',
-      note: 'Giá thu mua xô tại vườn: <strong>100.000 đ/kg</strong>'
+      icon: 'fa-solid fa-gem'
     },
     {
       orderNum: '4',
       title: 'Sầu riêng Black Thorn (Gai Đen)',
       tag: 'Xô tại vườn',
-      keyMin: 'black_thorn_min',
-      keyMax: 'black_thorn_max',
+      keyMin: 'black_thorn',
+      keyMax: 'black_thorn',
       accentColor: 'border-l-4 border-rose-500',
       badgeColor: 'bg-rose-100 text-rose-900',
-      icon: 'fa-solid fa-fire',
-      note: 'Khoảng giá xô cả vườn: <strong>Min 105.000</strong> – <strong>Max 110.000 đ/kg</strong>'
+      icon: 'fa-solid fa-fire'
     },
     {
       orderNum: '5',
       title: 'Sầu riêng Chuồng Bò',
       tag: 'Xô tại vườn',
-      keyMin: 'chuong_bo_min',
-      keyMax: 'chuong_bo_max',
+      keyMin: 'chuong_bo',
+      keyMax: 'chuong_bo',
       accentColor: 'border-l-4 border-cyan-600',
       badgeColor: 'bg-cyan-100 text-cyan-900',
-      icon: 'fa-solid fa-leaf',
-      note: 'Khoảng giá xô cả vườn: <strong>Min 45.000</strong> – <strong>Max 50.000 đ/kg</strong>'
+      icon: 'fa-solid fa-leaf'
     },
     {
       orderNum: '6',
       title: 'Sầu riêng Sáu Hữu',
       tag: 'Xô tại vườn',
-      keyMin: 'sau_huu_min',
-      keyMax: 'sau_huu_max',
+      keyMin: 'sau_huu',
+      keyMax: 'sau_huu',
       accentColor: 'border-l-4 border-orange-500',
       badgeColor: 'bg-orange-100 text-orange-900',
-      icon: 'fa-solid fa-star',
-      note: 'Khoảng giá xô cả vườn: <strong>Min 85.000</strong> – <strong>Max 90.000 đ/kg</strong>'
+      icon: 'fa-solid fa-star'
     }
   ];
 
@@ -240,20 +236,29 @@ function renderPriceCards() {
   if (!mainContainer) return;
 
   mainContainer.innerHTML = cardsConfig.map(c => {
-    const minVal = todayAvg[c.keyMin] || todayAvg['ri6_b'];
-    const maxVal = todayAvg[c.keyMax] || todayAvg['ri6_a'];
-    const prevMax = prevAvg[c.keyMax] || prevAvg['ri6_a'];
+    const minVal = todayAvg[c.keyMin] || todayAvg[c.keyMax];
+    const maxVal = todayAvg[c.keyMax] || todayAvg[c.keyMin];
+    const prevMax = prevAvg[c.keyMax] || prevAvg[c.keyMin];
     const diffInfo = getDiff(maxVal, prevMax);
 
     let priceDisplay = 'Đang cập nhật';
+    let noteHtml = '';
+
     if (minVal && maxVal) {
       if (minVal === maxVal) {
         priceDisplay = formatNumber(maxVal);
+        noteHtml = `Giá thu mua xô tại vườn: <strong>${formatNumber(maxVal)} đ/kg</strong>`;
       } else {
         priceDisplay = `${formatNumber(minVal)} – ${formatNumber(maxVal)}`;
+        const ratioStr = c.ratio ? ` (${c.ratio})` : '';
+        noteHtml = `Khoảng giá xô cả vườn: <strong>Min ${formatNumber(minVal)}</strong> – <strong>Max ${formatNumber(maxVal)} đ/kg</strong>${ratioStr}`;
       }
-    } else if (maxVal) {
-      priceDisplay = formatNumber(maxVal);
+    } else if (maxVal || minVal) {
+      const val = maxVal || minVal;
+      priceDisplay = formatNumber(val);
+      noteHtml = `Giá thu mua xô tại vườn: <strong>${formatNumber(val)} đ/kg</strong>`;
+    } else {
+      noteHtml = 'Đang theo dõi dữ liệu mới từ các vựa/thương lái.';
     }
 
     return `
@@ -279,7 +284,7 @@ function renderPriceCards() {
           </div>
 
           <div class="mt-3 p-2.5 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-600">
-            <i class="fa-solid fa-circle-info text-slate-400 mr-1"></i> ${c.note}
+            <i class="fa-solid fa-circle-info text-slate-400 mr-1"></i> ${noteHtml}
           </div>
         </div>
 
