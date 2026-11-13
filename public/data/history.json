@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T22:44:32.142020+07:00",
+  "last_updated": "2026-11-13T15:34:23.729676+07:00",
   "days": {
     "2026-11-10": {
       "daily_average": {
@@ -335,6 +335,115 @@
           "ri6_b": 25000,
           "monthong_a": 85000,
           "monthong_b": 75000,
+          "musang_king": 120000,
+          "black_thorn": 110000,
+          "chuong_bo": 45000,
+          "sau_huu": 50000
+        }
+      }
+    },
+    "2026-11-13": {
+      "daily_average": {
+        "ri6_a": 48000,
+        "ri6_b": 45000,
+        "monthong_a": 77000,
+        "monthong_b": 74000,
+        "musang_king": 100000,
+        "black_thorn": 110000,
+        "chuong_bo": 48000,
+        "sau_huu": 55000
+      },
+      "sources": [
+        {
+          "video_id": "6mnQ6Z9twNY",
+          "title": "giá sầu riêng trưa nay ngày 13/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=6mnQ6Z9twNY",
+          "published_at": "2026-11-13T10:29:26+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng mua xô tại vườn khu vực Miền Tây ngày 13/11/2026: Ri6 xô dao động 45.000 - 48.000 đ/kg; Sầu riêng Thái xô tăng nhẹ lên 74.000 - 77.000 đ/kg; Musang King xô đạt 100.000 đ/kg; Black Thorn xô ở mức 110.000 đ/kg; Chuồng Bò xô từ 45.000 - 50.000 đ/kg; Sáu Hữu xô từ 55.000 - 60.000 đ/kg.",
+          "prices": {
+            "ri6_a": 48000,
+            "ri6_b": 45000,
+            "monthong_a": 77000,
+            "monthong_b": 74000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 48000,
+            "sau_huu": 55000
+          }
+        },
+        {
+          "video_id": "IihRsws0m3s",
+          "title": "Giá Sầu Riêng Hôm Nay 13/11/2026: Lo Ngại Ri6 Miền Tây Giảm Sâu",
+          "channel_name": "Giá Nông Sản 47",
+          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+          "video_url": "https://www.youtube.com/watch?v=IihRsws0m3s",
+          "published_at": "2026-11-13T04:20:33+07:00",
+          "region": "Tây Nguyên & Miền Tây",
+          "summary": "Giá sầu riêng ngày 13/11/2026 có sự phân hóa mạnh. Tại miền Tây, Ri6 loại B (giá xô) dao động 45.000-50.000đ/kg, Thái loại B (giá xô) 72.000-77.000đ/kg. Tại Đắk Lắk, Ri6 loại B (giá xô) 25.000đ/kg, Thái loại B (giá xô) 73.000-74.000đ/kg. Tại Gia Lai, Ri6 loại B (giá xô) 20.000đ/kg, Thái loại B (giá xô) 71.000-75.000đ/kg. Giá xô tại vườn được xác định dựa trên mức giá loại B theo quy tắc thu mua thực tế.",
+          "prices": {
+            "ri6_a": 25000,
+            "ri6_b": 20000,
+            "monthong_a": 75000,
+            "monthong_b": 71000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 45000,
+            "sau_huu": 50000
+          }
+        },
+        {
+          "video_id": "-fgAHGzYhzk",
+          "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ SÁU NGÀY /13/11/2026|Giải Trí Miền Tây",
+          "channel_name": "Giải Trí Miền Tây",
+          "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+          "video_url": "https://www.youtube.com/watch?v=-fgAHGzYhzk",
+          "published_at": "2026-11-13T08:12:22+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng tại vườn khu vực Miền Tây: Ri6 xô 45-48k, Thái xô 70-75k, Chuồng Bò xô 45-50k, Musang King 100k, Black Thorn xô 105-110k. Tỉ lệ xô phổ biến 7:3 hoặc 8:2.",
+          "prices": {
+            "ri6_a": 48000,
+            "ri6_b": 45000,
+            "monthong_a": 75000,
+            "monthong_b": 70000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 48000,
+            "sau_huu": 55000
+          }
+        }
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 48000,
+          "ri6_b": 45000,
+          "monthong_a": 77000,
+          "monthong_b": 74000,
+          "musang_king": 100000,
+          "black_thorn": 110000,
+          "chuong_bo": 48000,
+          "sau_huu": 55000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 45000,
+          "ri6_b": 40000,
+          "monthong_a": 72000,
+          "monthong_b": 68000,
+          "musang_king": 95000,
+          "black_thorn": 105000,
+          "chuong_bo": 45000,
+          "sau_huu": 50000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 25000,
+          "ri6_b": 20000,
+          "monthong_a": 75000,
+          "monthong_b": 71000,
           "musang_king": 120000,
           "black_thorn": 110000,
           "chuong_bo": 45000,
