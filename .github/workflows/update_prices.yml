@@ -2,15 +2,15 @@ name: "Cập nhật giá sầu riêng tự động"
 
 on:
   schedule:
-    # Chạy 3 lần/ngày vào các khung giờ vàng ra video của thương lái (Giờ VN = UTC + 7).
-    # Đặt phút lẻ (35) để tránh nghẽn hàng đợi chung của GitHub Actions vào phút tròn:
-    - cron: '35 4 * * *'   # 04:35 UTC -> 11:35 VN (Giờ vựa chốt giá trưa)
-    - cron: '35 6 * * *'   # 06:35 UTC -> 13:35 VN (Quét vét các kênh đăng đầu chiều)
-    - cron: '35 11 * * *'  # 11:35 UTC -> 18:35 VN (Tổng kết thị trường chiều tối)
+    # Chạy tự động các khung giờ ra video của thương lái (Giờ VN = UTC + 7):
+    # - 04:35 UTC -> 11:35 VN (Vựa chốt giá trưa)
+    # - 06:35 UTC -> 13:35 VN (Quét vét đầu giờ chiều)
+    # - 11:35 UTC -> 18:35 VN (Tổng kết thị trường chiều tối)
+    - cron: '35 4,6,11 * * *'
   workflow_dispatch: # Cho phép kích hoạt thủ công từ giao diện GitHub Actions
 
 concurrency:
-  group: data-pipeline
+  group: update-prices-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -41,7 +41,7 @@ jobs:
       - name: Chạy script lấy và cập nhật giá
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: "gemini-3.8-flash"
+          GEMINI_MODEL: "gemini-3.5-flash"
         run: |
           python scripts/fetch_prices.py
 

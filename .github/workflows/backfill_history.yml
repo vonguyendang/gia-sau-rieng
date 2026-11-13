@@ -2,10 +2,10 @@ name: "Cào lùi dữ liệu lịch sử tự động (Backfill)"
 
 on:
   schedule:
-    # Tự động cào lùi tích lũy chậm 2 lần mỗi ngày (Giờ VN = UTC + 7).
-    # Đặt phút lẻ (15) để tránh nghẽn hàng đợi chung của GitHub Actions vào phút tròn:
-    - cron: '15 8 * * *'   # 08:15 UTC -> 15:15 VN (Đầu giờ chiều)
-    - cron: '15 19 * * *'  # 19:15 UTC -> 02:15 sáng VN (Nửa đêm)
+    # Tự động cào lùi tích lũy chậm 2 lần mỗi ngày (Giờ VN = UTC + 7):
+    # - 08:15 UTC -> 15:15 VN (Đầu giờ chiều)
+    # - 19:15 UTC -> 02:15 sáng VN (Nửa đêm)
+    - cron: '15 8,19 * * *'
   workflow_dispatch:
     inputs:
       limit_per_channel:
@@ -14,7 +14,7 @@ on:
         default: '6'
 
 concurrency:
-  group: data-pipeline
+  group: backfill-history-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -45,7 +45,7 @@ jobs:
       - name: Chạy script cào lùi lịch sử tự động
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: "gemini-3.8-flash"
+          GEMINI_MODEL: "gemini-3.5-flash"
         run: |
           LIMIT="${{ github.event.inputs.limit_per_channel }}"
           if [ -z "$LIMIT" ]; then
