@@ -455,7 +455,7 @@
     "processed_at": "2026-11-12T22:29:14.815868+07:00",
     "has_transcript": true,
     "is_price_video": false,
-    "extracted_prices": null
+    "extracted_prices": {}
   },
   "nBtaEn-GpPc": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -471,7 +471,7 @@
     "processed_at": "2026-11-12T22:35:19.701039+07:00",
     "has_transcript": true,
     "is_price_video": false,
-    "extracted_prices": null
+    "extracted_prices": {}
   },
   "bWy9mNmxO1I": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
@@ -503,16 +503,13 @@
     "has_transcript": true,
     "is_price_video": true,
     "extracted_prices": {
-      "thai_min": 94000,
-      "thai_max": 98000,
-      "ri6_min": 60000,
-      "ri6_max": 65000,
-      "musang_king_min": 120000,
-      "musang_king_max": 128000,
-      "chuong_bo_min": 47000,
-      "chuong_bo_max": 62000,
-      "black_thorn_min": 110000,
-      "black_thorn_max": 130000
+      "ri6_a": 65000,
+      "ri6_b": 60000,
+      "monthong_a": 98000,
+      "monthong_b": 94000,
+      "musang_king": 128000,
+      "black_thorn": 130000,
+      "chuong_bo": 62000
     }
   },
   "c8b5rj6p2i8": {
@@ -536,7 +533,7 @@
     "processed_at": "2026-11-12T22:35:31.905576+07:00",
     "has_transcript": true,
     "is_price_video": false,
-    "extracted_prices": null
+    "extracted_prices": {}
   },
   "3pERsSiZywM": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -544,7 +541,7 @@
     "processed_at": "2026-11-12T22:37:12.934588+07:00",
     "has_transcript": true,
     "is_price_video": false,
-    "extracted_prices": null
+    "extracted_prices": {}
   },
   "9vIB2DAavF0": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -553,22 +550,7 @@
     "has_transcript": true,
     "is_price_video": true,
     "extracted_prices": {
-      "ri6": {
-        "min": null,
-        "max": null
-      },
-      "monthong": {
-        "min": null,
-        "max": null
-      },
-      "musang_king": {
-        "min": 125000,
-        "max": 125000
-      },
-      "black_thorn": {
-        "min": null,
-        "max": null
-      }
+      "musang_king": 125000
     }
   },
   "TXbYH_Yxy0Q": {
@@ -577,7 +559,7 @@
     "processed_at": "2026-11-12T22:38:03.288186+07:00",
     "has_transcript": true,
     "is_price_video": false,
-    "extracted_prices": null
+    "extracted_prices": {}
   },
   "3zWVqnXc2E0": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -631,26 +613,8 @@
     "has_transcript": true,
     "is_price_video": true,
     "extracted_prices": {
-      "black_thorn": {
-        "min": 110000,
-        "max": 135000
-      },
-      "chuong_bo": {
-        "min": 60000,
-        "max": 69000
-      },
-      "ri6": {
-        "min": null,
-        "max": null
-      },
-      "monthong": {
-        "min": null,
-        "max": null
-      },
-      "musang_king": {
-        "min": null,
-        "max": null
-      }
+      "black_thorn": 135000,
+      "chuong_bo": 69000
     }
   },
   "Gy82AjhKnb8": {

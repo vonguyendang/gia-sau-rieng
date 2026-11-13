@@ -223,10 +223,10 @@ QUY TẮC QUAN TRỌNG HÀNG ĐẦU VỀ GIÁ CẮT XÔ TẠI VƯỜN (FARM-GATE
 - BẮT BUỘC ƯU TIÊN GIÁ CẮT XÔ TẠI VƯỜN: Khi trong video đề cập đến nhiều mức giá (giá tại vựa/kho, giá xuất khẩu, giá sạp chợ, giá cắt xô tại vườn), bạn BẮT BUỘC lấy GIÁ CẮT XÔ LÁI MUA TẠI VƯỜN của nông dân.
 - ĐẶC BIỆT LƯU Ý VỀ KHOẢNG GIÁ MIN - MAX:
   "Ri6 xô A/B tỉ lệ 7:3 8:2 giá 48-53" có nghĩa là giá mua xô cả vườn dao động từ MIN 48.000 đến MAX 53.000 đ/kg (tùy khu vực, chất lượng trái, thương lượng), TUYỆT ĐỐI KHÔNG HIỂU LÀ giá loại A 53, loại B 48!
-  + Giá thấp hơn trong khoảng (vd 48.000) là min: gán vào `ri6_b` (hoặc `ri6_min`).
-  + Giá cao hơn trong khoảng (vd 53.000) là max: gán vào `ri6_a` (hoặc `ri6_max`).
-  Tương tự với Thái (Monthong / Dona): "Thái xô 70 - 75" có nghĩa là min 70.000 đ/kg, max 75.000 đ/kg.
-- Nếu video chỉ báo một mức giá xô duy nhất (ví dụ "Musang King 100k", "Ri6 xô 50k"), gán cả min và max bằng mức giá đó (hoặc gán vào loại A/max, còn min để null nếu chỉ có 1 mức).
+  + Giá thấp hơn trong khoảng (vd 48.000) là min/sàn: gán vào `ri6_b`.
+  + Giá cao hơn trong khoảng (vd 53.000) là max/trần: gán vào `ri6_a`.
+  Tương tự với Thái (Monthong / Dona): "Thái xô 70 - 75" gán min vào `monthong_b` (70000), max vào `monthong_a` (75000).
+- Nếu video chỉ báo một mức giá xô duy nhất (ví dụ "Musang King 100k"), gán trực tiếp vào trường của giống đó (ví dụ: `musang_king: 100000`). Đối với Ri6/Thái nếu chỉ có 1 mức giá xô, gán cả `ri6_a` và `ri6_b` bằng mức đó.
 
 LƯU Ý CỰC KỲ QUAN TRỌNG VỀ NHẬN DIỆN GIỌNG NÓI VÀ TỪ ĐỊA PHƯƠNG (Miền Tây & Tây Nguyên):
 1. Phụ đề tự động thường bị sai chính tả do nhận diện âm giọng địa phương:

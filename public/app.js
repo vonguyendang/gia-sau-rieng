@@ -738,12 +738,12 @@ function renderSources(selectedDay) {
     const prices = src.prices || {};
 
     const priceChips = [
-      { label: '1. Sầu riêng Ri6', min: prices.ri6_min || prices.ri6_b, max: prices.ri6_max || prices.ri6_a, bg: 'bg-emerald-50 text-emerald-800 font-bold border-emerald-200' },
-      { label: '2. Sầu riêng Thái', min: prices.monthong_min || prices.monthong_b, max: prices.monthong_max || prices.monthong_a, bg: 'bg-amber-50 text-amber-900 font-bold border-amber-200' },
-      { label: '3. Musang King', min: prices.musang_king_min || prices.musang_king, max: prices.musang_king_max || prices.musang_king, bg: 'bg-purple-50 text-purple-900 font-bold border-purple-200' },
-      { label: '4. Black Thorn', min: prices.black_thorn_min || prices.black_thorn, max: prices.black_thorn_max || prices.black_thorn, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
-      { label: '5. Chuồng Bò', min: prices.chuong_bo_min || prices.chuong_bo, max: prices.chuong_bo_max || prices.chuong_bo, bg: 'bg-cyan-50 text-cyan-900 font-medium border-cyan-200' },
-      { label: '6. Sáu Hữu', min: prices.sau_huu_min || prices.sau_huu, max: prices.sau_huu_max || prices.sau_huu, bg: 'bg-orange-50 text-orange-900 font-bold border-orange-200' },
+      { label: '1. Sầu riêng Ri6', min: prices.ri6_b, max: prices.ri6_a, bg: 'bg-emerald-50 text-emerald-800 font-bold border-emerald-200' },
+      { label: '2. Sầu riêng Thái', min: prices.monthong_b, max: prices.monthong_a, bg: 'bg-amber-50 text-amber-900 font-bold border-amber-200' },
+      { label: '3. Musang King', min: prices.musang_king, max: prices.musang_king, bg: 'bg-purple-50 text-purple-900 font-bold border-purple-200' },
+      { label: '4. Black Thorn', min: prices.black_thorn, max: prices.black_thorn, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
+      { label: '5. Chuồng Bò', min: prices.chuong_bo, max: prices.chuong_bo, bg: 'bg-cyan-50 text-cyan-900 font-medium border-cyan-200' },
+      { label: '6. Sáu Hữu', min: prices.sau_huu, max: prices.sau_huu, bg: 'bg-orange-50 text-orange-900 font-bold border-orange-200' },
     ].map(p => {
       const minV = p.min;
       const maxV = p.max;
