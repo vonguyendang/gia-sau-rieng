@@ -219,38 +219,82 @@ SYSTEM_INSTRUCTION = """
 Bạn là một chuyên gia phân tích dữ liệu thị trường nông sản Việt Nam, chuyên về sầu riêng.
 Nhiệm vụ của bạn là đọc phụ đề và thông tin video YouTube để trích xuất bảng GIÁ SẦU RIÊNG CẮT XÔ TẠI VƯỜN (Farm-gate Bulk Price) chuẩn xác nhất cho bà con nông dân.
 
-QUY TẮC QUAN TRỌNG HÀNG ĐẦU VỀ GIÁ CẮT XÔ TẠI VƯỜN (FARM-GATE BULK PRICE):
-- BẮT BUỘC ƯU TIÊN GIÁ CẮT XÔ TẠI VƯỜN: Khi trong video đề cập đến nhiều mức giá (giá tại vựa/kho, giá xuất khẩu, giá sạp chợ, giá cắt xô tại vườn), bạn BẮT BUỘC lấy GIÁ CẮT XÔ LÁI MUA TẠI VƯỜN của nông dân.
-- ĐẶC BIỆT LƯU Ý VỀ KHOẢNG GIÁ MIN - MAX:
-  "Ri6 xô A/B tỉ lệ 7:3 8:2 giá 48-53" có nghĩa là giá mua xô cả vườn dao động từ MIN 48.000 đến MAX 53.000 đ/kg (tùy khu vực, chất lượng trái, thương lượng), TUYỆT ĐỐI KHÔNG HIỂU LÀ giá loại A 53, loại B 48!
-  + Giá thấp hơn trong khoảng (vd 48.000) là min/sàn: gán vào `ri6_b`.
-  + Giá cao hơn trong khoảng (vd 53.000) là max/trần: gán vào `ri6_a`.
-  Tương tự với Thái (Monthong / Dona): "Thái xô 70 - 75" gán min vào `monthong_b` (70000), max vào `monthong_a` (75000).
-- Nếu video chỉ báo một mức giá xô duy nhất (ví dụ "Musang King 100k"), gán trực tiếp vào trường của giống đó (ví dụ: `musang_king: 100000`). Đối với Ri6/Thái nếu chỉ có 1 mức giá xô, gán cả `ri6_a` và `ri6_b` bằng mức đó.
+QUY TẮC BẮT BUỘC VỀ GIÁ CẮT XÔ TẠI VƯỜN (FARM-GATE BULK PRICE):
+1. QUY TẮC CỐT LÕI: NẾU VIDEO NÓI GIÁ CỤ THỂ LOẠI A, LOẠI B THÌ MỨC GIÁ LOẠI B CHÍNH LÀ MỨC GIÁ XÔ THEO TỈ LỆ A/B 7/3, 8/2:
+   - Trong thực tế thu mua sầu riêng tại vườn, giá loại A (ví dụ 65k - 70k cho Ri6, hoặc 90k - 98k cho Thái) là giá tuyển chọn từng quả đẹp xuất khẩu tại kho/vựa. Khi thương lái vào vườn cắt xô cả vườn (tỉ lệ A/B 7/3 hoặc 8/2), MỨC GIÁ LOẠI B CHÍNH LÀ MỨC GIÁ XÔ CẢ VƯỜN!
+   - Do đó, khi video báo riêng giá loại A và giá loại B:
+     + BẮT BUỘC LẤY MỨC GIÁ LOẠI B LÀM GIÁ XÔ TẠI VƯỜN!
+     + Nếu loại B có khoảng giá (ví dụ: Ri6 loại B từ 45.000 đến 50.000 đ/kg):
+       * Gán cận dưới loại B (45000) vào `ri6_b`.
+       * Gán cận trên loại B (50000) vào `ri6_a`.
+     + Nếu loại B chỉ có 1 mức giá (ví dụ: Ri6 loại B giá 50.000 đ/kg, loại A 70.000 đ/kg):
+       * Giá xô cả vườn chính là 50.000 đ/kg: gán `ri6_b: 50000` và `ri6_a: 50000`.
+     + TUYỆT ĐỐI KHÔNG lấy giá loại A (hàng tuyển) gán vào khoảng giá xô vườn, vì nông dân bán xô nguyên vườn không thể tính bằng giá loại A!
+   - Tương tự với sầu riêng Thái (Monthong / Dona): nếu video nói "Thái loại A 92k-98k, loại B 72k-78k" thì giá xô vườn tỉ lệ 7/3 8/2 là 72k-78k (gán `monthong_b: 72000`, `monthong_a: 78000`).
 
-LƯU Ý CỰC KỲ QUAN TRỌNG VỀ NHẬN DIỆN GIỌNG NÓI VÀ TỪ ĐỊA PHƯƠNG (Miền Tây & Tây Nguyên):
-1. Phụ đề tự động thường bị sai chính tả do nhận diện âm giọng địa phương:
-   - "di sáu", "zi sáu", "ri 6", "sáu ri" -> Sầu riêng Ri6.
-   - "mỏn thon", "mỏn", "mon thong", "thái", "dona" -> Sầu riêng Monthong (Thái/Dona).
-   - "mút sang kinh", "mút san king", "musang", "mu sang" -> Sầu riêng Musang King.
-   - "gai đen", "blách thon", "black thorn", "bờ lách thon" -> Sầu riêng Black Thorn.
-   - "chuồng bò", "chuồn bò" -> Sầu riêng Chuồng Bò.
-   - "sáu hữu", "6 hữu", "sáu hửu" -> Sầu riêng Sáu Hữu.
-2. Quy đổi đơn vị tiền tệ:
-   - Nếu video nói "tám lăm", "85 nghìn", "85k", "tám mươi lăm ngàn" -> giá là 85000 (VNĐ/kg).
-   - "trăm hai", "120 nghìn", "120k" -> 120000 (VNĐ/kg).
-   - "hai trăm rưỡi", "250k" -> 250000 (VNĐ/kg).
-3. Quy tắc phân loại A / B và Tỉ lệ cắt xô (CỰC KỲ QUAN TRỌNG):
-   - Loại A thường là hàng tuyển, hàng đẹp, từ 2.5 - 3 hộc trở lên (hoặc từ 1.8kg - 5kg).
-   - Loại B thường là hàng dạt, méo, hộc không đều, hoặc giá thấp hơn rõ rệt.
-   - TỈ LỆ TRÁI (8:2, 7:3, 9:1...): Trong thu mua sầu riêng, "tỉ lệ 8:2" hay "7:3" là TỈ LỆ PHÂN LOẠI TRÁI KHI MUA XÔ (ví dụ 8:2 = 80% loại A và 20% loại B; 7:3 = 70% loại A và 30% loại B). Tuyệt đối KHÔNG nhầm các con số tỉ lệ này thành giá tiền!
-   - Nếu video nhắc đến tỉ lệ xô (8:2 hay 7:3), hãy đưa chi tiết này vào phần 'summary' để người nông dân hiểu rõ điều kiện giá mua của thương lái.
-   - Nếu trong video chỉ nhắc chung 1 mức giá cho giống đó mà không chia A/B, hãy gán giá đó cho loại A, còn loại B để null.
-4. Bắt buộc:
+2. KHI VIDEO BÁO TRỰC TIẾP KHOẢNG GIÁ XÔ:
+   - "Ri6 xô A/B tỉ lệ 7:3 8:2 giá 48-53" có nghĩa là giá mua xô cả vườn dao động từ MIN 48.000 đến MAX 53.000 đ/kg:
+     * Giá thấp hơn trong khoảng (vd 48.000) là min/sàn tỉ lệ 7:3: gán vào `ri6_b`.
+     * Giá cao hơn trong khoảng (vd 53.000) là max/trần tỉ lệ 8:2: gán vào `ri6_a`.
+   - "Thái xô 70 - 75" gán min vào `monthong_b` (70000), max vào `monthong_a` (75000).
+   - Với các giống đặc sản (Musang King, Black Thorn, Chuồng Bò, Sáu Hữu): nếu video có nói giá loại B thì lấy giá loại B làm giá xô tại vườn.
+
+3. LƯU Ý VỀ TỈ LỆ CẮT XÔ:
+   - TỈ LỆ TRÁI (8:2, 7:3...): Là tỉ lệ phân loại trái khi mua xô cả vườn (8:2 = 80% A và 20% B). Tuyệt đối KHÔNG nhầm tỉ lệ thành giá tiền!
+   - Đưa chi tiết tỉ lệ xô vào phần 'summary' để người nông dân hiểu rõ.
+
+4. NHẬN DIỆN GIỌNG NÓI ĐỊA PHƯƠNG & QUY ĐỔI TIỀN:
+   - "di sáu", "zi sáu", "ri 6", "sáu ri" -> Ri6.
+   - "mỏn thon", "mỏn", "mon thong", "thái", "dona" -> Thái (Monthong/Dona).
+   - "mút sang kinh", "musang" -> Musang King.
+   - "gai đen", "black thorn" -> Black Thorn.
+   - "chuồng bò", "chuồn bò" -> Chuồng Bò.
+   - "sáu hữu", "6 hữu" -> Sáu Hữu.
+   - "tám lăm", "85k" -> 85000; "trăm hai", "120k" -> 120000; "hai trăm rưỡi", "250k" -> 250000.
+
+5. BẮT BUỘC:
    - Nếu giống sầu riêng nào không được nhắc đến, giá trị BẮT BUỘC là null (tuyệt đối không để 0).
-   - is_price_video: Đặt là false nếu video chỉ chia sẻ kỹ thuật cắt cành, làm bông, phân bón, bẫy rầy hoặc phóng sự không có giá mua bán cụ thể.
+   - is_price_video: false nếu không phải video báo giá sầu riêng.
    - Trả về JSON đúng định dạng theo schema đã yêu cầu.
 """
+
+
+def normalize_bulk_prices(prices: dict) -> dict:
+    """
+    Chuẩn hóa khoảng giá xô vườn theo quy tắc cốt lõi của người dùng:
+    Nếu video có nói giá cụ thể loại A, loại B thì mức giá loại B chính là mức giá xô theo tỉ lệ A/B 7/3, 8/2.
+    Tự động ngăn chặn trường hợp lấy nhầm giá hàng tuyển loại A (chênh lệch > 10.000 đ/kg) vào khoảng giá xô vườn.
+    """
+    if not isinstance(prices, dict):
+        return {}
+
+    cleaned = dict(prices)
+
+    # 1. Xử lý Ri6
+    ri6_a = cleaned.get("ri6_a")
+    ri6_b = cleaned.get("ri6_b")
+    if ri6_a and ri6_b:
+        # Nếu chênh lệch > 10.000 đ/kg thì ri6_a là giá hàng tuyển loại A (65k-70k), ri6_b là loại B (45k-50k)
+        if ri6_a - ri6_b > 10000:
+            cleaned["ri6_a"] = ri6_b + 5000
+    elif ri6_b and not ri6_a:
+        cleaned["ri6_a"] = ri6_b
+    elif ri6_a and not ri6_b and ri6_a <= 55000:
+        cleaned["ri6_b"] = ri6_a
+
+    # 2. Xử lý Thái (Monthong / Dona)
+    mo_a = cleaned.get("monthong_a")
+    mo_b = cleaned.get("monthong_b")
+    if mo_a and mo_b:
+        # Nếu chênh lệch > 12.000 đ/kg thì mo_a là giá hàng tuyển loại A (90k-98k), mo_b là loại B (70k-75k)
+        if mo_a - mo_b > 12000:
+            cleaned["monthong_a"] = mo_b + 5000
+    elif mo_b and not mo_a:
+        cleaned["monthong_a"] = mo_b
+    elif mo_a and not mo_b and mo_a <= 80000:
+        cleaned["monthong_b"] = mo_a
+
+    return cleaned
 
 
 def load_json(file_path: Path, default):
@@ -993,7 +1037,8 @@ NỘI DUNG PHỤ ĐỀ:
 
             is_price_video = extracted.get("is_price_video", False)
             region = extracted.get("region") or default_region
-            prices = extracted.get("prices", {})
+            raw_prices = extracted.get("prices", {})
+            prices = normalize_bulk_prices(raw_prices)
             summary = extracted.get("summary", "")
 
             # Lưu vào danh sách đã xử lý
