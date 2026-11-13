@@ -143,14 +143,15 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
 #### 1️⃣ Cronjob 1: Cập nhật giá sầu riêng mới nhất hàng ngày
 
 * **Title:** `Cập nhật giá sầu riêng hàng ngày`
-* **URL:**  
-  `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/update_prices.yml/dispatches`
+* **URL:**`https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/update_prices.yml/dispatches`
 * **Execution schedule (Cấu hình 3 khung giờ trong ngày):**
+
   1. Tích chọn vào nút tròn **`Custom`** (nằm ở dòng cuối cùng trong mục Execution schedule).
   2. Tại ô **Crontab expression** ngay bên dưới, bạn điền chính xác biểu thức:
      ```
      35 11,13,18 * * *
      ```
+
      *(Ý nghĩa: Chạy vào phút thứ **35** của các giờ **11**, **13**, và **18** hàng ngày).*
   3. Quan sát cột bên phải mục **Next executions**, bạn sẽ thấy hệ thống tự động hiển thị danh sách các mốc chạy kế tiếp đúng chuẩn giờ Việt Nam:
      * `... 11:35 AM` (Trưa — giờ vựa chốt giá sáng)
@@ -190,9 +191,9 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
 #### 2️⃣ Cronjob 2: Cào lùi dữ liệu lịch sử tự động (Backfill)
 
 * **Title:** `Cào lùi dữ liệu lịch sử (Backfill)`
-* **URL:**  
-  `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/backfill_history.yml/dispatches`
+* **URL:**`https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/backfill_history.yml/dispatches`
 * **Execution schedule (Giờ chạy ban đêm):**
+
   * Cách 1: Tích chọn nút tròn **`Every day at`** $\rightarrow$ chọn giờ là **`2` : `15`**.
   * Cách 2: Tích chọn **`Custom`** $\rightarrow$ điền Crontab expression: `15 2 * * *`.
 * **Timezone:** Chọn `Asia/Ho_Chi_Minh` (GMT+7).

@@ -68,7 +68,7 @@ jobs:
           fi
 
           echo "Phát hiện dữ liệu lịch sử mới trong public/data/. Tiến hành commit..."
-          git commit -m "chore(data): cào lùi dữ liệu lịch sử thật từ YouTube [skip ci]"
+          git commit -m "chore(data): cào lùi dữ liệu lịch sử thật từ YouTube"
 
           # Cơ chế đẩy an toàn kèm tự động đồng bộ lại nếu remote có commit mới
           MAX_RETRIES=4
@@ -85,7 +85,7 @@ jobs:
               git rebase --abort
               git reset --soft origin/main
               git add public/data/*.json
-              git commit -m "chore(data): cào lùi dữ liệu lịch sử thật từ YouTube [skip ci]"
+              git commit -m "chore(data): cào lùi dữ liệu lịch sử thật từ YouTube"
             }
           done
           echo "Đã push dữ liệu lịch sử mới thành công!"

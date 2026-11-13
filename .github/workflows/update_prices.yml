@@ -59,7 +59,7 @@ jobs:
           fi
 
           echo "Phát hiện dữ liệu mới trong public/data/. Tiến hành commit..."
-          git commit -m "chore(data): tự động cập nhật giá sầu riêng [skip ci]"
+          git commit -m "chore(data): tự động cập nhật giá sầu riêng"
 
           # Cơ chế đẩy an toàn kèm tự động đồng bộ lại nếu remote có commit mới
           MAX_RETRIES=4
@@ -76,7 +76,7 @@ jobs:
               git rebase --abort
               git reset --soft origin/main
               git add public/data/*.json
-              git commit -m "chore(data): tự động cập nhật giá sầu riêng [skip ci]"
+              git commit -m "chore(data): tự động cập nhật giá sầu riêng"
             }
           done
           echo "Đã push dữ liệu mới thành công!"
