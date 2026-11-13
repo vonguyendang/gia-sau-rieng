@@ -141,13 +141,20 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
 * **Title:** `Cập nhật giá sầu riêng hàng ngày`
 * **URL:**  
   `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/update_prices.yml/dispatches`
-* **Execution schedule (Giờ chạy):** Chọn **User-defined** (chạy **3 lần/ngày** vào đúng các khung giờ vựa chốt giá):
-  * **`11:35`** (Trưa — thương lái chốt giá sáng)
-  * **`13:35`** (Đầu giờ chiều)
-  * **`18:35`** (Chiều tối — tổng kết thị trường cả ngày)
-* **Timezone:** Chọn `Asia/Ho_Chi_Minh` hoặc `Asia/Bangkok` (GMT+7).
+* **Execution schedule (Cấu hình 3 khung giờ trong ngày):**
+  1. Tích chọn vào nút tròn **`Custom`** (nằm ở dòng cuối cùng trong mục Execution schedule).
+  2. Tại ô **Crontab expression** ngay bên dưới, bạn điền chính xác biểu thức:
+     ```
+     35 11,13,18 * * *
+     ```
+     *(Ý nghĩa: Chạy vào phút thứ **35** của các giờ **11**, **13**, và **18** hàng ngày).*
+  3. Quan sát cột bên phải mục **Next executions**, bạn sẽ thấy hệ thống tự động hiển thị danh sách các mốc chạy kế tiếp đúng chuẩn giờ Việt Nam:
+     * `... 11:35 AM` (Trưa — giờ vựa chốt giá sáng)
+     * `... 1:35 PM` (Đầu giờ chiều)
+     * `... 6:35 PM` (Chiều tối — tổng kết thị trường cả ngày)
+* **Timezone:** Kiểm tra đảm bảo đang là `Asia/Ho_Chi_Minh` hoặc `Asia/Bangkok` (GMT+7).
 * **Request Method:** Chọn **`POST`**.
-* **Headers (thêm 3 dòng trong mục Advanced Settings):**
+* **Headers (thêm 3 dòng trong mục tab ADVANCED phía trên):**
   * `Accept`: `application/vnd.github.v3+json`
   * `Authorization`: `Bearer MÃ_TOKEN_CỦA_BẠN` *(lưu ý: có chữ Bearer và 1 khoảng trắng trước mã token `ghp_...` hoặc `github_pat_...`)*
   * `User-Agent`: `Durian-Tracker`
@@ -155,7 +162,7 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
   ```json
   {"ref": "main"}
   ```
-* Bấm **Create** để lưu.
+* Bấm nút màu cam **CREATE** (góc dưới bên phải) để lưu.
 
 ---
 
@@ -164,11 +171,12 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
 * **Title:** `Cào lùi dữ liệu lịch sử (Backfill)`
 * **URL:**  
   `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/backfill_history.yml/dispatches`
-* **Execution schedule (Giờ chạy):** Tác vụ này quét tích lũy quá khứ, chỉ cần chạy vào khung giờ mạng thông thoáng:
-  * **`02:15`** sáng (hoặc thêm **`15:15`** chiều).
+* **Execution schedule (Giờ chạy ban đêm):**
+  * Cách 1: Tích chọn nút tròn **`Every day at`** $\rightarrow$ chọn giờ là **`2` : `15`**.
+  * Cách 2: Tích chọn **`Custom`** $\rightarrow$ điền Crontab expression: `15 2 * * *`.
 * **Timezone:** Chọn `Asia/Ho_Chi_Minh` (GMT+7).
 * **Request Method:** Chọn **`POST`**.
-* **Headers (thêm 3 dòng tương tự Cronjob 1):**
+* **Headers (thêm 3 dòng tương tự Cronjob 1 trong tab ADVANCED):**
   * `Accept`: `application/vnd.github.v3+json`
   * `Authorization`: `Bearer MÃ_TOKEN_CỦA_BẠN`
   * `User-Agent`: `Durian-Tracker`
@@ -176,7 +184,7 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
   ```json
   {"ref": "main", "inputs": {"limit_per_channel": "6"}}
   ```
-* Bấm **Create** để lưu.
+* Bấm nút màu cam **CREATE** để lưu.
 
 ---
 
