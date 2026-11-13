@@ -104,23 +104,24 @@
         </span>
       </div>
 
-      <!-- BỘ CHỌN KHU VỰC: TOÀN QUỐC | MIỀN TÂY | MIỀN ĐÔNG | TÂY NGUYÊN -->
-      <div class="flex items-center gap-2 mb-4 overflow-x-auto pb-1 no-scrollbar" id="region-selector-container">
-        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0 flex items-center gap-1 mr-1">
-          <i class="fa-solid fa-location-dot text-amber-500"></i> Khu vực:
-        </span>
-        <button type="button" data-region="all" class="region-filter-btn px-3 py-1.5 text-xs font-bold rounded-xl transition-all bg-emerald-800 text-white shadow-sm flex items-center gap-1.5 shrink-0">
-          <i class="fa-solid fa-earth-asia"></i> Toàn Quốc (Trung Bình)
-        </button>
-        <button type="button" data-region="mientay" class="region-filter-btn px-3 py-1.5 text-xs font-semibold rounded-xl transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm flex items-center gap-1.5 shrink-0">
-          <i class="fa-solid fa-water text-blue-600"></i> Miền Tây (ĐBSCL)
-        </button>
-        <button type="button" data-region="miendong" class="region-filter-btn px-3 py-1.5 text-xs font-semibold rounded-xl transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm flex items-center gap-1.5 shrink-0">
-          <i class="fa-solid fa-tree text-emerald-600"></i> Miền Đông (Đông Nam Bộ)
-        </button>
-        <button type="button" data-region="taynguyen" class="region-filter-btn px-3 py-1.5 text-xs font-semibold rounded-xl transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm flex items-center gap-1.5 shrink-0">
-          <i class="fa-solid fa-mountain text-amber-600"></i> Tây Nguyên
-        </button>
+      <!-- BỘ CHỌN KHU VỰC DẠNG DROPDOWN LIST -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div class="flex items-center gap-2">
+          <label for="region-select" class="text-xs font-bold text-slate-600 uppercase tracking-wider shrink-0 flex items-center gap-1.5">
+            <i class="fa-solid fa-location-dot text-amber-500"></i> Khu vực:
+          </label>
+          <div class="relative inline-block">
+            <select id="region-select" class="appearance-none bg-white border border-slate-300 hover:border-emerald-600 focus:border-emerald-700 text-slate-800 text-xs sm:text-sm font-bold rounded-xl pl-3.5 pr-8 py-2 shadow-xs focus:outline-none focus:ring-2 focus:ring-emerald-700/20 transition-all cursor-pointer">
+              <option value="all">🌏 Toàn Quốc (Trung Bình)</option>
+              <option value="mientay">🌊 Miền Tây (ĐBSCL)</option>
+              <option value="miendong">🌲 Miền Đông (Đông Nam Bộ)</option>
+              <option value="taynguyen">⛰️ Tây Nguyên</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Lưới 6 Thẻ Giống Sầu Riêng Chuẩn Giá Xô Tại Vườn -->
@@ -252,7 +253,7 @@
   </footer>
 
   <!-- Application Logic (Thêm cache buster để mobile luôn nạp bản mới nhất) -->
-  <script src="app.js?v=20261113c"></script>
+  <script src="app.js?v=20261113d"></script>
 </body>
 </html>
 

@@ -57,7 +57,19 @@ function setupEventListeners() {
     });
   }
 
-  // Bộ chọn khu vực: Toàn Quốc | Miền Tây | Miền Đông | Tây Nguyên
+  // Bộ chọn khu vực dạng dropdown list (select)
+  const regionSelect = document.getElementById('region-select');
+  if (regionSelect) {
+    regionSelect.value = currentRegion;
+    regionSelect.addEventListener('change', (e) => {
+      currentRegion = e.target.value || 'all';
+      renderPriceCards();
+      renderComparisonTable();
+      initOrUpdateChart();
+    });
+  }
+
+  // Dự phòng nếu có nút bấm chọn khu vực
   const regionBtns = document.querySelectorAll('.region-filter-btn');
   regionBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -69,6 +81,7 @@ function setupEventListeners() {
       btn.classList.remove('bg-white', 'text-slate-700', 'font-semibold', 'border', 'border-slate-200');
 
       currentRegion = btn.getAttribute('data-region') || 'all';
+      if (regionSelect) regionSelect.value = currentRegion;
       renderPriceCards();
       renderComparisonTable();
       initOrUpdateChart();
