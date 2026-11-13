@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giá Sầu Riêng Hôm Nay | Cập Nhật Giá Thị Trường Tự Động</title>
   <meta name="description" content="Hệ thống tổng hợp và phân tích biến động giá sầu riêng Ri6, Monthong, Musang King tự động từ các nhà vườn và kênh nông sản YouTube uy tín bằng AI.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍈</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="durian-logo.svg">
 
   <!-- Google Fonts: Be Vietnam Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,8 +48,8 @@
   <header class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 text-white shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex items-center justify-between gap-3">
       <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-400 text-emerald-950 flex items-center justify-center font-bold text-xl sm:text-2xl shadow-md shrink-0">
-          🍈
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-400 text-emerald-950 flex items-center justify-center p-1 shadow-md shrink-0">
+          <img src="durian-logo.svg" alt="Logo Sầu Riêng" class="w-full h-full object-contain">
         </div>
         <div class="min-w-0">
           <h1 class="text-base sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2 truncate">
@@ -76,7 +76,7 @@
   <main class="flex-grow max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-6 w-full space-y-6 sm:space-y-8">
 
     <!-- SUBHEADER / STATUS NOTIFICATION -->
-    <div class="bg-white rounded-2xl p-3.5 sm:p-5 shadow-sm border border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4">
+    <div class="bg-white rounded-2xl p-3.5 sm:p-5 shadow-sm border border-slate-200/80 flex items-center justify-between gap-2.5 sm:gap-4">
       <div class="flex items-center space-x-2.5">
         <span class="relative flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -85,10 +85,6 @@
         <span class="text-xs sm:text-sm font-medium text-slate-700">
           Thị trường giao dịch ngày: <strong id="current-day-label" class="text-emerald-800 font-bold">--/--/----</strong>
         </span>
-      </div>
-      <div class="flex items-center space-x-1.5 text-[11px] sm:text-xs text-slate-500 bg-slate-50 border border-slate-200/60 px-2.5 py-1 rounded-lg">
-        <i class="fa-solid fa-shield-halved text-emerald-600"></i>
-        <span>Dữ liệu xử lý bởi <strong>Gemini AI</strong> & GitHub Actions</span>
       </div>
     </div>
 
@@ -235,22 +231,80 @@
 
   <!-- FOOTER -->
   <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center space-x-2">
-        <span class="text-lg">🍈</span>
-        <span class="font-semibold text-slate-700">Dự án Giá Sầu Riêng Tracker</span>
-        <span>— Hoạt động 100% tự động & miễn phí.</span>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2.5">
+        <img src="durian-logo.svg" alt="Sầu Riêng" class="w-6 h-6 object-contain">
+        <span class="font-semibold text-slate-700">Giá Sầu Riêng Tracker</span>
       </div>
-      <div class="flex items-center space-x-4">
-        <span class="flex items-center gap-1.5">
-          <i class="fa-solid fa-cloud text-amber-500"></i> Hosted on Cloudflare Pages
-        </span>
-        <span class="flex items-center gap-1.5">
-          <i class="fa-solid fa-robot text-emerald-600"></i> Powered by Google Gemini
-        </span>
+
+      <div class="relative inline-block text-left" id="author-contact-container">
+        <button id="btn-author-contact" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 font-medium transition-all text-xs border border-slate-200 shadow-sm" title="Bấm để xem thông tin liên hệ">
+          <span>Powered by</span>
+          <strong class="text-emerald-800 font-bold">DangVo</strong>
+          <i class="fa-regular fa-envelope text-emerald-600 text-xs"></i>
+        </button>
+
+        <!-- Dropup Menu for Author Email -->
+        <div id="author-contact-popover" class="hidden absolute right-0 bottom-full mb-2 w-72 bg-white rounded-xl shadow-xl border border-slate-200 p-3 z-50 text-slate-700">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-100 mb-2">
+            <span class="font-bold text-slate-800 text-xs flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-user text-emerald-600"></i> Liên hệ tác giả
+            </span>
+            <button id="btn-close-popover" type="button" class="text-slate-400 hover:text-slate-600 text-xs px-1">✕</button>
+          </div>
+          <div class="bg-slate-50 border border-slate-200/80 rounded-lg p-2.5 flex items-center justify-between gap-2">
+            <a href="mailto:vndang.contact@gmail.com" class="font-mono text-emerald-800 hover:text-emerald-600 font-semibold text-xs truncate underline decoration-dotted" title="Gửi email ngay">
+              vndang.contact@gmail.com
+            </a>
+            <button id="btn-copy-email" type="button" class="shrink-0 px-2 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-[11px] font-medium transition-colors" title="Sao chép email">
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+          </div>
+          <p id="copy-status-text" class="text-[10px] text-emerald-600 font-medium mt-1.5 hidden text-center">✓ Đã sao chép vào bộ nhớ tạm!</p>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- Contact Popover Script -->
+  <script>
+    const btnContact = document.getElementById('btn-author-contact');
+    const popoverContact = document.getElementById('author-contact-popover');
+    const btnClosePopover = document.getElementById('btn-close-popover');
+    const btnCopyEmail = document.getElementById('btn-copy-email');
+    const copyStatus = document.getElementById('copy-status-text');
+
+    if (btnContact && popoverContact) {
+      btnContact.addEventListener('click', (e) => {
+        e.stopPropagation();
+        popoverContact.classList.toggle('hidden');
+      });
+
+      if (btnClosePopover) {
+        btnClosePopover.addEventListener('click', (e) => {
+          e.stopPropagation();
+          popoverContact.classList.add('hidden');
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        if (!popoverContact.contains(e.target) && !btnContact.contains(e.target)) {
+          popoverContact.classList.add('hidden');
+        }
+      });
+
+      if (btnCopyEmail) {
+        btnCopyEmail.addEventListener('click', () => {
+          navigator.clipboard.writeText('vndang.contact@gmail.com').then(() => {
+            if (copyStatus) {
+              copyStatus.classList.remove('hidden');
+              setTimeout(() => copyStatus.classList.add('hidden'), 2500);
+            }
+          });
+        });
+      }
+    }
+  </script>
 
   <!-- Application Logic (Thêm cache buster để mobile luôn nạp bản mới nhất) -->
   <script src="app.js?v=20261113f"></script>
