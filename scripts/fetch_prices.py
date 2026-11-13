@@ -294,6 +294,16 @@ def normalize_bulk_prices(prices: dict) -> dict:
     elif mo_a and not mo_b and mo_a <= 80000:
         cleaned["monthong_b"] = mo_a
 
+    # 3. Xử lý Sáu Hữu (nếu video báo giá loại A ~78k-90k, quy chuẩn về giá xô loại B 50k-55k)
+    sau_huu = cleaned.get("sau_huu")
+    if sau_huu and sau_huu > 70000:
+        cleaned["sau_huu"] = 55000
+
+    # 4. Xử lý Chuồng Bò (nếu báo giá loại A > 60k, quy chuẩn về giá xô loại B 45k-50k)
+    chuong_bo = cleaned.get("chuong_bo")
+    if chuong_bo and chuong_bo > 60000:
+        cleaned["chuong_bo"] = 50000
+
     return cleaned
 
 

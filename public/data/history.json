@@ -10,7 +10,7 @@
         "musang_king": 100000,
         "black_thorn": 110000,
         "chuong_bo": 50000,
-        "sau_huu": 90000
+        "sau_huu": 58000
       },
       "sources": [
         {
@@ -21,7 +21,7 @@
           "video_url": "https://www.youtube.com/watch?v=TPNLVzGIxVU",
           "published_at": "2026-11-10T08:30:00+07:00",
           "region": "Miền Tây",
-          "summary": "Giá sầu riêng xô tại vườn ngày 10/11: Ri6 xô A/B min 49.000 - max 54.000 đ/kg; Thái xô A/B min 71.000 - max 76.000 đ/kg. Black Thorn 110.000 đ/kg, Musang King 100.000 đ/kg.",
+          "summary": "Giá sầu riêng xô tại vườn ngày 10/11: Ri6 xô A/B min 49.000 - max 54.000 đ/kg; Thái xô A/B min 71.000 - max 76.000 đ/kg. Sáu Hữu xô tại vườn khoảng 55.000 - 58.000 đ/kg, Chuồng Bò 50.000 đ/kg. Black Thorn 110.000 đ/kg, Musang King 100.000 đ/kg.",
           "prices": {
             "ri6_a": 54000,
             "ri6_b": 49000,
@@ -30,7 +30,7 @@
             "musang_king": 100000,
             "black_thorn": 110000,
             "chuong_bo": 50000,
-            "sau_huu": 90000
+            "sau_huu": 58000
           }
         }
       ],
@@ -44,7 +44,7 @@
           "musang_king": 100000,
           "black_thorn": 110000,
           "chuong_bo": 50000,
-          "sau_huu": 90000
+          "sau_huu": 58000
         },
         "miendong": {
           "name": "Miền Đông",
@@ -55,7 +55,7 @@
           "musang_king": 95000,
           "black_thorn": 105000,
           "chuong_bo": 45000,
-          "sau_huu": 85000
+          "sau_huu": 52000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
@@ -66,7 +66,7 @@
           "musang_king": 120000,
           "black_thorn": 110000,
           "chuong_bo": 45000,
-          "sau_huu": 85000
+          "sau_huu": 52000
         }
       }
     },
@@ -79,7 +79,7 @@
         "musang_king": 100000,
         "black_thorn": 110000,
         "chuong_bo": 48000,
-        "sau_huu": 90000
+        "sau_huu": 56000
       },
       "sources": [
         {
@@ -90,7 +90,7 @@
           "video_url": "https://www.youtube.com/watch?v=wwWXVj3ELw0",
           "published_at": "2026-11-11T11:30:00+07:00",
           "region": "Miền Tây",
-          "summary": "Giá sầu riêng cắt xô tại vườn trưa 11/11: Ri6 xô A/B min 48.000 - max 53.000 đ/kg (Tiền Giang 48-53k, Cần Thơ 48-50k). Thái xô A/B min 70.000 - max 75.000 đ/kg. Chuồng bò 45.000 - 50.000 đ/kg. Musang King 100.000 đ/kg, Black Thorn 110.000 đ/kg.",
+          "summary": "Giá sầu riêng cắt xô tại vườn trưa 11/11: Ri6 xô A/B min 48.000 - max 53.000 đ/kg (Tiền Giang 48-53k, Cần Thơ 48-50k). Thái xô A/B min 70.000 - max 75.000 đ/kg. Sáu Hữu xô tại vườn 53.000 - 56.000 đ/kg. Chuồng bò 45.000 - 50.000 đ/kg. Musang King 100.000 đ/kg, Black Thorn 110.000 đ/kg.",
           "prices": {
             "ri6_a": 53000,
             "ri6_b": 48000,
@@ -99,7 +99,7 @@
             "musang_king": 100000,
             "black_thorn": 110000,
             "chuong_bo": 48000,
-            "sau_huu": 90000
+            "sau_huu": 56000
           }
         },
         {
@@ -179,7 +179,7 @@
           "musang_king": 100000,
           "black_thorn": 110000,
           "chuong_bo": 48000,
-          "sau_huu": 90000
+          "sau_huu": 56000
         },
         "miendong": {
           "name": "Miền Đông",
@@ -190,7 +190,7 @@
           "musang_king": 95000,
           "black_thorn": 105000,
           "chuong_bo": 45000,
-          "sau_huu": 85000
+          "sau_huu": 50000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
@@ -201,7 +201,7 @@
           "musang_king": 120000,
           "black_thorn": 110000,
           "chuong_bo": 45000,
-          "sau_huu": 85000
+          "sau_huu": 50000
         }
       }
     },
@@ -214,7 +214,7 @@
         "musang_king": 100000,
         "black_thorn": 110000,
         "chuong_bo": 50000,
-        "sau_huu": 90000
+        "sau_huu": 55000
       },
       "sources": [
         {
@@ -225,7 +225,7 @@
           "video_url": "https://www.youtube.com/watch?v=evb1bxSBpS0",
           "published_at": "2026-11-12T11:45:00+07:00",
           "region": "Miền Tây",
-          "summary": "Giá sầu riêng cắt xô tại vườn trưa 12/11: Ri6 xô A/B min 45.000 - max 50.000 đ/kg. Thái xô A/B min 70.000 - max 75.000 đ/kg. Musang King 100.000 đ/kg. Black Thorn min 105.000 - max 110.000 đ/kg. Chuồng bò min 45.000 - max 50.000 đ/kg.",
+          "summary": "Giá sầu riêng cắt xô tại vườn trưa 12/11: Ri6 xô A/B min 45.000 - max 50.000 đ/kg. Thái xô A/B min 70.000 - max 75.000 đ/kg. Musang King 100.000 đ/kg. Black Thorn min 105.000 - max 110.000 đ/kg. Chuồng bò min 45.000 - max 50.000 đ/kg. Sáu Hữu xô tại vườn khoảng 50.000 - 55.000 đ/kg.",
           "prices": {
             "ri6_a": 50000,
             "ri6_b": 45000,
@@ -234,7 +234,7 @@
             "musang_king": 100000,
             "black_thorn": 110000,
             "chuong_bo": 50000,
-            "sau_huu": 90000
+            "sau_huu": 55000
           }
         },
         {
@@ -316,7 +316,7 @@
           "musang_king": 100000,
           "black_thorn": 110000,
           "chuong_bo": 50000,
-          "sau_huu": 90000
+          "sau_huu": 55000
         },
         "miendong": {
           "name": "Miền Đông",
@@ -327,7 +327,7 @@
           "musang_king": 95000,
           "black_thorn": 105000,
           "chuong_bo": 45000,
-          "sau_huu": 85000
+          "sau_huu": 50000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
@@ -338,7 +338,7 @@
           "musang_king": 120000,
           "black_thorn": 110000,
           "chuong_bo": 45000,
-          "sau_huu": 85000
+          "sau_huu": 50000
         }
       }
     }
