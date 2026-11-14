@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-14T15:52:00.945860+07:00",
+  "last_updated": "2026-11-14T15:56:27.998281+07:00",
   "days": {
     "2026-11-10": {
       "daily_average": {
@@ -445,6 +445,115 @@
           "monthong_a": 75000,
           "monthong_b": 71000,
           "musang_king": 120000,
+          "black_thorn": 110000,
+          "chuong_bo": 45000,
+          "sau_huu": 50000
+        }
+      }
+    },
+    "2026-11-14": {
+      "daily_average": {
+        "ri6_a": 48000,
+        "ri6_b": 45000,
+        "monthong_a": 77000,
+        "monthong_b": 74000,
+        "musang_king": 100000,
+        "black_thorn": 110000,
+        "chuong_bo": 48000,
+        "sau_huu": 58000
+      },
+      "sources": [
+        {
+          "video_id": "vo5S4P1hyH0",
+          "title": "giá sầu riêng hôm nay ngày 14/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=vo5S4P1hyH0",
+          "published_at": "2026-11-14T06:30:00+07:00",
+          "region": "Miền Tây & Miền Đông",
+          "summary": "Giá sầu riêng cắt xô tại vườn ngày 14/11/2026: Miền Tây: Ri6 xô 45.000 - 48.000 đ/kg; Thái xô 74.000 - 77.000 đ/kg (tiếp tục tăng); Musang King 100.000 đ/kg; Black Thorn 105.000 - 110.000 đ/kg; Chuồng Bò 45.000 - 50.000 đ/kg; Sáu Hữu 55.000 - 60.000 đ/kg. Miền Đông: Ri6 xô 40.000 đ/kg; Thái xô 60.000 đ/kg. Tỉ lệ cắt xô chuẩn 8:2, 7:3.",
+          "prices": {
+            "ri6_a": 48000,
+            "ri6_b": 45000,
+            "monthong_a": 77000,
+            "monthong_b": 74000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 48000,
+            "sau_huu": 58000
+          }
+        },
+        {
+          "video_id": "VDhLcFJ-A_0",
+          "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ BẢY NGÀY /14/11/2026|Giải Trí Miền Tây",
+          "channel_name": "Giải Trí Miền Tây",
+          "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+          "video_url": "https://www.youtube.com/watch?v=VDhLcFJ-A_0",
+          "published_at": "2026-11-14T08:15:00+07:00",
+          "region": "Miền Tây, Miền Đông & Tây Nguyên",
+          "summary": "Thị trường sầu riêng sáng 14/11/2026 phục hồi tích cực. Miền Tây: Thái xô cổng vườn 74.000 - 77.000 đ/kg, Ri6 xô 45.000 - 48.000 đ/kg, Sáu Hữu 55.000 - 60.000 đ/kg, Chuồng Bò 45.000 - 50.000 đ/kg, Musang King 100.000 đ/kg, Black Thorn 105.000 - 110.000 đ/kg. Miền Đông: Ri6 40.000 đ/kg, Thái 60.000 đ/kg. Tây Nguyên (Đắk Lắk, Đắk Nông): Thái xô 75.000 - 78.000 đ/kg.",
+          "prices": {
+            "ri6_a": 48000,
+            "ri6_b": 45000,
+            "monthong_a": 77000,
+            "monthong_b": 74000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 48000,
+            "sau_huu": 58000
+          }
+        },
+        {
+          "video_id": "6XmS1x-6usg",
+          "title": "Giá Sầu Riêng Hôm Nay 14/11/2026: Áp Lực Mạnh Hàng Thái Đắk Lắk Giảm Sâu",
+          "channel_name": "Giá Nông Sản 47",
+          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+          "video_url": "https://www.youtube.com/watch?v=6XmS1x-6usg",
+          "published_at": "2026-11-14T04:30:00+07:00",
+          "region": "Tây Nguyên & Miền Tây",
+          "summary": "Khảo sát giá sầu riêng xô (loại B) ngày 14/11/2026: Miền Tây: Thái loại B 73.000 - 78.000 đ/kg, Ri6 loại B 43.000 - 46.000 đ/kg. Đắk Lắk: Thái loại B 65.000 - 75.000 đ/kg, Ri6 loại B 25.000 đ/kg. Gia Lai: Thái loại B 71.000 - 75.000 đ/kg, Ri6 loại B 20.000 đ/kg. Musang King loại B: 90.000 - 108.000 đ/kg.",
+          "prices": {
+            "ri6_a": 35000,
+            "ri6_b": 25000,
+            "monthong_a": 75000,
+            "monthong_b": 71000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 45000,
+            "sau_huu": 55000
+          }
+        }
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 48000,
+          "ri6_b": 45000,
+          "monthong_a": 77000,
+          "monthong_b": 74000,
+          "musang_king": 100000,
+          "black_thorn": 110000,
+          "chuong_bo": 48000,
+          "sau_huu": 58000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 42000,
+          "ri6_b": 40000,
+          "monthong_a": 65000,
+          "monthong_b": 60000,
+          "musang_king": 95000,
+          "black_thorn": 105000,
+          "chuong_bo": 45000,
+          "sau_huu": 50000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 25000,
+          "ri6_b": 20000,
+          "monthong_a": 78000,
+          "monthong_b": 75000,
+          "musang_king": 115000,
           "black_thorn": 110000,
           "chuong_bo": 45000,
           "sau_huu": 50000

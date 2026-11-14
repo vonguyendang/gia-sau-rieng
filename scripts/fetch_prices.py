@@ -752,7 +752,11 @@ def call_gemini_api(prompt_text: str) -> dict:
         print("[WARN] Chưa cấu hình GEMINI_API_KEY. Bỏ qua bước gọi AI.")
         return None
 
-    candidate_models = ["gemini-3.5-flash", "gemini-3.1-flash-lite"]
+    env_model = os.environ.get("GEMINI_MODEL")
+    candidate_models = []
+    if env_model:
+        candidate_models.append(env_model)
+    candidate_models.extend(["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"])
     # Loại bỏ trùng lặp giữ nguyên thứ tự
     seen = set()
     candidate_models = [m for m in candidate_models if not (m in seen or seen.add(m))]

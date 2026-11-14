@@ -1574,10 +1574,9 @@
   "vo5S4P1hyH0": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng hôm nay ngày 14/11/2026",
-    "processed_at": "2026-11-14T15:50:33.227449+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-14T15:56:39.577798+07:00",
+    "has_transcript": true,
+    "is_price_video": true
   },
   "XixfUqq_5bQ": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -1606,10 +1605,9 @@
   "6XmS1x-6usg": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 14/11/2026: Áp Lực Mạnh Hàng Thái Đắk Lắk Giảm Sâu",
-    "processed_at": "2026-11-14T15:51:37.987341+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-14T15:56:39.577859+07:00",
+    "has_transcript": true,
+    "is_price_video": true
   },
   "ujwIg3wVECY": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -1629,9 +1627,8 @@
   "VDhLcFJ-A_0": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ BẢY NGÀY /14/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-14T15:51:52.746035+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-14T15:56:39.577846+07:00",
+    "has_transcript": true,
+    "is_price_video": true
   }
 }

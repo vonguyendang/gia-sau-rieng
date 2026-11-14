@@ -41,7 +41,7 @@ jobs:
       - name: Chạy script lấy và cập nhật giá
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: "gemini-3.5-flash"
+          GEMINI_MODEL: "gemini-2.5-flash"
         run: |
           python scripts/fetch_prices.py
 
