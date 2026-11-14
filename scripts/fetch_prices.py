@@ -637,6 +637,11 @@ def get_transcript_via_ytdlp(video_id: str) -> str:
             "writesubtitles": True,
             "writeautomaticsub": True,
             "subtitleslangs": ["vi"],
+            "extractor_args": {
+                "youtube": {
+                    "player_client": ["android", "ios", "mweb"]
+                }
+            },
             "quiet": True,
             "no_warnings": True,
             "outtmpl": os.path.join(tmpdir, "%(id)s"),
@@ -660,6 +665,23 @@ def get_transcript_via_ytdlp(video_id: str) -> str:
             if result:
                 print(f"        -> [yt-dlp fallback] Thành công trích xuất {len(result)} ký tự phụ đề!")
                 return result
+
+        # Dự phòng bổ sung: Nếu không có file sub, trích xuất phần mô tả video (description)
+        try:
+            info_opts = {
+                "skip_download": True,
+                "extractor_args": {"youtube": {"player_client": ["android", "ios", "mweb"]}},
+                "quiet": True,
+                "no_warnings": True,
+            }
+            with yt_dlp.YoutubeDL(info_opts) as ydl:
+                info = ydl.extract_info(f"https://www.youtube.com/watch?v={video_id}", download=False)
+                desc = (info.get("description") or "").strip()
+                if desc and len(desc) > 30:
+                    print(f"        -> [yt-dlp fallback] Trích xuất {len(desc)} ký tự từ mô tả video!")
+                    return f"[Nội dung mô tả video]: {desc}"
+        except Exception:
+            pass
     except Exception as e:
         print(f"        [DEBUG yt-dlp fallback] {type(e).__name__}: {e}")
     finally:
