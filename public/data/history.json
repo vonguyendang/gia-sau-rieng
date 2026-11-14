@@ -1,6 +1,31 @@
 {
-  "last_updated": "2026-11-14T19:02:24.664865+07:00",
+  "last_updated": "2026-11-14T22:07:00.047823+07:00",
   "days": {
+    "2026-11-08": {
+      "daily_average": {
+        "ri6_a": null,
+        "ri6_b": null,
+        "monthong_a": null,
+        "monthong_b": null,
+        "musang_king": null,
+        "black_thorn": null,
+        "chuong_bo": null,
+        "sau_huu": null
+      },
+      "sources": [
+        {
+          "video_id": "vFwiX2DIRC4",
+          "title": "Giá Sầu Riêng Hôm Nay 08/11/2026: Áp Lực Mạnh, Miền Tây Giảm Cả Thái Lẫn Ri6",
+          "channel_name": "Giá Nông Sản 47",
+          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+          "video_url": "https://www.youtube.com/watch?v=vFwiX2DIRC4",
+          "published_at": "2026-11-14T22:05:50.161647+07:00",
+          "region": "Tây Nguyên",
+          "summary": "Bản tin giá sầu riêng ngày 08/11/2026. Thị trường phân hóa rõ rệt: Miền Tây và Lâm Đồng giảm giá, trong khi Gia Lai đi ngang. Theo quy tắc tính giá cắt xô tại vườn (lấy mức giá hàng loại B đại diện cho giá xô vườn tỉ lệ A/B 7/3 hoặc 8/2): Tại Miền Tây, Thái xô có giá 60.000 - 75.000 đ/kg, Ri6 xô từ 50.000 - 55.000 đ/kg. Tại Đắk Lắk, Thái xô đạt 73.000 - 78.000 đ/kg, Ri6 xô ở mức 25.000 đ/kg. Tại Gia Lai, Thái xô dao động 71.000 - 75.000 đ/kg, Ri6 xô ở mức 20.000 đ/kg. Ở các tỉnh khác, Thái xô là 68.000 đ/kg và Musang King xô đạt 103.000 đ/kg.",
+          "prices": {}
+        }
+      ]
+    },
     "2026-11-10": {
       "daily_average": {
         "ri6_a": 54000,
