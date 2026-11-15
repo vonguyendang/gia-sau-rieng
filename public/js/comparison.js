@@ -9,7 +9,10 @@ function renderComparisonTable() {
   const tableBody = document.getElementById('comparison-table-body');
   if (!tableBody) return;
 
-  const daysKeys = Object.keys(historyData.days).sort();
+  // Lọc chỉ các ngày có định dạng YYYY-MM-DD hợp lệ
+  const daysKeys = Object.keys(historyData.days)
+    .filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d))
+    .sort();
   if (daysKeys.length === 0) return;
 
   const latestDay = daysKeys[daysKeys.length - 1];
@@ -19,22 +22,36 @@ function renderComparisonTable() {
     : (dayObj.daily_average || {});
 
   function getPastDay(daysAgo) {
-    const curDate = new Date(latestDay);
-    curDate.setDate(curDate.getDate() - daysAgo);
-    const targetStr = curDate.toISOString().split('T')[0];
-    
-    if (historyData.days[targetStr]) return targetStr;
+    try {
+      const parts = latestDay.split('-');
+      if (parts.length !== 3) return null;
+      const curDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      if (isNaN(curDate.getTime())) return null;
 
-    for (let delta = 1; delta <= 3; delta++) {
-      const dPlus = new Date(curDate);
-      dPlus.setDate(dPlus.getDate() + delta);
-      const strPlus = dPlus.toISOString().split('T')[0];
-      if (historyData.days[strPlus]) return strPlus;
+      curDate.setDate(curDate.getDate() - daysAgo);
+      const toISO = (d) => {
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
+      };
 
-      const dMinus = new Date(curDate);
-      dMinus.setDate(dMinus.getDate() - delta);
-      const strMinus = dMinus.toISOString().split('T')[0];
-      if (historyData.days[strMinus]) return strMinus;
+      const targetStr = toISO(curDate);
+      if (historyData.days[targetStr]) return targetStr;
+
+      for (let delta = 1; delta <= 3; delta++) {
+        const dPlus = new Date(curDate);
+        dPlus.setDate(dPlus.getDate() + delta);
+        const strPlus = toISO(dPlus);
+        if (historyData.days[strPlus]) return strPlus;
+
+        const dMinus = new Date(curDate);
+        dMinus.setDate(dMinus.getDate() - delta);
+        const strMinus = toISO(dMinus);
+        if (historyData.days[strMinus]) return strMinus;
+      }
+    } catch (e) {
+      return null;
     }
     return null;
   }

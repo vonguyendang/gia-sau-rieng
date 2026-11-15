@@ -8,7 +8,16 @@
     "published_at": "2026-11-15T11:13:55+07:00",
     "region": "Miền Tây",
     "summary": "Giá sầu riêng mua xô tại vườn ngày 15/11/2026 ở khu vực Miền Tây tiếp tục xu hướng tăng nhẹ và ổn định. Cụ thể: Ri6 cắt xô dao động từ 47.000 - 50.000 đ/kg; Sầu riêng Thái (Monthong) xô từ 75.000 - 80.000 đ/kg; Musang King xô ở mức 100.000 đ/kg; Black Thorn xô từ 105.000 - 110.000 đ/kg; Chuồng Bò xô từ 45.000 - 50.000 đ/kg; Sáu Hữu xô từ 55.000 - 60.000 đ/kg.",
-    "prices": {}
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 47000,
+      "monthong_a": 80000,
+      "monthong_b": 75000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 48000,
+      "sau_huu": 58000
+    }
   },
   {
     "video_id": "Dds-Kuni_hE",
@@ -17,9 +26,18 @@
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "video_url": "https://www.youtube.com/watch?v=Dds-Kuni_hE",
     "published_at": "2026-11-14T17:00:44+07:00",
-    "region": "Miền Tây",
+    "region": "Miền Tây, Miền Đông & Tây Nguyên",
     "summary": "Giá sầu riêng mua xô tại vườn ngày 15/11/2026 đang có xu hướng phục hồi tốt. Khu vực Miền Tây: Ri6 xô dao động 47.000 - 50.000 đ/kg; Thái (Monthong) xô dao động 74.000 - 77.000 đ/kg; Chuồng Bò 45.000 - 50.000 đ/kg; Musang King 100.000 đ/kg; Black Thorn 105.000 - 110.000 đ/kg; Sáu Hữu 55.000 - 60.000 đ/kg. Khu vực Miền Đông: Ri6 xô 40.000 - 42.000 đ/kg, Thái xô 60.000 đ/kg. Khu vực Tây Nguyên: Thái xô dao động 75.000 - 78.000 đ/kg.",
-    "prices": {}
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 47000,
+      "monthong_a": 77000,
+      "monthong_b": 74000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 48000,
+      "sau_huu": 58000
+    }
   },
   {
     "video_id": "5aYCcT3FwJQ",
@@ -28,9 +46,18 @@
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "video_url": "https://www.youtube.com/watch?v=5aYCcT3FwJQ",
     "published_at": "2026-11-15T09:45:38+07:00",
-    "region": "Tiền Giang",
+    "region": "Tiền Giang (Miền Tây)",
     "summary": "Bảng giá sầu riêng cắt xô tại vườn khu vực Tiền Giang (tính theo mức giá loại B): Ri6 xô từ 47.000 - 50.000 đ/kg; Thái (Monthong) xô từ 75.000 - 77.000 đ/kg; Musang King xô từ 93.000 - 95.000 đ/kg; Black Thorn xô từ 108.000 - 110.000 đ/kg.",
-    "prices": {}
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 47000,
+      "monthong_a": 77000,
+      "monthong_b": 75000,
+      "musang_king": 94000,
+      "black_thorn": 110000,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   {
     "video_id": "sWZ7g6r_wXg",
@@ -41,6 +68,15 @@
     "published_at": "2026-11-14T16:40:09+07:00",
     "region": "Miền Tây",
     "summary": "Giá sầu riêng tại vườn ở khu vực Miền Tây ngày 15/11/2026: Sầu riêng Ri6 tại vườn dao động từ 40.000 - 46.000 đ/kg. Sầu riêng Thái (Monthong) tại vườn dao động từ 70.000 - 78.000 đ/kg tùy từng vườn.",
-    "prices": {}
+    "prices": {
+      "ri6_a": 46000,
+      "ri6_b": 40000,
+      "monthong_a": 78000,
+      "monthong_b": 70000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

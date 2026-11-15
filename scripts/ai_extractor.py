@@ -224,6 +224,7 @@ def call_gemini_api(prompt_text: str, video_url: str = None) -> dict:
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_INSTRUCTION,
                         response_mime_type="application/json",
+                        response_schema=PRICE_SCHEMA,
                         temperature=0.1,
                     ),
                 )
@@ -264,6 +265,7 @@ def call_gemini_api(prompt_text: str, video_url: str = None) -> dict:
                 },
                 "generationConfig": {
                     "responseMimeType": "application/json",
+                    "responseSchema": PRICE_SCHEMA,
                     "temperature": 0.1,
                 },
             }

@@ -11,15 +11,7 @@
  * - js/sources.js: Bộ điều hướng ngày dạng lưới & danh sách bản tin YouTube
  */
 
-// Trạng thái toàn cục (Global State)
-let historyData = null;
-let priceChartInstance = null;
-let currentRange = '7'; // '7', '30', '90', '180', '365', 'all'
-let currentRegion = 'all'; // 'all', 'mientay', 'miendong', 'taynguyen'
-let currentSelectedDay = null;
-const sourcesCache = {};
-let isFullHistoryLoaded = false;
-
+// Trạng thái toàn cục (được khai báo tại utils.js)
 document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   loadData();
@@ -199,11 +191,11 @@ async function loadData() {
       sourcesCache[historyData.latest_day] = historyData.latest_sources;
     }
 
-    renderHeader();
-    renderPriceCards();
-    renderComparisonTable();
-    initOrUpdateChart();
-    populateDateSelect();
+    try { renderHeader(); } catch (e) { console.error('Lỗi renderHeader:', e); }
+    try { renderPriceCards(); } catch (e) { console.error('Lỗi renderPriceCards:', e); }
+    try { renderComparisonTable(); } catch (e) { console.error('Lỗi renderComparisonTable:', e); }
+    try { initOrUpdateChart(); } catch (e) { console.error('Lỗi initOrUpdateChart:', e); }
+    try { populateDateSelect(); } catch (e) { console.error('Lỗi populateDateSelect:', e); }
   } catch (error) {
     console.error('Lỗi khi tải dữ liệu giá:', error);
     const container = document.getElementById('price-cards-container');

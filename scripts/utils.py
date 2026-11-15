@@ -178,7 +178,21 @@ def save_split_data(history_data: dict):
     # 1. Tạo thư mục sources nếu chưa có
     SOURCES_DIR.mkdir(parents=True, exist_ok=True)
 
-    days_dict = history_data.get("days", {})
+    raw_days_dict = history_data.get("days", {})
+    # Làm sạch: Chỉ giữ lại các ngày có định dạng YYYY-MM-DD hợp lệ
+    days_dict = {}
+    for day_str, day_content in raw_days_dict.items():
+        try:
+            parts = day_str.split("-")
+            if len(parts) == 3 and len(parts[0]) == 4:
+                datetime(int(parts[0]), int(parts[1]), int(parts[2]))
+                days_dict[day_str] = day_content
+            else:
+                print(f"[CẢNH BÁO] Loại bỏ ngày không hợp lệ khỏi database: {day_str}")
+        except (ValueError, TypeError):
+            print(f"[CẢNH BÁO] Loại bỏ ngày không hợp lệ khỏi database: {day_str}")
+
+    history_data["days"] = days_dict
     sorted_days = sorted(days_dict.keys(), reverse=True)
 
     # Lưu chi tiết nguồn tin từng ngày vào thư mục sources/

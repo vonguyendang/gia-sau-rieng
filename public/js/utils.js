@@ -3,6 +3,23 @@
  * Các hàm tiện ích định dạng tiền tệ, ngày tháng và hằng số khu vực.
  */
 
+// Trạng thái toàn cục (Global State chia sẻ qua window)
+window.historyData = null;
+window.priceChartInstance = null;
+window.currentRange = '7'; // '7', '30', '90', '180', '365', 'all'
+window.currentRegion = 'all'; // 'all', 'mientay', 'miendong', 'taynguyen'
+window.currentSelectedDay = null;
+window.sourcesCache = {};
+window.isFullHistoryLoaded = false;
+
+var historyData = window.historyData;
+var priceChartInstance = window.priceChartInstance;
+var currentRange = window.currentRange;
+var currentRegion = window.currentRegion;
+var currentSelectedDay = window.currentSelectedDay;
+var sourcesCache = window.sourcesCache;
+var isFullHistoryLoaded = window.isFullHistoryLoaded;
+
 const REGIONS = {
   all: { label: 'Toàn Quốc (Trung Bình)', badge: 'Toàn quốc', short: 'Toàn quốc' },
   mientay: { label: 'Miền Tây (ĐBSCL)', badge: 'Miền Tây', short: 'Miền Tây' },

@@ -22,8 +22,12 @@ function renderHeader() {
     }
   }
 
-  const daysKeys = Object.keys(historyData.days || {}).sort();
-  const latestDay = daysKeys[daysKeys.length - 1] || '';
+  const daysKeys = Object.keys(historyData.days || {})
+    .filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d))
+    .sort();
+  const latestDay = historyData.latest_day && /^\d{4}-\d{2}-\d{2}$/.test(historyData.latest_day)
+    ? historyData.latest_day
+    : (daysKeys[daysKeys.length - 1] || '');
   const currentDayLabel = document.getElementById('current-day-label');
   if (currentDayLabel && latestDay) {
     currentDayLabel.textContent = formatDateStr(latestDay, true);
@@ -33,10 +37,14 @@ function renderHeader() {
 function renderPriceCards() {
   if (!historyData || !historyData.days) return;
 
-  const daysKeys = Object.keys(historyData.days).sort();
+  const daysKeys = Object.keys(historyData.days)
+    .filter(d => /^\d{4}-\d{2}-\d{2}$/.test(d))
+    .sort();
   if (daysKeys.length === 0) return;
 
-  const latestDay = daysKeys[daysKeys.length - 1];
+  const latestDay = historyData.latest_day && /^\d{4}-\d{2}-\d{2}$/.test(historyData.latest_day)
+    ? historyData.latest_day
+    : daysKeys[daysKeys.length - 1];
   const prevDay = daysKeys.length > 1 ? daysKeys[daysKeys.length - 2] : null;
 
   const dayObj = historyData.days[latestDay] || {};
