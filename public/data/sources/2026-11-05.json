@@ -38,5 +38,25 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "6ZuKMAbC0Jw",
+    "title": "Giá Sầu Riêng Hôm Nay 05/11/2026: Hoang Mang Hàng Thái Đắk Lắk Tụt Mạnh",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=6ZuKMAbC0Jw",
+    "published_at": "2026-11-16T06:28:06.510563+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng Thái tại Đắk Lắk giảm mạnh 17.000 đ/kg ở cả hàng loại A và loại B, trong khi các vùng khác phần lớn đi ngang.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 75000,
+      "monthong_b": 63000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

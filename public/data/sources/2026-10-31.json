@@ -1,0 +1,22 @@
+[
+  {
+    "video_id": "G-jKbbLzHhk",
+    "title": "Giá sầu riêng hôm nay ngày 31/10/2026: Tăng ở khu vực Đồng bằng sông Cửu Long.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=G-jKbbLzHhk",
+    "published_at": "2026-11-16T06:25:20.658106+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 31/10/2026 tăng ở khu vực ĐBSCL đối với Thái và Ri6. Giá xô tại vườn (quy đổi theo giá loại B) đối với Thái đạt 75.000 - 77.000 đ/kg, Ri6 đạt 68.000 đ/kg tại ĐBSCL. Các dòng đặc sản như Musang King, Black Thorn và Chuồng Bò có giá loại B lần lượt là 130.000, 135.000 và 50.000 đ/kg.",
+    "prices": {
+      "ri6_a": 68000,
+      "ri6_b": 68000,
+      "monthong_a": 77000,
+      "monthong_b": 75000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
+  }
+]

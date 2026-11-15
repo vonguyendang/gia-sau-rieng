@@ -1,0 +1,22 @@
+[
+  {
+    "video_id": "0xuGiyMhhrI",
+    "title": "Giá sầu riêng hôm nay ngày 3/11/2026: Sầu Thái tại Đắk Lắk chạm mốc 100.000 đồng/kg",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=0xuGiyMhhrI",
+    "published_at": "2026-11-16T06:25:20.658106+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 03/11/2026 ghi nhận mức giá sầu Thái duy trì ở mức cao tại Đắk Lắk và các tỉnh ĐBSCL. Áp dụng quy chuẩn giá loại B làm giá cắt xô tại vườn, Ri6 dao động từ 64.000 - 68.000 đ/kg, Thái xô từ 71.000 - 80.000 đ/kg, Musang King 130.000 đ/kg và Black Thorn 135.000 đ/kg.",
+    "prices": {
+      "ri6_a": 68000,
+      "ri6_b": 64000,
+      "monthong_a": 80000,
+      "monthong_b": 71000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
+  }
+]
