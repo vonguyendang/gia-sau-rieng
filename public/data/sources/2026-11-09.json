@@ -1,0 +1,62 @@
+[
+  {
+    "video_id": "NDhyoUS-7tw",
+    "title": "Giá Sầu Riêng Hôm Nay 09/11/2026: Hồi Hộp Thái Loại A Tụt Ở Ba Vùng",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=NDhyoUS-7tw",
+    "published_at": "2026-11-09T04:30:00+07:00",
+    "region": "Miền Tây & Tây Nguyên",
+    "summary": "Giá sầu riêng ngày 09/11/2026 tiếp tục xu hướng biến động nhẹ. Miền Tây: Thái xô 72.000 - 75.000 đ/kg, Ri6 xô 50.000 - 55.000 đ/kg. Tây Nguyên: Thái xô 73.000 - 78.000 đ/kg tại Đắk Lắk, 71.000 - 75.000 đ/kg tại Gia Lai. Ri6 xô từ 20.000 - 25.000 đ/kg. Musang King xô ổn định ở mức 100.000 đ/kg.",
+    "prices": {
+      "ri6_a": 54000,
+      "ri6_b": 50000,
+      "monthong_a": 76000,
+      "monthong_b": 72000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
+  },
+  {
+    "video_id": "0ROtLSVZxMc",
+    "title": "giá sầu riêng trưa nay ngày 9/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=0ROtLSVZxMc",
+    "published_at": "2026-11-09T11:20:00+07:00",
+    "region": "Miền Tây",
+    "summary": "Trưa 09/11/2026, sầu riêng Thái và Black Thorn tiếp tục tăng mạnh tại Miền Tây. Ri6 xô tại vườn Cần Thơ, Hậu Giang, Tiền Giang, Vĩnh Long, Đồng Tháp dao động từ 53.000 - 55.000 đ/kg; Thái xô đạt 72.000 - 75.000 đ/kg; Musang King xô 100.000 đ/kg; Black Thorn xô 110.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 53000,
+      "monthong_a": 76000,
+      "monthong_b": 72000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
+  },
+  {
+    "video_id": "5_Jqi4YQB5A",
+    "title": "Giá sầu riêng hôm nay ngày 9/11/2026: Biến động trái chiều tại nhiều địa phương",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=5_Jqi4YQB5A",
+    "published_at": "2026-11-09T08:30:00+07:00",
+    "region": "Toàn quốc",
+    "summary": "Thị trường ngày 09/11/2026: Miền Tây phục hồi ở nhóm Thái loại B lên 78.000 đ/kg, Ri6 loại B đạt 54.000 - 55.000 đ/kg. Tại Tây Nguyên (Đắk Lắk), sầu Thái loại B ở mức 70.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 54000,
+      "monthong_a": 78000,
+      "monthong_b": 70000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
+  }
+]

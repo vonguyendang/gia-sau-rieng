@@ -31,6 +31,8 @@ from utils import (
     CHANNELS_FILE,
     PROCESSED_FILE,
     HISTORY_FILE,
+    LATEST_FILE,
+    SOURCES_DIR,
     ENV_FILE,
     VN_TZ,
     USER_AGENTS,
@@ -43,6 +45,7 @@ from utils import (
     has_durian_content,
     load_json,
     save_json,
+    save_split_data,
     parse_relative_time,
 )
 
@@ -266,7 +269,7 @@ NỘI DUNG PHỤ ĐỀ:
                 history_data["days"][day_key]["daily_average"] = daily_avg
                 history_data["days"][day_key]["by_region"] = calculate_regional_data(sources, daily_avg)
                 history_data["last_updated"] = datetime.now(VN_TZ).isoformat()
-                save_json(HISTORY_FILE, history_data)
+                save_split_data(history_data)
 
             # Nghỉ ngẫu nhiên kèm jitter giữa các video để đảm bảo an toàn tuyệt đối
             safe_sleep(3.5, 6.5, msg="giãn cách an toàn giữa các video")
@@ -276,7 +279,7 @@ NỘI DUNG PHỤ ĐỀ:
 
     # Cập nhật lại thời gian kiểm tra cuối cùng
     history_data["last_updated"] = datetime.now(VN_TZ).isoformat()
-    save_json(HISTORY_FILE, history_data)
+    save_split_data(history_data)
     save_json(PROCESSED_FILE, processed_videos)
 
     print(f"\n=== HOÀN TẤT. Thêm mới {new_price_records} bản ghi giá sầu riêng. ===")

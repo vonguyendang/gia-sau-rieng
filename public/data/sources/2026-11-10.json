@@ -1,0 +1,22 @@
+[
+  {
+    "video_id": "TPNLVzGIxVU",
+    "title": "Giá sầu riêng ngày 10/11/2026: Diễn biến thị trường đầu vụ nghịch miền Tây",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=TPNLVzGIxVU",
+    "published_at": "2026-11-10T08:30:00+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng xô tại vườn ngày 10/11: Ri6 xô A/B min 49.000 - max 54.000 đ/kg; Thái xô A/B min 71.000 - max 76.000 đ/kg. Sáu Hữu xô tại vườn khoảng 55.000 - 58.000 đ/kg, Chuồng Bò 50.000 đ/kg. Black Thorn 110.000 đ/kg, Musang King 100.000 đ/kg.",
+    "prices": {
+      "ri6_a": 54000,
+      "ri6_b": 49000,
+      "monthong_a": 76000,
+      "monthong_b": 71000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 58000
+    }
+  }
+]

@@ -13,9 +13,11 @@
 
 let historyData = null;
 let priceChartInstance = null;
-let currentRange = '7'; // '7', '30', 'all'
+let currentRange = '7'; // '7', '30', '90', '180', '365', 'all'
 let currentRegion = 'all'; // 'all', 'mientay', 'miendong', 'taynguyen'
 let currentSelectedDay = null;
+const sourcesCache = {};
+let isFullHistoryLoaded = false;
 
 const REGIONS = {
   all: { label: 'Toàn Quốc (Trung Bình)', badge: 'Toàn quốc', short: 'Toàn quốc' },
@@ -195,9 +197,22 @@ function setupEventListeners() {
 
 async function loadData() {
   try {
-    const res = await fetch(`data/history.json?t=${Date.now()}`);
+    // Kiến trúc 2 tầng: Ưu tiên tải latest.json (siêu nhẹ ~12KB) để mở web tức thì
+    let res;
+    try {
+      res = await fetch(`data/latest.json?t=${Date.now()}`);
+      if (!res.ok) throw new Error('latest.json không khả dụng');
+    } catch (e) {
+      // Fallback tự động sang history.json nếu latest.json chưa có
+      res = await fetch(`data/history.json?t=${Date.now()}`);
+    }
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     historyData = await res.json();
+
+    // Cache nguồn tin của ngày mới nhất nếu đã có trong latest.json
+    if (historyData.latest_day && historyData.latest_sources) {
+      sourcesCache[historyData.latest_day] = historyData.latest_sources;
+    }
 
     renderHeader();
     renderPriceCards();
@@ -205,7 +220,7 @@ async function loadData() {
     initOrUpdateChart();
     populateDateSelect();
   } catch (error) {
-    console.error('Lỗi khi tải dữ liệu history.json:', error);
+    console.error('Lỗi khi tải dữ liệu giá:', error);
     const container = document.getElementById('price-cards-container');
     if (container) {
       container.innerHTML = `
@@ -612,8 +627,31 @@ function renderComparisonTable() {
   `).join('');
 }
 
+async function ensureFullHistoryLoaded() {
+  if (isFullHistoryLoaded) return;
+  try {
+    const res = await fetch(`data/history.json?t=${Date.now()}`);
+    if (res.ok) {
+      const fullData = await res.json();
+      if (fullData && fullData.days) {
+        historyData.days = { ...fullData.days, ...historyData.days };
+        historyData.is_partial = false;
+        isFullHistoryLoaded = true;
+        initOrUpdateChart();
+      }
+    }
+  } catch (e) {
+    console.warn('Không thể tải toàn bộ lịch sử:', e);
+  }
+}
+
 function initOrUpdateChart() {
   if (!historyData || !historyData.days) return;
+
+  // Nếu người dùng chọn xem khoảng thời gian dài (3 tháng, 6 tháng, 1 năm, Tất cả) mà dữ liệu hiện tại chỉ là partial 35 ngày
+  if (['90', '180', '365', 'all'].includes(currentRange) && historyData.is_partial && !isFullHistoryLoaded) {
+    ensureFullHistoryLoaded();
+  }
 
   const daysKeys = Object.keys(historyData.days).sort();
   let selectedDays = daysKeys;
@@ -622,6 +660,12 @@ function initOrUpdateChart() {
     selectedDays = daysKeys.slice(-7);
   } else if (currentRange === '30') {
     selectedDays = daysKeys.slice(-30);
+  } else if (currentRange === '90') {
+    selectedDays = daysKeys.slice(-90);
+  } else if (currentRange === '180') {
+    selectedDays = daysKeys.slice(-180);
+  } else if (currentRange === '365') {
+    selectedDays = daysKeys.slice(-365);
   } else {
     selectedDays = daysKeys;
   }
@@ -869,9 +913,9 @@ function updateChart() {
 }
 
 function populateDateSelect() {
-  if (!historyData || !historyData.days) return;
+  if (!historyData) return;
 
-  const daysKeys = Object.keys(historyData.days).sort().reverse();
+  const daysKeys = historyData.available_days || (historyData.days ? Object.keys(historyData.days).sort().reverse() : []);
   if (daysKeys.length === 0) return;
 
   // Cập nhật tổng số ngày lên popover header
@@ -930,7 +974,8 @@ function renderDateGrid(daysKeys) {
             const weekday = getWeekdayShort(d);
             const parts = d.split('-');
             const displayDayMonth = `${parts[2]}/${parts[1]}`;
-            const sourceCount = historyData.days[d]?.sources?.length || 0;
+            const knownSources = (historyData.days && historyData.days[d]?.sources) || sourcesCache[d];
+            const sourceCount = knownSources ? knownSources.length : null;
 
             const baseClass = isSelected
               ? 'bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300'
@@ -972,8 +1017,8 @@ function renderDateGrid(daysKeys) {
 }
 
 function selectDay(dayKey, closePopover = false) {
-  if (!historyData || !historyData.days) return;
-  const daysKeys = Object.keys(historyData.days).sort().reverse();
+  if (!historyData) return;
+  const daysKeys = historyData.available_days || (historyData.days ? Object.keys(historyData.days).sort().reverse() : []);
   if (!daysKeys.includes(dayKey)) return;
 
   currentSelectedDay = dayKey;
@@ -1049,18 +1094,51 @@ function selectDay(dayKey, closePopover = false) {
     if (arrow) arrow.classList.remove('rotate-180');
   }
 
-  // Render danh sách nguồn tin của ngày đã chọn
+  // Render danh sách nguồn tin của ngày đã chọn (tải động)
   renderSources(dayKey);
 }
 
 function renderSources(selectedDay) {
-  if (!historyData || !historyData.days) return;
-
   const container = document.getElementById('sources-list-container');
   if (!container) return;
 
-  const dayData = historyData.days[selectedDay];
-  if (!dayData || !dayData.sources || dayData.sources.length === 0) {
+  // 1. Kiểm tra cache bộ nhớ
+  if (sourcesCache[selectedDay]) {
+    renderSourcesCards(container, sourcesCache[selectedDay]);
+    return;
+  }
+
+  // 2. Kiểm tra nếu có sẵn trong historyData.days
+  if (historyData?.days?.[selectedDay]?.sources && historyData.days[selectedDay].sources.length > 0) {
+    sourcesCache[selectedDay] = historyData.days[selectedDay].sources;
+    renderSourcesCards(container, sourcesCache[selectedDay]);
+    return;
+  }
+
+  // 3. Tải động từ public/data/sources/{date}.json (Giải pháp 2: Tách nguồn theo ngày)
+  container.innerHTML = `
+    <div class="col-span-full bg-white p-10 rounded-2xl text-center border border-slate-200">
+      <i class="fa-solid fa-circle-notch fa-spin text-2xl text-emerald-600 mb-2"></i>
+      <div class="text-xs font-semibold text-slate-600">Đang tải bản tin ngày ${formatDateStr(selectedDay, true)}...</div>
+    </div>
+  `;
+
+  fetch(`data/sources/${selectedDay}.json?t=${Date.now()}`)
+    .then(res => {
+      if (!res.ok) throw new Error('Không tìm thấy file nguồn');
+      return res.json();
+    })
+    .then(sources => {
+      sourcesCache[selectedDay] = Array.isArray(sources) ? sources : [];
+      renderSourcesCards(container, sourcesCache[selectedDay]);
+    })
+    .catch(() => {
+      renderSourcesCards(container, []);
+    });
+}
+
+function renderSourcesCards(container, sources) {
+  if (!sources || sources.length === 0) {
     container.innerHTML = `
       <div class="col-span-full bg-white p-8 rounded-2xl text-center border border-slate-200">
         <i class="fa-solid fa-inbox text-4xl text-slate-300 mb-2"></i>
@@ -1080,7 +1158,7 @@ function renderSources(selectedDay) {
 
   const PRIORITY_CHANNEL_ID = 'UCX11-9EVu6AzLYorQNoLzRA';
 
-  const sortedSources = [...dayData.sources].sort((a, b) => {
+  const sortedSources = [...sources].sort((a, b) => {
     const aIsPri = a.channel_id === PRIORITY_CHANNEL_ID;
     const bIsPri = b.channel_id === PRIORITY_CHANNEL_ID;
     if (aIsPri && !bIsPri) return -1;

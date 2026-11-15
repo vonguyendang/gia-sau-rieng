@@ -26,6 +26,8 @@ DATA_DIR = ROOT_DIR / "public" / "data"
 CHANNELS_FILE = DATA_DIR / "channels.json"
 PROCESSED_FILE = DATA_DIR / "processed_videos.json"
 HISTORY_FILE = DATA_DIR / "history.json"
+LATEST_FILE = DATA_DIR / "latest.json"
+SOURCES_DIR = DATA_DIR / "sources"
 ENV_FILE = ROOT_DIR / ".env"
 
 # Tự động nạp file .env nếu có (dành cho chạy local)
@@ -160,6 +162,54 @@ def save_json(file_path: Path, data):
     with open(temp_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     temp_file.replace(file_path)
+
+
+def save_split_data(history_data: dict):
+    """
+    Triển khai kiến trúc 2 tầng (Two-Tier Data) & Tách nguồn theo ngày:
+    1. Lưu từng ngày vào public/data/sources/{date}.json (chứa mảng sources chi tiết)
+    2. Lưu public/data/latest.json (siêu nhẹ ~15-25KB, chứa 35 ngày giá gần nhất + sources của ngày mới nhất)
+    3. Lưu public/data/history.json (lịch sử toàn bộ các ngày)
+    """
+    if not isinstance(history_data, dict) or "days" not in history_data:
+        save_json(HISTORY_FILE, history_data)
+        return
+
+    # 1. Tạo thư mục sources nếu chưa có
+    SOURCES_DIR.mkdir(parents=True, exist_ok=True)
+
+    days_dict = history_data.get("days", {})
+    sorted_days = sorted(days_dict.keys(), reverse=True)
+
+    # Lưu chi tiết nguồn tin từng ngày vào thư mục sources/
+    for day_str, day_content in days_dict.items():
+        sources = day_content.get("sources", [])
+        source_file = SOURCES_DIR / f"{day_str}.json"
+        save_json(source_file, sources)
+
+    # 2. Xây dựng latest.json (35 ngày gần nhất để web tải siêu nhanh)
+    latest_day = sorted_days[0] if sorted_days else None
+    recent_day_keys = sorted_days[:35]  # Lấy 35 ngày gần nhất cho so sánh T-30 và vẽ biểu đồ 1 tháng
+    recent_days_data = {}
+    for d in recent_day_keys:
+        recent_days_data[d] = {
+            "daily_average": days_dict[d].get("daily_average", {}),
+            "by_region": days_dict[d].get("by_region", {}),
+            # Kèm nguồn cho ngày mới nhất để trang chủ render ngay lập tức không cần fetch thêm
+            "sources": days_dict[d].get("sources", []) if d == latest_day else []
+        }
+
+    latest_data = {
+        "last_updated": history_data.get("last_updated", ""),
+        "latest_day": latest_day,
+        "available_days": sorted_days,
+        "days": recent_days_data,
+        "is_partial": len(sorted_days) > len(recent_day_keys)
+    }
+    save_json(LATEST_FILE, latest_data)
+
+    # 3. Lưu toàn bộ history.json
+    save_json(HISTORY_FILE, history_data)
 
 
 def parse_relative_time(time_str: str) -> datetime:

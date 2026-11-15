@@ -52,6 +52,7 @@ from fetch_prices import (
     normalize_bulk_prices,
     load_json,
     save_json,
+    save_split_data,
     safe_sleep,
     is_durian_title,
     has_durian_content,
@@ -235,7 +236,7 @@ NỘI DUNG PHỤ ĐỀ:
                 # Tính lại giá trung bình với ưu tiên kênh chỉ định
                 history_data["days"][day_key]["daily_average"] = calculate_daily_average(sources)
                 history_data["last_updated"] = datetime.now(VN_TZ).isoformat()
-                save_json(HISTORY_FILE, history_data)
+                save_split_data(history_data)
             else:
                 print("       -> Video không chứa thông tin báo giá sầu riêng.")
 
@@ -247,7 +248,7 @@ NỘI DUNG PHỤ ĐỀ:
 
     # Sắp xếp lại danh sách ngày theo thứ tự thời gian
     history_data["days"] = dict(sorted(history_data["days"].items()))
-    save_json(HISTORY_FILE, history_data)
+    save_split_data(history_data)
 
     print(f"\n=== HOÀN TẤT CÀO LÙI LỊCH SỬ. Đã thêm mới {total_backfilled} bản ghi giá thật vào history.json ===")
 

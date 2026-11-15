@@ -1,0 +1,42 @@
+[
+  {
+    "video_id": "vFwiX2DIRC4",
+    "title": "Giá Sầu Riêng Hôm Nay 08/11/2026: Áp Lực Mạnh, Miền Tây Giảm Cả Thái Lẫn Ri6",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=vFwiX2DIRC4",
+    "published_at": "2026-11-08T04:30:00+07:00",
+    "region": "Miền Tây & Tây Nguyên",
+    "summary": "Bản tin giá sầu riêng ngày 08/11/2026. Áp lực giảm nhẹ ở Miền Tây và Lâm Đồng, Gia Lai đi ngang. Theo quy chuẩn giá cắt xô tại vườn: Miền Tây: Thái xô 73.000 - 75.000 đ/kg, Ri6 xô 50.000 - 55.000 đ/kg. Tây Nguyên: Thái xô 73.000 - 78.000 đ/kg, Ri6 xô 20.000 - 25.000 đ/kg. Musang King xô 100.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 50000,
+      "monthong_a": 77000,
+      "monthong_b": 73000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 58000
+    }
+  },
+  {
+    "video_id": "O8v3THmEPfM",
+    "title": "Giá sầu riêng hôm nay 8/11/2026 thị trường sầu riêng, giá sầu riêng miền tây",
+    "channel_name": "Thắm Trần Vlog",
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "video_url": "https://www.youtube.com/watch?v=O8v3THmEPfM",
+    "published_at": "2026-11-08T07:15:00+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng cắt xô tại vườn Miền Tây ngày 08/11/2026: Thái loại B (xô) khoảng 75.000 đ/kg; Ri6 loại B (xô) khoảng 53.000 đ/kg; Musang King loại B dao động 80.000 - 100.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 53000,
+      "monthong_a": 77000,
+      "monthong_b": 75000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 58000
+    }
+  }
+]
