@@ -60,5 +60,25 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "u4-cL4NY6wc",
+    "title": "giá sầu riêng trưa nay ngày 10/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=u4-cL4NY6wc",
+    "published_at": "2026-11-16T02:15:33.794909+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng mua xô tại vườn khu vực Miền Tây ngày 10/11/2026 ghi nhận Ri6 xô từ 50.000 - 55.000 đ/kg, sầu Thái xô dao động từ 75.000 - 80.000 đ/kg theo tỉ lệ 8:2, 7:3. Musang King và Black Thorn thu mua tại vườn lần lượt từ 100.000 đ/kg và 110.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 50000,
+      "monthong_a": 80000,
+      "monthong_b": 75000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
   }
 ]
