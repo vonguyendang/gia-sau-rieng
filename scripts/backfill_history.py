@@ -137,43 +137,52 @@ def main():
 
             print(f"\n   [+] Đang xử lý: [{vid}] {title}")
             transcript = get_video_transcript(vid)
+            video_url = v.get("link") or f"https://www.youtube.com/watch?v={vid}"
 
             if not transcript:
-                print("       -> Không có phụ đề tiếng Việt. Ghi nhận bỏ qua.")
-                processed_videos[vid] = {
-                    "channel_id": cid,
-                    "title": title,
-                    "processed_at": datetime.now(VN_TZ).isoformat(),
-                    "has_transcript": False,
-                    "is_price_video": False,
-                }
-                save_json(PROCESSED_FILE, processed_videos)
-                safe_sleep(3.0, 5.0, msg="chờ sau khi video không có phụ đề")
-                continue
+                print(f"       -> Phụ đề text chưa sẵn sàng. Kích hoạt Gemini Multimodal phân tích trực tiếp video YouTube...")
+                prompt = f"""
+KÊNH: {name} (Khu vực mặc định: {region})
+TIÊU ĐỀ VIDEO: {title}
+Hãy nghe âm thanh và xem thông tin video để trích xuất bảng giá sầu riêng cắt xô tại vườn chuẩn xác nhất.
+"""
+                extracted = call_gemini_api(prompt, video_url=video_url)
+                if not extracted:
+                    print("       -> Không thể phân tích video qua Gemini. Ghi nhận bỏ qua.")
+                    processed_videos[vid] = {
+                        "channel_id": cid,
+                        "title": title,
+                        "processed_at": datetime.now(VN_TZ).isoformat(),
+                        "has_transcript": False,
+                        "is_price_video": False,
+                    }
+                    save_json(PROCESSED_FILE, processed_videos)
+                    safe_sleep(3.0, 5.0, msg="chờ sau khi video không phân tích được")
+                    continue
+            else:
+                # Kiểm tra an toàn phụ đề
+                if not has_durian_content(title, transcript):
+                    print("       -> Phụ đề không chứa thông tin về sầu riêng. Ghi nhận bỏ qua.")
+                    processed_videos[vid] = {
+                        "channel_id": cid,
+                        "title": title,
+                        "processed_at": datetime.now(VN_TZ).isoformat(),
+                        "has_transcript": True,
+                        "is_price_video": False,
+                    }
+                    save_json(PROCESSED_FILE, processed_videos)
+                    safe_sleep(2.0, 4.0, msg="nghỉ ngắn")
+                    continue
 
-            # Kiểm tra an toàn phụ đề
-            if not has_durian_content(title, transcript):
-                print("       -> Phụ đề không chứa thông tin về sầu riêng. Ghi nhận bỏ qua.")
-                processed_videos[vid] = {
-                    "channel_id": cid,
-                    "title": title,
-                    "processed_at": datetime.now(VN_TZ).isoformat(),
-                    "has_transcript": True,
-                    "is_price_video": False,
-                }
-                save_json(PROCESSED_FILE, processed_videos)
-                safe_sleep(2.0, 4.0, msg="nghỉ ngắn")
-                continue
+                print(f"       -> Lấy được phụ đề ({len(transcript)} ký tự). Đang gửi Gemini phân tích giá xô...")
 
-            print(f"       -> Lấy được phụ đề ({len(transcript)} ký tự). Đang gửi Gemini phân tích giá xô...")
-
-            prompt = f"""
+                prompt = f"""
 KÊNH: {name} (Khu vực mặc định: {region})
 TIÊU ĐỀ VIDEO: {title}
 NỘI DUNG PHỤ ĐỀ:
 \"\"\"{transcript[:8000]}\"\"\"
 """
-            extracted = call_gemini_api(prompt)
+                extracted = call_gemini_api(prompt)
 
             if not extracted:
                 print("       -> [LỖI] Gemini API không trả về kết quả.")

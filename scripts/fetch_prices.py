@@ -639,7 +639,8 @@ def get_transcript_via_ytdlp(video_id: str) -> str:
             "subtitleslangs": ["vi"],
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["android", "ios", "mweb"]
+                    "player_client": ["android"],
+                    "player_skip": ["webpage", "configs"]
                 }
             },
             "quiet": True,
@@ -670,7 +671,12 @@ def get_transcript_via_ytdlp(video_id: str) -> str:
         try:
             info_opts = {
                 "skip_download": True,
-                "extractor_args": {"youtube": {"player_client": ["android", "ios", "mweb"]}},
+                "extractor_args": {
+                    "youtube": {
+                        "player_client": ["android"],
+                        "player_skip": ["webpage", "configs"]
+                    }
+                },
                 "quiet": True,
                 "no_warnings": True,
             }
@@ -743,10 +749,11 @@ def get_video_transcript(video_id: str) -> str:
     return get_transcript_via_ytdlp(video_id)
 
 
-def call_gemini_api(prompt_text: str) -> dict:
+def call_gemini_api(prompt_text: str, video_url: str = None) -> dict:
     """
     Gọi Gemini API với Structured Outputs (JSON Schema).
-    Thử qua google-genai SDK, nếu lỗi hoặc 503 sẽ thử REST API với danh sách model dự phòng.
+    Hỗ trợ phân tích trực tiếp video YouTube qua video_url (Gemini Multimodal)
+    nếu không lấy được phụ đề text.
     """
     if not GEMINI_API_KEY:
         print("[WARN] Chưa cấu hình GEMINI_API_KEY. Bỏ qua bước gọi AI.")
@@ -769,9 +776,22 @@ def call_gemini_api(prompt_text: str) -> dict:
         client = genai.Client(api_key=GEMINI_API_KEY)
         for model in candidate_models:
             try:
+                if video_url:
+                    contents = [
+                        types.Part(
+                            file_data=types.FileData(
+                                file_uri=video_url,
+                                mime_type="video/mp4"
+                            )
+                        ),
+                        types.Part(text=prompt_text)
+                    ]
+                else:
+                    contents = prompt_text
+
                 response = client.models.generate_content(
                     model=model,
-                    contents=prompt_text,
+                    contents=contents,
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_INSTRUCTION,
                         response_mime_type="application/json",
@@ -794,10 +814,20 @@ def call_gemini_api(prompt_text: str) -> dict:
     for model in candidate_models:
         try:
             endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
+            parts = []
+            if video_url:
+                parts.append({
+                    "fileData": {
+                        "mimeType": "video/mp4",
+                        "fileUri": video_url
+                    }
+                })
+            parts.append({"text": prompt_text})
+
             payload = {
                 "contents": [
                     {
-                        "parts": [{"text": prompt_text}]
+                        "parts": parts
                     }
                 ],
                 "systemInstruction": {
@@ -809,7 +839,7 @@ def call_gemini_api(prompt_text: str) -> dict:
                 },
             }
 
-            resp = requests.post(endpoint, json=payload, timeout=30)
+            resp = requests.post(endpoint, json=payload, timeout=45)
             if resp.status_code != 200:
                 print(f"[ERR] Gemini REST API model {model} lỗi HTTP {resp.status_code}. Đang thử model tiếp theo...")
                 continue
@@ -1016,48 +1046,59 @@ def main():
 
             # 4. Lấy phụ đề tiếng Việt an toàn
             transcript = get_video_transcript(video_id)
+            video_url = f"https://www.youtube.com/watch?v={video_id}"
+
             if not transcript:
-                prev_retries = processed_videos.get(video_id, {}).get("transcript_retries", 0)
-                print(f"       -> Chưa có phụ đề tiếng Việt (Lần thử {prev_retries + 1}/5). Sẽ tự động quét lại ở phiên kế tiếp.")
-                processed_videos[video_id] = {
-                    "channel_id": channel_id,
-                    "title": title,
-                    "processed_at": datetime.now(VN_TZ).isoformat(),
-                    "has_transcript": False,
-                    "transcript_retries": prev_retries + 1,
-                    "is_price_video": False,
-                }
-                save_json(PROCESSED_FILE, processed_videos)
-                consecutive_errors += 1
-                safe_sleep(2.0, 4.0, msg="chờ an toàn sau khi chưa có phụ đề")
-                continue
+                print(f"       -> Phụ đề text chưa sẵn sàng. Kích hoạt Gemini Multimodal phân tích trực tiếp video YouTube...")
+                prompt = f"""
+KÊNH: {channel_name} (Khu vực mặc định: {default_region})
+TIÊU ĐỀ VIDEO: {title}
+NGÀY ĐĂNG: {pub_at_iso}
+Hãy nghe âm thanh và xem thông tin video để trích xuất bảng giá sầu riêng cắt xô tại vườn chuẩn xác nhất.
+"""
+                extracted = call_gemini_api(prompt, video_url=video_url)
+                if not extracted:
+                    prev_retries = processed_videos.get(video_id, {}).get("transcript_retries", 0)
+                    print(f"       -> Chưa thể phân tích video (Lần thử {prev_retries + 1}/5). Sẽ tự động quét lại ở phiên kế tiếp.")
+                    processed_videos[video_id] = {
+                        "channel_id": channel_id,
+                        "title": title,
+                        "processed_at": datetime.now(VN_TZ).isoformat(),
+                        "has_transcript": False,
+                        "transcript_retries": prev_retries + 1,
+                        "is_price_video": False,
+                    }
+                    save_json(PROCESSED_FILE, processed_videos)
+                    consecutive_errors += 1
+                    safe_sleep(2.0, 4.0, msg="chờ an toàn sau khi chưa có phụ đề")
+                    continue
+            else:
+                consecutive_errors = 0
 
-            consecutive_errors = 0
+                # 5. Kiểm tra lại phụ đề có nhắc sầu riêng không
+                if not has_durian_content(title, transcript):
+                    print("       -> Phụ đề không chứa thông tin sầu riêng. Bỏ qua.")
+                    processed_videos[video_id] = {
+                        "channel_id": channel_id,
+                        "title": title,
+                        "processed_at": datetime.now(VN_TZ).isoformat(),
+                        "has_transcript": True,
+                        "is_price_video": False,
+                    }
+                    save_json(PROCESSED_FILE, processed_videos)
+                    safe_sleep(2.0, 4.0, msg="nghỉ ngắn")
+                    continue
 
-            # 5. Kiểm tra lại phụ đề có nhắc sầu riêng không
-            if not has_durian_content(title, transcript):
-                print("       -> Phụ đề không chứa thông tin sầu riêng. Bỏ qua.")
-                processed_videos[video_id] = {
-                    "channel_id": channel_id,
-                    "title": title,
-                    "processed_at": datetime.now(VN_TZ).isoformat(),
-                    "has_transcript": True,
-                    "is_price_video": False,
-                }
-                save_json(PROCESSED_FILE, processed_videos)
-                safe_sleep(2.0, 4.0, msg="nghỉ ngắn")
-                continue
-
-            # 6. Chuẩn bị prompt gửi Gemini
-            prompt = f"""
+                # 6. Chuẩn bị prompt gửi Gemini
+                prompt = f"""
 KÊNH: {channel_name} (Khu vực mặc định: {default_region})
 TIÊU ĐỀ VIDEO: {title}
 NGÀY ĐĂNG: {pub_at_iso}
 NỘI DUNG PHỤ ĐỀ:
 \"\"\"{transcript[:8000]}\"\"\"
 """
-            print("       -> Đang gửi phụ đề cho Gemini phân tích & trích xuất khoảng giá xô...")
-            extracted = call_gemini_api(prompt)
+                print("       -> Đang gửi phụ đề cho Gemini phân tích & trích xuất khoảng giá xô...")
+                extracted = call_gemini_api(prompt)
 
             if not extracted:
                 print("       -> [LỖI] Không nhận được phản hồi hợp lệ từ Gemini. Bỏ qua video này.")
