@@ -57,8 +57,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Chỉ add các file JSON trong public/data/ (loại trừ hoàn toàn các file tạm/bak)
-          git add public/data/*.json
+          # Add tất cả dữ liệu data bao gồm cả thư mục con sources/
+          git add public/data/*.json public/data/sources/*.json
 
           if git diff --staged --quiet; then
             echo "Không có thay đổi dữ liệu mới. Bỏ qua commit."
