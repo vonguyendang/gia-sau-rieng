@@ -49,6 +49,7 @@ from fetch_prices import (
     get_video_transcript,
     call_gemini_api,
     calculate_daily_average,
+    normalize_bulk_prices,
     load_json,
     save_json,
     safe_sleep,
@@ -180,7 +181,8 @@ NỘI DUNG PHỤ ĐỀ:
                 continue
 
             is_price_video = extracted.get("is_price_video", False)
-            prices = extracted.get("prices", {})
+            raw_prices = extracted.get("prices", {})
+            prices = normalize_bulk_prices(raw_prices)
             summary = extracted.get("summary", "")
             reg = extracted.get("region") or region
 

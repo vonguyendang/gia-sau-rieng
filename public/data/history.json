@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-11-14T22:07:00.047823+07:00",
+  "last_updated": "2026-11-15T08:32:34.414269+07:00",
   "days": {
     "2026-11-08": {
       "daily_average": {
-        "ri6_a": null,
-        "ri6_b": null,
-        "monthong_a": null,
-        "monthong_b": null,
-        "musang_king": null,
-        "black_thorn": null,
-        "chuong_bo": null,
-        "sau_huu": null
+        "ri6_a": 55000,
+        "ri6_b": 50000,
+        "monthong_a": 77000,
+        "monthong_b": 73000,
+        "musang_king": 100000,
+        "black_thorn": 110000,
+        "chuong_bo": 50000,
+        "sau_huu": 58000
       },
       "sources": [
         {
@@ -19,12 +19,125 @@
           "channel_name": "Giá Nông Sản 47",
           "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
           "video_url": "https://www.youtube.com/watch?v=vFwiX2DIRC4",
-          "published_at": "2026-11-14T22:05:50.161647+07:00",
-          "region": "Tây Nguyên",
-          "summary": "Bản tin giá sầu riêng ngày 08/11/2026. Thị trường phân hóa rõ rệt: Miền Tây và Lâm Đồng giảm giá, trong khi Gia Lai đi ngang. Theo quy tắc tính giá cắt xô tại vườn (lấy mức giá hàng loại B đại diện cho giá xô vườn tỉ lệ A/B 7/3 hoặc 8/2): Tại Miền Tây, Thái xô có giá 60.000 - 75.000 đ/kg, Ri6 xô từ 50.000 - 55.000 đ/kg. Tại Đắk Lắk, Thái xô đạt 73.000 - 78.000 đ/kg, Ri6 xô ở mức 25.000 đ/kg. Tại Gia Lai, Thái xô dao động 71.000 - 75.000 đ/kg, Ri6 xô ở mức 20.000 đ/kg. Ở các tỉnh khác, Thái xô là 68.000 đ/kg và Musang King xô đạt 103.000 đ/kg.",
-          "prices": {}
+          "published_at": "2026-11-08T04:30:00+07:00",
+          "region": "Miền Tây & Tây Nguyên",
+          "summary": "Bản tin giá sầu riêng ngày 08/11/2026. Áp lực giảm nhẹ ở Miền Tây và Lâm Đồng, Gia Lai đi ngang. Theo quy chuẩn giá cắt xô tại vườn: Miền Tây: Thái xô 73.000 - 75.000 đ/kg, Ri6 xô 50.000 - 55.000 đ/kg. Tây Nguyên: Thái xô 73.000 - 78.000 đ/kg, Ri6 xô 20.000 - 25.000 đ/kg. Musang King xô 100.000 đ/kg.",
+          "prices": {
+            "ri6_a": 55000,
+            "ri6_b": 50000,
+            "monthong_a": 77000,
+            "monthong_b": 73000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 58000
+          }
         }
-      ]
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 55000,
+          "ri6_b": 50000,
+          "monthong_a": 77000,
+          "monthong_b": 73000,
+          "musang_king": 100000,
+          "black_thorn": 110000,
+          "chuong_bo": 50000,
+          "sau_huu": 58000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 48000,
+          "ri6_b": 45000,
+          "monthong_a": 70000,
+          "monthong_b": 65000,
+          "musang_king": 95000,
+          "black_thorn": 105000,
+          "chuong_bo": 45000,
+          "sau_huu": 52000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 25000,
+          "ri6_b": 20000,
+          "monthong_a": 78000,
+          "monthong_b": 73000,
+          "musang_king": 110000,
+          "black_thorn": 110000,
+          "chuong_bo": 45000,
+          "sau_huu": 50000
+        }
+      }
+    },
+    "2026-11-09": {
+      "daily_average": {
+        "ri6_a": 54000,
+        "ri6_b": 50000,
+        "monthong_a": 76000,
+        "monthong_b": 72000,
+        "musang_king": 100000,
+        "black_thorn": 110000,
+        "chuong_bo": 50000,
+        "sau_huu": 57000
+      },
+      "sources": [
+        {
+          "video_id": "NDhyoUS-7tw",
+          "title": "Giá Sầu Riêng Hôm Nay 09/11/2026: Hồi Hộp Thái Loại A Tụt Ở Ba Vùng",
+          "channel_name": "Giá Nông Sản 47",
+          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+          "video_url": "https://www.youtube.com/watch?v=NDhyoUS-7tw",
+          "published_at": "2026-11-09T04:30:00+07:00",
+          "region": "Miền Tây & Tây Nguyên",
+          "summary": "Giá sầu riêng ngày 09/11/2026 tiếp tục xu hướng biến động nhẹ. Miền Tây: Thái xô 72.000 - 75.000 đ/kg, Ri6 xô 50.000 - 55.000 đ/kg. Tây Nguyên: Thái xô 73.000 - 78.000 đ/kg tại Đắk Lắk, 71.000 - 75.000 đ/kg tại Gia Lai. Ri6 xô từ 20.000 - 25.000 đ/kg. Musang King xô ổn định ở mức 100.000 đ/kg.",
+          "prices": {
+            "ri6_a": 54000,
+            "ri6_b": 50000,
+            "monthong_a": 76000,
+            "monthong_b": 72000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 57000
+          }
+        }
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 54000,
+          "ri6_b": 50000,
+          "monthong_a": 76000,
+          "monthong_b": 72000,
+          "musang_king": 100000,
+          "black_thorn": 110000,
+          "chuong_bo": 50000,
+          "sau_huu": 57000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 48000,
+          "ri6_b": 45000,
+          "monthong_a": 70000,
+          "monthong_b": 65000,
+          "musang_king": 95000,
+          "black_thorn": 105000,
+          "chuong_bo": 45000,
+          "sau_huu": 52000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 25000,
+          "ri6_b": 20000,
+          "monthong_a": 78000,
+          "monthong_b": 73000,
+          "musang_king": 110000,
+          "black_thorn": 110000,
+          "chuong_bo": 45000,
+          "sau_huu": 50000
+        }
+      }
     },
     "2026-11-10": {
       "daily_average": {
