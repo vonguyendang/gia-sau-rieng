@@ -238,17 +238,25 @@
               <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform duration-200" id="date-picker-arrow"></i>
             </button>
 
-            <!-- Popover Dạng Lưới Lịch Sử (Grid Dropdown) -->
-            <div id="date-picker-popover" class="hidden absolute right-0 sm:right-auto sm:left-0 top-full mt-2 w-80 sm:w-96 bg-white rounded-2xl shadow-xl border border-slate-200 p-3.5 z-50 transition-all">
+            <!-- Backdrop nền mờ trên Mobile -->
+            <div id="date-picker-backdrop" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-40 sm:hidden"></div>
+
+            <!-- Popover Dạng Lưới Lịch Sử (Modal căn giữa trên Mobile & Dropdown trên Desktop) -->
+            <div id="date-picker-popover" class="hidden fixed inset-x-3.5 top-28 mx-auto w-auto max-w-[340px] sm:max-w-none sm:w-96 sm:absolute sm:inset-x-auto sm:left-0 sm:top-full sm:mt-2 bg-white rounded-2xl shadow-2xl sm:shadow-xl border border-slate-200 p-3.5 sm:p-4 z-50 transition-all">
               <!-- Header Popover -->
               <div class="flex items-center justify-between pb-2.5 border-b border-slate-100 mb-3">
                 <div class="flex items-center gap-1.5">
                   <i class="fa-solid fa-clock-rotate-left text-emerald-600 text-xs"></i>
                   <span class="text-xs font-bold text-slate-800">Lịch Sử Giá Theo Ngày</span>
                 </div>
-                <button id="btn-quick-latest-day" type="button" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1">
-                  <i class="fa-solid fa-angles-up text-[10px]"></i> Về mới nhất
-                </button>
+                <div class="flex items-center gap-2">
+                  <button id="btn-quick-latest-day" type="button" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1">
+                    <i class="fa-solid fa-angles-up text-[10px]"></i> Về mới nhất
+                  </button>
+                  <button id="btn-close-date-popover" type="button" class="sm:hidden text-slate-400 hover:text-slate-600 text-xs p-1" title="Đóng">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                  </button>
+                </div>
               </div>
 
               <!-- Lưới các ngày theo tháng -->

@@ -88,35 +88,53 @@ function setupEventListeners() {
   // Bộ chọn & điều hướng ngày dạng lưới (Grid Date Picker)
   const toggleBtn = document.getElementById('btn-date-picker-toggle');
   const popover = document.getElementById('date-picker-popover');
+  const backdrop = document.getElementById('date-picker-backdrop');
+  const closePopoverBtn = document.getElementById('btn-close-date-popover');
   const arrow = document.getElementById('date-picker-arrow');
   const prevBtn = document.getElementById('btn-prev-day');
   const nextBtn = document.getElementById('btn-next-day');
   const quickLatestBtn = document.getElementById('btn-quick-latest-day');
+
+  const closeDatePopover = () => {
+    if (popover) popover.classList.add('hidden');
+    if (backdrop) backdrop.classList.add('hidden');
+    if (arrow) arrow.classList.remove('rotate-180');
+  };
+
+  const openDatePopover = () => {
+    if (popover) popover.classList.remove('hidden');
+    if (backdrop) backdrop.classList.remove('hidden');
+    if (arrow) arrow.classList.add('rotate-180');
+  };
 
   if (toggleBtn && popover) {
     toggleBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isHidden = popover.classList.contains('hidden');
       if (isHidden) {
-        popover.classList.remove('hidden');
-        if (arrow) arrow.classList.add('rotate-180');
+        openDatePopover();
       } else {
-        popover.classList.add('hidden');
-        if (arrow) arrow.classList.remove('rotate-180');
+        closeDatePopover();
       }
     });
 
+    if (backdrop) {
+      backdrop.addEventListener('click', closeDatePopover);
+    }
+
+    if (closePopoverBtn) {
+      closePopoverBtn.addEventListener('click', closeDatePopover);
+    }
+
     document.addEventListener('click', (e) => {
       if (!popover.contains(e.target) && !toggleBtn.contains(e.target)) {
-        popover.classList.add('hidden');
-        if (arrow) arrow.classList.remove('rotate-180');
+        closeDatePopover();
       }
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !popover.classList.contains('hidden')) {
-        popover.classList.add('hidden');
-        if (arrow) arrow.classList.remove('rotate-180');
+        closeDatePopover();
       }
     });
   }

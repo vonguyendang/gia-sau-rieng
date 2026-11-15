@@ -65,8 +65,15 @@ function renderDateGrid(daysKeys) {
             const weekday = getWeekdayShort(d);
             const parts = d.split('-');
             const displayDayMonth = `${parts[2]}/${parts[1]}`;
-            const knownSources = (historyData.days && historyData.days[d]?.sources) || sourcesCache[d];
-            const sourceCount = knownSources ? knownSources.length : null;
+            
+            let sourceCount = 0;
+            if (historyData?.days?.[d]?.source_count !== undefined) {
+              sourceCount = historyData.days[d].source_count;
+            } else if (sourcesCache[d] && Array.isArray(sourcesCache[d])) {
+              sourceCount = sourcesCache[d].length;
+            } else if (historyData?.days?.[d]?.sources && Array.isArray(historyData.days[d].sources)) {
+              sourceCount = historyData.days[d].sources.length;
+            }
 
             const baseClass = isSelected
               ? 'bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300'
@@ -84,7 +91,7 @@ function renderDateGrid(daysKeys) {
                   <span class="text-[10px] ${subTextClass}">${weekday}</span>
                 </div>
                 <div class="mt-1 flex items-center justify-between w-full text-[10px]">
-                  <span class="${countClass}">${sourceCount !== null ? (sourceCount > 0 ? `${sourceCount} tin` : '0 tin') : 'Xem tin'}</span>
+                  <span class="${countClass}">${sourceCount} tin</span>
                   ${isLatest ? `<span class="text-[9px] px-1 py-0.2 rounded font-bold ${isSelected ? 'bg-amber-300 text-amber-950' : 'bg-emerald-100 text-emerald-800'}">Mới</span>` : ''}
                 </div>
               </button>
@@ -178,8 +185,10 @@ function selectDay(dayKey, closePopover = false) {
   // Đóng popover nếu yêu cầu
   if (closePopover) {
     const popover = document.getElementById('date-picker-popover');
+    const backdrop = document.getElementById('date-picker-backdrop');
     const arrow = document.getElementById('date-picker-arrow');
     if (popover) popover.classList.add('hidden');
+    if (backdrop) backdrop.classList.add('hidden');
     if (arrow) arrow.classList.remove('rotate-180');
   }
 

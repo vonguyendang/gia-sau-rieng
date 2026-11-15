@@ -57,6 +57,7 @@
           "sau_huu": 50000
         }
       },
+      "source_count": 3,
       "sources": [
         {
           "video_id": "vo5S4P1hyH0",
@@ -166,6 +167,7 @@
           "sau_huu": 50000
         }
       },
+      "source_count": 3,
       "sources": []
     },
     "2026-11-12": {
@@ -214,6 +216,7 @@
           "sau_huu": 50000
         }
       },
+      "source_count": 7,
       "sources": []
     },
     "2026-11-11": {
@@ -262,6 +265,7 @@
           "sau_huu": 50000
         }
       },
+      "source_count": 6,
       "sources": []
     },
     "2026-11-10": {
@@ -310,6 +314,7 @@
           "sau_huu": 52000
         }
       },
+      "source_count": 1,
       "sources": []
     },
     "2026-11-09": {
@@ -358,6 +363,7 @@
           "sau_huu": 50000
         }
       },
+      "source_count": 3,
       "sources": []
     },
     "2026-11-08": {
@@ -406,6 +412,7 @@
           "sau_huu": 50000
         }
       },
+      "source_count": 2,
       "sources": []
     }
   },

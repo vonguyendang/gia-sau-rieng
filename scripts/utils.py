@@ -192,11 +192,13 @@ def save_split_data(history_data: dict):
     recent_day_keys = sorted_days[:35]  # Lấy 35 ngày gần nhất cho so sánh T-30 và vẽ biểu đồ 1 tháng
     recent_days_data = {}
     for d in recent_day_keys:
+        srcs = days_dict[d].get("sources", [])
         recent_days_data[d] = {
             "daily_average": days_dict[d].get("daily_average", {}),
             "by_region": days_dict[d].get("by_region", {}),
+            "source_count": len(srcs),
             # Kèm nguồn cho ngày mới nhất để trang chủ render ngay lập tức không cần fetch thêm
-            "sources": days_dict[d].get("sources", []) if d == latest_day else []
+            "sources": srcs if d == latest_day else []
         }
 
     latest_data = {
