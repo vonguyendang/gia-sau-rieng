@@ -15,6 +15,7 @@ let historyData = null;
 let priceChartInstance = null;
 let currentRange = '7'; // '7', '30', 'all'
 let currentRegion = 'all'; // 'all', 'mientay', 'miendong', 'taynguyen'
+let currentSelectedDay = null;
 
 const REGIONS = {
   all: { label: 'Toàn Quốc (Trung Bình)', badge: 'Toàn quốc', short: 'Toàn quốc' },
@@ -22,6 +23,18 @@ const REGIONS = {
   miendong: { label: 'Miền Đông (Đông Nam Bộ)', badge: 'Miền Đông', short: 'Miền Đông' },
   taynguyen: { label: 'Tây Nguyên', badge: 'Tây Nguyên', short: 'Tây Nguyên' }
 };
+
+function getWeekdayShort(dateStr) {
+  try {
+    const parts = dateStr.split('-');
+    if (parts.length !== 3) return '';
+    const dt = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+    const names = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+    return names[dt.getDay()];
+  } catch (e) {
+    return '';
+  }
+}
 
 function formatVND(val) {
   if (val === null || val === undefined || isNaN(val) || val <= 0) return 'Đang cập nhật';
@@ -103,10 +116,79 @@ function setupEventListeners() {
     });
   });
 
+  // Bộ chọn & điều hướng ngày dạng lưới (Grid Date Picker)
+  const toggleBtn = document.getElementById('btn-date-picker-toggle');
+  const popover = document.getElementById('date-picker-popover');
+  const arrow = document.getElementById('date-picker-arrow');
+  const prevBtn = document.getElementById('btn-prev-day');
+  const nextBtn = document.getElementById('btn-next-day');
+  const quickLatestBtn = document.getElementById('btn-quick-latest-day');
+
+  if (toggleBtn && popover) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = popover.classList.contains('hidden');
+      if (isHidden) {
+        popover.classList.remove('hidden');
+        if (arrow) arrow.classList.add('rotate-180');
+      } else {
+        popover.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!popover.contains(e.target) && !toggleBtn.contains(e.target)) {
+        popover.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !popover.classList.contains('hidden')) {
+        popover.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
+      }
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (!historyData || !historyData.days) return;
+      const daysKeys = Object.keys(historyData.days).sort().reverse();
+      const idx = daysKeys.indexOf(currentSelectedDay);
+      if (idx !== -1 && idx < daysKeys.length - 1) {
+        selectDay(daysKeys[idx + 1]);
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (!historyData || !historyData.days) return;
+      const daysKeys = Object.keys(historyData.days).sort().reverse();
+      const idx = daysKeys.indexOf(currentSelectedDay);
+      if (idx > 0) {
+        selectDay(daysKeys[idx - 1]);
+      }
+    });
+  }
+
+  if (quickLatestBtn) {
+    quickLatestBtn.addEventListener('click', () => {
+      if (!historyData || !historyData.days) return;
+      const daysKeys = Object.keys(historyData.days).sort().reverse();
+      if (daysKeys.length > 0) {
+        selectDay(daysKeys[0], true);
+      }
+    });
+  }
+
+  // Tương thích ngược nếu vẫn còn phần tử date-select cũ
   const dateSelect = document.getElementById('date-select');
   if (dateSelect) {
     dateSelect.addEventListener('change', (e) => {
-      renderSources(e.target.value);
+      selectDay(e.target.value);
     });
   }
 }
@@ -789,17 +871,186 @@ function updateChart() {
 function populateDateSelect() {
   if (!historyData || !historyData.days) return;
 
-  const dateSelect = document.getElementById('date-select');
-  if (!dateSelect) return;
-
   const daysKeys = Object.keys(historyData.days).sort().reverse();
   if (daysKeys.length === 0) return;
 
-  dateSelect.innerHTML = daysKeys.map(d => {
-    return `<option value="${d}">${formatDateStr(d, true)}</option>`;
-  }).join('');
+  // Cập nhật tổng số ngày lên popover header
+  const totalDaysEl = document.getElementById('popover-total-days');
+  if (totalDaysEl) {
+    totalDaysEl.textContent = `${daysKeys.length} ngày`;
+  }
 
-  renderSources(daysKeys[0]);
+  // Tương thích ngược: nếu có select cũ
+  const dateSelect = document.getElementById('date-select');
+  if (dateSelect) {
+    dateSelect.innerHTML = daysKeys.map(d => {
+      return `<option value="${d}">${formatDateStr(d, true)}</option>`;
+    }).join('');
+  }
+
+  // Mặc định chọn ngày mới nhất nếu chưa chọn
+  if (!currentSelectedDay || !daysKeys.includes(currentSelectedDay)) {
+    currentSelectedDay = daysKeys[0];
+  }
+
+  renderDateGrid(daysKeys);
+  selectDay(currentSelectedDay, false);
+}
+
+function renderDateGrid(daysKeys) {
+  const gridContainer = document.getElementById('date-grid-container');
+  if (!gridContainer) return;
+
+  // Phân nhóm theo Năm-Tháng (YYYY-MM)
+  const monthGroups = {};
+  daysKeys.forEach(d => {
+    const ym = d.substring(0, 7);
+    if (!monthGroups[ym]) monthGroups[ym] = [];
+    monthGroups[ym].push(d);
+  });
+
+  const latestDay = daysKeys[0];
+
+  let html = '';
+  Object.keys(monthGroups).forEach(ym => {
+    const [year, month] = ym.split('-');
+    const monthLabel = `Tháng ${parseInt(month, 10)}/${year}`;
+    const daysInMonth = monthGroups[ym];
+
+    html += `
+      <div class="month-group">
+        <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center justify-between">
+          <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-emerald-600"></i> ${monthLabel}</span>
+          <span class="text-[10px] text-slate-400 font-semibold">(${daysInMonth.length} ngày)</span>
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          ${daysInMonth.map(d => {
+            const isSelected = d === currentSelectedDay;
+            const isLatest = d === latestDay;
+            const weekday = getWeekdayShort(d);
+            const parts = d.split('-');
+            const displayDayMonth = `${parts[2]}/${parts[1]}`;
+            const sourceCount = historyData.days[d]?.sources?.length || 0;
+
+            const baseClass = isSelected
+              ? 'bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300'
+              : 'bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border-slate-200 hover:border-emerald-300 font-medium';
+
+            const subTextClass = isSelected ? 'text-emerald-100' : 'text-slate-400';
+            const countClass = isSelected ? 'text-emerald-100' : 'text-slate-500';
+
+            return `
+              <button type="button" 
+                data-day="${d}"
+                class="date-grid-chip p-2 rounded-xl text-left border transition-all flex flex-col justify-between cursor-pointer ${baseClass}">
+                <div class="flex items-center justify-between w-full">
+                  <span class="text-xs font-bold">${displayDayMonth}</span>
+                  <span class="text-[10px] ${subTextClass}">${weekday}</span>
+                </div>
+                <div class="mt-1 flex items-center justify-between w-full text-[10px]">
+                  <span class="${countClass}">${sourceCount > 0 ? `${sourceCount} tin` : '0 tin'}</span>
+                  ${isLatest ? `<span class="text-[9px] px-1 py-0.2 rounded font-bold ${isSelected ? 'bg-amber-300 text-amber-950' : 'bg-emerald-100 text-emerald-800'}">Mới</span>` : ''}
+                </div>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  });
+
+  gridContainer.innerHTML = html;
+
+  // Gắn sự kiện click cho từng ô chip ngày
+  const chips = gridContainer.querySelectorAll('.date-grid-chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const day = chip.getAttribute('data-day');
+      if (day) selectDay(day, true);
+    });
+  });
+}
+
+function selectDay(dayKey, closePopover = false) {
+  if (!historyData || !historyData.days) return;
+  const daysKeys = Object.keys(historyData.days).sort().reverse();
+  if (!daysKeys.includes(dayKey)) return;
+
+  currentSelectedDay = dayKey;
+  const latestDay = daysKeys[0];
+  const isLatest = dayKey === latestDay;
+  const weekday = getWeekdayShort(dayKey);
+
+  // Cập nhật text nút toggle
+  const selectedTextEl = document.getElementById('selected-date-text');
+  const badgeEl = document.getElementById('selected-date-badge');
+  if (selectedTextEl) {
+    selectedTextEl.textContent = `${formatDateStr(dayKey, true)} (${weekday})`;
+  }
+  if (badgeEl) {
+    if (isLatest) {
+      badgeEl.classList.remove('hidden');
+    } else {
+      badgeEl.classList.add('hidden');
+    }
+  }
+
+  // Tương thích ngược: cập nhật select cũ nếu có
+  const dateSelect = document.getElementById('date-select');
+  if (dateSelect && dateSelect.value !== dayKey) {
+    dateSelect.value = dayKey;
+  }
+
+  // Cập nhật trạng thái nút Previous / Next
+  const prevBtn = document.getElementById('btn-prev-day');
+  const nextBtn = document.getElementById('btn-next-day');
+  const idx = daysKeys.indexOf(dayKey);
+
+  if (prevBtn) {
+    // idx === daysKeys.length - 1 nghĩa là ngày cũ nhất -> disable prev
+    prevBtn.disabled = (idx >= daysKeys.length - 1);
+  }
+  if (nextBtn) {
+    // idx === 0 nghĩa là ngày mới nhất -> disable next
+    nextBtn.disabled = (idx <= 0);
+  }
+
+  // Cập nhật highlight active trong grid
+  const gridContainer = document.getElementById('date-grid-container');
+  if (gridContainer) {
+    const chips = gridContainer.querySelectorAll('.date-grid-chip');
+    chips.forEach(chip => {
+      const d = chip.getAttribute('data-day');
+      const isSel = d === dayKey;
+      const isLat = d === latestDay;
+      const subText = chip.querySelector('span:nth-child(2)');
+      const countEl = chip.querySelector('.mt-1 > span:first-child');
+      const badgeSpan = chip.querySelector('.mt-1 > span:last-child');
+
+      if (isSel) {
+        chip.className = 'date-grid-chip p-2 rounded-xl text-left border transition-all flex flex-col justify-between cursor-pointer bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300';
+        if (subText) subText.className = 'text-[10px] text-emerald-100';
+        if (countEl) countEl.className = 'text-emerald-100';
+        if (badgeSpan && isLat) badgeSpan.className = 'text-[9px] px-1 py-0.2 rounded font-bold bg-amber-300 text-amber-950';
+      } else {
+        chip.className = 'date-grid-chip p-2 rounded-xl text-left border transition-all flex flex-col justify-between cursor-pointer bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border-slate-200 hover:border-emerald-300 font-medium';
+        if (subText) subText.className = 'text-[10px] text-slate-400';
+        if (countEl) countEl.className = 'text-slate-500';
+        if (badgeSpan && isLat) badgeSpan.className = 'text-[9px] px-1 py-0.2 rounded font-bold bg-emerald-100 text-emerald-800';
+      }
+    });
+  }
+
+  // Đóng popover nếu yêu cầu
+  if (closePopover) {
+    const popover = document.getElementById('date-picker-popover');
+    const arrow = document.getElementById('date-picker-arrow');
+    if (popover) popover.classList.add('hidden');
+    if (arrow) arrow.classList.remove('rotate-180');
+  }
+
+  // Render danh sách nguồn tin của ngày đã chọn
+  renderSources(dayKey);
 }
 
 function renderSources(selectedDay) {
