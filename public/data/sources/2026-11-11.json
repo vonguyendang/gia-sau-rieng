@@ -166,5 +166,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "2XB8lCnvq30",
+    "title": "giá sầu riêng hôm nay 11/11/2026 cập nhật giá sầu riêng, giá sầu riêng xô lùa ",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=2XB8lCnvq30",
+    "published_at": "2026-11-17T01:31:17.329538+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng Thái cắt xô tại vườn đạt khoảng 72.000 - 78.000 đ/kg và tiếp tục có xu hướng tăng. Trong khi đó, sầu riêng Ri6 xô lùa giữ mức khoảng 48.000 - 50.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 48000,
+      "monthong_a": 78000,
+      "monthong_b": 72000,
+      "musang_king": 90000,
+      "black_thorn": 98000,
+      "chuong_bo": 50000,
+      "sau_huu": 58000
+    }
   }
 ]
