@@ -1536,21 +1536,21 @@
   "iXylUhBe8nI": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít chiều nay ngày 14/11/2026",
-    "processed_at": "2026-11-15T15:00:54.549771+07:00",
+    "processed_at": "2026-11-16T10:00:48.547396+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "6F0O7-ufZBI": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá phân bón hôm nay ngày 14/11/2026",
-    "processed_at": "2026-11-15T10:00:45.343102+07:00",
+    "processed_at": "2026-11-16T10:00:48.550213+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "6XWdFrfhf44": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít trưa nay ngày 14/11/2026",
-    "processed_at": "2026-11-15T10:00:45.344441+07:00",
+    "processed_at": "2026-11-16T10:00:48.552837+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -1719,15 +1719,16 @@
   "ujwIg3wVECY": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ LÚA & GẠO HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T10:01:53.343499+07:00",
+    "processed_at": "2026-11-16T10:01:52.883294+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "Vwu7xtR_zPE": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ BẢY NGÀY /14/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-16T06:30:05.111408+07:00",
+    "processed_at": "2026-11-16T10:01:56.139657+07:00",
     "has_transcript": false,
+    "transcript_retries": 1,
     "is_price_video": false
   },
   "VDhLcFJ-A_0": {
@@ -1740,14 +1741,14 @@
   "NTJ2Uk0dNJQ": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "cập nhật giá mít cuối ngày 14/11/2026",
-    "processed_at": "2026-11-15T19:10:34.603820+07:00",
+    "processed_at": "2026-11-16T10:00:48.539453+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "XrQVkTyIe_E": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá dừa chiều nay ngày 14/11/2026",
-    "processed_at": "2026-11-15T15:00:47.901190+07:00",
+    "processed_at": "2026-11-16T10:00:48.542058+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -1762,7 +1763,7 @@
   "m-NZk-Zq2hE": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít cuối ngày 14/11/2026",
-    "processed_at": "2026-11-15T15:00:54.547425+07:00",
+    "processed_at": "2026-11-16T10:00:48.544702+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -1877,14 +1878,14 @@
   "Ijc4KOjMqHs": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ CUỐI HÔM NAY THỨ BẢY NGÀY /14/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T10:01:53.344856+07:00",
+    "processed_at": "2026-11-16T10:01:52.886050+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "-s49d_QAyDo": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ CUỐI HÔM NAY THỨ BẢY NGÀY /14/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T10:01:53.342135+07:00",
+    "processed_at": "2026-11-16T10:01:52.880524+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -1925,42 +1926,42 @@
   "FmKzy7DaxXc": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít hôm nay mới ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.589995+07:00",
+    "processed_at": "2026-11-16T10:00:48.523576+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "Iva9ukZETyo": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít hôm nay ngày 15/11/20266",
-    "processed_at": "2026-11-15T19:10:34.592354+07:00",
+    "processed_at": "2026-11-16T10:00:48.526227+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "RUTx6VYHxQw": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá dừa hôm nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.594646+07:00",
+    "processed_at": "2026-11-16T10:00:48.528887+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "88cRYnYdbmw": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít hôm nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.596925+07:00",
+    "processed_at": "2026-11-16T10:00:48.531493+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "UYGKzVccV8A": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá tiêu hôm nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.599218+07:00",
+    "processed_at": "2026-11-16T10:00:48.534159+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "q4WPjA3DoYY": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá cà phê hôm nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.601523+07:00",
+    "processed_at": "2026-11-16T10:00:48.536797+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -1974,84 +1975,85 @@
   "yDjerfh-PfI": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Cách trồng quýt hồng Lai Vung sai quả",
-    "processed_at": "2026-11-15T19:10:58.088630+07:00",
+    "processed_at": "2026-11-16T10:01:09.618785+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "60usnEzjL4M": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Cà Phê Hôm Nay 15/11/2026: Hồi Hộp Cà Phê Lùi Thêm Một Nhịp",
-    "processed_at": "2026-11-15T19:11:13.422490+07:00",
+    "processed_at": "2026-11-16T10:01:34.009333+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "kzzq1U1dQt8": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Tiêu Hôm Nay 15/11/2026: Áp Lực Chưa Tới, Hồ Tiêu Vẫn Neo Cao",
-    "processed_at": "2026-11-15T19:11:13.425226+07:00",
+    "processed_at": "2026-11-16T10:01:34.013090+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "Ab6XYbyRwNc": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:01:59.691747+07:00",
+    "processed_at": "2026-11-16T10:01:45.916885+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "iVkARhQR3Dk": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-16T06:29:56.973650+07:00",
+    "processed_at": "2026-11-16T10:01:50.402450+07:00",
     "has_transcript": false,
+    "transcript_retries": 1,
     "is_price_video": false
   },
   "_3G1p7CNRUM": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:02:04.549776+07:00",
+    "processed_at": "2026-11-16T10:01:52.865835+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "QqYrRA-CWKI": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "XỊT CỎ 5 LẦN KHÔNG ĂN THUA NÔNG DÂN CẮT 1 ĐƯỜNG RUỘNG RỒI BỎ LUÔN KHÓC RÒNG|GIẢI TRÍ MIỀN TÂY",
-    "processed_at": "2026-11-15T15:02:04.552241+07:00",
+    "processed_at": "2026-11-16T10:01:52.869420+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "MiWXrEqh_G4": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:02:04.554248+07:00",
+    "processed_at": "2026-11-16T10:01:52.872273+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "i0WgpiQhBuc": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ PHÂN BÓN VÀ THUỐC BVTV MỖI NGÀY| SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:02:04.556175+07:00",
+    "processed_at": "2026-11-16T10:01:52.875015+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "P2GXPvK5TZ4": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ CÀ PHÊ VÀ HỒ TIÊU MỖI NGÀY| SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:02:04.558102+07:00",
+    "processed_at": "2026-11-16T10:01:52.877779+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "KqG0JKmJbmQ": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít chiều nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.580437+07:00",
+    "processed_at": "2026-11-16T10:00:48.515668+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "LWc5S66EuYo": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít trưa nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.582763+07:00",
+    "processed_at": "2026-11-16T10:00:48.518300+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -2066,7 +2068,7 @@
   "DFRVJSH_B2o": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá ớt hôm nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.587665+07:00",
+    "processed_at": "2026-11-16T10:00:48.520940+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -2152,70 +2154,70 @@
   "x5ozBZmxQgI": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ CHIỀU HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T19:11:32.761528+07:00",
+    "processed_at": "2026-11-16T10:01:45.895186+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "9TL7IZiAOrs": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ CÀ PHÊ VÀ HỒ TIÊU MỖI NGÀY| CHIỀU HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T19:01:44.923622+07:00",
+    "processed_at": "2026-11-16T10:01:45.897881+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "rVcI9WDonBk": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ CHIỀU HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T19:01:44.925617+07:00",
+    "processed_at": "2026-11-16T10:01:45.900588+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "SzcGdMGoA_o": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ TRƯA HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:01:59.682153+07:00",
+    "processed_at": "2026-11-16T10:01:45.903301+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "1NChqpDczfI": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "VỪA BỎ CỌC XONG GIÁ LÚA TĂNG ẦM ẦM BÀ CON XIN THÊM NHẤT QUYẾT KHÔNG CHO |GIẢI TRÍ MIỀN TÂY",
-    "processed_at": "2026-11-15T15:01:59.684089+07:00",
+    "processed_at": "2026-11-16T10:01:45.906002+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "-HggofuI0TQ": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ TRƯA HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:01:59.686023+07:00",
+    "processed_at": "2026-11-16T10:01:45.908711+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "FvaWtUqskPc": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ PHÂN BÓN VÀ THUỐC BVTV MỖI NGÀY| TRƯA HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:01:59.687915+07:00",
+    "processed_at": "2026-11-16T10:01:45.911481+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "Hm085nip9KQ": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T15:01:59.689817+07:00",
+    "processed_at": "2026-11-16T10:01:45.914188+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "V7Utaba58ws": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "cập nhật giá mít cuối ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:27.886367+07:00",
+    "processed_at": "2026-11-16T10:00:48.507668+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "yEKZ8LW_lHk": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá dừa chiều nay ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:27.888819+07:00",
+    "processed_at": "2026-11-16T10:00:48.510296+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -2239,7 +2241,7 @@
   "NvpSGBPa_CE": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá mít cuối ngày 15/11/2026",
-    "processed_at": "2026-11-15T19:10:34.577607+07:00",
+    "processed_at": "2026-11-16T10:00:48.513014+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -2271,8 +2273,9 @@
   "BAVacjmTOGM": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
     "title": "Giá sầu riêng hôm nay ngày 16 tháng 11, 2026, thị trường sầu riêng, sầu riêng miền tây Woo",
-    "processed_at": "2026-11-16T06:27:08.545301+07:00",
+    "processed_at": "2026-11-16T10:01:19.580703+07:00",
     "has_transcript": false,
+    "transcript_retries": 1,
     "is_price_video": false
   },
   "SDfWCTuJwts": {
@@ -2341,7 +2344,7 @@
   "j30lrVZvbxQ": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ CUỐI HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T19:11:27.073756+07:00",
+    "processed_at": "2026-11-16T10:01:45.886809+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -2355,14 +2358,14 @@
   "rY4gVsCto3g": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ LÚA & GẠO HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T19:11:27.081379+07:00",
+    "processed_at": "2026-11-16T10:01:45.889543+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
   "RgmtqtuvXa4": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ CUỐI HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-15T19:11:27.084419+07:00",
+    "processed_at": "2026-11-16T10:01:45.892413+07:00",
     "has_transcript": null,
     "is_price_video": false
   },
@@ -2555,8 +2558,144 @@
   "sf8MN-GKtHQ": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 16/11/2026: Hồi Hộp Tây Nguyên Giữ Mốc Hàng Thái",
-    "processed_at": "2026-11-16T06:28:10.683903+07:00",
+    "processed_at": "2026-11-16T10:01:31.666000+07:00",
     "has_transcript": false,
+    "transcript_retries": 1,
+    "is_price_video": false
+  },
+  "60XHyLkZXGs": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít trưa nay ngày 16/11/2026",
+    "processed_at": "2026-11-16T10:00:48.488987+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "Mv6pFS0H5To": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít hôm nay mới ngày 16/11/2026",
+    "processed_at": "2026-11-16T10:00:48.491833+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "Vbs1-1C21sE": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá dừa hôm nay ngày 16/11/2026",
+    "processed_at": "2026-11-16T10:00:48.494426+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "IemjvfPKgm8": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít hôm nay ngày 16/11/20266",
+    "processed_at": "2026-11-16T10:00:48.497031+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "azSA97CTYAw": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá mít hôm nay ngày 16/11/2026",
+    "processed_at": "2026-11-16T10:00:48.499653+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "yHcGozv8eJ0": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá tiêu hôm nay ngày 16/11/2026",
+    "processed_at": "2026-11-16T10:00:48.502312+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "rZKxsYwqVLI": {
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "title": "giá cà phê hôm nay ngày 16/11/2026",
+    "processed_at": "2026-11-16T10:00:48.504995+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "dvzCghuJwe0": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá heo hơi hôm nay ngày 16/11/2026: Tiếp đà tăng, một số địa phương đạt mức 52.000 đồng/kg.",
+    "processed_at": "2026-11-16T10:01:03.408890+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "nGMh8X04FsU": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá sầu riêng hôm nay ngày 16/11/2026: Biến động trái chiều tại nhiều địa phương.",
+    "processed_at": "2026-11-16T10:01:06.851805+07:00",
+    "has_transcript": false,
+    "transcript_retries": 1,
+    "is_price_video": false
+  },
+  "FSO3bWHnkqI": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Cách Trồng Na Trên Đất Cằn Sỏi Đá Sai Quả | Bí Quyết Làm Giàu Từ Đất Đồi",
+    "processed_at": "2026-11-16T10:01:09.615133+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "0EIYoJXjo_M": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Cà Phê Hôm Nay 16/11/2026: Áp Lực Mạnh Cà Phê Chạm Đáy Một Tuần",
+    "processed_at": "2026-11-16T10:01:28.299344+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "5dtIezeAfB8": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Tiêu Hôm Nay 16/11/2026: Phấn Khởi, Hồ Tiêu Giữ Vững Vùng Giá Cao",
+    "processed_at": "2026-11-16T10:01:28.302419+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "XLl7E4TxNhE": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-16T10:01:38.877769+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "H3KzVHwzTwU": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-16T10:01:41.948646+07:00",
+    "has_transcript": false,
+    "transcript_retries": 1,
+    "is_price_video": false
+  },
+  "KOPP2cb5s2c": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-16T10:01:45.872022+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "cPoRwVRazMs": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "QUÁ SỐC 20 NĂM MỚI CÓ CẢNH CẢ CÁNH ĐỒNG ĐỒNG LOẠT BỘI THU NHỜ BÍ QUYẾT NÀY|GIẢI TRÍ MIỀN TÂY",
+    "processed_at": "2026-11-16T10:01:45.875860+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "67nEw7XgoCg": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-16T10:01:45.878641+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "Vo47-fQVrEw": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ PHÂN BÓN VÀ THUỐC BVTV MỖI NGÀY| SÁNG HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-16T10:01:45.881338+07:00",
+    "has_transcript": null,
+    "is_price_video": false
+  },
+  "KY768ulN1fE": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ CÀ PHÊ VÀ HỒ TIÊU MỖI NGÀY| SÁNG HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-16T10:01:45.884091+07:00",
+    "has_transcript": null,
     "is_price_video": false
   }
 }
