@@ -126,5 +126,45 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "Cz3bH3j7Zd8",
+    "title": " Giá sầu riêng hôm nay ngày 11tháng 11, 2026 thị trường sầu riêng, sầu riêng miền tây ",
+    "channel_name": "Thắm Trần Vlog",
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "video_url": "https://www.youtube.com/watch?v=Cz3bH3j7Zd8",
+    "published_at": "2026-11-16T15:19:02.796305+07:00",
+    "region": "Chung",
+    "summary": "Cập nhật giá sầu riêng tại Tây Nguyên và Miền Tây: sầu Thái mua xô tại vườn (dựa trên phân loại B) có giá 72.000 - 75.000 đ/kg, Ri6 xô từ 53.000 - 55.000 đ/kg, và Musang King đạt mức 120.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 53000,
+      "monthong_a": 75000,
+      "monthong_b": 72000,
+      "musang_king": 120000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  },
+  {
+    "video_id": "irv-y5uRqbY",
+    "title": "Giá Sầu Riêng Hôm Nay 11/11/2026: Hoang Mang Giống Đặc Sản Giảm Sâu",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=irv-y5uRqbY",
+    "published_at": "2026-11-16T15:21:29.305777+07:00",
+    "region": "Chung",
+    "summary": "Bản tin ngày 11/11/2026 cho thấy giá sầu riêng phân hóa: dòng đặc sản như Musang King giảm sâu 40k-50k/kg, trong khi sầu riêng Ri6 và Thái loại B khu vực Miền Tây có xu hướng nhích tăng nhẹ.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 54000,
+      "monthong_a": 65000,
+      "monthong_b": 60000,
+      "musang_king": 80000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

@@ -18,5 +18,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "sBA9Yx41IDg",
+    "title": "Giá Sầu Riêng Hôm Nay 04/11/2026: Phân Hóa Rõ, Thái Lâm Đồng Nhích Lên",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=sBA9Yx41IDg",
+    "published_at": "2026-11-16T15:21:29.305777+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng ngày 04/11/2026 tại Tây Nguyên có sự phân hóa: sầu Thái loại B (tính làm giá xô tại vườn) dao động từ 71.000 - 80.000 đ/kg, Ri6 loại B dao động từ 20.000 - 25.000 đ/kg, Musang King loại B đạt 130.000 đ/kg.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 80000,
+      "monthong_b": 71000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

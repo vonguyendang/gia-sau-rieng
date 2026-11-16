@@ -18,5 +18,45 @@
       "chuong_bo": 55000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "KNBkgAQMKzM",
+    "title": "Giá sầu riêng hôm nay ngày 6/11/2026: Thị trường biến động tại nhiều địa phương trên cả nước.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=KNBkgAQMKzM",
+    "published_at": "2026-11-06T15:18:10.229287+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 06/11/2026 có sự phân hóa rõ rệt giữa các vùng trồng. Giá mua xô cả vườn (tính theo giá loại B) đối với sầu Thái dao động từ 70.000 - 78.000 đ/kg, Ri6 dao động từ 59.000 - 60.000 đ/kg tại Miền Tây. Các giống đặc sản như Musang King loại B đạt 130.000 đ/kg và Black Thorn loại B đạt 135.000 đ/kg.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 59000,
+      "monthong_a": 78000,
+      "monthong_b": 70000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
+  },
+  {
+    "video_id": "1x2ZsswLae0",
+    "title": "Giá Sầu Riêng Hôm Nay 06/11/2026: Lo Ngại Ri6 Miền Tây Lùi Bước",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=1x2ZsswLae0",
+    "published_at": "2026-11-16T15:21:29.305777+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng có xu hướng giảm nhẹ, chủ yếu do Ri6 và Thái loại B tại Miền Tây hạ giá, trong khi khu vực Tây Nguyên đi ngang. Giá sầu riêng Thái xô dao động 63.000 - 75.000 đ/kg, Ri6 xô Miền Tây 60.000 - 65.000 đ/kg và Musang King loại B đạt 130.000 đ/kg.",
+    "prices": {
+      "ri6_a": 65000,
+      "ri6_b": 60000,
+      "monthong_a": 75000,
+      "monthong_b": 63000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

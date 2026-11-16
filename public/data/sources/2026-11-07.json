@@ -9,5 +9,45 @@
     "region": "Đồng bằng sông Cửu Long",
     "summary": "Giá sầu riêng tại Đồng bằng sông Cửu Long ngày 07/11/2026: Sầu Thái loại B dao động từ 60.000 - 75.000 đ/kg (tương ứng giá cắt xô vườn), Ri6 loại B dao động từ 50.000 - 55.000 đ/kg.",
     "prices": {}
+  },
+  {
+    "video_id": "2mzAiRrup_Y",
+    "title": "Giá sầu riêng hôm nay ngày 7 tháng 11, 2026, giá sầu riêng miền tây, thị trường sầu riêng ",
+    "channel_name": "Thắm Trần Vlog",
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "video_url": "https://www.youtube.com/watch?v=2mzAiRrup_Y",
+    "published_at": "2026-11-16T15:19:02.796305+07:00",
+    "region": "Chung",
+    "summary": "Cập nhật giá sầu riêng tại khu vực Miền Tây và Đắk Lắk. Sầu riêng Ri6 xô mua dao động từ 70.000 - 71.000 đ/kg, sầu riêng Thái loại B (giá xô) từ 75.000 - 80.000 đ/kg.",
+    "prices": {
+      "ri6_a": 71000,
+      "ri6_b": 70000,
+      "monthong_a": 80000,
+      "monthong_b": 75000,
+      "musang_king": 120000,
+      "black_thorn": 108000,
+      "chuong_bo": 47000,
+      "sau_huu": null
+    }
+  },
+  {
+    "video_id": "BLdTVN-yQkE",
+    "title": "Giá Sầu Riêng Hôm Nay 07/11/2026: Phấn Khởi Hàng Thái Bứt Phá Ở Đắk Lắk",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=BLdTVN-yQkE",
+    "published_at": "2026-11-16T15:21:29.305777+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng Thái tại Đắk Lắk bứt phá tăng mạnh với Thái loại B đạt 73.000 - 78.000 đ/kg. Ngược lại, giá sầu riêng Ri6 và Thái loại B tại Miền Tây chịu áp lực giảm nhẹ.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 59000,
+      "monthong_a": 78000,
+      "monthong_b": 73000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
