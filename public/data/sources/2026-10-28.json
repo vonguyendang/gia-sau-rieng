@@ -1,0 +1,42 @@
+[
+  {
+    "video_id": "eFSeHET_zpQ",
+    "title": "Giá sầu riêng hôm nay ngày 28/10/2026: Thị trường biến động tại nhiều địa phương trên cả nước",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=eFSeHET_zpQ",
+    "published_at": "2026-11-17T09:30:12.902915+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 28/10/2026 ghi nhận sự biến động tại nhiều địa phương. Tại Miền Tây, sầu Thái mua xô dao động từ 70.000 - 73.000 đ/kg, Ri6 xô dao động từ 60.000 - 68.000 đ/kg; các khu vực Tây Nguyên có sự điều chỉnh nhẹ tùy vùng.",
+    "prices": {
+      "ri6_a": 68000,
+      "ri6_b": 60000,
+      "monthong_a": 66000,
+      "monthong_b": 61000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
+  },
+  {
+    "video_id": "K3FtxGLtGkM",
+    "title": "Giá Sầu Riêng Hôm Nay 28/10/2026: Bất Ngờ Sầu Thái Bật Tăng Mạnh Tây Nguyên",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=K3FtxGLtGkM",
+    "published_at": "2026-11-17T09:31:52.988406+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Bản tin ngày 28/10/2026 ghi nhận giá sầu riêng Thái tại Tây Nguyên bật tăng mạnh, mức giá mua xô (tỉ lệ A/B) dao động từ 65.000 - 80.000 đ/kg. Trong khi đó, giá Ri6 xô duy trì ở mức thấp từ 20.000 - 25.000 đ/kg.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 70000,
+      "monthong_b": 65000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-17T02:16:15.221691+07:00",
+  "last_updated": "2026-11-17T09:32:41.919627+07:00",
   "latest_day": "2026-11-17",
   "available_days": [
     "2026-11-17",
@@ -20,7 +20,8 @@
     "2026-11-02",
     "2026-10-31",
     "2026-10-30",
-    "2026-10-29"
+    "2026-10-29",
+    "2026-10-28"
   ],
   "days": {
     "2026-11-17": {
@@ -35,7 +36,7 @@
         "sau_huu": 55000
       },
       "by_region": {},
-      "source_count": 2,
+      "source_count": 3,
       "sources": [
         {
           "video_id": "8qdaxdCazO4",
@@ -75,6 +76,26 @@
             "black_thorn": 110000,
             "chuong_bo": 47000,
             "sau_huu": null
+          }
+        },
+        {
+          "video_id": "FS9Ph2pZgDs",
+          "title": "Giá sầu riêng hôm nay ngày 17/11/2026: Giảm ở Đắk Lắk",
+          "channel_name": "VTC Nông Nghiệp Xanh",
+          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+          "video_url": "https://www.youtube.com/watch?v=FS9Ph2pZgDs",
+          "published_at": "2026-11-17T07:54:19+07:00",
+          "region": "Chung",
+          "summary": "Giá sầu riêng ngày 17/11/2026 ghi nhận mức giảm ở Đắk Lắk. Giá sầu Thái mua xô tại ĐBSCL dao động từ 75.000 - 78.000 đ/kg, Ri6 mua xô từ 48.000 - 50.000 đ/kg.",
+          "prices": {
+            "ri6_a": 50000,
+            "ri6_b": 48000,
+            "monthong_a": 78000,
+            "monthong_b": 75000,
+            "musang_king": 105000,
+            "black_thorn": 110000,
+            "chuong_bo": 45000,
+            "sau_huu": 58000
           }
         }
       ]
@@ -385,7 +406,7 @@
           "sau_huu": 52000
         }
       },
-      "source_count": 5,
+      "source_count": 6,
       "sources": []
     },
     "2026-11-09": {
@@ -619,6 +640,21 @@
       },
       "by_region": {},
       "source_count": 1,
+      "sources": []
+    },
+    "2026-10-28": {
+      "daily_average": {
+        "ri6_a": 46500,
+        "ri6_b": 40000,
+        "monthong_a": 68000,
+        "monthong_b": 63000,
+        "musang_king": 130000,
+        "black_thorn": 135000,
+        "chuong_bo": 50000,
+        "sau_huu": null
+      },
+      "by_region": {},
+      "source_count": 2,
       "sources": []
     }
   },

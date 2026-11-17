@@ -2095,7 +2095,7 @@
   "iVkARhQR3Dk": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY CHỦ NHẬT NGÀY /15/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-17T02:20:50.911816+07:00",
+    "processed_at": "2026-11-17T09:33:22.490089+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -2511,7 +2511,7 @@
   "qQf7UWimUc4": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 4/11/2026: Giảm ở Đắk Lắk.",
-    "processed_at": "2026-11-17T02:18:28.604400+07:00",
+    "processed_at": "2026-11-17T09:30:36.396744+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -2620,7 +2620,7 @@
   "Xd-i32Nd9sY": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 30/10/2026: Sầu Thái tăng mạnh ở Đắk Lắk.",
-    "processed_at": "2026-11-17T02:18:37.646793+07:00",
+    "processed_at": "2026-11-17T09:30:43.427160+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -2796,7 +2796,7 @@
   "H3KzVHwzTwU": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-17T02:20:43.786518+07:00",
+    "processed_at": "2026-11-17T09:33:14.797605+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -3142,7 +3142,7 @@
   "EL_I21aUKFQ": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ HAI NGÀY /16/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-17T02:20:36.315020+07:00",
+    "processed_at": "2026-11-17T09:33:07.123266+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -3262,28 +3262,39 @@
   "KmaXcQnAL2s": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "sầu riêng màu hồng có thật không #shorts",
-    "processed_at": "2026-11-17T02:17:07.237397+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-17T09:29:22.795212+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "eFSeHET_zpQ": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 28/10/2026: Thị trường biến động tại nhiều địa phương trên cả nước",
-    "processed_at": "2026-11-17T02:18:44.436399+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-17T09:31:06.510289+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 68000,
+      "ri6_b": 60000,
+      "monthong_a": 66000,
+      "monthong_b": 61000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
   },
   "qO7SZ3fUpcM": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 27/10/2026: Sầu Thái tại Đắk Lắk chạm mốc 100.000 đồng/kg.",
-    "processed_at": "2026-11-17T02:18:51.277833+07:00",
+    "processed_at": "2026-11-17T09:31:13.395040+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "K4Zw7xYkCpk": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 26/10/2026: Black Thorn dẫn đầu, cao nhất 155.000 đồng/kg.",
-    "processed_at": "2026-11-17T02:18:58.423355+07:00",
+    "processed_at": "2026-11-17T09:31:20.735711+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -3297,35 +3308,35 @@
   "3UrmpI8WRgE": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
     "title": "giá sầu riêng hôm nay ngày 17/11/2026 sầu riêng miền tây ",
-    "processed_at": "2026-11-17T02:19:19.641133+07:00",
+    "processed_at": "2026-11-17T09:31:35.526973+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "hnJIXRzf0IA": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
     "title": "Giá sầu riêng hôm nay ngày 1/11/2026 giá sầu riêng Musaking, sầu riêng thái, ri6",
-    "processed_at": "2026-11-17T02:19:26.955325+07:00",
+    "processed_at": "2026-11-17T09:31:41.402874+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "-suCtIgoDFo": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 02/11/2026: Mừng Rỡ Hàng Thái Hai Miền Cùng Nhích Lên",
-    "processed_at": "2026-11-17T02:19:41.727264+07:00",
+    "processed_at": "2026-11-17T09:32:02.792743+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "yvarOM4Ehf4": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 01/11/2026: Hồi Hộp Sầu Miền Tây Đồng Loạt Nhích Giá",
-    "processed_at": "2026-11-17T02:19:49.765247+07:00",
+    "processed_at": "2026-11-17T09:32:10.262350+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "wXOYCy0idN4": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 31/10/2026: Lo Ngại Ri6 Miền Tây Trượt Nhẹ",
-    "processed_at": "2026-11-17T02:19:56.606871+07:00",
+    "processed_at": "2026-11-17T09:32:16.326207+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -3349,23 +3360,34 @@
   "LZG-aWr-HFE": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 29/10/2026: Hoang Mang Hàng Thái Phân Hóa Rõ Rệt",
-    "processed_at": "2026-11-17T02:20:04.073939+07:00",
+    "processed_at": "2026-11-17T09:32:23.225277+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "K3FtxGLtGkM": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 28/10/2026: Bất Ngờ Sầu Thái Bật Tăng Mạnh Tây Nguyên",
-    "processed_at": "2026-11-17T02:20:11.833203+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-17T09:32:41.916982+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 70000,
+      "monthong_b": 65000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "i5DtATcqN88": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "em gái có kỹ năng đu mình trên cây sầu riêng để thu hoạch",
-    "processed_at": "2026-11-17T02:17:15.341868+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-17T09:29:32.116776+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "qqtvYtyqAuA": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -3379,6 +3401,76 @@
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 27/10/2026: Áp Lực Lớn Hàng Thái Tây Nguyên Giảm Sâu",
     "processed_at": "2026-11-17T02:20:19.442290+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "hQDkc_5tnaY": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "Kỹ năng tách sầu riêng bằng dao của em gái thật tuyệt vời",
+    "processed_at": "2026-11-17T09:29:12.441462+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "XOX0668w9Xg": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "báo giá sầu riêng 10/11 #shorts",
+    "processed_at": "2026-11-17T09:29:45.583616+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 70000,
+      "ri6_b": 68000,
+      "monthong_a": 70000,
+      "monthong_b": 70000,
+      "musang_king": 75000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  },
+  "fdNWOpYPAdU": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "nông dân cắt cỏ mô sầu riêng cực nhanh #garden #fyp",
+    "processed_at": "2026-11-17T09:29:54.096687+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "MYo7QX7P-GI": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "ri6 hết thời...cưa bỏ ghép sầu riêng thái #shorts",
+    "processed_at": "2026-11-17T09:30:00.122743+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "FS9Ph2pZgDs": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá sầu riêng hôm nay ngày 17/11/2026: Giảm ở Đắk Lắk",
+    "processed_at": "2026-11-17T09:30:27.077440+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 48000,
+      "monthong_a": 78000,
+      "monthong_b": 75000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 45000,
+      "sau_huu": 58000
+    }
+  },
+  "axEa4AAEdyk": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 17/11/2026: Hoang Mang Thị Trường Phân Hóa Rõ Rệt",
+    "processed_at": "2026-11-17T09:31:56.568847+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "UOVYSEoJl-k": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ BA NGÀY /17/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-17T09:33:00.821697+07:00",
     "has_transcript": false,
     "is_price_video": false
   }

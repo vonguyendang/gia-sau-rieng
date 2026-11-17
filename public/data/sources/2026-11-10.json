@@ -80,5 +80,25 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "XOX0668w9Xg",
+    "title": "báo giá sầu riêng 10/11 #shorts",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=XOX0668w9Xg",
+    "published_at": "2026-11-17T09:28:46.998029+07:00",
+    "region": "Miền Tây",
+    "summary": "Báo giá sầu riêng ngày 10/11 tại Miền Tây: Ri6 mua xô từ 68.000 - 70.000 đ/kg, Thái xô (giá loại B) đạt 70.000 đ/kg và Musang King (giá loại B) đạt 75.000 đ/kg.",
+    "prices": {
+      "ri6_a": 70000,
+      "ri6_b": 68000,
+      "monthong_a": 70000,
+      "monthong_b": 70000,
+      "musang_king": 75000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
