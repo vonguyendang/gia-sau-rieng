@@ -18,5 +18,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "Xd-i32Nd9sY",
+    "title": "Giá sầu riêng hôm nay ngày 30/10/2026: Sầu Thái tăng mạnh ở Đắk Lắk.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=Xd-i32Nd9sY",
+    "published_at": "2026-11-19T02:19:46.775858+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 30/10/2026 ghi nhận sầu Thái tăng mạnh ở Đắk Lắk và Gia Lai, trong khi sầu Ri6 có dấu hiệu chựng lại.",
+    "prices": {
+      "ri6_a": 67000,
+      "ri6_b": 65000,
+      "monthong_a": 77000,
+      "monthong_b": 70000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
   }
 ]

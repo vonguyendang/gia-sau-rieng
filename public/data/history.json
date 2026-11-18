@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-18T20:22:19.163365+07:00",
+  "last_updated": "2026-11-19T02:29:04.929944+07:00",
   "days": {
     "2026-10-24": {
       "daily_average": {
@@ -125,13 +125,13 @@
     },
     "2026-10-30": {
       "daily_average": {
-        "ri6_a": 25000,
-        "ri6_b": 20000,
-        "monthong_a": 75000,
-        "monthong_b": 65000,
+        "ri6_a": 46000,
+        "ri6_b": 42500,
+        "monthong_a": 76000,
+        "monthong_b": 67500,
         "musang_king": 130000,
-        "black_thorn": null,
-        "chuong_bo": null,
+        "black_thorn": 135000,
+        "chuong_bo": 50000,
         "sau_huu": null
       },
       "sources": [
@@ -152,6 +152,26 @@
             "musang_king": 130000,
             "black_thorn": null,
             "chuong_bo": null,
+            "sau_huu": null
+          }
+        },
+        {
+          "video_id": "Xd-i32Nd9sY",
+          "title": "Giá sầu riêng hôm nay ngày 30/10/2026: Sầu Thái tăng mạnh ở Đắk Lắk.",
+          "channel_name": "VTC Nông Nghiệp Xanh",
+          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+          "video_url": "https://www.youtube.com/watch?v=Xd-i32Nd9sY",
+          "published_at": "2026-11-19T02:19:46.775858+07:00",
+          "region": "Chung",
+          "summary": "Giá sầu riêng ngày 30/10/2026 ghi nhận sầu Thái tăng mạnh ở Đắk Lắk và Gia Lai, trong khi sầu Ri6 có dấu hiệu chựng lại.",
+          "prices": {
+            "ri6_a": 67000,
+            "ri6_b": 65000,
+            "monthong_a": 77000,
+            "monthong_b": 70000,
+            "musang_king": 130000,
+            "black_thorn": 135000,
+            "chuong_bo": 50000,
             "sau_huu": null
           }
         }
@@ -2140,6 +2160,40 @@
             "black_thorn": 105000,
             "chuong_bo": 45000,
             "sau_huu": 55000
+          }
+        }
+      ]
+    },
+    "2026-11-19": {
+      "daily_average": {
+        "ri6_a": 50000,
+        "ri6_b": 48000,
+        "monthong_a": 85000,
+        "monthong_b": 85000,
+        "musang_king": 100000,
+        "black_thorn": null,
+        "chuong_bo": 49000,
+        "sau_huu": null
+      },
+      "sources": [
+        {
+          "video_id": "Ci8UOu1hoNM",
+          "title": "Giá sầu riêng hôm nay 19/11/2026 giá sầu riêng miền tây, cập nhật giá ",
+          "channel_name": "Thắm Trần Vlog",
+          "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+          "video_url": "https://www.youtube.com/watch?v=Ci8UOu1hoNM",
+          "published_at": "2026-11-18T18:00:02+07:00",
+          "region": "Miền Tây",
+          "summary": "Cập nhật giá sầu riêng tại khu vực Miền Tây với sầu riêng Thái loại B mua xô ở mức 85.000 đ/kg, Ri6 mua xô dao động 48.000 - 50.000 đ/kg, Musang King loại B 100.000 đ/kg và Chuồng Bò loại B 49.000 đ/kg.",
+          "prices": {
+            "ri6_a": 50000,
+            "ri6_b": 48000,
+            "monthong_a": 85000,
+            "monthong_b": 85000,
+            "musang_king": 100000,
+            "black_thorn": null,
+            "chuong_bo": 49000,
+            "sau_huu": null
           }
         }
       ]
