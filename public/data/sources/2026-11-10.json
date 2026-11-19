@@ -100,5 +100,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "1i1SGLHMK7E",
+    "title": "giá sầu riêng hôm nay ngày 10/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=1i1SGLHMK7E",
+    "published_at": "2026-11-19T16:25:39+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng hôm nay tiếp tục đà tăng mạnh tại vườn. Ri6 mua xô tỉ lệ 8:2 - 7:3 dao động từ 48.000 - 53.000 đ/kg, Thái xô từ 85.000 - 90.000 đ/kg.",
+    "prices": {
+      "ri6_a": 53000,
+      "ri6_b": 48000,
+      "monthong_a": 90000,
+      "monthong_b": 85000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   }
 ]
