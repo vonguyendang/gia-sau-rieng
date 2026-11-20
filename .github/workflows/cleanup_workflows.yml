@@ -1,0 +1,46 @@
+name: "Dọn dẹp lịch sử Workflow runs"
+
+on:
+  # 1. Cho phép kích hoạt thủ công từ giao diện GitHub Actions UI hoặc gọi qua API workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      retain_days:
+        description: 'Số ngày lưu giữ runs cũ (mặc định 1 ngày)'
+        required: false
+        default: '1'
+      keep_minimum_runs:
+        description: 'Số lần chạy tối thiểu giữ lại cho mỗi workflow (mặc định 2)'
+        required: false
+        default: '2'
+
+  # 2. Cho phép kích hoạt từ bên ngoài qua API (cron-job.org, webhook, curl)
+  repository_dispatch:
+    types: [cleanup-workflows, clean-workflows]
+
+  # 3. Chạy dự phòng tự động hàng tuần (00:00 Chủ Nhật, giờ VN = 07:00 Chủ Nhật)
+  schedule:
+    - cron: '0 0 * * 0'
+
+concurrency:
+  group: cleanup-workflows-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  delete-runs:
+    name: "Xóa lịch sử chạy cũ của các workflow"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Dọn dẹp workflow runs cũ
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: ${{ github.event.inputs.retain_days || github.event.client_payload.retain_days || 1 }}
+          keep_minimum_runs: ${{ github.event.inputs.keep_minimum_runs || github.event.client_payload.keep_minimum_runs || 2 }}
+          delete_workflow_pattern: ".*"
+          delete_workflow_by_state_pattern: "completed, failure, cancelled, skipped"
