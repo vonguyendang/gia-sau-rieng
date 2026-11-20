@@ -18,5 +18,45 @@
       "chuong_bo": 45000,
       "sau_huu": 55000
     }
+  },
+  {
+    "video_id": "aGp18KqAntw",
+    "title": "giá sầu riêng trưa nay ngày 18/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=aGp18KqAntw",
+    "published_at": "2026-11-20T08:15:32.716623+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng Thái cắt xô tại vườn Miền Tây tiếp tục tăng mạnh lên mức 80.000 - 85.000 đ/kg, Ri6 xô ổn định từ 48.000 - 52.000 đ/kg. Các dòng đặc sản như Musang King và Black Thorn duy trì ở mức giá cao.",
+    "prices": {
+      "ri6_a": 52000,
+      "ri6_b": 48000,
+      "monthong_a": 85000,
+      "monthong_b": 80000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 45000,
+      "sau_huu": 55000
+    }
+  },
+  {
+    "video_id": "bRfUQ-6frw0",
+    "title": "Giá sầu riêng hôm nay ngày 18/11/2026: Thị trường tăng tại nhiều khu vực.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=bRfUQ-6frw0",
+    "published_at": "2026-11-18T07:36:34+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 18/11/2026 ghi nhận xu hướng tăng ở nhiều khu vực. Tại Đồng bằng sông Cửu Long, giá xô Thái dao động từ 78.000 - 82.000 đ/kg và Ri6 xô từ 48.000 - 50.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 48000,
+      "monthong_a": 82000,
+      "monthong_b": 78000,
+      "musang_king": 95000,
+      "black_thorn": 105000,
+      "chuong_bo": 45000,
+      "sau_huu": 58000
+    }
   }
 ]

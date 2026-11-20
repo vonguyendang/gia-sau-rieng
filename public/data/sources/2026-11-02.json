@@ -38,5 +38,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "-suCtIgoDFo",
+    "title": "Giá Sầu Riêng Hôm Nay 02/11/2026: Mừng Rỡ Hàng Thái Hai Miền Cùng Nhích Lên",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=-suCtIgoDFo",
+    "published_at": "2026-11-20T08:23:25.241782+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng Thái tại Tây Nguyên nhích tăng, giá Thái cắt xô dao động từ 71.000 - 77.000 đ/kg. Giá Ri6 cắt xô tại vườn duy trì ở mức 20.000 - 25.000 đ/kg.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 77000,
+      "monthong_b": 71000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

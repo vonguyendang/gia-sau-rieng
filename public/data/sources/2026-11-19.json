@@ -58,5 +58,65 @@
       "chuong_bo": 45000,
       "sau_huu": 55000
     }
+  },
+  {
+    "video_id": "EL3xPSjPrGc",
+    "title": "giá sầu riêng hôm thái tại kho Việt Tiệp",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=EL3xPSjPrGc",
+    "published_at": "2026-11-19T08:25:35+07:00",
+    "region": "Miền Tây",
+    "summary": "Cập nhật giá sầu riêng Thái hôm nay tại kho Việt Tiệp ở mức 103.000 VNĐ/kg.",
+    "prices": {
+      "ri6_a": null,
+      "ri6_b": null,
+      "monthong_a": 103000,
+      "monthong_b": 103000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  },
+  {
+    "video_id": "g68CLDyH7us",
+    "title": "Giá sầu riêng hôm nay ngày 19/11/2026: Sầu Thái chạm mốc 105.000 đồng/kg.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=g68CLDyH7us",
+    "published_at": "2026-11-19T08:19:08+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 19/11/2026 ghi nhận sầu Thái chạm mốc 105.000 đ/kg (loại A) tại ĐBSCL. Mức giá mua xô sầu Thái dao động phổ biến từ 78.000 - 85.000 đ/kg, còn Ri6 xô ở mức 50.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 50000,
+      "monthong_a": 85000,
+      "monthong_b": 78000,
+      "musang_king": 70000,
+      "black_thorn": 110000,
+      "chuong_bo": 49000,
+      "sau_huu": 58000
+    }
+  },
+  {
+    "video_id": "3wKK-Bu1fXg",
+    "title": "Giá Sầu Riêng Hôm Nay 19/11/2026: Lo Ngại Musang King Giảm, Thái Tăng Mạnh",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=3wKK-Bu1fXg",
+    "published_at": "2026-11-19T04:21:53+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 19/11/2026 ghi nhận sầu Thái tăng mạnh tại Đắk Lắk và Miền Tây, trong khi giá Musang King giảm và Ri6 duy trì ổn định đi ngang.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 48000,
+      "monthong_a": 82000,
+      "monthong_b": 78000,
+      "musang_king": 95000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
