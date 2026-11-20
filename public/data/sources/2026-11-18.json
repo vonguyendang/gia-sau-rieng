@@ -78,5 +78,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "eqG9a2tT4hI",
+    "title": "Giá sầu riêng hôm nay ngày 18/11/2026 thị trường sầu riêng, sầu riêng miền tây ",
+    "channel_name": "Thắm Trần Vlog",
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "video_url": "https://www.youtube.com/watch?v=eqG9a2tT4hI",
+    "published_at": "2026-11-17T18:00:21+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại Miền Tây hôm nay ghi nhận giá sầu Thái cắt xô (loại B) từ 78.000 - 80.000 đ/kg, Ri6 xô từ 47.000 - 50.000 đ/kg, và Musang King dao động từ 120.000 - 125.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 47000,
+      "monthong_a": 80000,
+      "monthong_b": 78000,
+      "musang_king": 120000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
