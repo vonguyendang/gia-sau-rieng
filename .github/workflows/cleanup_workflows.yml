@@ -35,12 +35,27 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Xác định tham số dọn dẹp
+        id: params
+        run: |
+          RETAIN="${{ inputs.retain_days }}"
+          if [ -z "$RETAIN" ]; then RETAIN="${{ github.event.client_payload.retain_days }}"; fi
+          if [ -z "$RETAIN" ]; then RETAIN="1"; fi
+
+          KEEP="${{ inputs.keep_minimum_runs }}"
+          if [ -z "$KEEP" ]; then KEEP="${{ github.event.client_payload.keep_minimum_runs }}"; fi
+          if [ -z "$KEEP" ]; then KEEP="2"; fi
+
+          echo "retain_days=$RETAIN" >> "$GITHUB_OUTPUT"
+          echo "keep_minimum_runs=$KEEP" >> "$GITHUB_OUTPUT"
+          echo "Thiết lập: Giữ tối thiểu $KEEP runs, xóa runs cũ hơn $RETAIN ngày."
+
       - name: Dọn dẹp workflow runs cũ
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
-          retain_days: ${{ github.event.inputs.retain_days || github.event.client_payload.retain_days || 1 }}
-          keep_minimum_runs: ${{ github.event.inputs.keep_minimum_runs || github.event.client_payload.keep_minimum_runs || 2 }}
+          retain_days: ${{ steps.params.outputs.retain_days }}
+          keep_minimum_runs: ${{ steps.params.outputs.keep_minimum_runs }}
           delete_workflow_pattern: ".*"
           delete_workflow_by_state_pattern: "completed, failure, cancelled, skipped"
