@@ -78,5 +78,25 @@
       "chuong_bo": 45000,
       "sau_huu": 55000
     }
+  },
+  {
+    "video_id": "axEa4AAEdyk",
+    "title": "Giá Sầu Riêng Hôm Nay 17/11/2026: Hoang Mang Thị Trường Phân Hóa Rõ Rệt",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=axEa4AAEdyk",
+    "published_at": "2026-11-17T04:20:45+07:00",
+    "region": "Chung",
+    "summary": "Bản tin ngày 17/11/2026 cho thấy giá sầu riêng có sự phân hóa theo vùng. Tại Miền Tây, giá sầu Ri6 xô (tính theo loại B) tăng lên 48.000 - 50.000 đ/kg, Thái xô ở mức 75.000 - 79.000 đ/kg; trong khi Musang King loại B đạt 105.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 48000,
+      "monthong_a": 79000,
+      "monthong_b": 75000,
+      "musang_king": 105000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

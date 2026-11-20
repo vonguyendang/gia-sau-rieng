@@ -18,5 +18,25 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "IXna0XeKGDI",
+    "title": "Giá Sầu Riêng Hôm Nay 26/10/2026: Hồi Hộp Hàng Thái B Tăng Lan Ba Vùng",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=IXna0XeKGDI",
+    "published_at": "2026-11-20T15:27:10.939644+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng ngày 26/10/2026 ghi nhận xu hướng tăng nhẹ đối với Thái loại B tại các vùng trồng. Tại Tây Nguyên, giá sầu riêng Thái cắt xô (tính theo loại B) dao động từ 65.000 - 75.000 đ/kg, Ri6 xô loại B dao động 20.000 - 25.000 đ/kg.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 75000,
+      "monthong_b": 65000,
+      "musang_king": 56000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

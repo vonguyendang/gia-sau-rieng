@@ -18,5 +18,25 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "wXOYCy0idN4",
+    "title": "Giá Sầu Riêng Hôm Nay 31/10/2026: Lo Ngại Ri6 Miền Tây Trượt Nhẹ",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=wXOYCy0idN4",
+    "published_at": "2026-11-20T15:27:10.939644+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Bản tin giá sầu riêng ngày 31/10/2026 ghi nhận giá sầu riêng Thái loại B tại Đắk Lắk dao động từ 67.000 - 77.000 đ/kg, Ri6 loại B ở mức 25.000 đ/kg và Musang King loại B đạt 130.000 đ/kg.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 25000,
+      "monthong_a": 77000,
+      "monthong_b": 67000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20T15:01:49.204704+07:00",
+  "last_updated": "2026-11-20T15:37:46.805814+07:00",
   "latest_day": "2026-11-20",
   "available_days": [
     "2026-11-20",
@@ -26,23 +26,27 @@
     "2026-10-30",
     "2026-10-29",
     "2026-10-28",
+    "2026-10-27",
     "2026-10-26",
-    "2026-10-24"
+    "2026-10-24",
+    "2026-10-23",
+    "2026-10-22",
+    "2026-10-21"
   ],
   "days": {
     "2026-11-20": {
       "daily_average": {
-        "ri6_a": 54400,
-        "ri6_b": 52200,
-        "monthong_a": 90800,
-        "monthong_b": 86400,
-        "musang_king": 108000,
+        "ri6_a": 56000,
+        "ri6_b": 53429,
+        "monthong_a": 90286,
+        "monthong_b": 86714,
+        "musang_king": 109143,
         "black_thorn": 110000,
-        "chuong_bo": 49667,
-        "sau_huu": 57500
+        "chuong_bo": 49600,
+        "sau_huu": 57000
       },
       "by_region": {},
-      "source_count": 5,
+      "source_count": 7,
       "sources": [
         {
           "video_id": "DrZRpoBsz_0",
@@ -143,6 +147,46 @@
             "chuong_bo": 50000,
             "sau_huu": 57000
           }
+        },
+        {
+          "video_id": "PB8Sp9NXa70",
+          "title": "sầu riêng ở bảo lộc lâm đồng nay giá bao nhiêu #shorts",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=PB8Sp9NXa70",
+          "published_at": "2026-11-20T12:50:00+07:00",
+          "region": "Miền Tây",
+          "summary": "Báo giá sầu riêng Cty Tuấn Phát khu vực Miền Tây ngày 20/11, giá sầu Thái cắt xô ở mức 100.000 đ/kg và Ri6 khoảng 65.000 đ/kg.",
+          "prices": {
+            "ri6_a": 65000,
+            "ri6_b": 65000,
+            "monthong_a": 100000,
+            "monthong_b": 100000,
+            "musang_king": 124000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 55000
+          }
+        },
+        {
+          "video_id": "ck_fSK6AS1k",
+          "title": "giá sầu riêng hôm nay 20/11/2026 giá sầu riêng xô lùa, giá sầu riêng miền tây ",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=ck_fSK6AS1k",
+          "published_at": "2026-11-19T18:25:11+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng tại vườn ở Miền Tây ghi nhận khởi sắc, Ri6 mua xô từ 48.000 - 55.000 đ/kg, Thái xô từ 75.000 - 78.000 đ/kg.",
+          "prices": {
+            "ri6_a": 55000,
+            "ri6_b": 48000,
+            "monthong_a": 78000,
+            "monthong_b": 75000,
+            "musang_king": 100000,
+            "black_thorn": 110000,
+            "chuong_bo": 49000,
+            "sau_huu": 58000
+          }
         }
       ]
     },
@@ -158,7 +202,7 @@
         "sau_huu": 57000
       },
       "by_region": {},
-      "source_count": 6,
+      "source_count": 8,
       "sources": []
     },
     "2026-11-18": {
@@ -173,7 +217,7 @@
         "sau_huu": 55000
       },
       "by_region": {},
-      "source_count": 3,
+      "source_count": 4,
       "sources": []
     },
     "2026-11-17": {
@@ -188,7 +232,7 @@
         "sau_huu": 55000
       },
       "by_region": {},
-      "source_count": 4,
+      "source_count": 5,
       "sources": []
     },
     "2026-11-16": {
@@ -645,17 +689,17 @@
     },
     "2026-11-04": {
       "daily_average": {
-        "ri6_a": 46000,
-        "ri6_b": 43500,
-        "monthong_a": 77500,
+        "ri6_a": 53333,
+        "ri6_b": 50333,
+        "monthong_a": 77333,
         "monthong_b": 73000,
-        "musang_king": 102500,
-        "black_thorn": null,
-        "chuong_bo": null,
+        "musang_king": 111667,
+        "black_thorn": 135000,
+        "chuong_bo": 50000,
         "sau_huu": null
       },
       "by_region": {},
-      "source_count": 2,
+      "source_count": 3,
       "sources": []
     },
     "2026-11-03": {
@@ -705,17 +749,17 @@
     },
     "2026-10-31": {
       "daily_average": {
-        "ri6_a": 68000,
-        "ri6_b": 68000,
+        "ri6_a": 46500,
+        "ri6_b": 46500,
         "monthong_a": 77000,
-        "monthong_b": 75000,
+        "monthong_b": 71000,
         "musang_king": 130000,
         "black_thorn": 135000,
         "chuong_bo": 50000,
         "sau_huu": null
       },
       "by_region": {},
-      "source_count": 1,
+      "source_count": 2,
       "sources": []
     },
     "2026-10-30": {
@@ -736,16 +780,16 @@
     "2026-10-29": {
       "daily_average": {
         "ri6_a": 68000,
-        "ri6_b": 65000,
-        "monthong_a": 74000,
-        "monthong_b": 69000,
+        "ri6_b": 62500,
+        "monthong_a": 74500,
+        "monthong_b": 66000,
         "musang_king": 130000,
         "black_thorn": 135000,
         "chuong_bo": 50000,
         "sau_huu": null
       },
       "by_region": {},
-      "source_count": 1,
+      "source_count": 2,
       "sources": []
     },
     "2026-10-28": {
@@ -763,19 +807,34 @@
       "source_count": 2,
       "sources": []
     },
-    "2026-10-26": {
+    "2026-10-27": {
       "daily_average": {
-        "ri6_a": 65000,
-        "ri6_b": 64000,
-        "monthong_a": 70000,
-        "monthong_b": 67000,
+        "ri6_a": 45500,
+        "ri6_b": 42500,
+        "monthong_a": 68000,
+        "monthong_b": 64500,
         "musang_king": 130000,
         "black_thorn": 135000,
         "chuong_bo": 50000,
         "sau_huu": null
       },
       "by_region": {},
-      "source_count": 1,
+      "source_count": 2,
+      "sources": []
+    },
+    "2026-10-26": {
+      "daily_average": {
+        "ri6_a": 45000,
+        "ri6_b": 42000,
+        "monthong_a": 72500,
+        "monthong_b": 66000,
+        "musang_king": 93000,
+        "black_thorn": 135000,
+        "chuong_bo": 50000,
+        "sau_huu": null
+      },
+      "by_region": {},
+      "source_count": 2,
       "sources": []
     },
     "2026-10-24": {
@@ -784,6 +843,51 @@
         "ri6_b": 65000,
         "monthong_a": 70000,
         "monthong_b": 68000,
+        "musang_king": 130000,
+        "black_thorn": 135000,
+        "chuong_bo": 55000,
+        "sau_huu": null
+      },
+      "by_region": {},
+      "source_count": 1,
+      "sources": []
+    },
+    "2026-10-23": {
+      "daily_average": {
+        "ri6_a": 67000,
+        "ri6_b": 65000,
+        "monthong_a": 70000,
+        "monthong_b": 67000,
+        "musang_king": 130000,
+        "black_thorn": 135000,
+        "chuong_bo": 55000,
+        "sau_huu": null
+      },
+      "by_region": {},
+      "source_count": 1,
+      "sources": []
+    },
+    "2026-10-22": {
+      "daily_average": {
+        "ri6_a": 69000,
+        "ri6_b": 67000,
+        "monthong_a": 70000,
+        "monthong_b": 63000,
+        "musang_king": 130000,
+        "black_thorn": 135000,
+        "chuong_bo": 55000,
+        "sau_huu": null
+      },
+      "by_region": {},
+      "source_count": 1,
+      "sources": []
+    },
+    "2026-10-21": {
+      "daily_average": {
+        "ri6_a": 67000,
+        "ri6_b": 63000,
+        "monthong_a": 63000,
+        "monthong_b": 58000,
         "musang_king": 130000,
         "black_thorn": 135000,
         "chuong_bo": 55000,

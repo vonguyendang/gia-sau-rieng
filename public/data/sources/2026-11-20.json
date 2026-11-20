@@ -98,5 +98,45 @@
       "chuong_bo": 50000,
       "sau_huu": 57000
     }
+  },
+  {
+    "video_id": "PB8Sp9NXa70",
+    "title": "sầu riêng ở bảo lộc lâm đồng nay giá bao nhiêu #shorts",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=PB8Sp9NXa70",
+    "published_at": "2026-11-20T12:50:00+07:00",
+    "region": "Miền Tây",
+    "summary": "Báo giá sầu riêng Cty Tuấn Phát khu vực Miền Tây ngày 20/11, giá sầu Thái cắt xô ở mức 100.000 đ/kg và Ri6 khoảng 65.000 đ/kg.",
+    "prices": {
+      "ri6_a": 65000,
+      "ri6_b": 65000,
+      "monthong_a": 100000,
+      "monthong_b": 100000,
+      "musang_king": 124000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 55000
+    }
+  },
+  {
+    "video_id": "ck_fSK6AS1k",
+    "title": "giá sầu riêng hôm nay 20/11/2026 giá sầu riêng xô lùa, giá sầu riêng miền tây ",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=ck_fSK6AS1k",
+    "published_at": "2026-11-19T18:25:11+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại vườn ở Miền Tây ghi nhận khởi sắc, Ri6 mua xô từ 48.000 - 55.000 đ/kg, Thái xô từ 75.000 - 78.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 48000,
+      "monthong_a": 78000,
+      "monthong_b": 75000,
+      "musang_king": 100000,
+      "black_thorn": 110000,
+      "chuong_bo": 49000,
+      "sau_huu": 58000
+    }
   }
 ]

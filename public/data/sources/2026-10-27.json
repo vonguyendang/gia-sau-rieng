@@ -1,0 +1,42 @@
+[
+  {
+    "video_id": "qO7SZ3fUpcM",
+    "title": "Giá sầu riêng hôm nay ngày 27/10/2026: Sầu Thái tại Đắk Lắk chạm mốc 100.000 đồng/kg.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=qO7SZ3fUpcM",
+    "published_at": "2026-11-20T15:20:51.119455+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 27/10/2026 ghi nhận sầu Thái tại Đắk Lắk đạt mốc 100.000 đồng/kg hàng đẹp xuất khẩu. Tại khu vực Đồng bằng sông Cửu Long và Tây Nguyên, giá sầu riêng xô cắt tại vườn (quy đổi từ mức giá loại B) dao động phổ biến 65.000 - 66.000 đ/kg với Ri6 và 71.000 - 75.000 đ/kg với Thái.",
+    "prices": {
+      "ri6_a": 66000,
+      "ri6_b": 65000,
+      "monthong_a": 73000,
+      "monthong_b": 71000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
+  },
+  {
+    "video_id": "Sc-3u59aKa8",
+    "title": "Giá Sầu Riêng Hôm Nay 27/10/2026: Áp Lực Lớn Hàng Thái Tây Nguyên Giảm Sâu",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=Sc-3u59aKa8",
+    "published_at": "2026-11-20T15:27:10.939644+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 27/10/2026 có xu hướng giảm, đặc biệt áp lực giảm mạnh ở sầu Thái loại B tại khu vực Tây Nguyên (Gia Lai giảm 14.000 đ/kg xuống còn 61.000 đ/kg). Trong khi đó, giá sầu riêng tại khu vực Miền Tây giữ mức tương đối ổn định.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 63000,
+      "monthong_b": 58000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  }
+]

@@ -18,5 +18,25 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "LZG-aWr-HFE",
+    "title": "Giá Sầu Riêng Hôm Nay 29/10/2026: Hoang Mang Hàng Thái Phân Hóa Rõ Rệt",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=LZG-aWr-HFE",
+    "published_at": "2026-11-20T15:27:10.939644+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 29/10/2026 ghi nhận sự phân hóa giữa các vùng. Giá sầu riêng Thái loại A tại Miền Tây tăng 7.000 đ/kg trong khi tại Đắk Lắk giảm rầm rộ; giá xô sầu riêng Thái dao động từ 63.000 - 75.000 đ/kg, Ri6 xô từ 60.000 - 68.000 đ/kg tại Miền Tây, Musang King loại B đạt 130.000 đ/kg.",
+    "prices": {
+      "ri6_a": 68000,
+      "ri6_b": 60000,
+      "monthong_a": 75000,
+      "monthong_b": 63000,
+      "musang_king": 130000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

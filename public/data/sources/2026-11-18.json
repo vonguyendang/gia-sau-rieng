@@ -58,5 +58,25 @@
       "chuong_bo": 45000,
       "sau_huu": 58000
     }
+  },
+  {
+    "video_id": "uoNOXzp3uDI",
+    "title": "Giá Sầu Riêng Hôm Nay 18/11/2026: Bất Ngờ Hàng Thái Đắk Lắk Lùi Bước",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=uoNOXzp3uDI",
+    "published_at": "2026-11-18T04:20:57+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng ngày 18/11/2026 có xu hướng giảm nhẹ, đặc biệt là Thái loại A tại Đắk Lắk giảm 6.000 đ/kg. Tại Miền Tây, giá cắt xô sầu riêng Thái dao động 75.000 - 78.000 đ/kg và Ri6 từ 48.000 - 50.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 48000,
+      "monthong_a": 78000,
+      "monthong_b": 75000,
+      "musang_king": 105000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

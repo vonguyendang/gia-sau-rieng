@@ -38,5 +38,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "qQf7UWimUc4",
+    "title": "Giá sầu riêng hôm nay ngày 4/11/2026: Giảm ở Đắk Lắk.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=qQf7UWimUc4",
+    "published_at": "2026-11-20T15:20:51.119455+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 04/11/2026 có xu hướng giảm ở Đắk Lắk. Tại khu vực Đồng bằng sông Cửu Long, sầu Thái mua xô (giá loại B) dao động từ 73.000 - 77.000 đ/kg, Ri6 mua xô từ 64.000 - 68.000 đ/kg.",
+    "prices": {
+      "ri6_a": 68000,
+      "ri6_b": 64000,
+      "monthong_a": 77000,
+      "monthong_b": 73000,
+      "musang_king": 130000,
+      "black_thorn": 135000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
   }
 ]
