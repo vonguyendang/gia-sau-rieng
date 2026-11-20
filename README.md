@@ -22,7 +22,8 @@
 * 📈 **Bảng đối chiếu giá so với cùng kỳ:**
   Tự động so sánh biến động hôm nay với **Hôm qua ($T-1$)**, **Tuần trước ($T-7$)**, **Tháng trước ($T-30$)**, và **Cùng kỳ năm trước ($\text{YoY}$)**.
 * ⏱ **Cập nhật tự động theo khung giờ vàng:** GitHub Actions tự động quét video 3 lần/ngày (11h30, 13h30, 18h30 đúng các thời điểm thương lái và vựa chốt giá), không tốn server riêng.
-* 🧠 **Trích xuất thông minh bằng Gemini 3.8 Flash:** Tự động lấy phụ đề tiếng Việt qua `youtube-transcript-api` và phân tích khoảng giá chuẩn xác.
+* 🧹 **Tự động dọn dẹp lịch sử Workflow:** Tự động xóa các log/run cũ tích tụ qua thời gian, giữ repository luôn nhẹ nhàng và sạch sẽ.
+* 🧠 **Trích xuất thông minh bằng Gemini:** Tự động lấy phụ đề tiếng Việt qua `youtube-transcript-api` và phân tích khoảng giá chuẩn xác.
 * 📊 **Giao diện hiện đại & không cần build:** Viết bằng HTML5 thuần, Tailwind CSS và Chart.js, deploy tức thì lên Cloudflare Pages.
 
 ---
@@ -85,8 +86,9 @@ Truy cập trình duyệt: **`http://localhost:5050`**
 gia-sau-rieng/
 ├── .github/
 │   └── workflows/
-│       ├── fetch_prices.yml       # Tự động quét giá mỗi 3 tiếng & commit kết quả
-│       └── backfill_history.yml   # Kích hoạt thủ công cào lùi video lịch sử
+│       ├── update_prices.yml      # Tự động quét giá theo khung giờ vàng & commit kết quả
+│       ├── backfill_history.yml   # Cào lùi video lịch sử tích lũy tự động / thủ công
+│       └── cleanup_workflows.yml  # Tự động dọn dẹp lịch sử các workflow runs cũ (hỗ trợ gọi API)
 ├── docs/
 │   ├── INSTALLATION.md            # Hướng dẫn cài đặt chi tiết các hệ điều hành
 │   └── DEPLOYMENT.md              # Hướng dẫn triển khai GitHub Actions & Cloudflare Pages

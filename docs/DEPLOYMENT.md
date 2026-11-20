@@ -221,6 +221,41 @@ Dự án có **2 workflow độc lập**, bạn sẽ thực hiện bấm **Creat
 
 ---
 
+#### 3️⃣ Cronjob 3: Tự động dọn dẹp lịch sử các workflow (Cleanup)
+
+* **Title:** `Dọn dẹp lịch sử workflow runs`
+* **URL:** `https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/cleanup_workflows.yml/dispatches`
+* **Execution schedule (Chạy định kỳ dọn rác 1 lần/tuần hoặc mỗi ngày):**
+  * Tích chọn nút tròn **`Custom`** $\rightarrow$ điền Crontab expression:
+    ```text
+    0 3 * * 0
+    ```
+    *(Ý nghĩa: Chạy vào lúc 03:00 sáng Chủ Nhật hàng tuần).*
+* **Timezone:** Chọn `Asia/Ho_Chi_Minh` (GMT+7).
+* **Cách 1: Sử dụng tính năng `<> IMPORT FROM CURL` (Khuyên dùng):**
+  1. Nhấn nút **`<> IMPORT FROM CURL`** (góc dưới bên trái).
+  2. Dán đoạn lệnh sau:
+     ```bash
+     curl -X POST https://api.github.com/repos/vonguyendang/gia-sau-rieng/actions/workflows/cleanup_workflows.yml/dispatches \
+       -H "Accept: application/vnd.github+json" \
+       -H "Authorization: Bearer MÃ_TOKEN_CỦA_BẠN" \
+       -H "X-GitHub-Api-Version: 2022-11-28" \
+       -H "User-Agent: Durian-Tracker" \
+       -H "Content-Type: application/json" \
+       -d '{"ref":"main","inputs":{"retain_days":"1","keep_minimum_runs":"2"}}'
+     ```
+  3. Bấm **Import**.
+
+* **Cách 2: Cấu hình thủ công trong tab ADVANCED:**
+  * **Headers:** Thêm 5 headers tương tự như Cronjob 1.
+  * **Request Body:**
+    ```json
+    {"ref":"main","inputs":{"retain_days":"1","keep_minimum_runs":"2"}}
+    ```
+* Bấm nút màu cam **CREATE** để lưu.
+
+---
+
 ### Bước 3: Kiểm Tra Thử Nghiệm Ngay Lập Tức
 
 1. Trong danh sách Cronjob trên `cron-job.org`, bạn tìm từng cronjob vừa tạo và nhấn vào biểu tượng **Chạy thử (Run now / biểu tượng Play $\blacktriangleright$)**.
