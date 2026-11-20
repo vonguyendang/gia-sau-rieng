@@ -192,6 +192,19 @@ def save_split_data(history_data: dict):
         except (ValueError, TypeError):
             print(f"[CẢNH BÁO] Loại bỏ ngày không hợp lệ khỏi database: {day_str}")
 
+    # Tự động bù by_region nếu ngày có dữ liệu nhưng chưa được tính giá khu vực
+    try:
+        from price_calculator import calculate_regional_data
+        for day_str, day_content in days_dict.items():
+            by_reg = day_content.get("by_region")
+            if not by_reg or not any(by_reg.get(k) for k in ["mientay", "miendong", "taynguyen"]):
+                srcs = day_content.get("sources", [])
+                daily_avg = day_content.get("daily_average", {})
+                if daily_avg:
+                    day_content["by_region"] = calculate_regional_data(srcs, daily_avg)
+    except Exception as e:
+        print(f"[CẢNH BÁO] Lỗi khi tự động tính giá vùng miền: {e}")
+
     history_data["days"] = days_dict
     sorted_days = sorted(days_dict.keys(), reverse=True)
 

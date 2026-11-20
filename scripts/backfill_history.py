@@ -49,6 +49,7 @@ from fetch_prices import (
     get_video_transcript,
     call_gemini_api,
     calculate_daily_average,
+    calculate_regional_data,
     normalize_bulk_prices,
     load_json,
     save_json,
@@ -243,8 +244,10 @@ NỘI DUNG PHỤ ĐỀ:
                     sources.append(source_item)
                     total_backfilled += 1
 
-                # Tính lại giá trung bình với ưu tiên kênh chỉ định
-                history_data["days"][day_key]["daily_average"] = calculate_daily_average(sources)
+                # Tính lại giá trung bình và giá phân bổ 3 khu vực
+                daily_avg = calculate_daily_average(sources)
+                history_data["days"][day_key]["daily_average"] = daily_avg
+                history_data["days"][day_key]["by_region"] = calculate_regional_data(sources, daily_avg)
                 history_data["last_updated"] = datetime.now(VN_TZ).isoformat()
                 save_split_data(history_data)
             else:

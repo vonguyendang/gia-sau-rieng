@@ -188,7 +188,7 @@ function renderPriceCards() {
 
     // Bảng giá chi tiết 3 khu vực khi người dùng chọn tab Toàn Quốc
     let regionalBreakdownHtml = '';
-    if (currentRegion === 'all' && dayObj.by_region) {
+    if (currentRegion === 'all' && dayObj.by_region && Object.keys(dayObj.by_region).length > 0) {
       const mt = dayObj.by_region.mientay || {};
       const md = dayObj.by_region.miendong || {};
       const tn = dayObj.by_region.taynguyen || {};
