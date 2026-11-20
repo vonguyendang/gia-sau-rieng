@@ -1,7 +1,8 @@
 {
-  "last_updated": "2026-11-20T20:29:35.096299+07:00",
-  "latest_day": "2026-11-20",
+  "last_updated": "2026-11-20T23:57:59.332037+07:00",
+  "latest_day": "2026-11-21",
   "available_days": [
+    "2026-11-21",
     "2026-11-20",
     "2026-11-19",
     "2026-11-18",
@@ -34,145 +35,65 @@
     "2026-10-21"
   ],
   "days": {
-    "2026-11-20": {
+    "2026-11-21": {
       "daily_average": {
-        "ri6_a": 56000,
-        "ri6_b": 53429,
-        "monthong_a": 90286,
-        "monthong_b": 86714,
-        "musang_king": 109143,
+        "ri6_a": 55000,
+        "ri6_b": 48000,
+        "monthong_a": 90000,
+        "monthong_b": 85000,
+        "musang_king": 105000,
         "black_thorn": 110000,
-        "chuong_bo": 49600,
+        "chuong_bo": 50000,
         "sau_huu": 57000
       },
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 56667,
-          "ri6_b": 54333,
-          "monthong_a": 90333,
-          "monthong_b": 87500,
-          "musang_king": 110667,
+          "ri6_a": 55000,
+          "ri6_b": 48000,
+          "monthong_a": 90000,
+          "monthong_b": 85000,
+          "musang_king": 105000,
           "black_thorn": 110000,
-          "chuong_bo": 49750,
-          "sau_huu": 56667
+          "chuong_bo": 50000,
+          "sau_huu": 57000
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 53000,
-          "ri6_b": 51000,
+          "ri6_a": 52000,
+          "ri6_b": 46000,
           "monthong_a": 86000,
-          "monthong_b": 82000,
-          "musang_king": 104000,
+          "monthong_b": 81000,
+          "musang_king": 100000,
           "black_thorn": 104000,
-          "chuong_bo": 47000,
+          "chuong_bo": 48000,
           "sau_huu": 54000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 48000,
-          "ri6_b": 45000,
+          "ri6_a": 47000,
+          "ri6_b": 41000,
           "monthong_a": 99000,
-          "monthong_b": 95000,
-          "musang_king": 120000,
+          "monthong_b": 94000,
+          "musang_king": 116000,
           "black_thorn": 110000,
           "chuong_bo": 50000,
           "sau_huu": 57000
         }
       },
-      "source_count": 7,
+      "source_count": 1,
       "sources": [
         {
-          "video_id": "DrZRpoBsz_0",
-          "title": "bảng giá sầu riêng hôm nay 20/11 mới nhất",
-          "channel_name": "Vườn Nhà Tôi Vlog",
-          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
-          "video_url": "https://www.youtube.com/watch?v=DrZRpoBsz_0",
-          "published_at": "2026-11-20T08:00:29+07:00",
+          "video_id": "zvJB7bO1GrY",
+          "title": "giá sầu riêng hôm nay ngày 21/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=zvJB7bO1GrY",
+          "published_at": "2026-11-20T16:00:23+07:00",
           "region": "Miền Tây",
-          "summary": "Báo giá sầu riêng tại Miền Tây ngày 20/11 với giá xô Ri6 đạt 50.000 đ/kg, Thái đạt 84.000 đ/kg và Musang King từ 125.000 - 128.000 đ/kg.",
+          "summary": "Giá sầu riêng tại Miền Tây ghi nhận xu hướng tăng đồng loạt do bước vào đầu vụ nghịch, nguồn cung khan hiếm. Tại vườn, Ri6 cắt xô tỉ lệ 7/3 - 8/2 có giá từ 48.000 - 55.000 đ/kg, Thái xô từ 85.000 - 90.000 đ/kg.",
           "prices": {
-            "ri6_a": 50000,
-            "ri6_b": 50000,
-            "monthong_a": 84000,
-            "monthong_b": 84000,
-            "musang_king": 125000,
-            "black_thorn": null,
-            "chuong_bo": null,
-            "sau_huu": null
-          }
-        },
-        {
-          "video_id": "tH-h6iKwu-M",
-          "title": "Giá sầu riêng hôm nay ngày 20/11/2026: Tăng ở Đồng bằng sông Cửu Long",
-          "channel_name": "VTC Nông Nghiệp Xanh",
-          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
-          "video_url": "https://www.youtube.com/watch?v=tH-h6iKwu-M",
-          "published_at": "2026-11-20T06:38:29+07:00",
-          "region": "Chung",
-          "summary": "Giá sầu riêng ngày 20/11/2026 ghi nhận mức tăng tại khu vực Đồng bằng sông Cửu Long. Giá thu mua sầu Ri6 xô dao động từ 48.000 - 52.000 đ/kg và sầu Thái xô dao động từ 82.000 - 90.000 đ/kg.",
-          "prices": {
-            "ri6_a": 52000,
-            "ri6_b": 48000,
-            "monthong_a": 90000,
-            "monthong_b": 82000,
-            "musang_king": 100000,
-            "black_thorn": 110000,
-            "chuong_bo": 49000,
-            "sau_huu": 58000
-          }
-        },
-        {
-          "video_id": "Mu4IOwHwCPQ",
-          "title": "Giá sầu riêng miền tây hôm nay 20/11/2026",
-          "channel_name": "Thắm Trần Vlog",
-          "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
-          "video_url": "https://www.youtube.com/watch?v=Mu4IOwHwCPQ",
-          "published_at": "2026-11-19T18:21:38+07:00",
-          "region": "Miền Tây",
-          "summary": "Cập nhật giá sầu riêng tại Miền Tây ngày 20/11/2026: Ri6 dao động 65.000 - 67.000 đ/kg, Thái (Monthong) đạt 103.000 - 105.000 đ/kg. Nhìn chung thị trường ổn định, các loại sầu riêng cao cấp như Musang King, Black Thorn giữ mức giá cao.",
-          "prices": {
-            "ri6_a": 67000,
-            "ri6_b": 65000,
-            "monthong_a": 105000,
-            "monthong_b": 103000,
-            "musang_king": 120000,
-            "black_thorn": 110000,
-            "chuong_bo": 50000,
-            "sau_huu": null
-          }
-        },
-        {
-          "video_id": "iDA_0aN1Wp8",
-          "title": "Giá Sầu Riêng Hôm Nay 20/11/2026: Sôi Động Hàng Thái Miền Tây Nhích Lên",
-          "channel_name": "Giá Nông Sản 47",
-          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
-          "video_url": "https://www.youtube.com/watch?v=iDA_0aN1Wp8",
-          "published_at": "2026-11-20T04:21:01+07:00",
-          "region": "Chung",
-          "summary": "Giá sầu riêng ngày 20/11/2026 ghi nhận xu hướng tăng nhẹ tại Miền Tây đối với Thái và Ri6, trong khi sầu riêng Thái tại Đắk Lắk giảm nhẹ và Gia Lai đi ngang.",
-          "prices": {
-            "ri6_a": 50000,
-            "ri6_b": 50000,
-            "monthong_a": 85000,
-            "monthong_b": 78000,
-            "musang_king": 90000,
-            "black_thorn": null,
-            "chuong_bo": null,
-            "sau_huu": null
-          }
-        },
-        {
-          "video_id": "fpzBlfCU_ds",
-          "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ SÁU NGÀY /20/11/2026|Giải Trí Miền Tây",
-          "channel_name": "Giải Trí Miền Tây",
-          "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
-          "video_url": "https://www.youtube.com/watch?v=fpzBlfCU_ds",
-          "published_at": "2026-11-20T07:48:13+07:00",
-          "region": "Miền Tây",
-          "summary": "Giá sầu riêng tại Miền Tây tăng mạnh do nguồn cung đầu vụ nghịch khan hiếm. Thái xô tại vườn dao động từ 85.000 - 90.000 đ/kg, Ri6 xô vườn đạt từ 48.000 - 53.000 đ/kg.",
-          "prices": {
-            "ri6_a": 53000,
+            "ri6_a": 55000,
             "ri6_b": 48000,
             "monthong_a": 90000,
             "monthong_b": 85000,
@@ -181,48 +102,57 @@
             "chuong_bo": 50000,
             "sau_huu": 57000
           }
-        },
-        {
-          "video_id": "PB8Sp9NXa70",
-          "title": "sầu riêng ở bảo lộc lâm đồng nay giá bao nhiêu #shorts",
-          "channel_name": "Vườn Nhà Tôi Vlog",
-          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
-          "video_url": "https://www.youtube.com/watch?v=PB8Sp9NXa70",
-          "published_at": "2026-11-20T12:50:00+07:00",
-          "region": "Miền Tây",
-          "summary": "Báo giá sầu riêng Cty Tuấn Phát khu vực Miền Tây ngày 20/11, giá sầu Thái cắt xô ở mức 100.000 đ/kg và Ri6 khoảng 65.000 đ/kg.",
-          "prices": {
-            "ri6_a": 65000,
-            "ri6_b": 65000,
-            "monthong_a": 100000,
-            "monthong_b": 100000,
-            "musang_king": 124000,
-            "black_thorn": 110000,
-            "chuong_bo": 50000,
-            "sau_huu": 55000
-          }
-        },
-        {
-          "video_id": "ck_fSK6AS1k",
-          "title": "giá sầu riêng hôm nay 20/11/2026 giá sầu riêng xô lùa, giá sầu riêng miền tây ",
-          "channel_name": "Vườn Nhà Tôi Vlog",
-          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
-          "video_url": "https://www.youtube.com/watch?v=ck_fSK6AS1k",
-          "published_at": "2026-11-19T18:25:11+07:00",
-          "region": "Miền Tây",
-          "summary": "Giá sầu riêng tại vườn ở Miền Tây ghi nhận khởi sắc, Ri6 mua xô từ 48.000 - 55.000 đ/kg, Thái xô từ 75.000 - 78.000 đ/kg.",
-          "prices": {
-            "ri6_a": 55000,
-            "ri6_b": 48000,
-            "monthong_a": 78000,
-            "monthong_b": 75000,
-            "musang_king": 100000,
-            "black_thorn": 110000,
-            "chuong_bo": 49000,
-            "sau_huu": 58000
-          }
         }
       ]
+    },
+    "2026-11-20": {
+      "daily_average": {
+        "ri6_a": 55000,
+        "ri6_b": 48000,
+        "monthong_a": 90000,
+        "monthong_b": 85000,
+        "musang_king": 105000,
+        "black_thorn": 110000,
+        "chuong_bo": 50000,
+        "sau_huu": 57000
+      },
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 55000,
+          "ri6_b": 48000,
+          "monthong_a": 90000,
+          "monthong_b": 85000,
+          "musang_king": 105000,
+          "black_thorn": 110000,
+          "chuong_bo": 50000,
+          "sau_huu": 57000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 52000,
+          "ri6_b": 46000,
+          "monthong_a": 86000,
+          "monthong_b": 81000,
+          "musang_king": 100000,
+          "black_thorn": 104000,
+          "chuong_bo": 48000,
+          "sau_huu": 54000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 47000,
+          "ri6_b": 41000,
+          "monthong_a": 99000,
+          "monthong_b": 94000,
+          "musang_king": 116000,
+          "black_thorn": 110000,
+          "chuong_bo": 50000,
+          "sau_huu": 57000
+        }
+      },
+      "source_count": 8,
+      "sources": []
     },
     "2026-11-19": {
       "daily_average": {

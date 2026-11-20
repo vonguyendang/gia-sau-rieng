@@ -138,5 +138,25 @@
       "chuong_bo": 49000,
       "sau_huu": 58000
     }
+  },
+  {
+    "video_id": "NxE0hC--uKg",
+    "title": "giá sầu riêng trưa nay ngày 20/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=NxE0hC--uKg",
+    "published_at": "2026-11-20T10:00:21+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng ngày 20/11/2026 tại Miền Tây tiếp tục đà tăng mạnh. Giá mua xô tại vườn tỉ lệ 8:2 - 7:3 cho Ri6 từ 48.000 - 55.000 đ/kg, sầu Thái xô dao động từ 85.000 - 90.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 48000,
+      "monthong_a": 90000,
+      "monthong_b": 85000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   }
 ]

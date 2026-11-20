@@ -3358,7 +3358,7 @@
   "3UrmpI8WRgE": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
     "title": "giá sầu riêng hôm nay ngày 17/11/2026 sầu riêng miền tây ",
-    "processed_at": "2026-11-20T15:27:02.349873+07:00",
+    "processed_at": "2026-11-20T23:59:14.261935+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -3580,7 +3580,7 @@
   "UOVYSEoJl-k": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ BA NGÀY /17/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-20T15:38:17.932386+07:00",
+    "processed_at": "2026-11-21T00:00:56.283384+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -3934,7 +3934,7 @@
   "eqG9a2tT4hI": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
     "title": "Giá sầu riêng hôm nay ngày 18/11/2026 thị trường sầu riêng, sầu riêng miền tây ",
-    "processed_at": "2026-11-20T15:26:23.939881+07:00",
+    "processed_at": "2026-11-20T23:59:06.603833+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -4018,7 +4018,7 @@
   "irqmo_U5BXs": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ BA NGÀY /17/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-20T15:38:11.080859+07:00",
+    "processed_at": "2026-11-21T00:00:50.233413+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -4130,7 +4130,7 @@
   "_CC8yI6fDOg": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ TƯ NGÀY /18/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-20T15:38:03.024058+07:00",
+    "processed_at": "2026-11-21T00:00:42.613603+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -4322,7 +4322,7 @@
   "rTWKaVKcoYk": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Cách leo cây sầu riêng chỉ dùng bao bố – ai xem cũng phải ngỡ ngàng",
-    "processed_at": "2026-11-19T08:17:05.166679+07:00",
+    "processed_at": "2026-11-20T23:58:49.984001+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -4448,7 +4448,7 @@
   "LhZlDvZLHYM": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Đi mua thuốc xịt sầu riêng mà gặp cô chủ xinh đẹp quá! 😊",
-    "processed_at": "2026-11-19T08:16:57.815766+07:00",
+    "processed_at": "2026-11-20T23:58:43.640181+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -4486,7 +4486,7 @@
   "KXYGpiKbKo0": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ TƯ NGÀY /18/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-20T15:37:55.798315+07:00",
+    "processed_at": "2026-11-21T00:00:34.901387+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -5020,7 +5020,7 @@
   "9T3zZgkWBxk": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ NĂM NGÀY /19/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-20T15:36:03.618300+07:00",
+    "processed_at": "2026-11-21T00:00:26.857031+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -5264,10 +5264,19 @@
   "NxE0hC--uKg": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 20/11/2026",
-    "processed_at": "2026-11-20T20:28:29.324207+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-20T23:57:59.328304+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 48000,
+      "monthong_a": 90000,
+      "monthong_b": 85000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "PB8Sp9NXa70": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -5414,10 +5423,19 @@
   "zvJB7bO1GrY": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng hôm nay ngày 21/11/2026",
-    "processed_at": "2026-11-20T20:28:22.987195+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-20T23:57:22.310088+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 48000,
+      "monthong_a": 90000,
+      "monthong_b": 85000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "85WqqtK3an8": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -5429,25 +5447,22 @@
   "JJZhXs8nOtI": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Anh chàng chụp sầu riêng liên tục bằng giỏ xách – tay nhanh mắt nhạy quá!",
-    "processed_at": "2026-11-20T20:28:50.594661+07:00",
+    "processed_at": "2026-11-20T23:58:21.653556+07:00",
     "has_transcript": false,
-    "transcript_retries": 2,
     "is_price_video": false
   },
   "1aJd8Cv_BJw": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng hôm nay 21/11/2026 sầu riêng thái miền tây, sầu riêng ri6",
-    "processed_at": "2026-11-20T20:28:57.387601+07:00",
+    "processed_at": "2026-11-20T23:58:28.172608+07:00",
     "has_transcript": false,
-    "transcript_retries": 2,
     "is_price_video": false
   },
   "qxt_c_4qzHs": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Quy trình nhúng thuốc bảo quản sầu riêng tại kho",
-    "processed_at": "2026-11-20T19:01:17.599904+07:00",
+    "processed_at": "2026-11-20T23:58:36.032828+07:00",
     "has_transcript": false,
-    "transcript_retries": 1,
     "is_price_video": false
   },
   "5qPtw29YLPg": {
@@ -5544,9 +5559,8 @@
   "NPkLyXYPZ3U": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ SÁU NGÀY /20/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-20T20:29:24.959576+07:00",
+    "processed_at": "2026-11-21T00:00:20.073759+07:00",
     "has_transcript": false,
-    "transcript_retries": 2,
     "is_price_video": false
   },
   "y7hf94JdGzE": {
@@ -5559,9 +5573,50 @@
   "dp6AZyU72tE": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "tại sao phải nhúng thuốc cho sầu riêng",
-    "processed_at": "2026-11-20T20:28:44.275659+07:00",
+    "processed_at": "2026-11-20T23:58:15.333238+07:00",
     "has_transcript": false,
-    "transcript_retries": 1,
+    "is_price_video": false
+  },
+  "dryYHbK5vWs": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 25/10/2026: Hào Hứng Thái Loại B Đồng Loạt Tăng Giá",
+    "processed_at": "2026-11-20T23:59:27.330220+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "Z33HL_UA650": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 24/10/2026: Khởi Sắc Hàng Thái B, Lâm Đồng Dẫn Đầu",
+    "processed_at": "2026-11-20T23:59:34.755391+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "SYEFJOmG8Mo": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 23/10/2026: Phấn Khởi Ri6 Vọt Lên, Hàng Thái Bám Theo",
+    "processed_at": "2026-11-20T23:59:41.185571+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "dYHaZl_pGFs": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 22/10/2026: Hoang Mang Thái B Đắk Lắk Tụt Sâu, Ri6 Nhích Nhẹ",
+    "processed_at": "2026-11-20T23:59:48.276098+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "xj5sx2lC9Wo": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 21/10/2026: Bất Ngờ Ri Sáu Miền Tây Khởi Sắc",
+    "processed_at": "2026-11-20T23:59:56.000816+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "ekdGmoZYfY0": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 20/10/2026: Hồi Hộp Hàng Thái Nhích Lên, Miền Tây Dẫn Nhịp",
+    "processed_at": "2026-11-21T00:00:02.577124+07:00",
+    "has_transcript": false,
     "is_price_video": false
   }
 }
