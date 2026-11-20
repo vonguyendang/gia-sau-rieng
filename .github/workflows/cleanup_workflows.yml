@@ -57,5 +57,3 @@ jobs:
           repository: ${{ github.repository }}
           retain_days: ${{ steps.params.outputs.retain_days }}
           keep_minimum_runs: ${{ steps.params.outputs.keep_minimum_runs }}
-          delete_workflow_pattern: ".*"
-          delete_workflow_by_state_pattern: "completed, failure, cancelled, skipped"
