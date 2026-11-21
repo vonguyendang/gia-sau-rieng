@@ -58,5 +58,25 @@
       "chuong_bo": 49000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "CqZ9xQMLNdk",
+    "title": "Giá Sầu Riêng Hôm Nay 22/11/2026: Hồi Hộp Miền Tây Đồng Loạt Khởi Sắc",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=CqZ9xQMLNdk",
+    "published_at": "2026-11-22T04:23:02+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 22/11/2026 khởi sắc chủ yếu tại Miền Tây (Đồng bằng sông Cửu Long) khi giá Thái B tăng mạnh lên 90.000 đ/kg và Ri6 B đạt 52.000 đ/kg, trong khi giá sầu riêng tại Tây Nguyên phần lớn đi ngang.",
+    "prices": {
+      "ri6_a": 30000,
+      "ri6_b": 25000,
+      "monthong_a": 76000,
+      "monthong_b": 71000,
+      "musang_king": 100000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
