@@ -18,5 +18,25 @@
       "chuong_bo": 55000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "dYHaZl_pGFs",
+    "title": "Giá Sầu Riêng Hôm Nay 22/10/2026: Hoang Mang Thái B Đắk Lắk Tụt Sâu, Ri6 Nhích Nhẹ",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=dYHaZl_pGFs",
+    "published_at": "2026-11-21T23:20:00.621717+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 22/10 ghi nhận Thái loại B tại Đắk Lắk giảm mạnh xuống 62.000 - 75.000 đ/kg, trong khi Ri6 tại Miền Tây tăng nhẹ với giá loại B dao động từ 63.000 đến 67.000 đ/kg.",
+    "prices": {
+      "ri6_a": 67000,
+      "ri6_b": 63000,
+      "monthong_a": 70000,
+      "monthong_b": 63000,
+      "musang_king": 56000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

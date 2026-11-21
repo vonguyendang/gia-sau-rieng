@@ -18,5 +18,25 @@
       "chuong_bo": 55000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "Z33HL_UA650",
+    "title": "Giá Sầu Riêng Hôm Nay 24/10/2026: Khởi Sắc Hàng Thái B, Lâm Đồng Dẫn Đầu",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=Z33HL_UA650",
+    "published_at": "2026-11-21T23:20:00.621717+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng ngày 24/10/2026 ghi nhận xu hướng tăng nhẹ từ 3.000 - 5.000 đ/kg ở nhóm Thái loại B tại Lâm Đồng, Đắk Lắk và Miền Tây, trong khi giá Ri6 đa số đi ngang hoặc giảm nhẹ.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 75000,
+      "monthong_b": 65000,
+      "musang_king": 56000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

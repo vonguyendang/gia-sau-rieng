@@ -1,7 +1,8 @@
 {
-  "last_updated": "2026-11-21T19:56:34.066816+07:00",
-  "latest_day": "2026-11-21",
+  "last_updated": "2026-11-21T23:24:18.456727+07:00",
+  "latest_day": "2026-11-22",
   "available_days": [
+    "2026-11-22",
     "2026-11-21",
     "2026-11-20",
     "2026-11-19",
@@ -29,15 +30,87 @@
     "2026-10-28",
     "2026-10-27",
     "2026-10-26",
+    "2026-10-25",
     "2026-10-24",
     "2026-10-23",
     "2026-10-22",
     "2026-10-21",
     "2026-10-20",
+    "2026-10-19",
     "2026-10-16",
     "2026-10-15"
   ],
   "days": {
+    "2026-11-22": {
+      "daily_average": {
+        "ri6_a": 55000,
+        "ri6_b": 54000,
+        "monthong_a": 95000,
+        "monthong_b": 88000,
+        "musang_king": 100000,
+        "black_thorn": 108000,
+        "chuong_bo": 50000,
+        "sau_huu": 55000
+      },
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 55000,
+          "ri6_b": 54000,
+          "monthong_a": 95000,
+          "monthong_b": 88000,
+          "musang_king": 100000,
+          "black_thorn": 108000,
+          "chuong_bo": 50000,
+          "sau_huu": 55000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 52000,
+          "ri6_b": 51000,
+          "monthong_a": 90000,
+          "monthong_b": 84000,
+          "musang_king": 95000,
+          "black_thorn": 103000,
+          "chuong_bo": 48000,
+          "sau_huu": 52000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 47000,
+          "ri6_b": 46000,
+          "monthong_a": 105000,
+          "monthong_b": 97000,
+          "musang_king": 110000,
+          "black_thorn": 108000,
+          "chuong_bo": 50000,
+          "sau_huu": 55000
+        }
+      },
+      "source_count": 1,
+      "sources": [
+        {
+          "video_id": "4KBPCmbsoCE",
+          "title": "giá sầu riêng hôm nay 22/11/2026 sầu riêng thái miền tây, sầu riêng ri6 tăng giá ",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=4KBPCmbsoCE",
+          "published_at": "2026-11-21T16:40:22+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng hôm nay tại các kho Miền Tây có xu hướng nhích nhẹ. Giá thu mua xô tại vườn quy đổi theo giá loại B dao động từ 54.000 - 55.000 đ/kg với Ri6 và 88.000 - 95.000 đ/kg với sầu riêng Thái.",
+          "prices": {
+            "ri6_a": 55000,
+            "ri6_b": 54000,
+            "monthong_a": 95000,
+            "monthong_b": 88000,
+            "musang_king": 100000,
+            "black_thorn": 108000,
+            "chuong_bo": 50000,
+            "sau_huu": 55000
+          }
+        }
+      ]
+    },
     "2026-11-21": {
       "daily_average": {
         "ri6_a": 55000,
@@ -84,69 +157,8 @@
           "sau_huu": 57000
         }
       },
-      "source_count": 3,
-      "sources": [
-        {
-          "video_id": "zvJB7bO1GrY",
-          "title": "giá sầu riêng hôm nay ngày 21/11/2026",
-          "channel_name": "Giá Nông Sản Hôm Nay Channel",
-          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
-          "video_url": "https://www.youtube.com/watch?v=zvJB7bO1GrY",
-          "published_at": "2026-11-20T16:00:23+07:00",
-          "region": "Miền Tây",
-          "summary": "Giá sầu riêng tại Miền Tây ghi nhận xu hướng tăng đồng loạt do bước vào đầu vụ nghịch, nguồn cung khan hiếm. Tại vườn, Ri6 cắt xô tỉ lệ 7/3 - 8/2 có giá từ 48.000 - 55.000 đ/kg, Thái xô từ 85.000 - 90.000 đ/kg.",
-          "prices": {
-            "ri6_a": 55000,
-            "ri6_b": 48000,
-            "monthong_a": 90000,
-            "monthong_b": 85000,
-            "musang_king": 105000,
-            "black_thorn": 110000,
-            "chuong_bo": 50000,
-            "sau_huu": 57000
-          }
-        },
-        {
-          "video_id": "1aJd8Cv_BJw",
-          "title": "giá sầu riêng hôm nay 21/11/2026 sầu riêng thái miền tây, sầu riêng ri6",
-          "channel_name": "Vườn Nhà Tôi Vlog",
-          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
-          "video_url": "https://www.youtube.com/watch?v=1aJd8Cv_BJw",
-          "published_at": "2026-11-20T16:40:16+07:00",
-          "region": "Miền Tây",
-          "summary": "Giá sầu riêng tại Miền Tây ghi nhận xu hướng tăng nhẹ ở nhiều kho. Ri6 tại vườn dao động 53.000 - 55.000 đ/kg, sầu riêng Thái mua xô lụa/loại B dao động từ 80.000 đến 90.000 đ/kg.",
-          "prices": {
-            "ri6_a": 55000,
-            "ri6_b": 53000,
-            "monthong_a": 90000,
-            "monthong_b": 80000,
-            "musang_king": 108000,
-            "black_thorn": 112000,
-            "chuong_bo": 51000,
-            "sau_huu": 60000
-          }
-        },
-        {
-          "video_id": "hiVEOV5b9QE",
-          "title": "Giá Sầu Riêng Hôm Nay 21/11/2026: Phấn Khởi Hàng Thái Vượt Mốc Trăm Nghìn",
-          "channel_name": "Giá Nông Sản 47",
-          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
-          "video_url": "https://www.youtube.com/watch?v=hiVEOV5b9QE",
-          "published_at": "2026-11-21T04:20:33+07:00",
-          "region": "Chung",
-          "summary": "Giá sầu riêng Thái tại Miền Tây tăng mạnh vượt mốc 100.000 đ/kg đối với hàng đẹp. Giá sầu riêng xô Thái loại B tại Miền Tây dao động từ 82.000 - 90.000 đ/kg, Ri6 xô loại B dao động 48.000 - 52.000 đ/kg.",
-          "prices": {
-            "ri6_a": 52000,
-            "ri6_b": 48000,
-            "monthong_a": 90000,
-            "monthong_b": 82000,
-            "musang_king": 100000,
-            "black_thorn": null,
-            "chuong_bo": null,
-            "sau_huu": null
-          }
-        }
-      ]
+      "source_count": 6,
+      "sources": []
     },
     "2026-11-20": {
       "daily_average": {
@@ -292,7 +304,7 @@
           "sau_huu": 55000
         }
       },
-      "source_count": 5,
+      "source_count": 6,
       "sources": []
     },
     "2026-11-17": {
@@ -341,7 +353,7 @@
           "sau_huu": 55000
         }
       },
-      "source_count": 5,
+      "source_count": 6,
       "sources": []
     },
     "2026-11-16": {
@@ -1422,13 +1434,62 @@
       "source_count": 2,
       "sources": []
     },
+    "2026-10-25": {
+      "daily_average": {
+        "ri6_a": 25000,
+        "ri6_b": 25000,
+        "monthong_a": 75000,
+        "monthong_b": 65000,
+        "musang_king": 56000,
+        "black_thorn": null,
+        "chuong_bo": null,
+        "sau_huu": null
+      },
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 25000,
+          "ri6_b": 25000,
+          "monthong_a": 75000,
+          "monthong_b": 65000,
+          "musang_king": 56000,
+          "black_thorn": null,
+          "chuong_bo": null,
+          "sau_huu": null
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 24000,
+          "ri6_b": 24000,
+          "monthong_a": 71000,
+          "monthong_b": 62000,
+          "musang_king": 53000,
+          "black_thorn": null,
+          "chuong_bo": null,
+          "sau_huu": null
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 21000,
+          "ri6_b": 21000,
+          "monthong_a": 82000,
+          "monthong_b": 72000,
+          "musang_king": 62000,
+          "black_thorn": null,
+          "chuong_bo": null,
+          "sau_huu": null
+        }
+      },
+      "source_count": 1,
+      "sources": []
+    },
     "2026-10-24": {
       "daily_average": {
-        "ri6_a": 70000,
-        "ri6_b": 65000,
-        "monthong_a": 70000,
-        "monthong_b": 68000,
-        "musang_king": 130000,
+        "ri6_a": 47500,
+        "ri6_b": 42500,
+        "monthong_a": 72500,
+        "monthong_b": 66500,
+        "musang_king": 93000,
         "black_thorn": 135000,
         "chuong_bo": 55000,
         "sau_huu": null
@@ -1436,39 +1497,39 @@
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 74000,
-          "ri6_b": 68000,
-          "monthong_a": 70000,
-          "monthong_b": 68000,
-          "musang_king": 130000,
+          "ri6_a": 25000,
+          "ri6_b": 20000,
+          "monthong_a": 75000,
+          "monthong_b": 65000,
+          "musang_king": 56000,
           "black_thorn": 135000,
           "chuong_bo": 55000,
           "sau_huu": null
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 66000,
-          "ri6_b": 62000,
-          "monthong_a": 66000,
-          "monthong_b": 65000,
-          "musang_king": 124000,
+          "ri6_a": 45000,
+          "ri6_b": 40000,
+          "monthong_a": 69000,
+          "monthong_b": 63000,
+          "musang_king": 88000,
           "black_thorn": 128000,
           "chuong_bo": 52000,
           "sau_huu": null
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 60000,
-          "ri6_b": 55000,
-          "monthong_a": 77000,
-          "monthong_b": 75000,
-          "musang_king": 143000,
+          "ri6_a": 40000,
+          "ri6_b": 36000,
+          "monthong_a": 80000,
+          "monthong_b": 73000,
+          "musang_king": 102000,
           "black_thorn": 135000,
           "chuong_bo": 55000,
           "sau_huu": null
         }
       },
-      "source_count": 1,
+      "source_count": 2,
       "sources": []
     },
     "2026-10-23": {
@@ -1522,11 +1583,11 @@
     },
     "2026-10-22": {
       "daily_average": {
-        "ri6_a": 69000,
-        "ri6_b": 67000,
+        "ri6_a": 68000,
+        "ri6_b": 65000,
         "monthong_a": 70000,
         "monthong_b": 63000,
-        "musang_king": 130000,
+        "musang_king": 93000,
         "black_thorn": 135000,
         "chuong_bo": 55000,
         "sau_huu": null
@@ -1534,39 +1595,39 @@
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 69000,
-          "ri6_b": 67000,
+          "ri6_a": 68000,
+          "ri6_b": 65000,
           "monthong_a": 70000,
           "monthong_b": 63000,
-          "musang_king": 130000,
+          "musang_king": 93000,
           "black_thorn": 135000,
           "chuong_bo": 55000,
           "sau_huu": null
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 66000,
-          "ri6_b": 64000,
+          "ri6_a": 65000,
+          "ri6_b": 62000,
           "monthong_a": 66000,
           "monthong_b": 60000,
-          "musang_king": 124000,
+          "musang_king": 88000,
           "black_thorn": 128000,
           "chuong_bo": 52000,
           "sau_huu": null
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 59000,
-          "ri6_b": 57000,
+          "ri6_a": 58000,
+          "ri6_b": 55000,
           "monthong_a": 77000,
           "monthong_b": 69000,
-          "musang_king": 143000,
+          "musang_king": 102000,
           "black_thorn": 135000,
           "chuong_bo": 55000,
           "sau_huu": null
         }
       },
-      "source_count": 1,
+      "source_count": 2,
       "sources": []
     },
     "2026-10-21": {
@@ -1667,97 +1728,48 @@
       "source_count": 1,
       "sources": []
     },
-    "2026-10-16": {
+    "2026-10-19": {
       "daily_average": {
-        "ri6_a": 57000,
-        "ri6_b": 50000,
-        "monthong_a": 60000,
-        "monthong_b": 55000,
-        "musang_king": null,
-        "black_thorn": null,
+        "ri6_a": 63000,
+        "ri6_b": 60000,
+        "monthong_a": 67000,
+        "monthong_b": 60000,
+        "musang_king": 135000,
+        "black_thorn": 155000,
         "chuong_bo": null,
         "sau_huu": null
       },
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
+          "ri6_a": 63000,
+          "ri6_b": 60000,
+          "monthong_a": 67000,
+          "monthong_b": 60000,
+          "musang_king": 135000,
+          "black_thorn": 155000,
+          "chuong_bo": null,
+          "sau_huu": null
+        },
+        "miendong": {
+          "name": "Miền Đông",
           "ri6_a": 60000,
-          "ri6_b": 52000,
-          "monthong_a": 60000,
-          "monthong_b": 55000,
-          "musang_king": null,
-          "black_thorn": null,
+          "ri6_b": 57000,
+          "monthong_a": 64000,
+          "monthong_b": 57000,
+          "musang_king": 128000,
+          "black_thorn": 147000,
           "chuong_bo": null,
           "sau_huu": null
         },
-        "miendong": {
-          "name": "Miền Đông",
+        "taynguyen": {
+          "name": "Tây Nguyên",
           "ri6_a": 54000,
-          "ri6_b": 48000,
-          "monthong_a": 57000,
-          "monthong_b": 52000,
-          "musang_king": null,
-          "black_thorn": null,
-          "chuong_bo": null,
-          "sau_huu": null
-        },
-        "taynguyen": {
-          "name": "Tây Nguyên",
-          "ri6_a": 48000,
-          "ri6_b": 42000,
-          "monthong_a": 66000,
-          "monthong_b": 61000,
-          "musang_king": null,
-          "black_thorn": null,
-          "chuong_bo": null,
-          "sau_huu": null
-        }
-      },
-      "source_count": 1,
-      "sources": []
-    },
-    "2026-10-15": {
-      "daily_average": {
-        "ri6_a": 56000,
-        "ri6_b": 50000,
-        "monthong_a": 60000,
-        "monthong_b": 55000,
-        "musang_king": null,
-        "black_thorn": null,
-        "chuong_bo": null,
-        "sau_huu": null
-      },
-      "by_region": {
-        "mientay": {
-          "name": "Miền Tây",
-          "ri6_a": 56000,
-          "ri6_b": 50000,
-          "monthong_a": 60000,
-          "monthong_b": 55000,
-          "musang_king": null,
-          "black_thorn": null,
-          "chuong_bo": null,
-          "sau_huu": null
-        },
-        "miendong": {
-          "name": "Miền Đông",
-          "ri6_a": 53000,
-          "ri6_b": 48000,
-          "monthong_a": 57000,
-          "monthong_b": 52000,
-          "musang_king": null,
-          "black_thorn": null,
-          "chuong_bo": null,
-          "sau_huu": null
-        },
-        "taynguyen": {
-          "name": "Tây Nguyên",
-          "ri6_a": 48000,
-          "ri6_b": 42000,
-          "monthong_a": 66000,
-          "monthong_b": 61000,
-          "musang_king": null,
-          "black_thorn": null,
+          "ri6_b": 51000,
+          "monthong_a": 74000,
+          "monthong_b": 66000,
+          "musang_king": 148000,
+          "black_thorn": 155000,
           "chuong_bo": null,
           "sau_huu": null
         }
@@ -1766,5 +1778,5 @@
       "sources": []
     }
   },
-  "is_partial": false
+  "is_partial": true
 }

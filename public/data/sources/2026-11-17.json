@@ -98,5 +98,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "3UrmpI8WRgE",
+    "title": "giá sầu riêng hôm nay ngày 17/11/2026 sầu riêng miền tây ",
+    "channel_name": "Thắm Trần Vlog",
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "video_url": "https://www.youtube.com/watch?v=3UrmpI8WRgE",
+    "published_at": "2026-11-21T23:19:08.354400+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại Miền Tây: Ri6 loại B (xô vườn) từ 47.000 - 50.000 đ/kg, Thái loại B (xô vườn) từ 75.000 - 78.000 đ/kg. Musang King loại B giá 100.000 đ/kg và Chuồng Bò loại B giá 50.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 47000,
+      "monthong_a": 78000,
+      "monthong_b": 75000,
+      "musang_king": 100000,
+      "black_thorn": null,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
   }
 ]

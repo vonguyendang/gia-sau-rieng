@@ -98,5 +98,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "KXYGpiKbKo0",
+    "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ TƯ NGÀY /18/11/2026|Giải Trí Miền Tây",
+    "channel_name": "Giải Trí Miền Tây",
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "video_url": "https://www.youtube.com/watch?v=KXYGpiKbKo0",
+    "published_at": "2026-11-21T23:22:35.492422+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại Miền Tây khởi sắc: Thái mua xô tại vườn dao động 80.000 - 85.000 đ/kg, Ri6 mua xô ở mức 48.000 - 52.000 đ/kg. Giống Musang King xô vườn đạt 105.000 - 108.000 đ/kg, Black Thorn đạt đỉnh 110.000 đ/kg.",
+    "prices": {
+      "ri6_a": 52000,
+      "ri6_b": 48000,
+      "monthong_a": 85000,
+      "monthong_b": 80000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 45000,
+      "sau_huu": 55000
+    }
   }
 ]
