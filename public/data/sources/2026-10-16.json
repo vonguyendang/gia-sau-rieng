@@ -1,0 +1,22 @@
+[
+  {
+    "video_id": "kPpEKqLnoes",
+    "title": "Giá sầu riêng hôm nay ngày 16/10/2026: Thị trường biến động tại nhiều địa phương trên cả nước.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=kPpEKqLnoes",
+    "published_at": "2026-11-21T07:51:00.658897+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 16/10/2026 biến động mạnh tùy địa phương. Giá sầu Thái xô dao động từ 55.000 - 75.000 đ/kg và Ri6 xô từ 50.000 - 57.000 đ/kg.",
+    "prices": {
+      "ri6_a": 57000,
+      "ri6_b": 50000,
+      "monthong_a": 60000,
+      "monthong_b": 55000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  }
+]

@@ -38,5 +38,25 @@
       "chuong_bo": 51000,
       "sau_huu": 60000
     }
+  },
+  {
+    "video_id": "hiVEOV5b9QE",
+    "title": "Giá Sầu Riêng Hôm Nay 21/11/2026: Phấn Khởi Hàng Thái Vượt Mốc Trăm Nghìn",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=hiVEOV5b9QE",
+    "published_at": "2026-11-21T04:20:33+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng Thái tại Miền Tây tăng mạnh vượt mốc 100.000 đ/kg đối với hàng đẹp. Giá sầu riêng xô Thái loại B tại Miền Tây dao động từ 82.000 - 90.000 đ/kg, Ri6 xô loại B dao động 48.000 - 52.000 đ/kg.",
+    "prices": {
+      "ri6_a": 52000,
+      "ri6_b": 48000,
+      "monthong_a": 90000,
+      "monthong_b": 82000,
+      "musang_king": 100000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

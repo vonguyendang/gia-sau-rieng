@@ -18,5 +18,25 @@
       "chuong_bo": 55000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "SYEFJOmG8Mo",
+    "title": "Giá Sầu Riêng Hôm Nay 23/10/2026: Phấn Khởi Ri6 Vọt Lên, Hàng Thái Bám Theo",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=SYEFJOmG8Mo",
+    "published_at": "2026-11-21T07:52:39.515612+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng hôm nay tại khu vực Miền Tây có xu hướng tăng, nổi bật là Ri6 loại A vọt lên 80.000 - 82.000 đ/kg. Mức giá cắt xô tại vườn đối với Ri6 dao động từ 67.000 - 69.000 đ/kg và sầu riêng Thái từ 63.000 - 70.000 đ/kg.",
+    "prices": {
+      "ri6_a": 69000,
+      "ri6_b": 67000,
+      "monthong_a": 70000,
+      "monthong_b": 63000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
