@@ -18,5 +18,25 @@
       "chuong_bo": 55000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "xj5sx2lC9Wo",
+    "title": "Giá Sầu Riêng Hôm Nay 21/10/2026: Bất Ngờ Ri Sáu Miền Tây Khởi Sắc",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=xj5sx2lC9Wo",
+    "published_at": "2026-11-22T02:18:48.231471+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng ngày 21/10/2026 ghi nhận sự khởi sắc của Ri6 tại Miền Tây tăng 3.000 đ/kg, trong khi giá sầu riêng Thái tại Đắk Lắk và Lâm Đồng có xu hướng giảm nhẹ.",
+    "prices": {
+      "ri6_a": 65000,
+      "ri6_b": 63000,
+      "monthong_a": 68000,
+      "monthong_b": 65000,
+      "musang_king": 56000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

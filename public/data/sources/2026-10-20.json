@@ -18,5 +18,25 @@
       "chuong_bo": 55000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "ekdGmoZYfY0",
+    "title": "Giá Sầu Riêng Hôm Nay 20/10/2026: Hồi Hộp Hàng Thái Nhích Lên, Miền Tây Dẫn Nhịp",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=ekdGmoZYfY0",
+    "published_at": "2026-11-22T02:18:48.231471+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng ngày 20/10/2026 ghi nhận Thái loại A tăng tại Đắk Lắk và Miền Tây. Theo quy tắc giá xô tại vườn (bằng giá loại B), Thái xô tại Đắk Lắk dao động từ 65.000 - 70.000 đ/kg, Ri6 xô khoảng 25.000 đ/kg và Musang King loại B đạt 56.000 đ/kg.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 25000,
+      "monthong_a": 70000,
+      "monthong_b": 65000,
+      "musang_king": 56000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

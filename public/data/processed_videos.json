@@ -3768,9 +3768,19 @@
   "M9YKvtejU5E": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "tin vui : sầu riêng thái miền TĂNG GIÁ",
-    "processed_at": "2026-11-18T08:42:21.143269+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-22T02:18:33.067973+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 50000,
+      "monthong_a": 84000,
+      "monthong_b": 80000,
+      "musang_king": 100000,
+      "black_thorn": 108000,
+      "chuong_bo": 49000,
+      "sau_huu": null
+    }
   },
   "CwvaMHlmN5A": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -3928,18 +3938,28 @@
   },
   "9r5C_eJcxHM": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
-    "title": "giá sầu riêng hôm nay 18/11/2026 sầu riêng thái miền tây, tăng mạnh",
-    "processed_at": "2026-11-18T10:01:25.723979+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "title": "giá sầu riêng hôm nay 18/11/2026 sầu riêng thái miền tây, tăng mạnh ",
+    "processed_at": "2026-11-22T02:17:20.331014+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 48000,
+      "ri6_b": 42000,
+      "monthong_a": 75000,
+      "monthong_b": 70000,
+      "musang_king": 95000,
+      "black_thorn": 105000,
+      "chuong_bo": 50000,
+      "sau_huu": 53000
+    }
   },
   "Spy31BIDABk": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Cô gái nhẹ nhàng nhảy từ cầu xuống ghe, chở sầu riêng đi quá khéo léo!",
-    "processed_at": "2026-11-18T08:42:07.202059+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-22T02:18:05.064365+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "eqG9a2tT4hI": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
@@ -4109,7 +4129,7 @@
   "FJ0KWtx_6oE": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Sầu riêng trên cao, trái nào cũng siêu phẩm – nhìn đã thấy ham",
-    "processed_at": "2026-11-18T08:42:14.762741+07:00",
+    "processed_at": "2026-11-22T02:18:12.818265+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -4150,7 +4170,7 @@
   "_CC8yI6fDOg": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ TƯ NGÀY /18/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-21T23:24:26.424608+07:00",
+    "processed_at": "2026-11-22T02:22:41.048351+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -5053,7 +5073,7 @@
   "9T3zZgkWBxk": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ NĂM NGÀY /19/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-21T23:23:02.244604+07:00",
+    "processed_at": "2026-11-22T02:22:18.795376+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -5614,7 +5634,7 @@
   "NPkLyXYPZ3U": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ SÁU NGÀY /20/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-21T23:22:54.077595+07:00",
+    "processed_at": "2026-11-22T02:22:11.688532+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -5704,16 +5724,36 @@
   "xj5sx2lC9Wo": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 21/10/2026: Bất Ngờ Ri Sáu Miền Tây Khởi Sắc",
-    "processed_at": "2026-11-21T23:22:17.541524+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-22T02:19:18.173947+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 65000,
+      "ri6_b": 63000,
+      "monthong_a": 68000,
+      "monthong_b": 65000,
+      "musang_king": 56000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "ekdGmoZYfY0": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 20/10/2026: Hồi Hộp Hàng Thái Nhích Lên, Miền Tây Dẫn Nhịp",
-    "processed_at": "2026-11-21T23:22:24.237986+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-22T02:21:32.349437+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 25000,
+      "monthong_a": 70000,
+      "monthong_b": 65000,
+      "musang_king": 56000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "94fWw3wKuY0": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
@@ -5929,7 +5969,7 @@
   "MtpTEpAGABg": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ BẢY NGÀY /21/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-21T23:22:45.861258+07:00",
+    "processed_at": "2026-11-22T02:22:04.208864+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -6112,9 +6152,19 @@
   "xKxV27Iw_Ro": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng hôm nay ngày 22/11/2026",
-    "processed_at": "2026-11-21T23:08:44.659910+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-22T02:16:15.993387+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 50000,
+      "monthong_a": 93000,
+      "monthong_b": 87000,
+      "musang_king": 108000,
+      "black_thorn": 110000,
+      "chuong_bo": 52000,
+      "sau_huu": 63000
+    }
   },
   "1qzMgKTSyAc": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -6185,7 +6235,7 @@
   "EmWA87crYfU": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ BẢY NGÀY /21/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-21T23:22:39.324915+07:00",
+    "processed_at": "2026-11-22T02:21:56.684557+07:00",
     "has_transcript": false,
     "is_price_video": false
   },

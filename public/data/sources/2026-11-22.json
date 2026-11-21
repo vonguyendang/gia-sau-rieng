@@ -18,5 +18,45 @@
       "chuong_bo": 50000,
       "sau_huu": 55000
     }
+  },
+  {
+    "video_id": "xKxV27Iw_Ro",
+    "title": "giá sầu riêng hôm nay ngày 22/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=xKxV27Iw_Ro",
+    "published_at": "2026-11-21T17:15:33+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại Miền Tây tiếp tục duy trì đà tăng. Giá sầu riêng Ri6 mua xô tại vườn dao động từ 50.000 - 55.000 đ/kg, Thái xô từ 87.000 - 93.000 đ/kg. Các giống sầu riêng đặc sản như Musang King và Black Thorn giữ giá cao.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 50000,
+      "monthong_a": 93000,
+      "monthong_b": 87000,
+      "musang_king": 108000,
+      "black_thorn": 110000,
+      "chuong_bo": 52000,
+      "sau_huu": 63000
+    }
+  },
+  {
+    "video_id": "M9YKvtejU5E",
+    "title": "tin vui : sầu riêng thái miền TĂNG GIÁ",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=M9YKvtejU5E",
+    "published_at": "2026-11-22T02:16:27.454668+07:00",
+    "region": "Miền Tây",
+    "summary": "Sầu riêng Thái tại Miền Tây ghi nhận tăng giá. Mức giá cắt xô tại vườn (quy đổi theo loại B) cho sầu Thái dao động từ 80.000 - 84.000 đ/kg và Ri6 giữ giá 50.000 đ/kg.",
+    "prices": {
+      "ri6_a": 50000,
+      "ri6_b": 50000,
+      "monthong_a": 84000,
+      "monthong_b": 80000,
+      "musang_king": 100000,
+      "black_thorn": 108000,
+      "chuong_bo": 49000,
+      "sau_huu": null
+    }
   }
 ]
