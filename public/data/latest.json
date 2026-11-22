@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T15:01:51.293384+07:00",
+  "last_updated": "2026-11-22T15:19:05.558478+07:00",
   "latest_day": "2026-11-22",
   "available_days": [
     "2026-11-22",
@@ -87,7 +87,7 @@
           "sau_huu": 63000
         }
       },
-      "source_count": 4,
+      "source_count": 8,
       "sources": [
         {
           "video_id": "4KBPCmbsoCE",
@@ -167,6 +167,86 @@
             "black_thorn": null,
             "chuong_bo": null,
             "sau_huu": null
+          }
+        },
+        {
+          "video_id": "dSSL5XKU7MM",
+          "title": "giá sầu riêng chiều nay ngày 22/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=dSSL5XKU7MM",
+          "published_at": "2026-11-22T14:37:19+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng chiều ngày 22/11/2026 tiếp tục đà tăng mạnh tại vườn ở Miền Tây. Ri6 cắt xô tỉ lệ 8/2-7/3 dao động 55.000 - 60.000 đ/kg, Thái xô đạt 90.000 - 100.000 đ/kg.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 55000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 105000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 57000
+          }
+        },
+        {
+          "video_id": "rmpcU4LLC3E",
+          "title": "giá sầu riêng trưa nay ngày 22/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=rmpcU4LLC3E",
+          "published_at": "2026-11-22T11:59:58+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng hôm nay tại Miền Tây tiếp tục tăng mạnh. Thương lái mua xô tại vườn sầu riêng Ri6 dao động từ 55.000 - 60.000 đ/kg, sầu riêng Thái mua xô từ 90.000 - 100.000 đ/kg theo tỷ lệ 7:3 và 8:2.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 55000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 105000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 57000
+          }
+        },
+        {
+          "video_id": "OrmHwunKgVo",
+          "title": "kho sầu riêng phát giá 22/11 #shorts",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=OrmHwunKgVo",
+          "published_at": "2026-11-22T08:35:37+07:00",
+          "region": "Miền Tây",
+          "summary": "Báo giá sầu riêng tại kho Miền Tây ngày 22/11: Giá cắt xô vườn tính theo giá loại B gồm Ri6 52.000 - 57.000 đ/kg, Thái 90.000 - 100.000 đ/kg, Musang King loại B 105.000 đ/kg và Chuồng Bò loại B 50.000 đ/kg.",
+          "prices": {
+            "ri6_a": 57000,
+            "ri6_b": 52000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 105000,
+            "black_thorn": null,
+            "chuong_bo": 50000,
+            "sau_huu": null
+          }
+        },
+        {
+          "video_id": "mmetSnUL5hA",
+          "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY CHỦ NHẬT NGÀY /22/11/2026|Giải Trí Miền Tây",
+          "channel_name": "Giải Trí Miền Tây",
+          "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+          "video_url": "https://www.youtube.com/watch?v=mmetSnUL5hA",
+          "published_at": "2026-11-22T08:34:15+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng tại Miền Tây hôm nay tiếp tục duy trì đà tăng mạnh do nguồn cung cạn kiệt. Giá thu mua xô tại vườn cho sầu Thái đạt từ 87.000 - 93.000 đ/kg, Ri6 xô dao động từ 50.000 - 55.000 đ/kg, Musang King xô từ 105.000 - 108.000 đ/kg và Black Thorn đạt 110.000 đ/kg.",
+          "prices": {
+            "ri6_a": 55000,
+            "ri6_b": 50000,
+            "monthong_a": 93000,
+            "monthong_b": 87000,
+            "musang_king": 105000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 57000
           }
         }
       ]
@@ -315,7 +395,7 @@
           "sau_huu": 57000
         }
       },
-      "source_count": 8,
+      "source_count": 9,
       "sources": []
     },
     "2026-11-18": {

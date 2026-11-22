@@ -5074,9 +5074,19 @@
   "9T3zZgkWBxk": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ NĂM NGÀY /19/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-22T06:50:09.202208+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:19:05.551777+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 53000,
+      "ri6_b": 48000,
+      "monthong_a": 90000,
+      "monthong_b": 85000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "_bGkvxoPFfo": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -6417,18 +6427,27 @@
   "OrmHwunKgVo": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "kho sầu riêng phát giá 22/11 #shorts",
-    "processed_at": "2026-11-22T15:01:10.326536+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:17:37.715038+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 57000,
+      "ri6_b": 52000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": null,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
   },
   "TUVoS6LkiRo": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "tay nghề thu hoạch sầu riêng quá đỉnh #garden #shorts",
-    "processed_at": "2026-11-22T10:00:58.658984+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:17:52.916467+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "DDozltHkS-I": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
@@ -6461,10 +6480,19 @@
   "mmetSnUL5hA": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY CHỦ NHẬT NGÀY /22/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-22T15:01:41.851229+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:18:43.678449+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 50000,
+      "monthong_a": 93000,
+      "monthong_b": 87000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "-gLjmu7jjxs": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -6518,10 +6546,19 @@
   "dSSL5XKU7MM": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng chiều nay ngày 22/11/2026",
-    "processed_at": "2026-11-22T15:00:42.023566+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:15:48.785178+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "rYigMIjTQgQ": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -6547,10 +6584,19 @@
   "rmpcU4LLC3E": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 22/11/2026",
-    "processed_at": "2026-11-22T15:00:48.182778+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:16:35.966209+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "txU87EOukO0": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -6562,18 +6608,18 @@
   "nfyK0sUnGXA": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "thu hoạch sầu riêng kiểu nằm #shorts #durian",
-    "processed_at": "2026-11-22T15:00:59.077353+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:17:15.546155+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "lhdey6YLKdY": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "dụng cụ thu hoạch sầu riêng cực nhanh #videoviral #fyp",
-    "processed_at": "2026-11-22T15:01:05.200231+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-22T15:17:24.090978+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "XoyFXJRopdY": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
