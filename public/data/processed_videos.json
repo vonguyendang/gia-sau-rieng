@@ -6687,26 +6687,35 @@
   "dJ71e_zoP6Q": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "kỹ thuật thu hoạch sầu riêng đỉnh của chớp #shorts",
-    "processed_at": "2026-11-22T19:47:51.085379+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-22T23:16:11.276429+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "D5WtRdAi-9k": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
-    "title": "Giá sầu riêng hôm nay 23/11/2026 sầu riêng các loại TĂNG GIÁ",
-    "processed_at": "2026-11-22T19:47:57.275377+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "title": "Giá sầu riêng hôm nay 23/11/2026 sầu riêng các loại TĂNG GIÁ ",
+    "processed_at": "2026-11-22T23:24:53.932768+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 53000,
+      "monthong_a": 80000,
+      "monthong_b": 75000,
+      "musang_king": 110000,
+      "black_thorn": 110000,
+      "chuong_bo": 52000,
+      "sau_huu": 58000
+    }
   },
   "Gqs8YL_p8ms": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "cách người Thái bắt sầu riêng #shorts #videoviral",
-    "processed_at": "2026-11-22T19:48:03.268686+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-22T23:25:15.623453+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "Z8z4ze7TTGM": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -6739,10 +6748,19 @@
   "rl-ttokMFQ0": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY CHỦ NHẬT NGÀY /22/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-22T19:48:37.814343+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-22T23:26:03.707466+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "zWAeD0iNy28": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -6750,5 +6768,13 @@
     "processed_at": "2026-11-22T19:48:40.738676+07:00",
     "has_transcript": null,
     "is_price_video": false
+  },
+  "HFdwHTQh7eA": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "trò cưa sầu riêng câu view #shorts #videoshort",
+    "processed_at": "2026-11-22T23:15:49.354676+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   }
 }
