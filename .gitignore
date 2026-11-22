@@ -15,6 +15,7 @@ __pycache__/
 env/
 venv/
 ENV/
+.gitattributes
 
 # OS generated files
 .DS_Store
