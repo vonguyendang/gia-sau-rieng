@@ -118,5 +118,45 @@
       "chuong_bo": 50000,
       "sau_huu": 57000
     }
+  },
+  {
+    "video_id": "j7gnVHXa5K4",
+    "title": "giá sầu riêng chiều nay ngày 23/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=j7gnVHXa5K4",
+    "published_at": "2026-11-23T15:45:27+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng mua xô tại vườn ở Miền Tây duy trì đà tăng tốt. Ri6 xô từ 55.000 - 60.000 đ/kg, Thái xô từ 90.000 - 100.000 đ/kg, Musang King 105.000 - 110.000 đ/kg.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
+  },
+  {
+    "video_id": "1YzN1h0FMeg",
+    "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ HAI NGÀY /23/11/2026|Giải Trí Miền Tây",
+    "channel_name": "Giải Trí Miền Tây",
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "video_url": "https://www.youtube.com/watch?v=1YzN1h0FMeg",
+    "published_at": "2026-11-24T03:13:10.338793+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng chiều ngày 23/11/2026 tại Miền Tây bật tăng đồng loạt do nguồn cung nghịch vụ khan hiếm. Sầu riêng Thái cắt xô tại vườn dao động từ 90.000 - 100.000 đ/kg, Ri6 xô đạt 55.000 - 60.000 đ/kg.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   }
 ]

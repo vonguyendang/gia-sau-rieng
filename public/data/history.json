@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T22:12:16.507058+07:00",
+  "last_updated": "2026-11-24T03:13:22.230932+07:00",
   "days": {
     "2026-10-15": {
       "daily_average": {
@@ -4860,6 +4860,46 @@
             "chuong_bo": 50000,
             "sau_huu": 57000
           }
+        },
+        {
+          "video_id": "j7gnVHXa5K4",
+          "title": "giá sầu riêng chiều nay ngày 23/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=j7gnVHXa5K4",
+          "published_at": "2026-11-23T15:45:27+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng mua xô tại vườn ở Miền Tây duy trì đà tăng tốt. Ri6 xô từ 55.000 - 60.000 đ/kg, Thái xô từ 90.000 - 100.000 đ/kg, Musang King 105.000 - 110.000 đ/kg.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 55000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 105000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 60000
+          }
+        },
+        {
+          "video_id": "1YzN1h0FMeg",
+          "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ HAI NGÀY /23/11/2026|Giải Trí Miền Tây",
+          "channel_name": "Giải Trí Miền Tây",
+          "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+          "video_url": "https://www.youtube.com/watch?v=1YzN1h0FMeg",
+          "published_at": "2026-11-24T03:13:10.338793+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng chiều ngày 23/11/2026 tại Miền Tây bật tăng đồng loạt do nguồn cung nghịch vụ khan hiếm. Sầu riêng Thái cắt xô tại vườn dao động từ 90.000 - 100.000 đ/kg, Ri6 xô đạt 55.000 - 60.000 đ/kg.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 55000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 105000,
+            "black_thorn": 110000,
+            "chuong_bo": 50000,
+            "sau_huu": 60000
+          }
         }
       ],
       "by_region": {
@@ -4894,6 +4934,95 @@
           "musang_king": 100000,
           "black_thorn": 110000,
           "chuong_bo": 50000,
+          "sau_huu": 60000
+        }
+      }
+    },
+    "2026-11-24": {
+      "daily_average": {
+        "ri6_a": 59500,
+        "ri6_b": 58500,
+        "monthong_a": 100000,
+        "monthong_b": 91000,
+        "musang_king": 107500,
+        "black_thorn": 106500,
+        "chuong_bo": 49000,
+        "sau_huu": 60000
+      },
+      "sources": [
+        {
+          "video_id": "BP8ZPDUYRHk",
+          "title": "giá sầu riêng hôm nay 24/11/2026 sầu riêng tăng mạnh rồi ",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=BP8ZPDUYRHk",
+          "published_at": "2026-11-23T16:40:29+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng Thái cắt xô tại vườn khu vực Miền Tây (Cái Bè, Cai Lậy) tăng mạnh, dao động từ 90.000 - 100.000 đ/kg (tỉ lệ 7:3). Giá sầu riêng Ri6 xô tại vườn ghi nhận khoảng 60.000 đ/kg.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 60000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 110000,
+            "black_thorn": 110000,
+            "chuong_bo": 48000,
+            "sau_huu": 60000
+          }
+        },
+        {
+          "video_id": "hlUp9BV8-4c",
+          "title": "Giá sầu riêng hôm nay ngày 24/11/2026, sầu riêng miền tây, thị trường sầu riêng, Thắm Trần vlog ",
+          "channel_name": "Thắm Trần Vlog",
+          "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+          "video_url": "https://www.youtube.com/watch?v=hlUp9BV8-4c",
+          "published_at": "2026-11-23T18:00:20+07:00",
+          "region": "Miền Tây",
+          "summary": "Cập nhật giá sầu riêng tại Miền Tây ngày 24/11/2026: Thái xô có giá từ 92.000 - 100.000 đ/kg, Ri6 xô từ 57.000 - 59.000 đ/kg, Musang King loại B đạt 105.000 đ/kg.",
+          "prices": {
+            "ri6_a": 59000,
+            "ri6_b": 57000,
+            "monthong_a": 100000,
+            "monthong_b": 92000,
+            "musang_king": 105000,
+            "black_thorn": 103000,
+            "chuong_bo": 50000,
+            "sau_huu": null
+          }
+        }
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 59500,
+          "ri6_b": 58500,
+          "monthong_a": 100000,
+          "monthong_b": 91000,
+          "musang_king": 107500,
+          "black_thorn": 106500,
+          "chuong_bo": 49000,
+          "sau_huu": 60000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 57000,
+          "ri6_b": 56000,
+          "monthong_a": 95000,
+          "monthong_b": 86000,
+          "musang_king": 102000,
+          "black_thorn": 101000,
+          "chuong_bo": 47000,
+          "sau_huu": 57000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 51000,
+          "ri6_b": 50000,
+          "monthong_a": 110000,
+          "monthong_b": 100000,
+          "musang_king": 118000,
+          "black_thorn": 106000,
+          "chuong_bo": 49000,
           "sau_huu": 60000
         }
       }
