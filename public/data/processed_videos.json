@@ -6839,10 +6839,19 @@
   "-eF3Ouqevkk": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng hôm nay 23/11/2026 #shorts",
-    "processed_at": "2026-11-23T15:00:52.415596+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-23T15:16:22.172385+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 59000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 92000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": 52000,
+      "sau_huu": 60000
+    }
   },
   "Wg2bej46UMo": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -6854,10 +6863,19 @@
   "GLzHb8-xMd8": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 23/11/2026: Tăng ở Đồng bằng sông Cửu Long.",
-    "processed_at": "2026-11-23T15:01:02.669630+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-23T15:17:03.406773+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 57000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 110000,
+      "black_thorn": 110000,
+      "chuong_bo": 47000,
+      "sau_huu": 58000
+    }
   },
   "I0rKFn1sMvg": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
@@ -6911,10 +6929,19 @@
   "MR99uc-h-NI": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ HAI NGÀY /23/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-23T15:01:24.155400+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-23T15:17:41.719478+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 57000
+    }
   },
   "td_kkCQkKmc": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -7024,10 +7051,19 @@
   "LVliOBolSIY": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 23/11/2026",
-    "processed_at": "2026-11-23T15:00:43.422303+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-23T15:16:00.191347+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "b5uNm9TxGc4": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
