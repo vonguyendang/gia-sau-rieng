@@ -6776,5 +6776,22 @@
     "has_transcript": true,
     "is_price_video": false,
     "prices": null
+  },
+  "Y3xbICtmtvY": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 23/11/2026: Hoang Mang Black Thorn Giảm Sâu, Hàng Thái Giữ Mốc",
+    "processed_at": "2026-11-23T07:18:45.182836+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 25000,
+      "monthong_a": 80000,
+      "monthong_b": 71000,
+      "musang_king": 100000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 }

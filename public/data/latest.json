@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T23:26:03.713790+07:00",
+  "last_updated": "2026-11-23T07:18:45.187795+07:00",
   "latest_day": "2026-11-23",
   "available_days": [
     "2026-11-23",
@@ -44,11 +44,11 @@
   "days": {
     "2026-11-23": {
       "daily_average": {
-        "ri6_a": 60000,
-        "ri6_b": 53000,
+        "ri6_a": 42500,
+        "ri6_b": 39000,
         "monthong_a": 80000,
-        "monthong_b": 75000,
-        "musang_king": 110000,
+        "monthong_b": 73000,
+        "musang_king": 105000,
         "black_thorn": 110000,
         "chuong_bo": 52000,
         "sau_huu": 58000
@@ -67,28 +67,28 @@
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 57000,
-          "ri6_b": 50000,
+          "ri6_a": 40000,
+          "ri6_b": 37000,
           "monthong_a": 76000,
-          "monthong_b": 71000,
-          "musang_king": 104000,
+          "monthong_b": 69000,
+          "musang_king": 100000,
           "black_thorn": 104000,
           "chuong_bo": 49000,
           "sau_huu": 55000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 51000,
-          "ri6_b": 45000,
-          "monthong_a": 88000,
-          "monthong_b": 82000,
-          "musang_king": 121000,
+          "ri6_a": 25000,
+          "ri6_b": 25000,
+          "monthong_a": 80000,
+          "monthong_b": 71000,
+          "musang_king": 100000,
           "black_thorn": 110000,
           "chuong_bo": 52000,
           "sau_huu": 58000
         }
       },
-      "source_count": 1,
+      "source_count": 2,
       "sources": [
         {
           "video_id": "D5WtRdAi-9k",
@@ -108,6 +108,26 @@
             "black_thorn": 110000,
             "chuong_bo": 52000,
             "sau_huu": 58000
+          }
+        },
+        {
+          "video_id": "Y3xbICtmtvY",
+          "title": "Giá Sầu Riêng Hôm Nay 23/11/2026: Hoang Mang Black Thorn Giảm Sâu, Hàng Thái Giữ Mốc",
+          "channel_name": "Giá Nông Sản 47",
+          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+          "video_url": "https://www.youtube.com/watch?v=Y3xbICtmtvY",
+          "published_at": "2026-11-23T04:20:34+07:00",
+          "region": "Tây Nguyên",
+          "summary": "Giá sầu riêng ngày 23/11/2026 phần lớn đi ngang, hàng Thái ổn định trong khi nhóm giống đặc sản như Black Thorn và Musang King chịu áp lực giảm giá.",
+          "prices": {
+            "ri6_a": 25000,
+            "ri6_b": 25000,
+            "monthong_a": 80000,
+            "monthong_b": 71000,
+            "musang_king": 100000,
+            "black_thorn": null,
+            "chuong_bo": null,
+            "sau_huu": null
           }
         }
       ]

@@ -18,5 +18,25 @@
       "chuong_bo": 52000,
       "sau_huu": 58000
     }
+  },
+  {
+    "video_id": "Y3xbICtmtvY",
+    "title": "Giá Sầu Riêng Hôm Nay 23/11/2026: Hoang Mang Black Thorn Giảm Sâu, Hàng Thái Giữ Mốc",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=Y3xbICtmtvY",
+    "published_at": "2026-11-23T04:20:34+07:00",
+    "region": "Tây Nguyên",
+    "summary": "Giá sầu riêng ngày 23/11/2026 phần lớn đi ngang, hàng Thái ổn định trong khi nhóm giống đặc sản như Black Thorn và Musang King chịu áp lực giảm giá.",
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 25000,
+      "monthong_a": 80000,
+      "monthong_b": 71000,
+      "musang_king": 100000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
