@@ -14,6 +14,7 @@
 // Trạng thái toàn cục (được khai báo tại utils.js)
 document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
+  setupPwaInstallation();
   loadData();
 });
 
@@ -209,3 +210,94 @@ async function loadData() {
     }
   }
 }
+
+/**
+ * Cấu hình PWA (Service Worker và nút Cài Đặt Ứng Dụng ẩn thanh địa chỉ)
+ */
+function setupPwaInstallation() {
+  // 1. Đăng ký Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch((err) => {
+        console.warn('Đăng ký Service Worker không thành công:', err);
+      });
+    });
+  }
+
+  const btnInstall = document.getElementById('btn-install-app');
+  const installModal = document.getElementById('pwa-install-modal');
+  const btnCloseModal = document.getElementById('btn-close-install-modal');
+  const btnDismissModal = document.getElementById('btn-dismiss-install-modal');
+
+  // Kiểm tra nếu ứng dụng đã chạy dưới dạng Standalone (đã cài đặt)
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                       window.navigator.standalone === true || 
+                       document.referrer.includes('android-app://');
+
+  if (isStandalone) {
+    // Đã ở chế độ ứng dụng không có thanh địa chỉ -> Ẩn nút cài đặt
+    if (btnInstall) {
+      btnInstall.classList.add('hidden');
+      btnInstall.classList.remove('flex');
+    }
+    return;
+  }
+
+  // 2. Xử lý sự kiện beforeinstallprompt trên Chromium (Android Chrome, Edge, PC)
+  let deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (btnInstall) {
+      btnInstall.classList.remove('hidden');
+      btnInstall.classList.add('flex');
+    }
+  });
+
+  // 3. Xử lý cho iOS Safari (Safari không phát sự kiện beforeinstallprompt)
+  const isIos = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+  if (isIos && !isStandalone && btnInstall) {
+    btnInstall.classList.remove('hidden');
+    btnInstall.classList.add('flex');
+  }
+
+  if (btnInstall) {
+    btnInstall.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        // Trình duyệt hỗ trợ hộp thoại cài đặt native (Android Chrome / PC)
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          btnInstall.classList.add('hidden');
+          btnInstall.classList.remove('flex');
+        }
+        deferredPrompt = null;
+      } else {
+        // Hiển thị modal hướng dẫn cụ thể (đặc biệt cho iPhone/iPad Safari)
+        if (installModal) installModal.classList.remove('hidden');
+      }
+    });
+  }
+
+  // Đóng modal hướng dẫn
+  const closeModal = () => {
+    if (installModal) installModal.classList.add('hidden');
+  };
+  if (btnCloseModal) btnCloseModal.addEventListener('click', closeModal);
+  if (btnDismissModal) btnDismissModal.addEventListener('click', closeModal);
+  if (installModal) {
+    installModal.addEventListener('click', (e) => {
+      if (e.target === installModal) closeModal();
+    });
+  }
+
+  // Sự kiện khi người dùng đã cài đặt thành công
+  window.addEventListener('appinstalled', () => {
+    if (btnInstall) {
+      btnInstall.classList.add('hidden');
+      btnInstall.classList.remove('flex');
+    }
+    closeModal();
+  });
+}
+
