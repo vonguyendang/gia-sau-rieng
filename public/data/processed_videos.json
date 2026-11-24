@@ -7423,10 +7423,19 @@
   "lAP-PYttKGA": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 24/11/2026",
-    "processed_at": "2026-11-24T22:09:49.977346+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T02:16:24.997585+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "dYMkGg19U6E": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -7556,10 +7565,19 @@
   "HF6ObtfW2Gg": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 24/11/2026: Bứt Phá Mạnh Hàng Thái +10.000Đ/KG Hôm Nay",
-    "processed_at": "2026-11-24T22:10:40.654565+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T02:18:44.553114+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 57000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "Ra_XBnNCsj8": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -7571,10 +7589,19 @@
   "DAKuykq0jiM": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ BA NGÀY /24/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-24T19:01:50.257770+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-25T02:19:58.589029+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "i36HkNRKePQ": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -7764,18 +7791,27 @@
   "6-VWPlSZFlQ": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng hôm nay 25/11/2026 giá sầu riêng thái, giá sầu riêng ri6",
-    "processed_at": "2026-11-24T22:10:03.472167+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T02:17:16.139921+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 60000,
+      "monthong_a": 100000,
+      "monthong_b": 100000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "oFFhAOBiLVQ": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "người đàn ông leo lên cây sầu riêng độc đáo #shortsviral #viralshort",
-    "processed_at": "2026-11-24T22:10:08.892530+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T02:17:26.259868+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "JJpLP7TRZtg": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
@@ -7808,10 +7844,19 @@
   "4E8LHC21ffk": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ BA NGÀY /24/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-24T22:10:52.355198+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T02:19:29.569012+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "BMbn_uvXLeA": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -7829,11 +7874,20 @@
   },
   "FutOBx1Ll5E": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
-    "title": "Giá sầu riêng hôm nay ngày 25/11/2026 , sầu riêng miền tây, thị trường sầu riêng, Thắm Trần vlog",
-    "processed_at": "2026-11-24T22:10:27.534882+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "title": "Giá sầu riêng hôm nay ngày 25/11/2026 , sầu riêng miền tây, thị trường sầu riêng, Thắm Trần vlog ",
+    "processed_at": "2026-11-25T02:18:17.846043+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 59000,
+      "ri6_b": 55000,
+      "monthong_a": 95000,
+      "monthong_b": 93000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
   },
   "5feUPgnoDuY": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",

@@ -1,0 +1,42 @@
+[
+  {
+    "video_id": "6-VWPlSZFlQ",
+    "title": "giá sầu riêng hôm nay 25/11/2026 giá sầu riêng thái, giá sầu riêng ri6",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=6-VWPlSZFlQ",
+    "published_at": "2026-11-24T16:40:22+07:00",
+    "region": "Miền Tây",
+    "summary": "Cập nhật giá sầu riêng tại vườn khu vực Miền Tây với Ri6 đạt khoảng 60.000 đ/kg và sầu riêng Thái (Monthong) đạt khoảng 100.000 đ/kg.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 60000,
+      "monthong_a": 100000,
+      "monthong_b": 100000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  },
+  {
+    "video_id": "FutOBx1Ll5E",
+    "title": "Giá sầu riêng hôm nay ngày 25/11/2026 , sầu riêng miền tây, thị trường sầu riêng, Thắm Trần vlog ",
+    "channel_name": "Thắm Trần Vlog",
+    "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
+    "video_url": "https://www.youtube.com/watch?v=FutOBx1Ll5E",
+    "published_at": "2026-11-24T20:28:20+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại Miền Tây ghi nhận mức khởi sắc với Thái xô dao động từ 93.000 - 95.000 đ/kg, Ri6 xô từ 55.000 - 59.000 đ/kg; các dòng sầu riêng cao cấp như Musang King và Black Thorn tiếp tục giữ giá cao.",
+    "prices": {
+      "ri6_a": 59000,
+      "ri6_b": 55000,
+      "monthong_a": 95000,
+      "monthong_b": 93000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": 50000,
+      "sau_huu": null
+    }
+  }
+]
