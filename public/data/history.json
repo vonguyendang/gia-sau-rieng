@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T15:01:52.206188+07:00",
+  "last_updated": "2026-11-24T15:19:12.205238+07:00",
   "days": {
     "2026-10-15": {
       "daily_average": {
@@ -4940,13 +4940,13 @@
     },
     "2026-11-24": {
       "daily_average": {
-        "ri6_a": 59500,
-        "ri6_b": 58500,
+        "ri6_a": 60000,
+        "ri6_b": 55000,
         "monthong_a": 100000,
-        "monthong_b": 91000,
-        "musang_king": 107500,
-        "black_thorn": 106500,
-        "chuong_bo": 49000,
+        "monthong_b": 90000,
+        "musang_king": 105000,
+        "black_thorn": 120000,
+        "chuong_bo": 50000,
         "sau_huu": 60000
       },
       "sources": [
@@ -4989,40 +4989,100 @@
             "chuong_bo": 50000,
             "sau_huu": null
           }
+        },
+        {
+          "video_id": "q15Rih4hYnU",
+          "title": "giá sầu riêng chiều nay ngày 24/11/2026",
+          "channel_name": "Giá Nông Sản Hôm Nay Channel",
+          "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+          "video_url": "https://www.youtube.com/watch?v=q15Rih4hYnU",
+          "published_at": "2026-11-24T15:06:49+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng tại vườn tiếp tục đà tăng tốt do nguồn cung khan hiếm. Mức giá mua xô cả vườn tại Miền Tây dao động từ 55.000 - 60.000 đ/kg đối với Ri6 (tỉ lệ A/B 8:2, 7:3) và 90.000 - 100.000 đ/kg đối với sầu riêng Thái.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 55000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 105000,
+            "black_thorn": 120000,
+            "chuong_bo": 50000,
+            "sau_huu": 60000
+          }
+        },
+        {
+          "video_id": "ohTsaz3y5lk",
+          "title": "giá sầu riêng hôm nay tại kho 24/11 #shorts",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=ohTsaz3y5lk",
+          "published_at": "2026-11-24T08:40:16+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng xô lùa tại vườn khu vực Miền Tây ghi nhận Ri6 khoảng 60.000 đ/kg và sầu riêng Thái khoảng 100.000 đ/kg.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 60000,
+            "monthong_a": 100000,
+            "monthong_b": 100000,
+            "musang_king": null,
+            "black_thorn": null,
+            "chuong_bo": null,
+            "sau_huu": null
+          }
+        },
+        {
+          "video_id": "Fyl7FdzYLKU",
+          "title": "Giá sầu riêng hôm nay ngày 24/11/2026: Duy trì mức cao tại nhiều địa phương.",
+          "channel_name": "VTC Nông Nghiệp Xanh",
+          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+          "video_url": "https://www.youtube.com/watch?v=Fyl7FdzYLKU",
+          "published_at": "2026-11-24T07:44:33+07:00",
+          "region": "Chung",
+          "summary": "Giá sầu riêng ngày 24/11/2026 duy trì ở mức cao tại nhiều địa phương. Mức giá cắt xô tại vườn quy đổi theo giá hàng B cho sầu Ri6 dao động từ 55.000 - 60.000 đ/kg và sầu Thái (Monthong) dao động từ 95.000 - 100.000 đ/kg.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 55000,
+            "monthong_a": 100000,
+            "monthong_b": 95000,
+            "musang_king": 110000,
+            "black_thorn": 110000,
+            "chuong_bo": 47000,
+            "sau_huu": 58000
+          }
         }
       ],
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 59500,
-          "ri6_b": 58500,
+          "ri6_a": 60000,
+          "ri6_b": 55000,
           "monthong_a": 100000,
-          "monthong_b": 91000,
-          "musang_king": 107500,
-          "black_thorn": 106500,
-          "chuong_bo": 49000,
+          "monthong_b": 90000,
+          "musang_king": 105000,
+          "black_thorn": 120000,
+          "chuong_bo": 50000,
           "sau_huu": 60000
         },
         "miendong": {
           "name": "Miền Đông",
           "ri6_a": 57000,
-          "ri6_b": 56000,
+          "ri6_b": 52000,
           "monthong_a": 95000,
           "monthong_b": 86000,
-          "musang_king": 102000,
-          "black_thorn": 101000,
-          "chuong_bo": 47000,
+          "musang_king": 100000,
+          "black_thorn": 114000,
+          "chuong_bo": 48000,
           "sau_huu": 57000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
           "ri6_a": 51000,
-          "ri6_b": 50000,
+          "ri6_b": 47000,
           "monthong_a": 110000,
-          "monthong_b": 100000,
-          "musang_king": 118000,
-          "black_thorn": 106000,
-          "chuong_bo": 49000,
+          "monthong_b": 99000,
+          "musang_king": 116000,
+          "black_thorn": 120000,
+          "chuong_bo": 50000,
           "sau_huu": 60000
         }
       }
