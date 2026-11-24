@@ -160,9 +160,24 @@
         </div>
       </div>
 
-      <!-- Chú thích 6 giống bằng các nút bấm HTML (không che khuất biểu đồ) -->
-      <div id="chart-legend-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2 mb-3.5">
-        <!-- Render tự động 6 pill bấm ẩn/hiện đường giá từ app.js -->
+      <!-- Thanh công cụ lọc giống nhanh & chú thích 6 giống (không che khuất biểu đồ) -->
+      <div class="flex flex-col gap-2 mb-3.5">
+        <div class="flex items-center justify-between text-xs text-slate-500">
+          <span class="font-medium text-[11px] sm:text-xs text-slate-600 flex items-center gap-1.5">
+            <i class="fa-solid fa-sliders text-emerald-600"></i> Bấm để bật/tắt từng giống:
+          </span>
+          <div class="inline-flex gap-1.5 shrink-0">
+            <button type="button" onclick="setChartPreset('main')" title="Chỉ hiện Ri6 và Thái" class="px-2.5 py-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg border border-emerald-200 transition-all cursor-pointer active:scale-95">
+              Ri6 & Thái
+            </button>
+            <button type="button" onclick="setChartPreset('all')" title="Hiện toàn bộ 6 giống" class="px-2.5 py-1 text-[11px] font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg border border-slate-200 transition-all cursor-pointer active:scale-95">
+              Hiện cả 6
+            </button>
+          </div>
+        </div>
+        <div id="chart-legend-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2">
+          <!-- Render tự động 6 pill bấm ẩn/hiện đường giá từ app.js -->
+        </div>
       </div>
 
       <!-- Khung Canvas biểu đồ -->

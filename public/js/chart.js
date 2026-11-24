@@ -53,6 +53,17 @@ function initOrUpdateChart() {
 
   const labels = selectedDays.map(d => formatDateStr(d));
 
+  // Quản lý trạng thái hiển thị của từng giống sầu riêng:
+  // - Lần đầu nạp: Mặc định chỉ hiển thị 2 giống chủ lực (0: Ri6, 1: Thái) để biểu đồ trên mobile thoáng đãng, sắc nét.
+  // - Nếu người dùng đã tự bấm chọn giống trước đó: Giữ nguyên trạng thái lựa chọn của người dùng khi đổi mốc thời gian.
+  const getHiddenState = (index) => {
+    if (priceChartInstance) {
+      return !priceChartInstance.isDatasetVisible(index);
+    }
+    // Mặc định: Ri6 và Thái hiển thị (false = not hidden), các giống phụ 2,3,4,5 tạm ẩn (true = hidden)
+    return index > 1;
+  };
+
   // 6 Giống đúng thứ tự:
   // 1. Sầu riêng Ri6
   // 2. Sầu riêng Thái (Monthong / Dona)
@@ -77,6 +88,21 @@ function initOrUpdateChart() {
   const ctx = document.getElementById('priceChart');
   if (!ctx) return;
 
+  // Cấu hình Minimalist Finance Curve:
+  // - pointRadius: 0 -> Loại bỏ hoàn toàn các chấm dính chùm trên điện thoại
+  // - pointHoverRadius: 6 -> Chỉ nổi chấm tròn sáng khi người dùng chạm/rê ngón tay vào ngày đó
+  // - pointHitRadius: 20 -> Vùng chạm cảm ứng rộng, cực kỳ mượt mà trên mobile
+  // - tension: 0.35 -> Đường cong uốn lượn mềm mại chuẩn biểu đồ tài chính
+  const commonDatasetOpts = {
+    tension: 0.35,
+    pointRadius: 0,
+    pointHitRadius: 20,
+    pointHoverRadius: 6,
+    pointHoverBackgroundColor: '#ffffff',
+    pointHoverBorderWidth: 2.5,
+    spanGaps: true,
+  };
+
   const chartData = {
     labels: labels,
     datasets: [
@@ -84,77 +110,67 @@ function initOrUpdateChart() {
         label: 'Ri6',
         data: ri6Data,
         borderColor: '#059669',
-        backgroundColor: 'rgba(5, 150, 105, 0.08)',
-        borderWidth: bWidth,
-        tension: 0.3,
-        fill: false,
-        spanGaps: true,
-        pointBackgroundColor: '#059669',
-        pointRadius: pRadius,
-        pointHoverRadius: pHoverRadius,
+        backgroundColor: 'rgba(5, 150, 105, 0.06)',
+        borderWidth: 2.5,
+        fill: true,
+        pointHoverBorderColor: '#059669',
+        hidden: getHiddenState(0),
+        ...commonDatasetOpts,
       },
       {
         label: 'Thái Monthong',
         data: monthongData,
         borderColor: '#d97706',
-        backgroundColor: 'rgba(217, 119, 6, 0.08)',
-        borderWidth: bWidth,
-        tension: 0.3,
-        fill: false,
-        spanGaps: true,
-        pointBackgroundColor: '#d97706',
-        pointRadius: pRadius,
-        pointHoverRadius: pHoverRadius,
+        backgroundColor: 'rgba(217, 119, 6, 0.06)',
+        borderWidth: 2.5,
+        fill: true,
+        pointHoverBorderColor: '#d97706',
+        hidden: getHiddenState(1),
+        ...commonDatasetOpts,
       },
       {
         label: 'Musang King',
         data: musangData,
         borderColor: '#7c3aed',
-        backgroundColor: 'rgba(124, 58, 237, 0.08)',
-        borderWidth: bWidth,
-        tension: 0.3,
+        backgroundColor: 'rgba(124, 58, 237, 0.04)',
+        borderWidth: 2,
         fill: false,
-        spanGaps: true,
-        pointBackgroundColor: '#7c3aed',
-        pointRadius: pRadius,
-        pointHoverRadius: pHoverRadius,
+        pointHoverBorderColor: '#7c3aed',
+        hidden: getHiddenState(2),
+        ...commonDatasetOpts,
       },
       {
         label: 'Black Thorn',
         data: blackThornData,
         borderColor: '#e11d48',
-        backgroundColor: 'rgba(225, 29, 72, 0.08)',
-        borderWidth: bWidth,
-        tension: 0.3,
+        backgroundColor: 'rgba(225, 29, 72, 0.04)',
+        borderWidth: 2,
         fill: false,
-        spanGaps: true,
-        pointBackgroundColor: '#e11d48',
-        pointRadius: pRadius,
-        pointHoverRadius: pHoverRadius,
+        pointHoverBorderColor: '#e11d48',
+        hidden: getHiddenState(3),
+        ...commonDatasetOpts,
       },
       {
         label: 'Chuồng Bò',
         data: chuongBoData,
         borderColor: '#0891b2',
-        borderWidth: isDense ? 1.5 : 2,
-        tension: 0.3,
+        backgroundColor: 'rgba(8, 145, 178, 0.04)',
+        borderWidth: 1.8,
         fill: false,
-        spanGaps: true,
-        pointBackgroundColor: '#0891b2',
-        pointRadius: pRadius,
-        pointHoverRadius: pHoverRadius,
+        pointHoverBorderColor: '#0891b2',
+        hidden: getHiddenState(4),
+        ...commonDatasetOpts,
       },
       {
         label: 'Sáu Hữu',
         data: sauHuuData,
         borderColor: '#ea580c',
-        borderWidth: isDense ? 1.5 : 2,
-        tension: 0.3,
+        backgroundColor: 'rgba(234, 88, 12, 0.04)',
+        borderWidth: 1.8,
         fill: false,
-        spanGaps: true,
-        pointBackgroundColor: '#ea580c',
-        pointRadius: pRadius,
-        pointHoverRadius: pHoverRadius,
+        pointHoverBorderColor: '#ea580c',
+        hidden: getHiddenState(5),
+        ...commonDatasetOpts,
       }
     ]
   };
@@ -215,10 +231,11 @@ function initOrUpdateChart() {
       x: {
         grid: { display: false },
         ticks: {
-          font: { family: '"Be Vietnam Pro"', size: 11 },
+          font: { family: '"Be Vietnam Pro"', size: 10.5 },
           color: '#64748b',
-          maxTicksLimit: isDense ? 12 : 10,
+          maxTicksLimit: (typeof window !== 'undefined' && window.innerWidth < 640) ? 6 : (isDense ? 12 : 10),
           maxRotation: 0,
+          autoSkip: true,
         }
       },
       y: {
@@ -280,6 +297,24 @@ window.toggleDataset = function(index) {
   if (!priceChartInstance) return;
   const isVisible = priceChartInstance.isDatasetVisible(index);
   priceChartInstance.setDatasetVisibility(index, !isVisible);
+  priceChartInstance.update();
+  renderChartLegend();
+};
+
+window.setChartPreset = function(preset) {
+  if (!priceChartInstance) return;
+  if (preset === 'main') {
+    priceChartInstance.setDatasetVisibility(0, true);
+    priceChartInstance.setDatasetVisibility(1, true);
+    priceChartInstance.setDatasetVisibility(2, false);
+    priceChartInstance.setDatasetVisibility(3, false);
+    priceChartInstance.setDatasetVisibility(4, false);
+    priceChartInstance.setDatasetVisibility(5, false);
+  } else if (preset === 'all') {
+    for (let i = 0; i <= 5; i++) {
+      priceChartInstance.setDatasetVisibility(i, true);
+    }
+  }
   priceChartInstance.update();
   renderChartLegend();
 };
