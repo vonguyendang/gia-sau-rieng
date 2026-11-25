@@ -8004,10 +8004,19 @@
   "8dQGd49vLWs": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "kho sầu riêng tại kho phát giá 25/11 #shorts",
-    "processed_at": "2026-11-25T15:01:07.816819+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T15:17:44.620699+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 57000,
+      "monthong_a": 97000,
+      "monthong_b": 95000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 48000,
+      "sau_huu": null
+    }
   },
   "qz-HD21uxFM": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -8026,10 +8035,19 @@
   "oFQGVYguAX8": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 25/11/2026: Sầu Thái ở Đồng bằng sông Cửu Long giảm.",
-    "processed_at": "2026-11-25T15:01:19.506899+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T15:18:12.717347+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 59000,
+      "ri6_b": 59000,
+      "monthong_a": 96000,
+      "monthong_b": 96000,
+      "musang_king": 110000,
+      "black_thorn": 110000,
+      "chuong_bo": 49000,
+      "sau_huu": 60000
+    }
   },
   "PpFoe6CJPwU": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
@@ -8069,10 +8087,19 @@
   "GTOxEUM-ZZs": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
     "title": "Giá Sầu Riêng Hôm Nay 25/11/2026: Nén Lại Hàng Thái Giữ Mốc, Musang Lùi",
-    "processed_at": "2026-11-25T15:01:38.442779+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T15:18:51.135636+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 25000,
+      "monthong_a": 80000,
+      "monthong_b": 71000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "myvBvZvyD1U": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -8091,10 +8118,19 @@
   "TwxRCOt2UJw": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ TƯ NGÀY /25/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-25T15:01:51.381797+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-25T15:19:39.826535+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "lu73hMfHeQc": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -8155,26 +8191,44 @@
   "7XBxt1kXsqY": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 25/11/2026",
-    "processed_at": "2026-11-25T15:00:46.643505+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-25T15:16:23.317572+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "ek0Dl4AAfBQ": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng chuông bò và 6 hữu",
-    "processed_at": "2026-11-25T15:00:57.225471+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-25T15:17:09.531053+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 58000,
+      "monthong_a": 97000,
+      "monthong_b": 95000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "xc2A4Jr0Atk": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Đỡ sầu riêng rơi từ trên cao chỉ bằng đầu — kỹ năng quá tuyệt vời!",
-    "processed_at": "2026-11-25T15:01:02.510758+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-25T15:17:21.613961+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "I97JLTL6Juw": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
