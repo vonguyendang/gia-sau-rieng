@@ -8324,10 +8324,19 @@
   "8ekskFw8wXw": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng chiều nay ngày 25/11/2026",
-    "processed_at": "2026-11-25T21:49:06.508140+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-26T01:39:02.669557+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "TjG3PkWS5Hc": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -8340,18 +8349,26 @@
   "PLS7EPGWbjI": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Giá sầu riêng hôm nay 26/11/2026 giá sầu riêng thái, giá sầu riêng tăng",
-    "processed_at": "2026-11-25T21:50:12.863811+07:00",
+    "processed_at": "2026-11-26T01:41:07.638882+07:00",
     "has_transcript": false,
-    "transcript_retries": 2,
     "is_price_video": false
   },
   "5vfmi1FJEiQ": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng tại vườn đang tăng",
-    "processed_at": "2026-11-25T19:01:09.031477+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-26T01:41:38.593604+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 60000,
+      "monthong_a": 100000,
+      "monthong_b": 100000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "q2tKI8OPdq0": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
@@ -8362,11 +8379,20 @@
   },
   "0J7mI6tzsBc": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
-    "title": "Giá sầu riêng hôm nay ngày 26/11/2016 sầu riêng miền tây, thị trường sầu riêng, Thắm Trần vlog",
-    "processed_at": "2026-11-25T21:50:40.802174+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "title": "Giá sầu riêng hôm nay ngày 26/11/2016 sầu riêng miền tây, thị trường sầu riêng, Thắm Trần vlog ",
+    "processed_at": "2026-11-26T01:42:45.989704+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 59000,
+      "ri6_b": 57000,
+      "monthong_a": 96000,
+      "monthong_b": 93000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": 45000,
+      "sau_huu": null
+    }
   },
   "lf4QF_cppMY": {
     "channel_id": "UCRU7pwfZ72gOW5aG_Fj7ESw",
@@ -8399,10 +8425,19 @@
   "ke9q-1JBxHg": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ TƯ NGÀY /25/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-25T21:51:14.798828+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-26T01:43:33.591254+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "DOSjaOUf_Q8": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -8421,10 +8456,19 @@
   "tWS2xHHlp-Y": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "tình hình sầu riêng xô lùa miền tây giá tốt #shorts",
-    "processed_at": "2026-11-25T21:49:29.999953+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-26T01:39:50.552784+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 58000,
+      "ri6_b": 58000,
+      "monthong_a": 100000,
+      "monthong_b": 100000,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "Oq09XmiZxVw": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
