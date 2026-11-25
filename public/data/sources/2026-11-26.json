@@ -1,0 +1,22 @@
+[
+  {
+    "video_id": "PLS7EPGWbjI",
+    "title": "Giá sầu riêng hôm nay 26/11/2026 giá sầu riêng thái, giá sầu riêng tăng",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=PLS7EPGWbjI",
+    "published_at": "2026-11-25T16:40:38+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng Thái tại vườn hôm nay đạt mức khoảng 100.000 đ/kg, Ri6 bán cho lái dao động khoảng 60.000 đ/kg. Tại các vựa/kho, sầu riêng Black Thorn tăng mạnh lên tới 160.000 đ/kg loại A (130.000 đ/kg loại B).",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 60000,
+      "monthong_a": 100000,
+      "monthong_b": 100000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
+  }
+]

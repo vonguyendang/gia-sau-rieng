@@ -8349,9 +8349,19 @@
   "PLS7EPGWbjI": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "Giá sầu riêng hôm nay 26/11/2026 giá sầu riêng thái, giá sầu riêng tăng",
-    "processed_at": "2026-11-26T01:41:07.638882+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-26T02:15:56.436356+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 60000,
+      "monthong_a": 100000,
+      "monthong_b": 100000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "5vfmi1FJEiQ": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",

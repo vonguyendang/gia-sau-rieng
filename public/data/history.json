@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T01:43:33.596466+07:00",
+  "last_updated": "2026-11-26T02:15:56.442240+07:00",
   "days": {
     "2016-11-26": {
       "daily_average": {
@@ -5520,6 +5520,75 @@
           "monthong_b": 71000,
           "musang_king": 110000,
           "black_thorn": 120000,
+          "chuong_bo": 50000,
+          "sau_huu": 60000
+        }
+      }
+    },
+    "2026-11-26": {
+      "daily_average": {
+        "ri6_a": 60000,
+        "ri6_b": 60000,
+        "monthong_a": 100000,
+        "monthong_b": 100000,
+        "musang_king": 110000,
+        "black_thorn": 130000,
+        "chuong_bo": 50000,
+        "sau_huu": 60000
+      },
+      "sources": [
+        {
+          "video_id": "PLS7EPGWbjI",
+          "title": "Giá sầu riêng hôm nay 26/11/2026 giá sầu riêng thái, giá sầu riêng tăng",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=PLS7EPGWbjI",
+          "published_at": "2026-11-25T16:40:38+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng Thái tại vườn hôm nay đạt mức khoảng 100.000 đ/kg, Ri6 bán cho lái dao động khoảng 60.000 đ/kg. Tại các vựa/kho, sầu riêng Black Thorn tăng mạnh lên tới 160.000 đ/kg loại A (130.000 đ/kg loại B).",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 60000,
+            "monthong_a": 100000,
+            "monthong_b": 100000,
+            "musang_king": 110000,
+            "black_thorn": 130000,
+            "chuong_bo": 50000,
+            "sau_huu": 60000
+          }
+        }
+      ],
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 60000,
+          "ri6_b": 60000,
+          "monthong_a": 100000,
+          "monthong_b": 100000,
+          "musang_king": 110000,
+          "black_thorn": 130000,
+          "chuong_bo": 50000,
+          "sau_huu": 60000
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 57000,
+          "ri6_b": 57000,
+          "monthong_a": 95000,
+          "monthong_b": 95000,
+          "musang_king": 104000,
+          "black_thorn": 124000,
+          "chuong_bo": 48000,
+          "sau_huu": 57000
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 51000,
+          "ri6_b": 51000,
+          "monthong_a": 110000,
+          "monthong_b": 110000,
+          "musang_king": 121000,
+          "black_thorn": 130000,
           "chuong_bo": 50000,
           "sau_huu": 60000
         }
