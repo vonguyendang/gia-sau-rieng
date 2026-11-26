@@ -8490,18 +8490,27 @@
   "J6ystBKiY60": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "✅ Tại sao phải xịt lên trái sầu riêng sau khi hái? Giải thích rõ",
-    "processed_at": "2026-11-26T15:01:09.776278+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-26T15:17:30.572139+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "mhYWSrF84Rs": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
     "title": "Giá sầu riêng hôm nay ngày 26/11/2026: Black Thorn tăng mạnh tại nhiều địa phương.",
-    "processed_at": "2026-11-26T15:01:21.982847+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-26T15:17:59.972865+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 25000,
+      "ri6_b": 20000,
+      "monthong_a": 63000,
+      "monthong_b": 58000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": 47000,
+      "sau_huu": 60000
+    }
   },
   "xXalfMO7AXY": {
     "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
@@ -8582,10 +8591,19 @@
   "MbkYGvW5dFs": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng hôm nay tại kho 26/11/2026 #shorts",
-    "processed_at": "2026-11-26T15:01:04.920133+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-26T15:17:10.196109+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 58000,
+      "ri6_b": 56000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   },
   "Qy94rD3cQsU": {
     "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
@@ -8695,18 +8713,17 @@
   "FacUm7P5flk": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 26/11/2026",
-    "processed_at": "2026-11-26T15:00:49.402383+07:00",
+    "processed_at": "2026-11-26T15:16:00.893960+07:00",
     "has_transcript": false,
-    "transcript_retries": 1,
     "is_price_video": false
   },
   "opxm3bitPGc": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "đăng cấp chụp sầu riêng điêu luyện #videoviral #shortvideos",
-    "processed_at": "2026-11-26T15:00:59.048230+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-26T15:16:39.700906+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "3z3V_CA0wXg": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",

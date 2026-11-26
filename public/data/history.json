@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T15:01:48.881649+07:00",
+  "last_updated": "2026-11-26T15:17:59.978585+07:00",
   "days": {
     "2016-11-26": {
       "daily_average": {
@@ -5527,14 +5527,14 @@
     },
     "2026-11-26": {
       "daily_average": {
-        "ri6_a": 50000,
-        "ri6_b": 46667,
-        "monthong_a": 92000,
-        "monthong_b": 87000,
+        "ri6_a": 46600,
+        "ri6_b": 43200,
+        "monthong_a": 87800,
+        "monthong_b": 82800,
         "musang_king": 110000,
         "black_thorn": 130000,
-        "chuong_bo": 51500,
-        "sau_huu": 62500
+        "chuong_bo": 50000,
+        "sau_huu": 61667
       },
       "sources": [
         {
@@ -5596,15 +5596,55 @@
             "chuong_bo": 53000,
             "sau_huu": 65000
           }
+        },
+        {
+          "video_id": "MbkYGvW5dFs",
+          "title": "giá sầu riêng hôm nay tại kho 26/11/2026 #shorts",
+          "channel_name": "Vườn Nhà Tôi Vlog",
+          "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+          "video_url": "https://www.youtube.com/watch?v=MbkYGvW5dFs",
+          "published_at": "2026-11-26T09:15:21+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng tại Miền Tây ngày 26/11/2026: Ri6 xô từ 56.000 - 58.000 đ/kg, Thái xô từ 95.000 - 100.000 đ/kg, Musang King 110.000 đ/kg và Black Thorn 130.000 đ/kg.",
+          "prices": {
+            "ri6_a": 58000,
+            "ri6_b": 56000,
+            "monthong_a": 100000,
+            "monthong_b": 95000,
+            "musang_king": 110000,
+            "black_thorn": 130000,
+            "chuong_bo": null,
+            "sau_huu": null
+          }
+        },
+        {
+          "video_id": "mhYWSrF84Rs",
+          "title": "Giá sầu riêng hôm nay ngày 26/11/2026: Black Thorn tăng mạnh tại nhiều địa phương.",
+          "channel_name": "VTC Nông Nghiệp Xanh",
+          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+          "video_url": "https://www.youtube.com/watch?v=mhYWSrF84Rs",
+          "published_at": "2026-11-26T08:05:11+07:00",
+          "region": "Chung",
+          "summary": "Giá sầu riêng ngày 26/11/2026 ghi nhận Black Thorn tăng mạnh tại nhiều địa phương. Giá thu mua xô sầu riêng Thái dao động 58.000 - 96.000 đ/kg và Ri6 từ 20.000 - 59.000 đ/kg tùy vùng.",
+          "prices": {
+            "ri6_a": 25000,
+            "ri6_b": 20000,
+            "monthong_a": 63000,
+            "monthong_b": 58000,
+            "musang_king": 110000,
+            "black_thorn": 130000,
+            "chuong_bo": 47000,
+            "sau_huu": 60000
+          }
         }
       ],
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 50000,
-          "ri6_b": 46667,
-          "monthong_a": 92000,
-          "monthong_b": 87000,
+          "ri6_a": 52000,
+          "ri6_b": 49000,
+          "monthong_a": 94000,
+          "monthong_b": 89000,
           "musang_king": 110000,
           "black_thorn": 130000,
           "chuong_bo": 51500,
@@ -5612,24 +5652,24 @@
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 48000,
-          "ri6_b": 44000,
-          "monthong_a": 87000,
-          "monthong_b": 83000,
+          "ri6_a": 44000,
+          "ri6_b": 41000,
+          "monthong_a": 83000,
+          "monthong_b": 79000,
           "musang_king": 104000,
           "black_thorn": 124000,
-          "chuong_bo": 49000,
+          "chuong_bo": 48000,
           "sau_huu": 59000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 42000,
-          "ri6_b": 40000,
-          "monthong_a": 101000,
-          "monthong_b": 96000,
+          "ri6_a": 40000,
+          "ri6_b": 37000,
+          "monthong_a": 97000,
+          "monthong_b": 91000,
           "musang_king": 121000,
           "black_thorn": 130000,
-          "chuong_bo": 52000,
+          "chuong_bo": 50000,
           "sau_huu": 62000
         }
       }
