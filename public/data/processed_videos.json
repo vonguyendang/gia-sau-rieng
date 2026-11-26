@@ -8486,5 +8486,53 @@
     "processed_at": "2026-11-25T21:50:57.263144+07:00",
     "has_transcript": null,
     "is_price_video": false
+  },
+  "J6ystBKiY60": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "✅ Tại sao phải xịt lên trái sầu riêng sau khi hái? Giải thích rõ",
+    "processed_at": "2026-11-26T09:12:59.466343+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "mhYWSrF84Rs": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá sầu riêng hôm nay ngày 26/11/2026: Black Thorn tăng mạnh tại nhiều địa phương.",
+    "processed_at": "2026-11-26T09:16:01.510596+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "xXalfMO7AXY": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 26/11/2026: TĂNG MẠNH Sầu Riêng RI6 +1.500Đ/KG Hôm Nay",
+    "processed_at": "2026-11-26T09:16:27.051647+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 30000,
+      "ri6_b": 25000,
+      "monthong_a": 76000,
+      "monthong_b": 71000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  },
+  "U7S5wDiUrBs": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ NĂM NGÀY /26/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-26T09:17:02.672100+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 90000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": 53000,
+      "sau_huu": 65000
+    }
   }
 }

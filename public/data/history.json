@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T02:15:56.442240+07:00",
+  "last_updated": "2026-11-26T09:17:02.680078+07:00",
   "days": {
     "2016-11-26": {
       "daily_average": {
@@ -5527,14 +5527,14 @@
     },
     "2026-11-26": {
       "daily_average": {
-        "ri6_a": 60000,
-        "ri6_b": 60000,
-        "monthong_a": 100000,
-        "monthong_b": 100000,
+        "ri6_a": 50000,
+        "ri6_b": 46667,
+        "monthong_a": 92000,
+        "monthong_b": 87000,
         "musang_king": 110000,
         "black_thorn": 130000,
-        "chuong_bo": 50000,
-        "sau_huu": 60000
+        "chuong_bo": 51500,
+        "sau_huu": 62500
       },
       "sources": [
         {
@@ -5556,41 +5556,81 @@
             "chuong_bo": 50000,
             "sau_huu": 60000
           }
+        },
+        {
+          "video_id": "xXalfMO7AXY",
+          "title": "Giá Sầu Riêng Hôm Nay 26/11/2026: TĂNG MẠNH Sầu Riêng RI6 +1.500Đ/KG Hôm Nay",
+          "channel_name": "Giá Nông Sản 47",
+          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+          "video_url": "https://www.youtube.com/watch?v=xXalfMO7AXY",
+          "published_at": "2026-11-26T04:20:28+07:00",
+          "region": "Chung",
+          "summary": "Giá sầu riêng ngày 26/11/2026 ghi nhận giảm 4.000 đ/kg tại Miền Tây đối với cả Thái và Ri6, trong khi khu vực Tây Nguyên giữ giá ổn định. Giá sầu riêng Musang King loại B đạt 110.000 đ/kg.",
+          "prices": {
+            "ri6_a": 30000,
+            "ri6_b": 25000,
+            "monthong_a": 76000,
+            "monthong_b": 71000,
+            "musang_king": 110000,
+            "black_thorn": null,
+            "chuong_bo": null,
+            "sau_huu": null
+          }
+        },
+        {
+          "video_id": "U7S5wDiUrBs",
+          "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ NĂM NGÀY /26/11/2026|Giải Trí Miền Tây",
+          "channel_name": "Giải Trí Miền Tây",
+          "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+          "video_url": "https://www.youtube.com/watch?v=U7S5wDiUrBs",
+          "published_at": "2026-11-26T08:30:17+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng tại vườn ở Miền Tây duy trì ở mức cao và ổn định; sầu Ri6 xô chốt từ 55.000 - 60.000 đ/kg, Thái xô từ 90.000 - 100.000 đ/kg, Black Thorn xô đạt từ 120.000 - 130.000 đ/kg.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 55000,
+            "monthong_a": 100000,
+            "monthong_b": 90000,
+            "musang_king": 110000,
+            "black_thorn": 130000,
+            "chuong_bo": 53000,
+            "sau_huu": 65000
+          }
         }
       ],
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 60000,
-          "ri6_b": 60000,
-          "monthong_a": 100000,
-          "monthong_b": 100000,
+          "ri6_a": 50000,
+          "ri6_b": 46667,
+          "monthong_a": 92000,
+          "monthong_b": 87000,
           "musang_king": 110000,
           "black_thorn": 130000,
-          "chuong_bo": 50000,
-          "sau_huu": 60000
+          "chuong_bo": 51500,
+          "sau_huu": 62500
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 57000,
-          "ri6_b": 57000,
-          "monthong_a": 95000,
-          "monthong_b": 95000,
+          "ri6_a": 48000,
+          "ri6_b": 44000,
+          "monthong_a": 87000,
+          "monthong_b": 83000,
           "musang_king": 104000,
           "black_thorn": 124000,
-          "chuong_bo": 48000,
-          "sau_huu": 57000
+          "chuong_bo": 49000,
+          "sau_huu": 59000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 51000,
-          "ri6_b": 51000,
-          "monthong_a": 110000,
-          "monthong_b": 110000,
+          "ri6_a": 42000,
+          "ri6_b": 40000,
+          "monthong_a": 101000,
+          "monthong_b": 96000,
           "musang_king": 121000,
           "black_thorn": 130000,
-          "chuong_bo": 50000,
-          "sau_huu": 60000
+          "chuong_bo": 52000,
+          "sau_huu": 62000
         }
       }
     }
