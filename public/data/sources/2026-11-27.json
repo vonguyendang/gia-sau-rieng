@@ -18,5 +18,45 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "sg_1TgfoAo0",
+    "title": "bảng giá sầu riêng tại kho mới nhất 27/11 #shorts #videoviral",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=sg_1TgfoAo0",
+    "published_at": "2026-11-27T08:20:12+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại Miền Tây (Cai Lậy - Cái Bè) quy đổi xô tại vườn: Ri6 từ 57.000 - 60.000 đ/kg, Thái từ 95.000 - 100.000 đ/kg, Musang King 105.000 - 110.000 đ/kg, Black Thorn 105.000 - 110.000 đ/kg, Chuồng Bò 49.000 đ/kg, Sáu Hữu 60.000 đ/kg.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 57000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 110000,
+      "black_thorn": 110000,
+      "chuong_bo": 49000,
+      "sau_huu": 60000
+    }
+  },
+  {
+    "video_id": "XMP6bcMH72M",
+    "title": "Giá Sầu Riêng Hôm Nay 27/11/2026: Nhà Vườn Mừng Hàng Thái VỌT TĂNG +20.000Đ/KG Từ Đáy Giữa Tháng",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=XMP6bcMH72M",
+    "published_at": "2026-11-27T04:21:47+07:00",
+    "region": "Chung",
+    "summary": "Bản tin giá sầu riêng ngày 27/11/2026 ghi nhận Black Thorn tăng mạnh, Chuồng Bò giảm nhẹ. Mức giá xô quy đổi từ giá loại B dao động từ 25.000 - 59.000 đ/kg đối với Ri6 và 71.000 - 96.000 đ/kg đối với sầu Thái tùy từng khu vực.",
+    "prices": {
+      "ri6_a": 30000,
+      "ri6_b": 25000,
+      "monthong_a": 76000,
+      "monthong_b": 71000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]

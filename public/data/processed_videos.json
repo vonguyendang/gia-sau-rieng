@@ -8713,9 +8713,19 @@
   "FacUm7P5flk": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 26/11/2026",
-    "processed_at": "2026-11-27T02:16:16.816291+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-27T09:11:18.431340+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "opxm3bitPGc": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -8826,9 +8836,19 @@
   "tl2vc2LSR54": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng chiều nay ngày 26/11/2026",
-    "processed_at": "2026-11-27T02:15:57.325738+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-27T09:10:48.912988+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "-y4eXsmobhk": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -8840,21 +8860,21 @@
   "vUEkdhnfv0c": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "✅ Tại sao phải cạo vỏ thân sầu riêng? Xem nông dân làm thế nào",
-    "processed_at": "2026-11-27T02:16:53.858656+07:00",
+    "processed_at": "2026-11-27T09:13:06.149451+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "jNPDo2onCfM": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng hôm nay 27/11/2026 tình hình sầu riêng đang ổn định, sầu riêng miền tây ",
-    "processed_at": "2026-11-27T02:17:14.033980+07:00",
+    "processed_at": "2026-11-27T09:13:13.209055+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
   "utFFaDXTmV8": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "giá sầu riêng đang ngon bớt có biến lại #shorts",
-    "processed_at": "2026-11-27T02:17:21.272062+07:00",
+    "processed_at": "2026-11-27T09:13:20.477500+07:00",
     "has_transcript": false,
     "is_price_video": false
   },
@@ -8930,9 +8950,10 @@
   "ZW3Hlf7-9J4": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "✅ Khoảnh khắc bình yên: Hái sầu riêng trong vườn núi quê",
-    "processed_at": "2026-11-27T02:16:34.103752+07:00",
-    "has_transcript": false,
-    "is_price_video": false
+    "processed_at": "2026-11-27T09:12:59.291231+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "JE3_Vgrmrj0": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -8946,6 +8967,54 @@
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY THỨ SÁU NGÀY /27/11/2026|Giải Trí Miền Tây",
     "processed_at": "2026-11-26T21:15:50.174789+07:00",
     "has_transcript": null,
+    "is_price_video": false
+  },
+  "sg_1TgfoAo0": {
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "title": "bảng giá sầu riêng tại kho mới nhất 27/11 #shorts #videoviral",
+    "processed_at": "2026-11-27T09:12:11.480454+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 57000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 110000,
+      "black_thorn": 110000,
+      "chuong_bo": 49000,
+      "sau_huu": 60000
+    }
+  },
+  "kwIGOV6ih9M": {
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "title": "Giá sầu riêng hôm nay ngày 27/11/2026: Sầu Thái ở khu vực Đồng bằng sông Cửu Long giữ mức cao.",
+    "processed_at": "2026-11-27T09:13:33.625901+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "XMP6bcMH72M": {
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "title": "Giá Sầu Riêng Hôm Nay 27/11/2026: Nhà Vườn Mừng Hàng Thái VỌT TĂNG +20.000Đ/KG Từ Đáy Giữa Tháng",
+    "processed_at": "2026-11-27T09:14:36.012912+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 30000,
+      "ri6_b": 25000,
+      "monthong_a": 76000,
+      "monthong_b": 71000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
+  },
+  "q97JGdH-Llw": {
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ SÁU NGÀY /27/11/2026|Giải Trí Miền Tây",
+    "processed_at": "2026-11-27T09:14:56.211741+07:00",
+    "has_transcript": false,
     "is_price_video": false
   }
 }
