@@ -178,5 +178,45 @@
       "chuong_bo": 50000,
       "sau_huu": 60000
     }
+  },
+  {
+    "video_id": "-h74eXZ4tLA",
+    "title": "giá sầu riêng chiều nay ngày 27/11/2026",
+    "channel_name": "Giá Nông Sản Hôm Nay Channel",
+    "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
+    "video_url": "https://www.youtube.com/watch?v=-h74eXZ4tLA",
+    "published_at": "2026-11-27T16:35:34+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại vườn ở khu vực Miền Tây duy trì ở mức cao. Ri6 mua xô tỉ lệ 8/2 - 7/3 dao động từ 55.000 - 60.000 đ/kg, Thái xô dao động từ 95.000 - 100.000 đ/kg.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
+  },
+  {
+    "video_id": "tMFTS64V2Ww",
+    "title": "GIÁ SẦU RIÊNG MỖI NGÀY|CHIỀU HÔM NAY THỨ SÁU NGÀY /27/11/2026|Giải Trí Miền Tây",
+    "channel_name": "Giải Trí Miền Tây",
+    "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
+    "video_url": "https://www.youtube.com/watch?v=tMFTS64V2Ww",
+    "published_at": "2026-11-28T01:16:47.175315+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng chiều ngày 27/11/2026 tiếp tục duy trì ở mức cao ổn định trên diện rộng. Tại Miền Tây, giá sầu riêng Ri6 xô tại vườn đạt 55.000 - 60.000 đ/kg, sầu Thái xô đạt 95.000 - 100.000 đ/kg tùy tỷ lệ vườn.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   }
 ]
