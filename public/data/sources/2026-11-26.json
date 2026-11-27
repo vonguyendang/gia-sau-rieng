@@ -158,5 +158,25 @@
       "chuong_bo": 50000,
       "sau_huu": 60000
     }
+  },
+  {
+    "video_id": "utFFaDXTmV8",
+    "title": "giá sầu riêng đang ngon bớt có biến lại #shorts",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=utFFaDXTmV8",
+    "published_at": "2026-11-26T15:25:04+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại vườn hiện vẫn duy trì mức ổn định 100.000 đ/kg, giúp bà con nông dân yên tâm sản xuất.",
+    "prices": {
+      "ri6_a": null,
+      "ri6_b": null,
+      "monthong_a": null,
+      "monthong_b": null,
+      "musang_king": null,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
