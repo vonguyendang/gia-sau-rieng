@@ -251,16 +251,16 @@ function renderForecastCard() {
   mainVarieties.forEach(item => {
     const isSinglePrice = item.currentMin === item.currentMax;
     const currentPriceText = isSinglePrice
-      ? `${formatPrice(item.currentMax)} đ/kg`
-      : `${formatPrice(item.currentMin)} - ${formatPrice(item.currentMax)} đ/kg`;
+      ? `${formatNumber(item.currentMax)} đ/kg`
+      : `${formatNumber(item.currentMin)} - ${formatNumber(item.currentMax)} đ/kg`;
 
     const projPriceText = isSinglePrice
-      ? `${formatPrice(item.projectedMax3d)} đ/kg`
-      : `${formatPrice(item.projectedMin3d)} - ${formatPrice(item.projectedMax3d)} đ/kg`;
+      ? `${formatNumber(item.projectedMax3d)} đ/kg`
+      : `${formatNumber(item.projectedMin3d)} - ${formatNumber(item.projectedMax3d)} đ/kg`;
 
     const deltaSign = item.projectedDelta3d > 0 ? '+' : '';
     const deltaText = item.projectedDelta3d !== 0
-      ? `(${deltaSign}${formatPrice(item.projectedDelta3d)} đ)`
+      ? `(${deltaSign}${formatNumber(item.projectedDelta3d)} đ)`
       : '(Ổn định)';
 
     html += `
@@ -326,12 +326,12 @@ function renderForecastCard() {
     otherVarieties.forEach(item => {
       const isSinglePrice = item.currentMin === item.currentMax;
       const currentPriceText = isSinglePrice
-        ? `${formatPrice(item.currentMax)} đ`
-        : `${formatPrice(item.currentMin)} - ${formatPrice(item.currentMax)} đ`;
+        ? `${formatNumber(item.currentMax)} đ`
+        : `${formatNumber(item.currentMin)} - ${formatNumber(item.currentMax)} đ`;
 
       const projPriceText = isSinglePrice
-        ? `${formatPrice(item.projectedMax3d)} đ`
-        : `${formatPrice(item.projectedMin3d)} - ${formatPrice(item.projectedMax3d)} đ`;
+        ? `${formatNumber(item.projectedMax3d)} đ`
+        : `${formatNumber(item.projectedMin3d)} - ${formatNumber(item.projectedMax3d)} đ`;
 
       html += `
         <div class="bg-white dark:bg-slate-800/80 p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs">
