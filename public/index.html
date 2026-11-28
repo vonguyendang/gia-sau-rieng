@@ -139,11 +139,16 @@
       </div>
 
       <div class="flex items-center gap-2 flex-wrap">
-        <!-- Nút nghe báo giá bằng giọng nói -->
-        <button id="btn-speech-toggle" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs border border-slate-200 dark:border-slate-700 shadow-xs active:scale-95 transition-all cursor-pointer">
-          <i class="fa-solid fa-volume-high text-xs text-emerald-600 dark:text-emerald-400" id="speech-icon"></i>
-          <span id="speech-text">Nghe Báo Giá</span>
-        </button>
+        <!-- Nút nghe báo giá bằng giọng nói & Đổi tốc độ đọc -->
+        <div class="inline-flex items-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xs overflow-hidden">
+          <button id="btn-speech-toggle" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 hover:bg-emerald-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs active:scale-95 transition-all cursor-pointer">
+            <i class="fa-solid fa-volume-high text-xs text-emerald-600 dark:text-emerald-400" id="speech-icon"></i>
+            <span id="speech-text">Nghe Báo Giá</span>
+          </button>
+          <button id="btn-speech-speed" type="button" title="Đổi tốc độ đọc (1.0x, 1.25x, 1.5x, 1.75x)" class="px-2.5 py-1.5 border-l border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-[11px] font-bold text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer">
+            1.25x
+          </button>
+        </div>
 
         <!-- Nút tạo ảnh bảng giá Zalo -->
         <button id="btn-share-price-image" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer">

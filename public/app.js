@@ -214,6 +214,17 @@ function setupEventListeners() {
     });
   }
 
+  // Nút đổi tốc độ đọc giọng nói
+  const speedBtn = document.getElementById('btn-speech-speed');
+  if (speedBtn) {
+    speedBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (typeof cycleSpeechSpeed === 'function') {
+        cycleSpeechSpeed();
+      }
+    });
+  }
+
   // Khởi tạo Dark Mode
   if (typeof initDarkMode === 'function') {
     initDarkMode();

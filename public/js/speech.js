@@ -4,6 +4,8 @@
  * Chạy 100% offline ngay trên trình duyệt (0đ, không cần gọi API Cloud TTS bên thứ ba).
  */
 
+const AVAILABLE_SPEECH_RATES = [1.0, 1.25, 1.5, 1.75];
+let currentSpeechRate = parseFloat(localStorage.getItem('durian_speech_rate')) || 1.25;
 let isSpeaking = false;
 let currentUtterance = null;
 
@@ -14,9 +16,6 @@ function toggleSpeechPlayback() {
   }
 
   const synth = window.speechSynthesis;
-  const btn = document.getElementById('btn-speech-toggle');
-  const icon = document.getElementById('speech-icon');
-  const textSpan = document.getElementById('speech-text');
 
   if (isSpeaking) {
     synth.cancel();
@@ -35,12 +34,12 @@ function toggleSpeechPlayback() {
   const utterance = new SpeechSynthesisUtterance(textToRead);
   currentUtterance = utterance;
 
-  // Cấu hình ngôn ngữ tiếng Việt
+  // Cấu hình ngôn ngữ tiếng Việt & Tốc độ đọc
   utterance.lang = 'vi-VN';
-  utterance.rate = 0.95; // Tốc độ vừa phải, dễ nghe
+  utterance.rate = currentSpeechRate; // Mặc định 1.25x nhanh, dứt khoát
   utterance.pitch = 1.0;
 
-  // Tìm giọng tiếng Việt tối ưu có sẵn trên thiết bị
+  // Tìm giọng tiếng Việt tối ưu có sẵn trên thiết bị (iOS, Android, Windows, Mac)
   const voices = synth.getVoices();
   const viVoice = voices.find(v => v.lang && (v.lang.includes('vi') || v.lang.includes('VN')));
   if (viVoice) {
@@ -63,6 +62,29 @@ function toggleSpeechPlayback() {
   synth.speak(utterance);
 }
 
+function cycleSpeechSpeed() {
+  const currentIndex = AVAILABLE_SPEECH_RATES.indexOf(currentSpeechRate);
+  const nextIndex = currentIndex === -1 ? 1 : (currentIndex + 1) % AVAILABLE_SPEECH_RATES.length;
+  currentSpeechRate = AVAILABLE_SPEECH_RATES[nextIndex];
+  localStorage.setItem('durian_speech_rate', currentSpeechRate);
+  updateSpeedButtonUI();
+
+  // Nếu đang đọc thì áp dụng tốc độ mới ngay lập tức
+  if (isSpeaking && window.speechSynthesis) {
+    window.speechSynthesis.cancel();
+    isSpeaking = false;
+    toggleSpeechPlayback();
+  }
+}
+
+function updateSpeedButtonUI() {
+  const speedBtn = document.getElementById('btn-speech-speed');
+  if (speedBtn) {
+    speedBtn.textContent = `${currentSpeechRate}x`;
+    speedBtn.title = `Tốc độ đọc: ${currentSpeechRate}x (Bấm để đổi 1.0x, 1.25x, 1.5x, 1.75x)`;
+  }
+}
+
 function setSpeakingState(speaking) {
   isSpeaking = speaking;
   const btn = document.getElementById('btn-speech-toggle');
@@ -72,17 +94,17 @@ function setSpeakingState(speaking) {
   if (!btn) return;
 
   if (speaking) {
-    btn.classList.add('bg-amber-400', 'text-emerald-950', 'ring-2', 'ring-amber-300');
-    btn.classList.remove('bg-white', 'text-slate-700');
+    btn.classList.add('bg-amber-400', 'text-emerald-950');
+    btn.classList.remove('text-slate-700', 'dark:text-slate-200');
     if (icon) {
-      icon.className = 'fa-solid fa-volume-high text-xs text-emerald-900 animate-pulse';
+      icon.className = 'fa-solid fa-volume-high text-xs text-emerald-950 animate-pulse';
     }
-    if (textSpan) textSpan.textContent = 'Đang phát... (Bấm để dừng)';
+    if (textSpan) textSpan.textContent = 'Đang phát... (Bấm dừng)';
   } else {
-    btn.classList.remove('bg-amber-400', 'text-emerald-950', 'ring-2', 'ring-amber-300');
-    btn.classList.add('bg-white', 'text-slate-700');
+    btn.classList.remove('bg-amber-400', 'text-emerald-950');
+    btn.classList.add('text-slate-700', 'dark:text-slate-200');
     if (icon) {
-      icon.className = 'fa-solid fa-volume-high text-xs text-emerald-600';
+      icon.className = 'fa-solid fa-volume-high text-xs text-emerald-600 dark:text-emerald-400';
     }
     if (textSpan) textSpan.textContent = 'Nghe Báo Giá';
   }
@@ -101,9 +123,9 @@ function generateSpeechScript() {
   if (currentRegion !== 'all' && dayData.by_region && dayData.by_region[currentRegion]) {
     prices = dayData.by_region[currentRegion];
     const regNames = {
-      mientay: 'khu vực miền Tây',
-      miendong: 'khu vực miền Đông',
-      taynguyen: 'khu vực Tây Nguyên'
+      mientay: 'miền Tây',
+      miendong: 'miền Đông',
+      taynguyen: 'Tây Nguyên'
     };
     regName = regNames[currentRegion] || currentRegion;
   }
@@ -111,33 +133,33 @@ function generateSpeechScript() {
   const parts = activeDay.split('-');
   const d = parseInt(parts[2], 10);
   const m = parseInt(parts[1], 10);
-  const y = parts[0];
 
-  let script = `Bản tin giá sầu riêng hôm nay ngày ${d} tháng ${m} năm ${y}, ${regName}. `;
+  // Kịch bản đọc gãy gọn, dứt khoát, trực diện vào giá, không lặp từ rườm rà
+  let script = `Giá sầu riêng ngày ${d} tháng ${m}, khu vực ${regName}. `;
 
-  if (prices.ri6_a) {
-    script += `Sầu riêng Ri Sáu loại A, giá ${formatSpeechNumber(prices.ri6_a)} đồng một ký. `;
+  if (prices.ri6_a && prices.ri6_b) {
+    script += `Ri Sáu loại A: ${formatSpeechNumber(prices.ri6_a)}, loại B: ${formatSpeechNumber(prices.ri6_b)}. `;
+  } else if (prices.ri6_a) {
+    script += `Ri Sáu loại A: ${formatSpeechNumber(prices.ri6_a)}. `;
   }
-  if (prices.ri6_b) {
-    script += `Ri Sáu loại B, giá ${formatSpeechNumber(prices.ri6_b)} đồng. `;
+
+  if (prices.monthong_a && prices.monthong_b) {
+    script += `Thái Mỏn Thong loại A: ${formatSpeechNumber(prices.monthong_a)}, loại B: ${formatSpeechNumber(prices.monthong_b)}. `;
+  } else if (prices.monthong_a) {
+    script += `Thái loại A: ${formatSpeechNumber(prices.monthong_a)}. `;
   }
-  if (prices.monthong_a) {
-    script += `Thái Mỏn Thong loại A, giá ${formatSpeechNumber(prices.monthong_a)} đồng một ký. `;
-  }
-  if (prices.monthong_b) {
-    script += `Thái Mỏn Thong loại B, giá ${formatSpeechNumber(prices.monthong_b)} đồng. `;
-  }
+
   if (prices.musang_king) {
-    script += `Mu-sang King, giá ${formatSpeechNumber(prices.musang_king)} đồng một ký. `;
+    script += `Musang King: ${formatSpeechNumber(prices.musang_king)}. `;
   }
   if (prices.black_thorn) {
-    script += `Black Thorn gai đen, giá ${formatSpeechNumber(prices.black_thorn)} đồng. `;
+    script += `Black Thorn: ${formatSpeechNumber(prices.black_thorn)}. `;
   }
   if (prices.chuong_bo) {
-    script += `Chuồng bò, giá ${formatSpeechNumber(prices.chuong_bo)} đồng. `;
+    script += `Chuồng bò: ${formatSpeechNumber(prices.chuong_bo)}. `;
   }
 
-  script += `Lưu ý: Bảng giá mang tính chất tham khảo xu hướng thị trường, giá thực tế phụ thuộc tỷ lệ phân loại và thỏa thuận tại vườn. Chúc quý nhà vườn và bà con một ngày giao dịch thành công.`;
+  script += `Giá tham khảo cắt xô tại vườn. Chúc bà con giao dịch thuận lợi!`;
   return script;
 }
 
@@ -151,7 +173,11 @@ function formatSpeechNumber(num) {
   return num.toString();
 }
 
-// Tự động tải danh sách giọng nói khi trình duyệt sẵn sàng
+// Khởi tạo tốc độ ban đầu & Voice list khi nạp trang
+document.addEventListener('DOMContentLoaded', () => {
+  updateSpeedButtonUI();
+});
+
 if ('speechSynthesis' in window) {
   window.speechSynthesis.onvoiceschanged = () => {
     window.speechSynthesis.getVoices();
