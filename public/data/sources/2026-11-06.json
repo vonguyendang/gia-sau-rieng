@@ -58,5 +58,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "KN2GSihPV0Y",
+    "title": "giá sầu riêng hôm nay 6/11/2026 giá sầu riêng ri6 có giảm nhẹ ",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=KN2GSihPV0Y",
+    "published_at": "2026-11-07T08:57:28.851315+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng Ri6 hôm nay có xu hướng giảm nhẹ với mức mua xô xắt vườn dao động khoảng 58.000 - 60.000 đ/kg. Trong khi đó, sầu riêng Thái (Monthong) vẫn giữ giá ổn định ở mức cao từ 73.000 - 75.000 đ/kg cho hàng xô.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 58000,
+      "monthong_a": 75000,
+      "monthong_b": 73000,
+      "musang_king": 80000,
+      "black_thorn": 108000,
+      "chuong_bo": 55000,
+      "sau_huu": null
+    }
   }
 ]

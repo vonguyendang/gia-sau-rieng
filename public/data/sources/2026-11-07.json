@@ -49,5 +49,25 @@
       "chuong_bo": null,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "uXyjQF27PVk",
+    "title": "Giá sầu riêng hôm nay 7/11/2026 giá sầu riêng xô lùa ri6 giảm nha, thị trường sầu riêng ",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=uXyjQF27PVk",
+    "published_at": "2026-11-07T08:57:28.851310+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng Ri6 giảm mạnh tại vườn và các kho khu vực Miền Tây, dao động giá mua xô cả vườn (tương đương loại B) khoảng 50.000 - 55.000 đ/kg. Sầu riêng Thái duy trì ổn định với giá cắt xô khoảng 70.000 - 75.000 đ/kg.",
+    "prices": {
+      "ri6_a": 55000,
+      "ri6_b": 50000,
+      "monthong_a": 75000,
+      "monthong_b": 70000,
+      "musang_king": 105000,
+      "black_thorn": 110000,
+      "chuong_bo": 55000,
+      "sau_huu": null
+    }
   }
 ]

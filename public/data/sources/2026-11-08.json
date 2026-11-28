@@ -38,5 +38,25 @@
       "chuong_bo": 50000,
       "sau_huu": 58000
     }
+  },
+  {
+    "video_id": "0ise0oNg7FE",
+    "title": "giá sầu riêng hôm nay 8/11/2026 giá sầu riêng các loại đã được cập nhật ",
+    "channel_name": "Vườn Nhà Tôi Vlog",
+    "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
+    "video_url": "https://www.youtube.com/watch?v=0ise0oNg7FE",
+    "published_at": "2026-11-14T08:57:28.851306+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng tại vườn hôm nay ghi nhận Ri6 xô từ 48.000 - 52.000 đ/kg, Thái xô từ 70.000 - 75.000 đ/kg. Ngoài ra video cũng cập nhật giá thu mua các giống sầu riêng Sáu Hữu, Black Thorn, Musang King và Chuồng Bò tại các kho.",
+    "prices": {
+      "ri6_a": 52000,
+      "ri6_b": 48000,
+      "monthong_a": 75000,
+      "monthong_b": 70000,
+      "musang_king": 100000,
+      "black_thorn": 108000,
+      "chuong_bo": 44000,
+      "sau_huu": 55000
+    }
   }
 ]

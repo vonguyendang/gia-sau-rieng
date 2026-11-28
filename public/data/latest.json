@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-28T01:20:19.644417+07:00",
+  "last_updated": "2026-11-28T09:00:30.356230+07:00",
   "latest_day": "2026-11-28",
   "available_days": [
     "2026-11-28",
@@ -49,23 +49,23 @@
   "days": {
     "2026-11-28": {
       "daily_average": {
-        "ri6_a": 58500,
-        "ri6_b": 57500,
-        "monthong_a": 111000,
-        "monthong_b": 105000,
-        "musang_king": 119000,
+        "ri6_a": 59000,
+        "ri6_b": 57000,
+        "monthong_a": 108000,
+        "monthong_b": 100750,
+        "musang_king": 114000,
         "black_thorn": 98000,
-        "chuong_bo": 47500,
+        "chuong_bo": 46667,
         "sau_huu": 60000
       },
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 58500,
-          "ri6_b": 57500,
-          "monthong_a": 111000,
-          "monthong_b": 105000,
-          "musang_king": 119000,
+          "ri6_a": 59000,
+          "ri6_b": 57333,
+          "monthong_a": 109000,
+          "monthong_b": 102000,
+          "musang_king": 115333,
           "black_thorn": 98000,
           "chuong_bo": 47500,
           "sau_huu": 60000
@@ -73,27 +73,27 @@
         "miendong": {
           "name": "Miền Đông",
           "ri6_a": 56000,
-          "ri6_b": 55000,
-          "monthong_a": 105000,
-          "monthong_b": 100000,
-          "musang_king": 113000,
+          "ri6_b": 54000,
+          "monthong_a": 103000,
+          "monthong_b": 96000,
+          "musang_king": 108000,
           "black_thorn": 93000,
-          "chuong_bo": 45000,
+          "chuong_bo": 44000,
           "sau_huu": 57000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
           "ri6_a": 50000,
-          "ri6_b": 49000,
-          "monthong_a": 122000,
-          "monthong_b": 116000,
-          "musang_king": 131000,
+          "ri6_b": 48000,
+          "monthong_a": 119000,
+          "monthong_b": 111000,
+          "musang_king": 125000,
           "black_thorn": 98000,
-          "chuong_bo": 48000,
+          "chuong_bo": 47000,
           "sau_huu": 60000
         }
       },
-      "source_count": 2,
+      "source_count": 4,
       "sources": [
         {
           "video_id": "7pZ165flXdU",
@@ -132,6 +132,46 @@
             "musang_king": 128000,
             "black_thorn": null,
             "chuong_bo": 50000,
+            "sau_huu": null
+          }
+        },
+        {
+          "video_id": "FRGhfilOuwY",
+          "title": "Giá sầu riêng hôm nay ngày 28/11/2026: Sầu Thái ở Đồng bằng sông Cửu Long tăng.",
+          "channel_name": "VTC Nông Nghiệp Xanh",
+          "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+          "video_url": "https://www.youtube.com/watch?v=FRGhfilOuwY",
+          "published_at": "2026-11-28T06:47:55+07:00",
+          "region": "Chung",
+          "summary": "Giá sầu riêng ngày 28/11/2026 ghi nhận sầu Thái tại Đồng bằng sông Cửu Long và Musang King tăng nhẹ, trong khi sầu riêng Black Thorn có xu hướng giảm so với các phiên trước.",
+          "prices": {
+            "ri6_a": 59000,
+            "ri6_b": 56000,
+            "monthong_a": 105000,
+            "monthong_b": 97000,
+            "musang_king": 110000,
+            "black_thorn": 98000,
+            "chuong_bo": 45000,
+            "sau_huu": 60000
+          }
+        },
+        {
+          "video_id": "QXYR8FMgCe8",
+          "title": "Giá Sầu Riêng Hôm Nay 28/11/2026: Đảo Chiều Mạnh, Hàng Thái +19.500Đ/KG Từ Đáy",
+          "channel_name": "Giá Nông Sản 47",
+          "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+          "video_url": "https://www.youtube.com/watch?v=QXYR8FMgCe8",
+          "published_at": "2026-11-28T04:21:46+07:00",
+          "region": "Miền Tây",
+          "summary": "Giá sầu riêng ngày 28/11/2026 ghi nhận sầu riêng Thái loại B tại Miền Tây phục hồi tăng 9.000 đ/kg, trong khi giá Ri6 và Musang King có xu hướng giảm nhẹ.",
+          "prices": {
+            "ri6_a": 60000,
+            "ri6_b": 57000,
+            "monthong_a": 105000,
+            "monthong_b": 96000,
+            "musang_king": 108000,
+            "black_thorn": null,
+            "chuong_bo": null,
             "sau_huu": null
           }
         }
@@ -984,39 +1024,39 @@
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 54000,
-          "ri6_b": 49000,
-          "monthong_a": 76000,
-          "monthong_b": 71000,
+          "ri6_a": 55000,
+          "ri6_b": 53000,
+          "monthong_a": 80000,
+          "monthong_b": 75000,
           "musang_king": 100000,
           "black_thorn": 110000,
           "chuong_bo": 50000,
-          "sau_huu": 58000
+          "sau_huu": 57500
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 50000,
-          "ri6_b": 45000,
-          "monthong_a": 72000,
-          "monthong_b": 66000,
+          "ri6_a": 52000,
+          "ri6_b": 50000,
+          "monthong_a": 76000,
+          "monthong_b": 71000,
           "musang_king": 95000,
-          "black_thorn": 105000,
-          "chuong_bo": 45000,
-          "sau_huu": 52000
+          "black_thorn": 104000,
+          "chuong_bo": 48000,
+          "sau_huu": 55000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 40000,
-          "ri6_b": 30000,
-          "monthong_a": 86000,
-          "monthong_b": 76000,
-          "musang_king": 120000,
+          "ri6_a": 47000,
+          "ri6_b": 45000,
+          "monthong_a": 88000,
+          "monthong_b": 82000,
+          "musang_king": 110000,
           "black_thorn": 110000,
-          "chuong_bo": 45000,
-          "sau_huu": 52000
+          "chuong_bo": 50000,
+          "sau_huu": 58000
         }
       },
-      "source_count": 7,
+      "source_count": 8,
       "sources": []
     },
     "2026-11-09": {
@@ -1033,8 +1073,8 @@
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 54000,
-          "ri6_b": 50000,
+          "ri6_a": 55000,
+          "ri6_b": 53000,
           "monthong_a": 76000,
           "monthong_b": 72000,
           "musang_king": 100000,
@@ -1044,175 +1084,175 @@
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 48000,
-          "ri6_b": 45000,
-          "monthong_a": 70000,
-          "monthong_b": 65000,
+          "ri6_a": 52000,
+          "ri6_b": 50000,
+          "monthong_a": 72000,
+          "monthong_b": 68000,
           "musang_king": 95000,
-          "black_thorn": 105000,
-          "chuong_bo": 45000,
-          "sau_huu": 52000
+          "black_thorn": 104000,
+          "chuong_bo": 48000,
+          "sau_huu": 54000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 25000,
-          "ri6_b": 20000,
-          "monthong_a": 78000,
-          "monthong_b": 73000,
+          "ri6_a": 47000,
+          "ri6_b": 45000,
+          "monthong_a": 84000,
+          "monthong_b": 79000,
           "musang_king": 110000,
           "black_thorn": 110000,
-          "chuong_bo": 45000,
-          "sau_huu": 50000
+          "chuong_bo": 50000,
+          "sau_huu": 57000
         }
       },
-      "source_count": 3,
+      "source_count": 4,
       "sources": []
     },
     "2026-11-08": {
       "daily_average": {
-        "ri6_a": 55000,
-        "ri6_b": 51500,
-        "monthong_a": 77000,
-        "monthong_b": 74000,
+        "ri6_a": 54000,
+        "ri6_b": 50333,
+        "monthong_a": 76333,
+        "monthong_b": 72667,
         "musang_king": 100000,
-        "black_thorn": 110000,
-        "chuong_bo": 50000,
-        "sau_huu": 58000
+        "black_thorn": 109333,
+        "chuong_bo": 48000,
+        "sau_huu": 57000
       },
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 55000,
-          "ri6_b": 50000,
-          "monthong_a": 77000,
-          "monthong_b": 73000,
+          "ri6_a": 54000,
+          "ri6_b": 50333,
+          "monthong_a": 76333,
+          "monthong_b": 72667,
           "musang_king": 100000,
-          "black_thorn": 110000,
-          "chuong_bo": 50000,
-          "sau_huu": 58000
+          "black_thorn": 109333,
+          "chuong_bo": 48000,
+          "sau_huu": 57000
         },
         "miendong": {
           "name": "Miền Đông",
-          "ri6_a": 48000,
-          "ri6_b": 45000,
-          "monthong_a": 70000,
-          "monthong_b": 65000,
+          "ri6_a": 51000,
+          "ri6_b": 48000,
+          "monthong_a": 73000,
+          "monthong_b": 69000,
           "musang_king": 95000,
-          "black_thorn": 105000,
-          "chuong_bo": 45000,
-          "sau_huu": 52000
+          "black_thorn": 104000,
+          "chuong_bo": 46000,
+          "sau_huu": 54000
         },
         "taynguyen": {
           "name": "Tây Nguyên",
-          "ri6_a": 25000,
-          "ri6_b": 20000,
-          "monthong_a": 78000,
-          "monthong_b": 73000,
+          "ri6_a": 46000,
+          "ri6_b": 43000,
+          "monthong_a": 84000,
+          "monthong_b": 80000,
           "musang_king": 110000,
-          "black_thorn": 110000,
-          "chuong_bo": 45000,
-          "sau_huu": 50000
-        }
-      },
-      "source_count": 2,
-      "sources": []
-    },
-    "2026-11-07": {
-      "daily_average": {
-        "ri6_a": 65500,
-        "ri6_b": 64500,
-        "monthong_a": 79000,
-        "monthong_b": 74000,
-        "musang_king": 125000,
-        "black_thorn": 108000,
-        "chuong_bo": 47000,
-        "sau_huu": null
-      },
-      "by_region": {
-        "mientay": {
-          "name": "Miền Tây",
-          "ri6_a": 65500,
-          "ri6_b": 64500,
-          "monthong_a": 79000,
-          "monthong_b": 74000,
-          "musang_king": 125000,
-          "black_thorn": 108000,
-          "chuong_bo": 47000,
-          "sau_huu": null
-        },
-        "miendong": {
-          "name": "Miền Đông",
-          "ri6_a": 62000,
-          "ri6_b": 61000,
-          "monthong_a": 75000,
-          "monthong_b": 70000,
-          "musang_king": 119000,
-          "black_thorn": 103000,
-          "chuong_bo": 45000,
-          "sau_huu": null
-        },
-        "taynguyen": {
-          "name": "Tây Nguyên",
-          "ri6_a": 56000,
-          "ri6_b": 55000,
-          "monthong_a": 87000,
-          "monthong_b": 81000,
-          "musang_king": 138000,
-          "black_thorn": 108000,
-          "chuong_bo": 47000,
-          "sau_huu": null
+          "black_thorn": 109000,
+          "chuong_bo": 48000,
+          "sau_huu": 57000
         }
       },
       "source_count": 3,
       "sources": []
     },
-    "2026-11-06": {
+    "2026-11-07": {
       "daily_average": {
-        "ri6_a": 61667,
-        "ri6_b": 59333,
-        "monthong_a": 78333,
-        "monthong_b": 68333,
-        "musang_king": 126667,
-        "black_thorn": 135000,
-        "chuong_bo": 52500,
+        "ri6_a": 62000,
+        "ri6_b": 59667,
+        "monthong_a": 77667,
+        "monthong_b": 72667,
+        "musang_king": 118333,
+        "black_thorn": 109000,
+        "chuong_bo": 51000,
         "sau_huu": null
       },
       "by_region": {
         "mientay": {
           "name": "Miền Tây",
-          "ri6_a": 61667,
-          "ri6_b": 59333,
-          "monthong_a": 78333,
-          "monthong_b": 68333,
-          "musang_king": 126667,
-          "black_thorn": 135000,
-          "chuong_bo": 52500,
+          "ri6_a": 62000,
+          "ri6_b": 59667,
+          "monthong_a": 77667,
+          "monthong_b": 72667,
+          "musang_king": 118333,
+          "black_thorn": 109000,
+          "chuong_bo": 51000,
           "sau_huu": null
         },
         "miendong": {
           "name": "Miền Đông",
           "ri6_a": 59000,
+          "ri6_b": 57000,
+          "monthong_a": 74000,
+          "monthong_b": 69000,
+          "musang_king": 112000,
+          "black_thorn": 104000,
+          "chuong_bo": 48000,
+          "sau_huu": null
+        },
+        "taynguyen": {
+          "name": "Tây Nguyên",
+          "ri6_a": 53000,
+          "ri6_b": 51000,
+          "monthong_a": 85000,
+          "monthong_b": 80000,
+          "musang_king": 130000,
+          "black_thorn": 109000,
+          "chuong_bo": 51000,
+          "sau_huu": null
+        }
+      },
+      "source_count": 4,
+      "sources": []
+    },
+    "2026-11-06": {
+      "daily_average": {
+        "ri6_a": 61250,
+        "ri6_b": 59000,
+        "monthong_a": 77500,
+        "monthong_b": 69500,
+        "musang_king": 115000,
+        "black_thorn": 121500,
+        "chuong_bo": 53333,
+        "sau_huu": null
+      },
+      "by_region": {
+        "mientay": {
+          "name": "Miền Tây",
+          "ri6_a": 61250,
+          "ri6_b": 59000,
+          "monthong_a": 77500,
+          "monthong_b": 69500,
+          "musang_king": 115000,
+          "black_thorn": 121500,
+          "chuong_bo": 53333,
+          "sau_huu": null
+        },
+        "miendong": {
+          "name": "Miền Đông",
+          "ri6_a": 58000,
           "ri6_b": 56000,
           "monthong_a": 74000,
-          "monthong_b": 65000,
-          "musang_king": 120000,
-          "black_thorn": 128000,
-          "chuong_bo": 50000,
+          "monthong_b": 66000,
+          "musang_king": 109000,
+          "black_thorn": 115000,
+          "chuong_bo": 51000,
           "sau_huu": null
         },
         "taynguyen": {
           "name": "Tây Nguyên",
           "ri6_a": 52000,
           "ri6_b": 50000,
-          "monthong_a": 86000,
-          "monthong_b": 75000,
-          "musang_king": 139000,
-          "black_thorn": 135000,
-          "chuong_bo": 52000,
+          "monthong_a": 85000,
+          "monthong_b": 76000,
+          "musang_king": 127000,
+          "black_thorn": 122000,
+          "chuong_bo": 53000,
           "sau_huu": null
         }
       },
-      "source_count": 3,
+      "source_count": 4,
       "sources": []
     },
     "2026-11-05": {

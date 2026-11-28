@@ -38,5 +38,45 @@
       "chuong_bo": 50000,
       "sau_huu": null
     }
+  },
+  {
+    "video_id": "FRGhfilOuwY",
+    "title": "Giá sầu riêng hôm nay ngày 28/11/2026: Sầu Thái ở Đồng bằng sông Cửu Long tăng.",
+    "channel_name": "VTC Nông Nghiệp Xanh",
+    "channel_id": "UC2ncEdenGMK0nTqOqjQZVSg",
+    "video_url": "https://www.youtube.com/watch?v=FRGhfilOuwY",
+    "published_at": "2026-11-28T06:47:55+07:00",
+    "region": "Chung",
+    "summary": "Giá sầu riêng ngày 28/11/2026 ghi nhận sầu Thái tại Đồng bằng sông Cửu Long và Musang King tăng nhẹ, trong khi sầu riêng Black Thorn có xu hướng giảm so với các phiên trước.",
+    "prices": {
+      "ri6_a": 59000,
+      "ri6_b": 56000,
+      "monthong_a": 105000,
+      "monthong_b": 97000,
+      "musang_king": 110000,
+      "black_thorn": 98000,
+      "chuong_bo": 45000,
+      "sau_huu": 60000
+    }
+  },
+  {
+    "video_id": "QXYR8FMgCe8",
+    "title": "Giá Sầu Riêng Hôm Nay 28/11/2026: Đảo Chiều Mạnh, Hàng Thái +19.500Đ/KG Từ Đáy",
+    "channel_name": "Giá Nông Sản 47",
+    "channel_id": "UCFuTqN6ubcdekDcTa64Dk-g",
+    "video_url": "https://www.youtube.com/watch?v=QXYR8FMgCe8",
+    "published_at": "2026-11-28T04:21:46+07:00",
+    "region": "Miền Tây",
+    "summary": "Giá sầu riêng ngày 28/11/2026 ghi nhận sầu riêng Thái loại B tại Miền Tây phục hồi tăng 9.000 đ/kg, trong khi giá Ri6 và Musang King có xu hướng giảm nhẹ.",
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 57000,
+      "monthong_a": 105000,
+      "monthong_b": 96000,
+      "musang_king": 108000,
+      "black_thorn": null,
+      "chuong_bo": null,
+      "sau_huu": null
+    }
   }
 ]
