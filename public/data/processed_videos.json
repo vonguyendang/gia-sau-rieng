@@ -9729,10 +9729,19 @@
   "z-hwqWdv71I": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
     "title": "GIÁ SẦU RIÊNG MỖI NGÀY|SÁNG HÔM NAY THỨ BẢY NGÀY /28/11/2026|Giải Trí Miền Tây",
-    "processed_at": "2026-11-28T15:01:38.043205+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "processed_at": "2026-11-28T15:17:11.783580+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 100000,
+      "monthong_b": 95000,
+      "musang_king": 105000,
+      "black_thorn": 120000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "FwWD4Q8aS6k": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -9855,11 +9864,11 @@
   },
   "Yg6A3G_8wqI": {
     "channel_id": "UCzfqlsxE_qx7YWT8Q7836IA",
-    "title": "THUẬN VỤ 2027 CÓ DỄ ĂN KHÔNG ??? @SAURIENGMIENTAY",
-    "processed_at": "2026-11-28T15:01:47.590730+07:00",
-    "has_transcript": false,
-    "transcript_retries": 2,
-    "is_price_video": false
+    "title": "THUẬN VỤ 2027 CÓ DỄ ĂN KHÔNG ??? @SAURIENGMIENTAY ",
+    "processed_at": "2026-11-28T15:17:41.176056+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
   },
   "py2AtNhpmbo": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
@@ -9899,18 +9908,36 @@
   "JKIbCaOn-0U": {
     "channel_id": "UCX11-9EVu6AzLYorQNoLzRA",
     "title": "giá sầu riêng trưa nay ngày 28/11/2026",
-    "processed_at": "2026-11-28T15:00:48.508995+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-28T15:15:57.813786+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 60000,
+      "ri6_b": 55000,
+      "monthong_a": 105000,
+      "monthong_b": 97000,
+      "musang_king": 110000,
+      "black_thorn": 130000,
+      "chuong_bo": 50000,
+      "sau_huu": 60000
+    }
   },
   "DYdHlX7YZyc": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "kho sầu riêng phạm sáng phát giá 28/11 #shorts #videoviral",
-    "processed_at": "2026-11-28T15:01:01.040136+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-28T15:16:18.298689+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 73000,
+      "ri6_b": 70000,
+      "monthong_a": 120000,
+      "monthong_b": 117000,
+      "musang_king": 128000,
+      "black_thorn": 130000,
+      "chuong_bo": 50000,
+      "sau_huu": 55000
+    }
   },
   "fYSsLP9p1ks": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
@@ -9922,10 +9949,19 @@
   "PjbtDkNBfVw": {
     "channel_id": "UCXB5t1jh4VowmGxz_FqyWJA",
     "title": "bảng giá sầu riêng tại kho mới nhất #shorts #videoviral",
-    "processed_at": "2026-11-28T15:01:06.972644+07:00",
-    "has_transcript": false,
-    "transcript_retries": 1,
-    "is_price_video": false
+    "processed_at": "2026-11-28T15:16:31.013169+07:00",
+    "has_transcript": true,
+    "is_price_video": true,
+    "prices": {
+      "ri6_a": 59000,
+      "ri6_b": 57000,
+      "monthong_a": 105000,
+      "monthong_b": 98000,
+      "musang_king": 110000,
+      "black_thorn": null,
+      "chuong_bo": 49000,
+      "sau_huu": 60000
+    }
   },
   "YXkwYcsSd3Q": {
     "channel_id": "UCktWknL-GEFGSX3hsJTMpxg",
@@ -9974,6 +10010,140 @@
     "title": "GIÁ MÍT THÁI & MÍT INDO RUỘT ĐỎ SÁNG HÔM NAY THỨ BẢY NGÀY /28/11/2026|Giải Trí Miền Tây",
     "processed_at": "2026-11-28T15:01:35.481466+07:00",
     "has_transcript": null,
+    "is_price_video": false
+  },
+  "AJe9sZM5YnI": {
+    "channel_id": "UCzfqlsxE_qx7YWT8Q7836IA",
+    "title": "PHÒNG TRỊ \"THỐI TRÁI\": LÀ KHÔNG GÂY BÁM DÍNH TRÁI @SAURIENGMIENTAY ",
+    "processed_at": "2026-11-28T15:18:35.636094+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "L1Jr56jMFEE": {
+    "channel_id": "UCzfqlsxE_qx7YWT8Q7836IA",
+    "title": "MUSANGKINH CÓ THẬT SỰ \"DỄ ĂN\" ??? @SAURIENGMIENTAY ",
+    "processed_at": "2026-11-28T15:18:55.686762+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "-4In35d3dqg": {
+    "channel_id": "UCzfqlsxE_qx7YWT8Q7836IA",
+    "title": "KỸ THUẬT: NUÔI TRÁI TỪ [0-30] NGÀY CỦA NÔNG DÂN @SAURIENGMIENTAY ",
+    "processed_at": "2026-11-28T15:19:46.259545+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "nPCjNfV1msM": {
+    "channel_id": "UCzfqlsxE_qx7YWT8Q7836IA",
+    "title": "HP.08: BẬC THẦY CỦA CHỐNG RỤNG-TĂNG NĂNG SUẤT TỐI ĐA @SAURIENGMIENTAY ",
+    "processed_at": "2026-11-28T15:20:04.219971+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "CKO_dH0B_UA": {
+    "channel_id": "UCzfqlsxE_qx7YWT8Q7836IA",
+    "title": "HP.08: ĐẬU TRÁI-CHỈNH TRÁI-XANH GAI-TRÒN TRÁI @SAURIENGMIENTAY ",
+    "processed_at": "2026-11-28T15:20:28.111962+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "qDqNnYNFq8s": {
+    "channel_id": "UCPYUL42YnHLrL2NqxIuqV7w",
+    "title": "Bệnh vàng lá thối rễ sầu riêng: Cách xử lý dứt điểm #saurieng #vuanongnghiep #shorts",
+    "processed_at": "2026-11-28T15:20:47.722539+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "ZTJ0dDTzN3A": {
+    "channel_id": "UCj3uOQ0rJpowKnTDxxyxJ8g",
+    "title": "Sầu riêng... #saurieng #farming #chamsocsaurieng #nongnghiep #sauriengdaklak #caycanh",
+    "processed_at": "2026-11-28T15:21:06.392894+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "BpWAh7dIK30": {
+    "channel_id": "UCj3uOQ0rJpowKnTDxxyxJ8g",
+    "title": "#saurieng #kithuatcaytrong #dautraisaurieng #nongnghiep #vattunongnghiep #phanbonla",
+    "processed_at": "2026-11-28T15:21:16.000174+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "uN9fdiZ9BwI": {
+    "channel_id": "UCj3uOQ0rJpowKnTDxxyxJ8g",
+    "title": "#bobadautraisaurieng #chaytraisaurieng #chongrungtraisaurieng #sauriengdaklak #saurieng #canxibo",
+    "processed_at": "2026-11-28T15:21:30.216122+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "U7yEcUueYTM": {
+    "channel_id": "UCj3uOQ0rJpowKnTDxxyxJ8g",
+    "title": "#bobadautraisaurieng #chaytraisaurieng #chongrungtraisaurieng #sauriengdaklak",
+    "processed_at": "2026-11-28T15:21:39.499919+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "ERO1TpOD648": {
+    "channel_id": "UCj3uOQ0rJpowKnTDxxyxJ8g",
+    "title": "#bobadautraisaurieng #chaytraisaurieng #chongrungtraisaurieng #sauriengdaklak",
+    "processed_at": "2026-11-28T15:21:51.365094+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "JVeDaFsrc3k": {
+    "channel_id": "UCj3uOQ0rJpowKnTDxxyxJ8g",
+    "title": "#nongnghiep #sauriengdaklak #phanbonla #n2mgzn70 #keodotsaurieng",
+    "processed_at": "2026-11-28T15:22:38.171240+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "7qNJDTj98Hs": {
+    "channel_id": "UCjYjuelyBV5jigGYCpYSeGA",
+    "title": "Tỉa cành sầu riêng",
+    "processed_at": "2026-11-28T15:23:42.745326+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "Lenn9e6vxSQ": {
+    "channel_id": "UCjYjuelyBV5jigGYCpYSeGA",
+    "title": "Tia sầu riêng",
+    "processed_at": "2026-11-28T15:23:54.552098+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "A9QHowyQ_aI": {
+    "channel_id": "UCjYjuelyBV5jigGYCpYSeGA",
+    "title": "Tỉa sầu riêng 20 ngày tuổi",
+    "processed_at": "2026-11-28T15:24:15.377066+07:00",
+    "has_transcript": true,
+    "is_price_video": false,
+    "prices": null
+  },
+  "Qqb6dSUEhTA": {
+    "channel_id": "UCjYjuelyBV5jigGYCpYSeGA",
+    "title": "Sầu riêng dài đang hót",
+    "processed_at": "2026-11-28T15:24:21.705642+07:00",
+    "has_transcript": false,
+    "is_price_video": false
+  },
+  "SUtsyRR-t7s": {
+    "channel_id": "UCjYjuelyBV5jigGYCpYSeGA",
+    "title": "Thằng l này bùm tiền cò sầu riêng né nó ra nha ae.",
+    "processed_at": "2026-11-28T15:24:28.101471+07:00",
+    "has_transcript": false,
     "is_price_video": false
   }
 }
