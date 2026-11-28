@@ -15,6 +15,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   setupPwaInstallation();
+  if (typeof initVisitorCounter === 'function') initVisitorCounter();
   loadData();
 });
 

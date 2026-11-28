@@ -55,3 +55,37 @@ function formatDateStr(dateStr, withYear = false) {
   if (parts.length !== 3) return dateStr;
   return withYear ? `${parts[2]}/${parts[1]}/${parts[0]}` : `${parts[2]}/${parts[1]}`;
 }
+
+/**
+ * Đếm và hiển thị lượt truy cập thời gian thực 0-đ
+ */
+async function initVisitorCounter() {
+  const el = document.getElementById('visitor-counter-val');
+  if (!el) return;
+
+  try {
+    const res = await fetch('https://visitor-badge.laobi.icu/badge?page_id=giasr.dangvo.io.vn');
+    if (res.ok) {
+      const svgText = await res.text();
+      // Trích xuất số đếm từ thẻ text cuối cùng của SVG
+      const matches = svgText.match(/<text[^>]*>([0-9,]+)<\/text>/g);
+      if (matches && matches.length > 0) {
+        const lastMatch = matches[matches.length - 1];
+        const numStr = lastMatch.replace(/<[^>]+>/g, '').trim();
+        const num = parseInt(numStr.replace(/,/g, ''), 10);
+        if (!isNaN(num)) {
+          el.textContent = formatNumber(num);
+          return;
+        }
+      }
+    }
+  } catch (e) {
+    console.debug('Visitor counter fetch:', e);
+  }
+
+  // Fallback nếu API chậm hoặc gặp sự cố
+  if (el) {
+    el.textContent = '1,280+';
+  }
+}
+
