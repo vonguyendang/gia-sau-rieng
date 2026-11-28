@@ -68,6 +68,63 @@ DURIAN_KEYWORDS = [
 DURIAN_TITLE_REGEX = re.compile(r"s[aàảãáạăằẳẵắặâầẩẫấậ]u\s*ri[eèẻẽéẹêềểễếệ]ng", re.IGNORECASE)
 
 
+def extract_date_from_title(title: str, fallback_dt: datetime) -> str:
+    """
+    Trích xuất ngày dạng YYYY-MM-DD từ tiêu đề video (ví dụ: 'ngày 28/11/2026', 'ngày 28 tháng 11', '28/11').
+    Bảo đảm:
+    1. Phòng ngừa lỗi gõ nhầm năm của YouTuber (ví dụ gõ 2016 thay vì 2026).
+    2. Chống lấy nhầm video cũ: Nếu ngày phát hiện trong tiêu đề lệch quá 2 ngày so với ngày đăng (fallback_dt),
+       hệ thống tự động loại bỏ để chống ăn nhầm video tư liệu/cũ.
+    """
+    now_year = fallback_dt.year
+    parsed_date = None
+
+    # 1. Pattern dạng DD / MM / YYYY (cho phép khoảng trắng, vd '28/ 11/2026' hoặc '28/11/2026')
+    m1 = re.search(r"(\d{1,2})\s*/\s*(\d{1,2})\s*/\s*(\d{4})", title)
+    if m1:
+        d, m, y = int(m1.group(1)), int(m1.group(2)), int(m1.group(3))
+        if abs(y - now_year) > 1:
+            y = now_year
+        try:
+            parsed_date = datetime(y, m, d).date()
+        except ValueError:
+            pass
+
+    # 2. Pattern dạng DD tháng MM (có thể kèm năm)
+    if not parsed_date:
+        m2 = re.search(r"(\d{1,2})\s*tháng\s*(\d{1,2})(?:\s*[,/]?\s*năm\s*(\d{4})|\s*,\s*(\d{4}))?", title, re.IGNORECASE)
+        if m2:
+            d, m = int(m2.group(1)), int(m2.group(2))
+            y = int(m2.group(3) or m2.group(4)) if (m2.group(3) or m2.group(4)) else now_year
+            if abs(y - now_year) > 1:
+                y = now_year
+            try:
+                parsed_date = datetime(y, m, d).date()
+            except ValueError:
+                pass
+
+    # 3. Pattern dạng DD / MM (không có dấu / và năm theo sau)
+    if not parsed_date:
+        m3 = re.search(r"\b(\d{1,2})\s*/\s*(\d{1,2})\b(?!\s*/\s*\d+)", title)
+        if m3:
+            d, m = int(m3.group(1)), int(m3.group(2))
+            try:
+                parsed_date = datetime(now_year, m, d).date()
+            except ValueError:
+                pass
+
+    # Kiểm tra tính hợp lý so với ngày đăng thực tế
+    if parsed_date:
+        delta_days = (parsed_date - fallback_dt.date()).days
+        # Hợp lệ: Từ -2 ngày (tổng kết hôm qua) đến +1 ngày (báo giá ngày mai)
+        if -2 <= delta_days <= 1:
+            return parsed_date.strftime("%Y-%m-%d")
+        else:
+            print(f"[CẢNH BÁO] Tiêu đề video chứa ngày {parsed_date} lệch {delta_days} ngày so với ngày đăng {fallback_dt.date()} -> Dùng ngày đăng.")
+
+    return fallback_dt.strftime("%Y-%m-%d")
+
+
 def get_safe_headers():
     """Tạo headers giả lập trình duyệt thật, xoay vòng User-Agent."""
     return {

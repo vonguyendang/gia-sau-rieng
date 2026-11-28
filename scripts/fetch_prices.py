@@ -46,6 +46,7 @@ from utils import (
     load_json,
     save_json,
     save_split_data,
+    extract_date_from_title,
     parse_relative_time,
 )
 
@@ -240,7 +241,7 @@ NỘI DUNG PHỤ ĐỀ:
             else:
                 print(f"       -> Trích xuất thành công: {prices}")
                 pub_vn_dt = pub_dt.astimezone(VN_TZ)
-                day_key = pub_vn_dt.strftime("%Y-%m-%d")
+                day_key = extract_date_from_title(title, pub_vn_dt)
 
                 if day_key not in history_data["days"]:
                     history_data["days"][day_key] = {

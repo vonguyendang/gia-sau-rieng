@@ -57,48 +57,9 @@ from fetch_prices import (
     safe_sleep,
     is_durian_title,
     has_durian_content,
+    extract_date_from_title,
     VN_TZ,
 )
-
-
-def extract_date_from_title(title: str, fallback_dt: datetime) -> str:
-    """
-    Trích xuất ngày dạng YYYY-MM-DD từ tiêu đề video (ví dụ: 'ngày 11/11/2026', 'ngày 10 tháng 11', '10/11').
-    Bảo đảm ngày trích xuất là ngày dương lịch hợp lệ (tránh các lỗi parse ngược 2026-20-11).
-    """
-    # 1. Pattern dạng DD / MM / YYYY (cho phép khoảng trắng, vd '9/ 11/2026' hoặc '11/11/2026')
-    m1 = re.search(r"(\d{1,2})\s*/\s*(\d{1,2})\s*/\s*(\d{4})", title)
-    if m1:
-        d, m, y = int(m1.group(1)), int(m1.group(2)), int(m1.group(3))
-        # Phòng ngừa lỗi gõ nhầm năm của YouTuber (ví dụ gõ 2016 thay vì 2026)
-        if abs(y - fallback_dt.year) > 1:
-            y = fallback_dt.year
-        try:
-            return datetime(y, m, d).strftime("%Y-%m-%d")
-        except ValueError:
-            pass
-
-    # 2. Pattern dạng DD tháng MM (có thể kèm năm)
-    m2 = re.search(r"(\d{1,2})\s*tháng\s*(\d{1,2})(?:\s*[,/]?\s*năm\s*(\d{4})|\s*,\s*(\d{4}))?", title, re.IGNORECASE)
-    if m2:
-        d, m = int(m2.group(1)), int(m2.group(2))
-        y = int(m2.group(3) or m2.group(4)) if (m2.group(3) or m2.group(4)) else fallback_dt.year
-        try:
-            return datetime(y, m, d).strftime("%Y-%m-%d")
-        except ValueError:
-            pass
-
-    # 3. Pattern dạng DD / MM (không có dấu / và năm theo sau, để tránh ăn nhầm 11/20 của 11/2026)
-    m3 = re.search(r"\b(\d{1,2})\s*/\s*(\d{1,2})\b(?!\s*/\s*\d+)", title)
-    if m3:
-        d, m = int(m3.group(1)), int(m3.group(2))
-        y = fallback_dt.year
-        try:
-            return datetime(y, m, d).strftime("%Y-%m-%d")
-        except ValueError:
-            pass
-
-    return fallback_dt.strftime("%Y-%m-%d")
 
 
 def main():
