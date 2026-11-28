@@ -238,17 +238,17 @@ function initOrUpdateChart() {
         grid: { display: false },
         ticks: {
           font: { family: '"Be Vietnam Pro"', size: 10.5 },
-          color: '#64748b',
+          color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? '#94a3b8' : '#64748b',
           maxTicksLimit: (typeof window !== 'undefined' && window.innerWidth < 640) ? 6 : (isDense ? 12 : 10),
           maxRotation: 0,
           autoSkip: true,
         }
       },
       y: {
-        grid: { color: '#f1f5f9' },
+        grid: { color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? 'rgba(255, 255, 255, 0.08)' : '#f1f5f9' },
         ticks: {
           font: { family: '"Be Vietnam Pro"', size: 11 },
-          color: '#64748b',
+          color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? '#94a3b8' : '#64748b',
           callback: function(value) {
             return (value / 1000) + 'k';
           }

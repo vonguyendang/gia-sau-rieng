@@ -221,7 +221,7 @@ function renderPriceCards() {
       : `<span class="text-[10px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 shrink-0 whitespace-nowrap">${c.tag}</span>`;
 
     return `
-      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/90 ${c.accentColor} hover:shadow-md transition-shadow flex flex-col justify-between">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm border border-slate-200/90 dark:border-slate-800 ${c.accentColor} hover:shadow-md transition-all flex flex-col justify-between">
         <div>
           <div class="flex items-start justify-between gap-1.5 mb-2">
             <span class="text-xs font-bold px-2.5 py-1 rounded-lg ${c.badgeColor} flex items-center gap-1.5 leading-snug">
@@ -232,22 +232,22 @@ function renderPriceCards() {
 
           <div class="mt-2.5 flex items-baseline justify-between">
             <div>
-              <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase block tracking-wider">Khoảng giá xô vườn:</span>
-              <div class="text-2xl sm:text-[26px] font-black text-slate-900 tracking-tight leading-none mt-1">
+              <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase block tracking-wider">Khoảng giá xô vườn:</span>
+              <div class="text-2xl sm:text-[26px] font-black text-slate-900 dark:text-white tracking-tight leading-none mt-1">
                 ${priceDisplay}
               </div>
             </div>
-            <span class="text-xs font-bold text-slate-500 shrink-0">đ / kg</span>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 shrink-0">đ / kg</span>
           </div>
 
-          <div class="mt-3 p-2.5 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-600">
+          <div class="mt-3 p-2.5 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-100 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-300">
             <i class="fa-solid fa-circle-info text-slate-400 mr-1"></i> ${noteHtml}
             ${regionalBreakdownHtml}
           </div>
         </div>
 
         <div>
-          <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+          <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
             <span class="text-slate-500 text-[11px]">So với hôm qua:</span>
             <span class="font-bold text-[11px] flex items-center gap-1 ${diffInfo.class} whitespace-nowrap">
               <i class="fa-solid ${diffInfo.icon} text-[9px]"></i>

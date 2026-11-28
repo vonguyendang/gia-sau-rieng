@@ -16,6 +16,35 @@
   <meta name="apple-mobile-web-app-title" content="Giá Sầu Riêng">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 
+  <!-- Open Graph & Chia Sẻ Mạng Xã Hội (Zalo, Facebook, iMessage) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vonguyendang.github.io/gia-sau-rieng/">
+  <meta property="og:title" content="Giá Sầu Riêng Hôm Nay | Cập Nhật Giá Cắt Xô Tại Vườn 3 Miền">
+  <meta property="og:description" content="Tra cứu bảng giá sầu riêng Ri6, Monthong, Musang King, Black Thorn thu mua cắt xô tại vườn Miền Tây, Miền Đông, Tây Nguyên hôm nay. Tự động cập nhật 2 lần mỗi ngày.">
+  <meta property="og:image" content="https://vonguyendang.github.io/gia-sau-rieng/icons/icon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Giá Sầu Riêng Xô Tại Vườn">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Giá Sầu Riêng Hôm Nay | Cập Nhật Giá Cắt Xô Tại Vườn 3 Miền">
+  <meta name="twitter:description" content="Tra cứu giá sầu riêng Ri6, Monthong, Musang King thu mua cắt xô tận vườn mới nhất.">
+  <meta name="twitter:image" content="https://vonguyendang.github.io/gia-sau-rieng/icons/icon-512.png">
+
+  <!-- Schema.org JSON-LD cho Google Search Top 1 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Giá Sầu Riêng Xô Tại Vườn",
+    "url": "https://vonguyendang.github.io/gia-sau-rieng/",
+    "description": "Hệ thống tổng hợp và phân tích biến động giá sầu riêng Ri6, Monthong, Musang King tự động từ các nhà vườn và vựa thu mua uy tín bằng AI",
+    "inLanguage": "vi-VN"
+  }
+  </script>
+
   <!-- Google Fonts: Be Vietnam Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +54,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -51,7 +81,7 @@
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-amber-200">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-amber-200 transition-colors duration-200">
 
   <!-- TOP BANNER & NAVBAR -->
   <header class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 text-white shadow-lg sticky top-0 z-50">
@@ -77,11 +107,16 @@
           <span class="sm:hidden">Cài App</span>
         </button>
 
+        <!-- Nút bật/tắt Dark Mode (Giao diện tối) -->
+        <button id="btn-dark-mode-toggle" type="button" class="p-2 sm:p-2.5 rounded-xl bg-emerald-700/70 hover:bg-emerald-600 text-emerald-100 hover:text-white transition-all shadow-sm cursor-pointer" title="Chuyển sang giao diện Tối (Dark Mode)">
+          <i class="fa-solid fa-moon text-sm sm:text-base text-emerald-200" id="dark-mode-icon"></i>
+        </button>
+
         <div class="text-right hidden md:block">
           <div class="text-xs text-emerald-200">Cập nhật lần cuối</div>
           <div id="last-updated-text" class="text-xs font-semibold text-amber-300">Đang đồng bộ...</div>
         </div>
-        <button id="btn-refresh" title="Tải lại dữ liệu" class="p-2 sm:p-2.5 rounded-xl bg-emerald-700/70 hover:bg-emerald-600 text-emerald-100 hover:text-white transition-all shadow-sm">
+        <button id="btn-refresh" title="Tải lại dữ liệu" class="p-2 sm:p-2.5 rounded-xl bg-emerald-700/70 hover:bg-emerald-600 text-emerald-100 hover:text-white transition-all shadow-sm cursor-pointer">
           <i class="fa-solid fa-arrows-rotate text-sm sm:text-base" id="refresh-icon"></i>
         </button>
       </div>
@@ -92,22 +127,30 @@
   <main class="flex-grow max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-6 w-full space-y-6 sm:space-y-8">
 
     <!-- SUBHEADER / STATUS NOTIFICATION -->
-    <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-3 sm:p-4 shadow-sm border border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 transition-colors">
       <div class="flex items-center space-x-2.5">
         <span class="relative flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
         </span>
-        <span class="text-xs sm:text-sm font-medium text-slate-700">
-          Thị trường giao dịch ngày: <strong id="current-day-label" class="text-emerald-800 font-bold">--/--/----</strong>
+        <span class="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">
+          Thị trường giao dịch ngày: <strong id="current-day-label" class="text-emerald-800 dark:text-emerald-400 font-bold">--/--/----</strong>
         </span>
       </div>
 
-      <!-- Nút tạo ảnh bảng giá Zalo -->
-      <button id="btn-share-price-image" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer">
-        <i class="fa-solid fa-camera text-amber-300"></i>
-        <span>Tạo Ảnh Bảng Giá Zalo</span>
-      </button>
+      <div class="flex items-center gap-2 flex-wrap">
+        <!-- Nút nghe báo giá bằng giọng nói -->
+        <button id="btn-speech-toggle" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs border border-slate-200 dark:border-slate-700 shadow-xs active:scale-95 transition-all cursor-pointer">
+          <i class="fa-solid fa-volume-high text-xs text-emerald-600 dark:text-emerald-400" id="speech-icon"></i>
+          <span id="speech-text">Nghe Báo Giá</span>
+        </button>
+
+        <!-- Nút tạo ảnh bảng giá Zalo -->
+        <button id="btn-share-price-image" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer">
+          <i class="fa-solid fa-camera text-amber-300"></i>
+          <span>Tạo Ảnh Bảng Giá Zalo</span>
+        </button>
+      </div>
     </div>
 
     <!-- KHU VỰC 1: CÁC THẺ GIÁ HÔM NAY (PRICE CARDS) -->
@@ -149,16 +192,16 @@
     </section>
 
     <!-- KHU VỰC: MÁY TÍNH TIỀN BÁN VƯỜN TỨC THÌ -->
-    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-slate-100 gap-2">
+    <section class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-slate-100 dark:border-slate-800 gap-2">
         <div>
-          <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
-            <i class="fa-solid fa-calculator text-emerald-600"></i>
+          <h2 class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+            <i class="fa-solid fa-calculator text-emerald-600 dark:text-emerald-400"></i>
             Tính Tiền Bán Sầu Riêng Cắt Vườn Tức Thì
           </h2>
-          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Nhập số lượng sầu riêng dự kiến cắt để xem tổng doanh thu và gửi báo giá cho thương lái</p>
+          <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5">Nhập số lượng sầu riêng dự kiến cắt để xem tổng doanh thu và gửi báo giá cho thương lái</p>
         </div>
-        <button id="btn-add-calc-row" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs border border-emerald-200 transition-all cursor-pointer self-start sm:self-auto">
+        <button id="btn-add-calc-row" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-slate-800 hover:bg-emerald-100 dark:hover:bg-slate-700 text-emerald-800 dark:text-emerald-300 font-bold text-xs border border-emerald-200 dark:border-slate-700 transition-all cursor-pointer self-start sm:self-auto">
           <i class="fa-solid fa-plus text-xs"></i>
           <span>Thêm giống khác</span>
         </button>
@@ -190,13 +233,13 @@
           </button>
         </div>
       </div>
-      <p id="calc-copy-status" class="text-xs text-emerald-700 font-bold text-center mt-2.5 hidden">
+      <p id="calc-copy-status" class="text-xs text-emerald-700 dark:text-emerald-400 font-bold text-center mt-2.5 hidden">
         ✓ Đã sao chép bảng tính! Bạn có thể mở Zalo và dán (Paste) ngay cho thương lái.
       </p>
     </section>
 
     <!-- KHU VỰC 2: BIỂU ĐỒ BIẾN ĐỘNG GIÁ (CHART SECTION) -->
-    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
+    <section class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 mb-3 border-b border-slate-100 gap-3">
         <div>
           <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
@@ -256,8 +299,8 @@
     </section>
 
     <!-- KHU VỰC 3: ĐỐI CHIẾU GIÁ SO VỚI CÙNG KỲ (COMPARISON TABLE) -->
-    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-3.5 border-b border-slate-100 gap-2">
+    <section class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-3.5 border-b border-slate-100 dark:border-slate-800 gap-2">
         <div>
           <div class="flex items-center gap-2">
             <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
@@ -366,7 +409,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-xs text-slate-500">
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-8 text-xs text-slate-500 dark:text-slate-400 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center space-x-2.5">
         <img src="durian-logo.svg" alt="Sầu Riêng" class="w-6 h-6 object-contain">
@@ -485,6 +528,8 @@
   <script src="js/sources.js?v=20261128"></script>
   <script src="js/share_image.js?v=20261128"></script>
   <script src="js/calculator.js?v=20261128"></script>
+  <script src="js/speech.js?v=20261128"></script>
+  <script src="js/darkmode.js?v=20261128"></script>
   <script src="app.js?v=20261128"></script>
 </body>
 </html>

@@ -203,6 +203,21 @@ function setupEventListeners() {
       }
     });
   }
+
+  // Nút nghe đọc báo giá giọng nói
+  const speechBtn = document.getElementById('btn-speech-toggle');
+  if (speechBtn) {
+    speechBtn.addEventListener('click', () => {
+      if (typeof toggleSpeechPlayback === 'function') {
+        toggleSpeechPlayback();
+      }
+    });
+  }
+
+  // Khởi tạo Dark Mode
+  if (typeof initDarkMode === 'function') {
+    initDarkMode();
+  }
 }
 
 async function loadData() {
