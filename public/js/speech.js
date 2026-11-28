@@ -142,7 +142,7 @@ function generateSpeechScript() {
     const mn = minVal || maxVal;
     const mx = maxVal || minVal;
     if (mn === mx) {
-      return `${label}: ${formatSpeechNumber(mx)}. `;
+      return `${label} giá trung bình khoảng ${formatSpeechNumber(mx)}. `;
     }
     return `${label} dao động trong khoảng ${formatSpeechNumber(mn)} đến ${formatSpeechNumber(mx)}. `;
   }
