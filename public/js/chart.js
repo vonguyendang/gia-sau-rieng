@@ -3,6 +3,25 @@
  * Quản lý vẽ biểu đồ xu hướng Chart.js, bộ lọc thời gian và ẩn/hiện từng giống sầu riêng.
  */
 
+let showForecastLines = true;
+
+window.toggleForecastChartLines = function() {
+  showForecastLines = !showForecastLines;
+  const labelEl = document.getElementById('text-toggle-forecast-line');
+  const btnEl = document.getElementById('btn-toggle-forecast-line');
+  if (labelEl) {
+    labelEl.textContent = `Nét đứt dự báo: ${showForecastLines ? 'BẬT' : 'TẮT'}`;
+  }
+  if (btnEl) {
+    if (showForecastLines) {
+      btnEl.className = 'px-2.5 py-1 text-[11px] font-bold text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 hover:bg-amber-100 dark:hover:bg-amber-900/60 rounded-lg border border-amber-300 dark:border-amber-700/80 transition-all cursor-pointer active:scale-95 flex items-center gap-1';
+    } else {
+      btnEl.className = 'px-2.5 py-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 transition-all cursor-pointer active:scale-95 flex items-center gap-1 opacity-70';
+    }
+  }
+  initOrUpdateChart();
+};
+
 async function ensureFullHistoryLoaded() {
   if (isFullHistoryLoaded) return;
   try {
@@ -57,7 +76,28 @@ function initOrUpdateChart() {
   const pHoverRadius = isDense ? 5 : 7;
   const bWidth = isDense ? 2 : 2.5;
 
-  const labels = selectedDays.map(d => formatDateStr(d));
+  let allDays = [...selectedDays];
+  let forecastDays = [];
+
+  // Tính toán các mốc ngày dự báo T+1, T+2, T+3 nếu bật chế độ nét đứt
+  if (showForecastLines && typeof calculatePriceForecast === 'function' && selectedDays.length > 0) {
+    const lastDayStr = selectedDays[selectedDays.length - 1];
+    const lastDate = new Date(lastDayStr);
+    for (let i = 1; i <= 3; i++) {
+      const nextDate = new Date(lastDate);
+      nextDate.setDate(lastDate.getDate() + i);
+      const yyyy = nextDate.getFullYear();
+      const mm = String(nextDate.getMonth() + 1).padStart(2, '0');
+      const dd = String(nextDate.getDate()).padStart(2, '0');
+      forecastDays.push(`${yyyy}-${mm}-${dd}`);
+    }
+    allDays = [...selectedDays, ...forecastDays];
+  }
+
+  const labels = allDays.map((d, idx) => {
+    const isFc = idx >= selectedDays.length;
+    return isFc ? `${formatDateStr(d)} (Dự báo)` : formatDateStr(d);
+  });
 
   // Quản lý trạng thái hiển thị của từng giống sầu riêng:
   // - Lần đầu nạp: Mặc định chỉ hiển thị 2 giống chủ lực (0: Ri6, 1: Thái) để biểu đồ trên mobile thoáng đãng, sắc nét.
@@ -84,21 +124,54 @@ function initOrUpdateChart() {
     return historyData.days[d]?.daily_average?.[key] ?? null;
   };
 
-  const ri6Data = selectedDays.map(d => getDayVal(d, 'ri6_a'));
-  const monthongData = selectedDays.map(d => getDayVal(d, 'monthong_a'));
-  const musangData = selectedDays.map(d => getDayVal(d, 'musang_king'));
-  const blackThornData = selectedDays.map(d => getDayVal(d, 'black_thorn'));
-  const chuongBoData = selectedDays.map(d => getDayVal(d, 'chuong_bo'));
-  const sauHuuData = selectedDays.map(d => getDayVal(d, 'sau_huu'));
+  const buildSeriesData = (key, fcVarKey) => {
+    const historical = selectedDays.map(d => getDayVal(d, key));
+    if (!showForecastLines || forecastDays.length === 0) {
+      return historical;
+    }
+    // Lấy giá trị dự báo từ calculatePriceForecast
+    let fcDelta = 0;
+    try {
+      const fcData = calculatePriceForecast(currentRegion);
+      if (fcData && fcData.forecasts) {
+        const item = fcData.forecasts.find(f => f.keyMax === key || f.keyMin === key || f.name.toLowerCase().includes(fcVarKey));
+        if (item) {
+          fcDelta = item.projectedDelta3d || 0;
+        }
+      }
+    } catch (e) {}
+
+    const lastVal = historical[historical.length - 1];
+    const fcPoints = [];
+    if (lastVal !== null && lastVal !== undefined) {
+      // T+1, T+2, T+3
+      fcPoints.push(Math.round(lastVal + fcDelta * (1 / 3)));
+      fcPoints.push(Math.round(lastVal + fcDelta * (2 / 3)));
+      fcPoints.push(Math.round(lastVal + fcDelta));
+    } else {
+      fcPoints.push(null, null, null);
+    }
+    return [...historical, ...fcPoints];
+  };
+
+  const ri6Data = buildSeriesData('ri6_a', 'ri6');
+  const monthongData = buildSeriesData('monthong_a', 'thái');
+  const musangData = buildSeriesData('musang_king', 'musang');
+  const blackThornData = buildSeriesData('black_thorn', 'black');
+  const chuongBoData = buildSeriesData('chuong_bo', 'chuồng');
+  const sauHuuData = buildSeriesData('sau_huu', 'sáu');
 
   const ctx = document.getElementById('priceChart');
   if (!ctx) return;
 
-  // Cấu hình Minimalist Finance Curve:
-  // - pointRadius: 0 -> Loại bỏ hoàn toàn các chấm dính chùm trên điện thoại
-  // - pointHoverRadius: 6 -> Chỉ nổi chấm tròn sáng khi người dùng chạm/rê ngón tay vào ngày đó
-  // - pointHitRadius: 20 -> Vùng chạm cảm ứng rộng, cực kỳ mượt mà trên mobile
-  // - tension: 0.35 -> Đường cong uốn lượn mềm mại chuẩn biểu đồ tài chính
+  const forecastStartIndex = selectedDays.length - 1;
+
+  // Segment styling: nét liền cho quá khứ, nét đứt cho tương lai (dự báo)
+  const segmentConfig = {
+    borderDash: ctx => (ctx.p0DataIndex >= forecastStartIndex ? [5, 5] : undefined),
+    borderWidth: ctx => (ctx.p0DataIndex >= forecastStartIndex ? 2 : 2.5),
+  };
+
   const commonDatasetOpts = {
     tension: 0.35,
     pointRadius: 0,
@@ -107,6 +180,7 @@ function initOrUpdateChart() {
     pointHoverBackgroundColor: '#ffffff',
     pointHoverBorderWidth: 2.5,
     spanGaps: true,
+    segment: segmentConfig,
   };
 
   const chartData = {
@@ -206,12 +280,18 @@ function initOrUpdateChart() {
             return items[0] ? `Ngày ${items[0].label} (${regBadge} - xô tại vườn)` : '';
           },
           label: function(context) {
+            const isForecast = context.dataIndex >= selectedDays.length;
+            const lbl = context.dataset.label || '';
+            if (isForecast) {
+              const val = context.parsed.y;
+              return `${lbl} (Dự báo): ${val ? formatNumber(val) + ' đ' : '---'}`;
+            }
+
             const dayKey = selectedDays[context.dataIndex];
             const dayObj = historyData.days[dayKey] || {};
             const avg = (currentRegion !== 'all' && dayObj.by_region?.[currentRegion])
               ? dayObj.by_region[currentRegion]
               : (dayObj.daily_average || {});
-            const lbl = context.dataset.label || '';
 
             if (lbl.includes('Ri6')) {
               const low = avg.ri6_b ? formatNumber(avg.ri6_b) : (avg.ri6_a ? formatNumber(avg.ri6_a) : '---');

@@ -295,6 +295,10 @@
             <button type="button" onclick="setChartPreset('all')" title="Hiện toàn bộ 6 giống" class="px-2.5 py-1 text-[11px] font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 transition-all cursor-pointer active:scale-95">
               Hiện cả 6
             </button>
+            <button id="btn-toggle-forecast-line" type="button" onclick="toggleForecastChartLines()" title="Bật/Tắt đường nét đứt dự báo 3 ngày tới" class="px-2.5 py-1 text-[11px] font-bold text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 hover:bg-amber-100 dark:hover:bg-amber-900/60 rounded-lg border border-amber-300 dark:border-amber-700/80 transition-all cursor-pointer active:scale-95 flex items-center gap-1">
+              <i class="fa-solid fa-chart-line text-[10px]"></i>
+              <span id="text-toggle-forecast-line">Nét đứt dự báo: BẬT</span>
+            </button>
           </div>
         </div>
         <div id="chart-legend-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2">
