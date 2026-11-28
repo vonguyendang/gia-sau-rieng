@@ -255,7 +255,12 @@
         </div>
         <!-- BỘ CHỌN & ĐIỀU HƯỚNG NGÀY HIỆN ĐẠI (DẠNG LƯỚI & PHÍM TẮT) -->
         <div class="relative flex items-center gap-1.5 self-start sm:self-auto" id="date-selector-component">
-          <!-- Nút chính mở Popover Lưới Ngày -->
+          <!-- Nút tiến ngày (Nằm bên trái) -->
+          <button id="btn-next-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Tiến tới ngày sau (ngày mới hơn)">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+
+          <!-- Nút chính mở Popover Lưới Ngày (Nằm ở giữa) -->
           <div class="relative" id="date-picker-dropdown-container">
             <button id="btn-date-picker-toggle" type="button" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white hover:bg-emerald-50/60 text-slate-800 font-bold text-xs border border-slate-300 shadow-xs hover:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 transition-all cursor-pointer">
               <i class="fa-regular fa-calendar-days text-emerald-600 text-sm"></i>
@@ -292,18 +297,10 @@
             </div>
           </div>
 
-          <!-- Nhóm nút điều hướng ngày: Đặt bên phải ô chọn ngày -->
-          <div class="flex items-center gap-1">
-            <!-- Nút lùi ngày (Ngày trước) -->
-            <button id="btn-prev-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Lùi về ngày trước">
-              <i class="fa-solid fa-chevron-left text-xs"></i>
-            </button>
-
-            <!-- Nút tiến ngày (Ngày sau) -->
-            <button id="btn-next-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Tiến tới ngày sau">
-              <i class="fa-solid fa-chevron-right text-xs"></i>
-            </button>
-          </div>
+          <!-- Nút lùi ngày (Nằm bên phải) -->
+          <button id="btn-prev-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Lùi về ngày trước (ngày cũ hơn)">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
         </div>
       </div>
 
