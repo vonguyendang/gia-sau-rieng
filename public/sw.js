@@ -5,7 +5,7 @@
  * và tối ưu tốc độ tải trên mạng di động 3G/4G yếu tại nhà vườn.
  */
 
-const CACHE_NAME = 'gia-sr-v3';
+const CACHE_NAME = 'gia-sr-v4';
 
 // Danh sách tài nguyên tĩnh cốt lõi cần nạp vào bộ đệm khi cài đặt
 const PRECACHE_ASSETS = [
@@ -16,6 +16,7 @@ const PRECACHE_ASSETS = [
   './app.js',
   './js/utils.js',
   './js/cards.js',
+  './js/forecast.js',
   './js/comparison.js',
   './js/chart.js',
   './js/sources.js',
