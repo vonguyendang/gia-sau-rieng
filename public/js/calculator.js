@@ -234,7 +234,7 @@ function copyCalculatorResult() {
   text += `💰 TỔNG THU VỀ: ${formatNumber(totalMoney)} VNĐ\n`;
   text += `(${numberToVietnameseWords(totalMoney)})\n\n`;
   text += `* Lưu ý: Bảng tính mang tính tham khảo, giá thực tế phụ thuộc tỷ lệ phân loại và thỏa thuận tại vườn.\n`;
-  text += `Tra cứu giá tại: https://vonguyendang.github.io/gia-sau-rieng/`;
+  text += `Tra cứu giá tại: https://giasr.dangvo.io.vn`;
 
   navigator.clipboard.writeText(text).then(() => {
     const statusEl = document.getElementById('calc-copy-status');

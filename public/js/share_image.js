@@ -240,7 +240,7 @@ function showImagePreviewModal(canvas, dayStr) {
           await navigator.share({
             files: [file],
             title: `Bảng giá sầu riêng ngày ${dayStr}`,
-            text: `Bảng giá sầu riêng xô tại vườn ngày ${dayStr}. Xem chi tiết tại: https://vonguyendang.github.io/gia-sau-rieng/`
+            text: `Bảng giá sầu riêng xô tại vườn ngày ${dayStr}. Xem chi tiết tại: https://giasr.dangvo.io.vn`
           });
           return;
         } catch (err) {
