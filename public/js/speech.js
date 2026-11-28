@@ -154,6 +154,24 @@ function generateSpeechScript() {
   script += formatRangeSpeech('Chuồng bò', prices.chuong_bo, prices.chuong_bo);
   script += formatRangeSpeech('Sáu Hữu', prices.sau_huu, prices.sau_huu);
 
+  // Tích hợp tóm tắt dự báo xu hướng 3 ngày tới nếu có dữ liệu
+  if (typeof calculatePriceForecast === 'function') {
+    try {
+      const forecastData = calculatePriceForecast(currentRegion);
+      if (forecastData && forecastData.forecasts && forecastData.forecasts.length >= 2) {
+        const ri6F = forecastData.forecasts.find(f => f.keyMin.includes('ri6'));
+        const moF = forecastData.forecasts.find(f => f.keyMin.includes('monthong'));
+        if (ri6F || moF) {
+          script += `Dự báo xu hướng 3 ngày tới: `;
+          if (ri6F) script += `Ri Sáu ${ri6F.trendText.toLowerCase()}, `;
+          if (moF) script += `Thái ${moF.trendText.toLowerCase()}. `;
+        }
+      }
+    } catch (e) {
+      console.warn('Lỗi bổ sung dự báo vào giọng đọc:', e);
+    }
+  }
+
   script += `Giá tham khảo cắt xô tại vườn. Chúc bà con giao dịch thuận lợi!`;
   return script;
 }

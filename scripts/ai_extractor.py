@@ -77,6 +77,15 @@ PRICE_SCHEMA = {
             },
             "required": ["ri6_a", "ri6_b", "monthong_a", "monthong_b", "musang_king"],
         },
+        "market_sentiment": {
+            "type": "STRING",
+            "enum": ["tang", "on_dinh", "giam", "chua_ro"],
+            "description": "Xu hướng giá sầu riêng được thương lái hoặc nhà vườn nhận định trong video: 'tang' (giá có xu hướng tăng/hút hàng), 'on_dinh' (giá đi ngang/ổn định), 'giam' (giá hạ nhiệt/chậm hàng), 'chua_ro' (không nói rõ xu hướng).",
+        },
+        "forecast_notes": {
+            "type": "STRING",
+            "description": "Nhận định ngắn gọn 1 câu về xu hướng cung cầu hoặc dự báo giá trong 3-5 ngày tới từ video (ví dụ: 'Kho đang gom hàng đi Trung Quốc, dự báo giá giữ vững hoặc tăng nhẹ', hoặc 'Hàng rộ nhiều, giá có thể chững lại').",
+        },
         "summary": {
             "type": "STRING",
             "description": "Tóm tắt ngắn gọn 1-2 câu về tình hình thu mua hoặc biến động giá sầu riêng trong video.",
@@ -109,9 +118,10 @@ QUY TẮC BẮT BUỘC VỀ GIÁ CẮT XÔ TẠI VƯỜN (FARM-GATE BULK PRICE):
    - "Thái xô 70 - 75" gán min vào `monthong_b` (70000), max vào `monthong_a` (75000).
    - Với các giống đặc sản (Musang King, Black Thorn, Chuồng Bò, Sáu Hữu): nếu video có nói giá loại B thì lấy giá loại B làm giá xô tại vườn.
 
-3. LƯU Ý VỀ TỈ LỆ CẮT XÔ:
+3. LƯU Ý VỀ TỈ LỆ CẮT XÔ & XU HƯỚNG DỰ BÁO:
    - TỈ LỆ TRÁI (8:2, 7:3...): Là tỉ lệ phân loại trái khi mua xô cả vườn (8:2 = 80% A và 20% B). Tuyệt đối KHÔNG nhầm tỉ lệ thành giá tiền!
    - Đưa chi tiết tỉ lệ xô vào phần 'summary' để người nông dân hiểu rõ.
+   - NHẬN ĐỊNH XU HƯỚNG (market_sentiment & forecast_notes): Lắng nghe kỹ nhận xét của thương lái hoặc chủ vườn về sức mua của vựa, tình hình biên giới/xuất khẩu Trung Quốc, nguồn cung sầu đang rộ hay khan hiếm để dự báo xu hướng (tang, on_dinh, giam).
 
 4. NHẬN DIỆN GIỌNG NÓI ĐỊA PHƯƠNG & QUY ĐỔI TIỀN:
    - "di sáu", "zi sáu", "ri 6", "sáu ri" -> Ri6.

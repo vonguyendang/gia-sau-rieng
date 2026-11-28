@@ -38,6 +38,7 @@ function setupEventListeners() {
     regionSelect.addEventListener('change', (e) => {
       currentRegion = e.target.value || 'all';
       renderPriceCards();
+      if (typeof renderForecastCard === 'function') renderForecastCard();
       renderComparisonTable();
       initOrUpdateChart();
       if (typeof initCalculator === 'function') initCalculator();
@@ -58,6 +59,7 @@ function setupEventListeners() {
       currentRegion = btn.getAttribute('data-region') || 'all';
       if (regionSelect) regionSelect.value = currentRegion;
       renderPriceCards();
+      if (typeof renderForecastCard === 'function') renderForecastCard();
       renderComparisonTable();
       initOrUpdateChart();
       if (typeof initCalculator === 'function') initCalculator();
@@ -252,6 +254,7 @@ async function loadData() {
 
     try { renderHeader(); } catch (e) { console.error('Lỗi renderHeader:', e); }
     try { renderPriceCards(); } catch (e) { console.error('Lỗi renderPriceCards:', e); }
+    try { if (typeof renderForecastCard === 'function') renderForecastCard(); } catch (e) { console.error('Lỗi renderForecastCard:', e); }
     try { renderComparisonTable(); } catch (e) { console.error('Lỗi renderComparisonTable:', e); }
     try { initOrUpdateChart(); } catch (e) { console.error('Lỗi initOrUpdateChart:', e); }
     try { populateDateSelect(); } catch (e) { console.error('Lỗi populateDateSelect:', e); }

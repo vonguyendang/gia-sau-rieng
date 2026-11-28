@@ -224,6 +224,8 @@ NỘI DUNG PHỤ ĐỀ:
             raw_prices = extracted.get("prices", {})
             prices = normalize_bulk_prices(raw_prices)
             summary = extracted.get("summary", "")
+            market_sentiment = extracted.get("market_sentiment", "chua_ro")
+            forecast_notes = extracted.get("forecast_notes", "")
 
             # Lưu vào danh sách đã xử lý
             processed_videos[video_id] = {
@@ -233,13 +235,14 @@ NỘI DUNG PHỤ ĐỀ:
                 "has_transcript": True,
                 "is_price_video": is_price_video,
                 "extracted_prices": prices if is_price_video else None,
+                "market_sentiment": market_sentiment if is_price_video else None,
             }
             save_json(PROCESSED_FILE, processed_videos)
 
             if not is_price_video:
                 print("       -> Gemini xác nhận: Đây không phải video báo giá sầu riêng.")
             else:
-                print(f"       -> Trích xuất thành công: {prices}")
+                print(f"       -> Trích xuất thành công: {prices} | Xu hướng: {market_sentiment}")
                 pub_vn_dt = pub_dt.astimezone(VN_TZ)
                 day_key = extract_date_from_title(title, pub_vn_dt)
 
@@ -259,6 +262,8 @@ NỘI DUNG PHỤ ĐỀ:
                     "region": region,
                     "summary": summary,
                     "prices": prices,
+                    "market_sentiment": market_sentiment,
+                    "forecast_notes": forecast_notes,
                 }
 
                 sources = history_data["days"][day_key].setdefault("sources", [])
