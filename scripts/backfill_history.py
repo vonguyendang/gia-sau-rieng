@@ -70,6 +70,9 @@ def extract_date_from_title(title: str, fallback_dt: datetime) -> str:
     m1 = re.search(r"(\d{1,2})\s*/\s*(\d{1,2})\s*/\s*(\d{4})", title)
     if m1:
         d, m, y = int(m1.group(1)), int(m1.group(2)), int(m1.group(3))
+        # Phòng ngừa lỗi gõ nhầm năm của YouTuber (ví dụ gõ 2016 thay vì 2026)
+        if abs(y - fallback_dt.year) > 1:
+            y = fallback_dt.year
         try:
             return datetime(y, m, d).strftime("%Y-%m-%d")
         except ValueError:

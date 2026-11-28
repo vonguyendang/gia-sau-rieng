@@ -29,7 +29,13 @@ function initOrUpdateChart() {
     ensureFullHistoryLoaded();
   }
 
-  const daysKeys = Object.keys(historyData.days).sort();
+  const currentYear = new Date().getFullYear();
+  const daysKeys = Object.keys(historyData.days)
+    .filter(d => {
+      const yr = parseInt(d.split('-')[0], 10);
+      return !isNaN(yr) && yr >= 2024 && yr <= currentYear + 1;
+    })
+    .sort();
   let selectedDays = daysKeys;
 
   if (currentRange === '7') {

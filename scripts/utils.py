@@ -179,13 +179,18 @@ def save_split_data(history_data: dict):
     SOURCES_DIR.mkdir(parents=True, exist_ok=True)
 
     raw_days_dict = history_data.get("days", {})
-    # Làm sạch: Chỉ giữ lại các ngày có định dạng YYYY-MM-DD hợp lệ
+    # Làm sạch: Chỉ giữ lại các ngày có định dạng YYYY-MM-DD hợp lệ và năm hợp lý
+    now_year = datetime.now().year
     days_dict = {}
     for day_str, day_content in raw_days_dict.items():
         try:
             parts = day_str.split("-")
             if len(parts) == 3 and len(parts[0]) == 4:
-                datetime(int(parts[0]), int(parts[1]), int(parts[2]))
+                year = int(parts[0])
+                if not (now_year - 2 <= year <= now_year + 1):
+                    print(f"[CẢNH BÁO] Loại bỏ ngày có năm bất thường khỏi database: {day_str}")
+                    continue
+                datetime(year, int(parts[1]), int(parts[2]))
                 days_dict[day_str] = day_content
             else:
                 print(f"[CẢNH BÁO] Loại bỏ ngày không hợp lệ khỏi database: {day_str}")
@@ -194,7 +199,10 @@ def save_split_data(history_data: dict):
 
     # Tự động bù by_region nếu ngày có dữ liệu nhưng chưa được tính giá khu vực
     try:
-        from price_calculator import calculate_regional_data
+        try:
+            from price_calculator import calculate_regional_data
+        except ImportError:
+            from scripts.price_calculator import calculate_regional_data
         for day_str, day_content in days_dict.items():
             by_reg = day_content.get("by_region")
             if not by_reg or not any(by_reg.get(k) for k in ["mientay", "miendong", "taynguyen"]):
