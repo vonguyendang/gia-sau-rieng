@@ -184,20 +184,20 @@ function showImagePreviewModal(canvas, dayStr) {
   const fileName = `bang-gia-sau-rieng-${dayStr}.png`;
 
   modal.innerHTML = `
-    <div class="bg-white rounded-2xl max-w-md w-full p-4 sm:p-5 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[95vh]">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-md w-full p-4 sm:p-5 shadow-2xl border border-slate-200 dark:border-slate-800 relative animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[95vh]">
       <!-- Header Modal -->
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 mb-3">
         <div class="flex items-center gap-2">
-          <i class="fa-regular fa-image text-emerald-700 text-base"></i>
-          <h3 class="font-bold text-slate-800 text-sm sm:text-base">Ảnh Bảng Giá Chia Sẻ</h3>
+          <i class="fa-regular fa-image text-emerald-700 dark:text-emerald-400 text-base"></i>
+          <h3 class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base">Ảnh Bảng Giá Chia Sẻ</h3>
         </div>
-        <button id="btn-close-share-modal" class="text-slate-400 hover:text-slate-600 w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors cursor-pointer">
+        <button id="btn-close-share-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
           ✕
         </button>
       </div>
 
       <!-- Khung hiển thị ảnh xem trước -->
-      <div class="overflow-y-auto max-h-[58vh] rounded-xl border border-slate-200 shadow-inner bg-slate-900 flex items-center justify-center p-2 mb-4">
+      <div class="overflow-y-auto max-h-[58vh] rounded-xl border border-slate-200 dark:border-slate-800 shadow-inner bg-slate-900 flex items-center justify-center p-2 mb-4">
         <img src="${dataUrl}" alt="Bảng giá sầu riêng" class="w-full h-auto rounded-lg shadow-md object-contain">
       </div>
 
@@ -213,7 +213,7 @@ function showImagePreviewModal(canvas, dayStr) {
         </a>
       </div>
 
-      <p id="share-copy-status" class="text-[11px] text-emerald-700 text-center font-medium mt-2 hidden">
+      <p id="share-copy-status" class="text-[11px] text-emerald-700 dark:text-emerald-400 text-center font-medium mt-2 hidden">
         ✓ Đã sao chép ảnh vào bộ nhớ tạm! Bạn có thể dán (Paste) ngay vào Zalo/Facebook.
       </p>
     </div>

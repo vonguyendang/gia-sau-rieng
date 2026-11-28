@@ -76,16 +76,16 @@ function renderComparisonTable() {
 
   function formatDiffCell(todayVal, pastVal) {
     if (!todayVal || !pastVal) {
-      return '<span class="text-slate-400 text-xs italic bg-slate-50 px-2 py-0.5 rounded border border-slate-100 whitespace-nowrap">Đang tích lũy</span>';
+      return '<span class="text-slate-400 dark:text-slate-500 text-xs italic bg-slate-50 dark:bg-slate-800/80 px-2 py-0.5 rounded border border-slate-100 dark:border-slate-700 whitespace-nowrap">Đang tích lũy</span>';
     }
     const diff = todayVal - pastVal;
     const pct = ((diff / pastVal) * 100).toFixed(1);
     if (diff > 0) {
-      return `<span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-emerald-200 whitespace-nowrap"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +${new Intl.NumberFormat('vi-VN').format(diff)} đ (+${pct}%)</span>`;
+      return `<span class="text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-emerald-200 dark:border-emerald-800/60 whitespace-nowrap"><i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +${new Intl.NumberFormat('vi-VN').format(diff)} đ (+${pct}%)</span>`;
     } else if (diff < 0) {
-      return `<span class="text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-rose-200 whitespace-nowrap"><i class="fa-solid fa-arrow-trend-down text-[10px]"></i> ${new Intl.NumberFormat('vi-VN').format(diff)} đ (${pct}%)</span>`;
+      return `<span class="text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-full font-bold text-xs inline-flex items-center gap-1 border border-rose-200 dark:border-rose-800/60 whitespace-nowrap"><i class="fa-solid fa-arrow-trend-down text-[10px]"></i> ${new Intl.NumberFormat('vi-VN').format(diff)} đ (${pct}%)</span>`;
     }
-    return '<span class="text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full font-medium text-xs whitespace-nowrap">Đứng giá</span>';
+    return '<span class="text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full font-medium text-xs whitespace-nowrap border border-transparent dark:border-slate-700">Đứng giá</span>';
   }
 
   const items = [
@@ -152,11 +152,11 @@ function renderComparisonTable() {
   ];
 
   tableBody.innerHTML = items.map(item => `
-    <tr class="hover:bg-slate-50/80 transition-colors">
-      <td class="py-3 px-3.5 font-bold text-slate-800 whitespace-nowrap">
+    <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/60 transition-colors">
+      <td class="py-3 px-3.5 font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">
         <span class="inline-flex items-center gap-1.5"><i class="fa-solid ${item.icon}"></i> ${item.name}</span>
       </td>
-      <td class="py-3 px-3 font-extrabold text-slate-900 whitespace-nowrap">${item.todayDisplay}</td>
+      <td class="py-3 px-3 font-extrabold text-slate-900 dark:text-white whitespace-nowrap">${item.todayDisplay}</td>
       <td class="py-3 px-3 whitespace-nowrap">${formatDiffCell(item.val, item.t1Val)}</td>
       <td class="py-3 px-3 whitespace-nowrap">${formatDiffCell(item.val, item.t7Val)}</td>
       <td class="py-3 px-3 whitespace-nowrap">${formatDiffCell(item.val, item.t30Val)}</td>

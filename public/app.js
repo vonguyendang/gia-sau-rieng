@@ -69,11 +69,11 @@ function setupEventListeners() {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
-        b.classList.remove('bg-white', 'text-emerald-800', 'shadow-sm');
-        b.classList.add('text-slate-600');
+        b.classList.remove('bg-white', 'dark:bg-slate-700', 'text-emerald-800', 'dark:text-emerald-300', 'shadow-sm');
+        b.classList.add('text-slate-600', 'dark:text-slate-400');
       });
-      btn.classList.add('bg-white', 'text-emerald-800', 'shadow-sm');
-      btn.classList.remove('text-slate-600');
+      btn.classList.add('bg-white', 'dark:bg-slate-700', 'text-emerald-800', 'dark:text-emerald-300', 'shadow-sm');
+      btn.classList.remove('text-slate-600', 'dark:text-slate-400');
 
       currentRange = btn.getAttribute('data-range');
       updateChart();

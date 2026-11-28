@@ -60,25 +60,25 @@ function renderPriceCards() {
     : (prevDayObj.daily_average || {});
 
   function getDiff(todayVal, prevVal) {
-    if (!todayVal || !prevVal) return { text: 'Chưa có so sánh', class: 'text-slate-400', icon: 'fa-minus' };
+    if (!todayVal || !prevVal) return { text: 'Chưa có so sánh', class: 'text-slate-400 dark:text-slate-500', icon: 'fa-minus' };
     const diff = todayVal - prevVal;
     const pct = ((diff / prevVal) * 100).toFixed(1);
     if (diff > 0) {
       return {
         text: `+${new Intl.NumberFormat('vi-VN').format(diff)} đ (+${pct}%)`,
-        class: 'text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-semibold',
+        class: 'text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full font-semibold border border-transparent dark:border-emerald-800/40',
         icon: 'fa-arrow-trend-up'
       };
     } else if (diff < 0) {
       return {
         text: `${new Intl.NumberFormat('vi-VN').format(diff)} đ (${pct}%)`,
-        class: 'text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full font-semibold',
+        class: 'text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-full font-semibold border border-transparent dark:border-rose-800/40',
         icon: 'fa-arrow-trend-down'
       };
     }
     return {
       text: 'Đứng giá (0%)',
-      class: 'text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full',
+      class: 'text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full border border-transparent dark:border-slate-700',
       icon: 'fa-equals'
     };
   }
@@ -98,7 +98,7 @@ function renderPriceCards() {
       keyMin: 'ri6_b',
       keyMax: 'ri6_a',
       accentColor: 'border-l-4 border-emerald-600',
-      badgeColor: 'bg-emerald-100 text-emerald-900',
+      badgeColor: 'bg-emerald-100 dark:bg-emerald-950/70 text-emerald-900 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/50',
       icon: 'fa-solid fa-award',
       ratio: 'tỉ lệ 7:3 - 8:2'
     },
@@ -109,7 +109,7 @@ function renderPriceCards() {
       keyMin: 'monthong_b',
       keyMax: 'monthong_a',
       accentColor: 'border-l-4 border-amber-500',
-      badgeColor: 'bg-amber-100 text-amber-900',
+      badgeColor: 'bg-amber-100 dark:bg-amber-950/70 text-amber-900 dark:text-amber-300 border border-amber-200/50 dark:border-amber-800/50',
       icon: 'fa-solid fa-crown',
       ratio: 'tỉ lệ 7:3 - 8:2'
     },
@@ -120,7 +120,7 @@ function renderPriceCards() {
       keyMin: 'musang_king',
       keyMax: 'musang_king',
       accentColor: 'border-l-4 border-purple-500',
-      badgeColor: 'bg-purple-100 text-purple-900',
+      badgeColor: 'bg-purple-100 dark:bg-purple-950/70 text-purple-900 dark:text-purple-300 border border-purple-200/50 dark:border-purple-800/50',
       icon: 'fa-solid fa-gem'
     },
     {
@@ -130,7 +130,7 @@ function renderPriceCards() {
       keyMin: 'black_thorn',
       keyMax: 'black_thorn',
       accentColor: 'border-l-4 border-rose-500',
-      badgeColor: 'bg-rose-100 text-rose-900',
+      badgeColor: 'bg-rose-100 dark:bg-rose-950/70 text-rose-900 dark:text-rose-300 border border-rose-200/50 dark:border-rose-800/50',
       icon: 'fa-solid fa-fire'
     },
     {
@@ -140,7 +140,7 @@ function renderPriceCards() {
       keyMin: 'chuong_bo',
       keyMax: 'chuong_bo',
       accentColor: 'border-l-4 border-cyan-600',
-      badgeColor: 'bg-cyan-100 text-cyan-900',
+      badgeColor: 'bg-cyan-100 dark:bg-cyan-950/70 text-cyan-900 dark:text-cyan-300 border border-cyan-200/50 dark:border-cyan-800/50',
       icon: 'fa-solid fa-leaf'
     },
     {
@@ -150,7 +150,7 @@ function renderPriceCards() {
       keyMin: 'sau_huu',
       keyMax: 'sau_huu',
       accentColor: 'border-l-4 border-orange-500',
-      badgeColor: 'bg-orange-100 text-orange-900',
+      badgeColor: 'bg-orange-100 dark:bg-orange-950/70 text-orange-900 dark:text-orange-300 border border-orange-200/50 dark:border-orange-800/50',
       icon: 'fa-solid fa-star'
     }
   ];
@@ -202,23 +202,23 @@ function renderPriceCards() {
       };
 
       regionalBreakdownHtml = `
-        <div class="mt-2.5 pt-2 border-t border-slate-100 flex flex-wrap gap-1.5 text-[10.5px]">
-          <span class="bg-blue-50 text-blue-800 px-2 py-0.5 rounded-md font-medium border border-blue-100/80 inline-flex items-center gap-1">
-            <i class="fa-solid fa-water text-[9px] text-blue-600"></i> Miền Tây: <strong class="font-bold">${formatRegPrice(mt)}</strong>
+        <div class="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5 text-[10.5px]">
+          <span class="bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 px-2 py-0.5 rounded-md font-medium border border-blue-100/80 dark:border-blue-900/50 inline-flex items-center gap-1">
+            <i class="fa-solid fa-water text-[9px] text-blue-600 dark:text-blue-400"></i> Miền Tây: <strong class="font-bold">${formatRegPrice(mt)}</strong>
           </span>
-          <span class="bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded-md font-medium border border-emerald-100/80 inline-flex items-center gap-1">
-            <i class="fa-solid fa-tree text-[9px] text-emerald-600"></i> Miền Đông: <strong class="font-bold">${formatRegPrice(md)}</strong>
+          <span class="bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 px-2 py-0.5 rounded-md font-medium border border-emerald-100/80 dark:border-emerald-900/50 inline-flex items-center gap-1">
+            <i class="fa-solid fa-tree text-[9px] text-emerald-600 dark:text-emerald-400"></i> Miền Đông: <strong class="font-bold">${formatRegPrice(md)}</strong>
           </span>
-          <span class="bg-amber-50 text-amber-800 px-2 py-0.5 rounded-md font-medium border border-amber-100/80 inline-flex items-center gap-1">
-            <i class="fa-solid fa-mountain text-[9px] text-amber-600"></i> Tây Nguyên: <strong class="font-bold">${formatRegPrice(tn)}</strong>
+          <span class="bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded-md font-medium border border-amber-100/80 dark:border-amber-900/50 inline-flex items-center gap-1">
+            <i class="fa-solid fa-mountain text-[9px] text-amber-600 dark:text-amber-400"></i> Tây Nguyên: <strong class="font-bold">${formatRegPrice(tn)}</strong>
           </span>
         </div>
       `;
     }
 
     const tagBadge = currentRegion !== 'all'
-      ? `<span class="text-[10px] font-bold text-emerald-900 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 shrink-0 whitespace-nowrap"><i class="fa-solid fa-location-dot text-emerald-600 mr-1"></i>${REGIONS[currentRegion]?.badge || currentRegion}</span>`
-      : `<span class="text-[10px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 shrink-0 whitespace-nowrap">${c.tag}</span>`;
+      ? `<span class="text-[10px] font-bold text-emerald-900 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800/60 shrink-0 whitespace-nowrap"><i class="fa-solid fa-location-dot text-emerald-600 dark:text-emerald-400 mr-1"></i>${REGIONS[currentRegion]?.badge || currentRegion}</span>`
+      : `<span class="text-[10px] font-bold text-amber-900 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0 whitespace-nowrap">${c.tag}</span>`;
 
     return `
       <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm border border-slate-200/90 dark:border-slate-800 ${c.accentColor} hover:shadow-md transition-all flex flex-col justify-between">

@@ -238,17 +238,17 @@ function initOrUpdateChart() {
         grid: { display: false },
         ticks: {
           font: { family: '"Be Vietnam Pro"', size: 10.5 },
-          color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? '#94a3b8' : '#64748b',
+          color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? '#cbd5e1' : '#64748b',
           maxTicksLimit: (typeof window !== 'undefined' && window.innerWidth < 640) ? 6 : (isDense ? 12 : 10),
           maxRotation: 0,
           autoSkip: true,
         }
       },
       y: {
-        grid: { color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? 'rgba(255, 255, 255, 0.08)' : '#f1f5f9' },
+        grid: { color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? 'rgba(255, 255, 255, 0.1)' : '#f1f5f9' },
         ticks: {
           font: { family: '"Be Vietnam Pro"', size: 11 },
-          color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? '#94a3b8' : '#64748b',
+          color: (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) ? '#cbd5e1' : '#64748b',
           callback: function(value) {
             return (value / 1000) + 'k';
           }
@@ -288,8 +288,8 @@ function renderChartLegend() {
   container.innerHTML = metaList.map(item => {
     const isVisible = priceChartInstance.isDatasetVisible(item.index);
     const stateClass = isVisible 
-      ? 'bg-slate-50 border-slate-200/90 text-slate-800 shadow-xs' 
-      : 'bg-slate-100/80 border-dashed border-slate-300 text-slate-400 line-through opacity-50';
+      ? 'bg-slate-50 dark:bg-slate-800 border-slate-200/90 dark:border-slate-700 text-slate-800 dark:text-slate-100 shadow-xs' 
+      : 'bg-slate-100/80 dark:bg-slate-900/60 border-dashed border-slate-300 dark:border-slate-800 text-slate-400 dark:text-slate-500 line-through opacity-50';
     return `
       <button type="button" onclick="toggleDataset(${item.index})" class="px-2 py-1 rounded-lg border text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95 cursor-pointer ${stateClass}">
         <span class="w-2 h-2 rounded-full shrink-0" style="background-color: ${item.color}"></span>

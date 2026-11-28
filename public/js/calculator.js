@@ -68,14 +68,14 @@ function renderCalculatorRows() {
     }).join('');
 
     html += `
-      <div class="bg-slate-50 border border-slate-200/90 rounded-xl p-3 sm:p-3.5 space-y-2.5 relative transition-all" data-calc-index="${index}">
+      <div class="bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700/80 rounded-xl p-3 sm:p-3.5 space-y-2.5 relative transition-all" data-calc-index="${index}">
         <div class="flex items-center justify-between gap-2">
-          <span class="text-xs font-bold text-emerald-800 flex items-center gap-1.5">
-            <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold flex items-center justify-center">${index + 1}</span>
+          <span class="text-xs font-bold text-emerald-800 dark:text-emerald-400 flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/60 text-[11px] font-extrabold flex items-center justify-center">${index + 1}</span>
             Giống sầu riêng:
           </span>
           ${calcRows.length > 1 ? `
-            <button type="button" class="btn-remove-calc-row text-slate-400 hover:text-red-500 text-xs px-2 py-0.5 rounded transition-colors cursor-pointer" data-index="${index}" title="Xóa dòng này">
+            <button type="button" class="btn-remove-calc-row text-slate-400 hover:text-red-500 dark:text-slate-400 dark:hover:text-red-400 text-xs px-2 py-0.5 rounded transition-colors cursor-pointer" data-index="${index}" title="Xóa dòng này">
               <i class="fa-solid fa-trash-can"></i> Xóa
             </button>
           ` : ''}
@@ -84,7 +84,7 @@ function renderCalculatorRows() {
         <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 items-center">
           <!-- Chọn giống -->
           <div class="sm:col-span-5">
-            <select class="calc-variety-select w-full bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700 cursor-pointer" data-index="${index}">
+            <select class="calc-variety-select w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700 cursor-pointer" data-index="${index}">
               ${optionsHtml}
             </select>
           </div>
@@ -92,7 +92,7 @@ function renderCalculatorRows() {
           <!-- Đơn giá (đ/kg) -->
           <div class="sm:col-span-3">
             <div class="relative">
-              <input type="number" step="500" min="0" value="${row.price}" class="calc-price-input w-full bg-white border border-slate-300 rounded-lg pl-2.5 pr-9 py-1.5 text-xs sm:text-sm font-bold text-amber-700 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700" data-index="${index}" placeholder="Giá bán">
+              <input type="number" step="500" min="0" value="${row.price}" class="calc-price-input w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg pl-2.5 pr-9 py-1.5 text-xs sm:text-sm font-bold text-amber-700 dark:text-amber-400 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700" data-index="${index}" placeholder="Giá bán">
               <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 font-semibold">đ/kg</span>
             </div>
           </div>
@@ -100,16 +100,16 @@ function renderCalculatorRows() {
           <!-- Số lượng (kg) -->
           <div class="sm:col-span-4">
             <div class="relative">
-              <input type="number" step="50" min="0" value="${row.weight}" class="calc-weight-input w-full bg-white border border-slate-300 rounded-lg pl-2.5 pr-7 py-1.5 text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700" data-index="${index}" placeholder="Số lượng kg">
+              <input type="number" step="50" min="0" value="${row.weight}" class="calc-weight-input w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg pl-2.5 pr-7 py-1.5 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700" data-index="${index}" placeholder="Số lượng kg">
               <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] text-slate-400 font-semibold">kg</span>
             </div>
           </div>
         </div>
 
         <!-- Thành tiền dòng -->
-        <div class="flex items-center justify-between pt-1 border-t border-slate-200/60 text-xs">
-          <span class="text-slate-500">Thành tiền (${row.weight >= 1000 ? (row.weight / 1000).toFixed(2) + ' tấn' : row.weight + ' kg'}):</span>
-          <span class="font-extrabold text-emerald-800 text-sm font-mono">${formatNumber(lineTotal)} VNĐ</span>
+        <div class="flex items-center justify-between pt-1 border-t border-slate-200/60 dark:border-slate-700 text-xs">
+          <span class="text-slate-500 dark:text-slate-400">Thành tiền (${row.weight >= 1000 ? (row.weight / 1000).toFixed(2) + ' tấn' : row.weight + ' kg'}):</span>
+          <span class="font-extrabold text-emerald-800 dark:text-emerald-400 text-sm font-mono">${formatNumber(lineTotal)} VNĐ</span>
         </div>
       </div>
     `;

@@ -161,11 +161,11 @@
     <!-- KHU VỰC 1: CÁC THẺ GIÁ HÔM NAY (PRICE CARDS) -->
     <section>
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3.5">
-        <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+        <h2 class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
           <i class="fa-solid fa-scale-balanced text-amber-500"></i>
           Bảng Giá Cắt Xô Tại Vườn Hôm Nay
         </h2>
-        <span class="text-[11px] sm:text-xs text-amber-900 font-medium bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-lg self-start sm:self-auto">
+        <span class="text-[11px] sm:text-xs text-amber-900 dark:text-amber-300 font-medium bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800/60 px-2.5 py-0.5 rounded-lg self-start sm:self-auto">
           Đơn vị: VNĐ / kg (Giá cắt xô mua tại vườn)
         </span>
       </div>
@@ -173,17 +173,17 @@
       <!-- BỘ CHỌN KHU VỰC DẠNG DROPDOWN LIST -->
       <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
         <div class="flex items-center gap-2">
-          <label for="region-select" class="text-xs font-bold text-slate-600 uppercase tracking-wider shrink-0 flex items-center gap-1.5">
+          <label for="region-select" class="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider shrink-0 flex items-center gap-1.5">
             <i class="fa-solid fa-location-dot text-amber-500"></i> Khu vực:
           </label>
           <div class="relative inline-block">
-            <select id="region-select" class="appearance-none bg-white border border-slate-300 hover:border-emerald-600 focus:border-emerald-700 text-slate-800 text-xs sm:text-sm font-bold rounded-xl pl-3.5 pr-8 py-2 shadow-xs focus:outline-none focus:ring-2 focus:ring-emerald-700/20 transition-all cursor-pointer">
+            <select id="region-select" class="appearance-none bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-emerald-600 dark:hover:border-emerald-500 focus:border-emerald-700 text-slate-800 dark:text-slate-100 text-xs sm:text-sm font-bold rounded-xl pl-3.5 pr-8 py-2 shadow-xs focus:outline-none focus:ring-2 focus:ring-emerald-700/20 transition-all cursor-pointer">
               <option value="all">🌏 Toàn Quốc (Trung Bình)</option>
               <option value="mientay">🌊 Miền Tây (ĐBSCL)</option>
               <option value="miendong">🌲 Miền Đông (Đông Nam Bộ)</option>
               <option value="taynguyen">⛰️ Tây Nguyên</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500 dark:text-slate-400">
               <i class="fa-solid fa-chevron-down text-xs"></i>
             </div>
           </div>
@@ -226,7 +226,7 @@
           <div class="text-2xl sm:text-3xl font-black text-amber-400 font-mono tracking-tight mt-0.5" id="calc-total-money">
             0 VNĐ
           </div>
-          <div class="text-xs text-emerald-200 font-semibold italic mt-0.5" id="calc-words-money">
+          <div class="text-xs text-amber-200 font-semibold italic mt-0.5" id="calc-words-money">
             (Không đồng)
           </div>
         </div>
@@ -245,33 +245,33 @@
 
     <!-- KHU VỰC 2: BIỂU ĐỒ BIẾN ĐỘNG GIÁ (CHART SECTION) -->
     <section class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 mb-3 border-b border-slate-100 gap-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 mb-3 border-b border-slate-100 dark:border-slate-800 gap-3">
         <div>
-          <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
-            <i class="fa-solid fa-chart-line text-emerald-600"></i>
+          <h2 class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+            <i class="fa-solid fa-chart-line text-emerald-600 dark:text-emerald-400"></i>
             Biểu Đồ Xu Hướng Giá Xô Tại Vườn
           </h2>
-          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Biến động giá thương lái cắt xô tại vườn qua các ngày (đ/kg)</p>
+          <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5">Biến động giá thương lái cắt xô tại vườn qua các ngày (đ/kg)</p>
         </div>
 
         <!-- Filter nút bấm thời gian (1 tuần, 1 tháng, 3 tháng, 6 tháng, 1 năm, Tất cả) -->
-        <div class="inline-flex p-1 bg-slate-100 rounded-xl gap-1 self-start sm:self-auto overflow-x-auto max-w-full" role="group">
-          <button type="button" data-range="7" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all bg-white text-emerald-800 shadow-sm cursor-pointer">
+        <div class="inline-flex p-1 bg-slate-100 dark:bg-slate-800 rounded-xl gap-1 self-start sm:self-auto overflow-x-auto max-w-full border border-transparent dark:border-slate-700/60" role="group">
+          <button type="button" data-range="7" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all bg-white dark:bg-slate-700 text-emerald-800 dark:text-emerald-300 shadow-sm cursor-pointer">
             1 tuần
           </button>
-          <button type="button" data-range="30" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900 cursor-pointer">
+          <button type="button" data-range="30" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
             1 tháng
           </button>
-          <button type="button" data-range="90" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900 cursor-pointer">
+          <button type="button" data-range="90" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
             3 tháng
           </button>
-          <button type="button" data-range="180" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900 cursor-pointer">
+          <button type="button" data-range="180" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
             6 tháng
           </button>
-          <button type="button" data-range="365" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900 cursor-pointer">
+          <button type="button" data-range="365" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
             1 năm
           </button>
-          <button type="button" data-range="all" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-slate-900 cursor-pointer">
+          <button type="button" data-range="all" class="chart-filter-btn whitespace-nowrap px-2.5 py-1.5 text-xs font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
             Tất cả
           </button>
         </div>
@@ -279,15 +279,15 @@
 
       <!-- Thanh công cụ lọc giống nhanh & chú thích 6 giống (không che khuất biểu đồ) -->
       <div class="flex flex-col gap-2 mb-3.5">
-        <div class="flex items-center justify-between text-xs text-slate-500">
-          <span class="font-medium text-[11px] sm:text-xs text-slate-600 flex items-center gap-1.5">
-            <i class="fa-solid fa-sliders text-emerald-600"></i> Bấm để bật/tắt từng giống:
+        <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+          <span class="font-medium text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+            <i class="fa-solid fa-sliders text-emerald-600 dark:text-emerald-400"></i> Bấm để bật/tắt từng giống:
           </span>
           <div class="inline-flex gap-1.5 shrink-0">
-            <button type="button" onclick="setChartPreset('main')" title="Chỉ hiện Ri6 và Thái" class="px-2.5 py-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg border border-emerald-200 transition-all cursor-pointer active:scale-95">
+            <button type="button" onclick="setChartPreset('main')" title="Chỉ hiện Ri6 và Thái" class="px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 rounded-lg border border-emerald-200 dark:border-emerald-800/60 transition-all cursor-pointer active:scale-95">
               Ri6 & Thái
             </button>
-            <button type="button" onclick="setChartPreset('all')" title="Hiện toàn bộ 6 giống" class="px-2.5 py-1 text-[11px] font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg border border-slate-200 transition-all cursor-pointer active:scale-95">
+            <button type="button" onclick="setChartPreset('all')" title="Hiện toàn bộ 6 giống" class="px-2.5 py-1 text-[11px] font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 transition-all cursor-pointer active:scale-95">
               Hiện cả 6
             </button>
           </div>
@@ -308,18 +308,18 @@
       <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 mb-3.5 border-b border-slate-100 dark:border-slate-800 gap-2">
         <div>
           <div class="flex items-center gap-2">
-            <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
               <i class="fa-solid fa-arrows-split-up-and-left text-amber-500"></i>
               Bảng Đối Chiếu Giá So Với Cùng Kỳ
             </h2>
           </div>
-          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">So sánh biến động giá xô hôm nay với các mốc chu kỳ (Hôm qua, Tuần trước, Tháng trước, Cùng kỳ năm trước)</p>
+          <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5">So sánh biến động giá xô hôm nay với các mốc chu kỳ (Hôm qua, Tuần trước, Tháng trước, Cùng kỳ năm trước)</p>
         </div>
         <div class="flex items-center gap-2 self-start sm:self-auto">
-          <span class="text-[11px] text-slate-500 sm:hidden flex items-center gap-1 font-medium bg-slate-100 px-2.5 py-1 rounded-lg">
-            <i class="fa-solid fa-arrows-left-right text-emerald-600"></i> Vuốt ngang để xem đủ
+          <span class="text-[11px] text-slate-500 dark:text-slate-400 sm:hidden flex items-center gap-1 font-medium bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg">
+            <i class="fa-solid fa-arrows-left-right text-emerald-600 dark:text-emerald-400"></i> Vuốt ngang để xem đủ
           </span>
-          <span class="hidden sm:inline-block text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+          <span class="hidden sm:inline-block text-[11px] font-semibold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 px-2.5 py-1 rounded-lg">
             Tự động đối chiếu theo dữ liệu thực tế
           </span>
         </div>
@@ -328,16 +328,16 @@
       <div class="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
         <table class="min-w-[650px] w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr class="bg-slate-50 text-slate-600 border-b border-slate-200 text-xs uppercase tracking-wider">
+            <tr class="bg-slate-50 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700 text-xs uppercase tracking-wider">
               <th class="py-3 px-3.5 font-bold rounded-l-xl">Giống Sầu Riêng</th>
-              <th class="py-3 px-3 font-bold text-slate-900">Giá Hôm Nay</th>
+              <th class="py-3 px-3 font-bold text-slate-900 dark:text-white">Giá Hôm Nay</th>
               <th class="py-3 px-3 font-bold">So Hôm Qua (T-1)</th>
               <th class="py-3 px-3 font-bold">Cùng Kỳ Tuần Trước (T-7)</th>
               <th class="py-3 px-3 font-bold">Cùng Kỳ Tháng Trước (T-30)</th>
               <th class="py-3 px-3.5 font-bold rounded-r-xl">Cùng Kỳ Năm Trước (YoY)</th>
             </tr>
           </thead>
-          <tbody id="comparison-table-body" class="divide-y divide-slate-100 font-medium text-slate-700">
+          <tbody id="comparison-table-body" class="divide-y divide-slate-100 dark:divide-slate-800 font-medium text-slate-700 dark:text-slate-300">
             <!-- Render tự động bởi app.js -->
           </tbody>
         </table>
@@ -348,44 +348,44 @@
     <section class="space-y-4">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3.5">
         <div>
-          <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+          <h2 class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
             <i class="fa-brands fa-youtube text-red-600"></i>
             Bản Tin & Chi Tiết Nguồn Thu Thập Mới Nhất
           </h2>
-          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Thông tin trích xuất từ các video báo giá tại vườn</p>
+          <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5">Thông tin trích xuất từ các video báo giá tại vườn</p>
         </div>
         <!-- BỘ CHỌN & ĐIỀU HƯỚNG NGÀY HIỆN ĐẠI (DẠNG LƯỚI & PHÍM TẮT) -->
         <div class="relative flex items-center gap-1.5 self-start sm:self-auto" id="date-selector-component">
           <!-- Nút tiến ngày (Nằm bên trái) -->
-          <button id="btn-next-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Tiến tới ngày sau (ngày mới hơn)">
+          <button id="btn-next-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 border border-slate-200 dark:border-slate-700 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Tiến tới ngày sau (ngày mới hơn)">
             <i class="fa-solid fa-chevron-left text-xs"></i>
           </button>
 
           <!-- Nút chính mở Popover Lưới Ngày (Nằm ở giữa) -->
           <div class="relative" id="date-picker-dropdown-container">
-            <button id="btn-date-picker-toggle" type="button" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white hover:bg-emerald-50/60 text-slate-800 font-bold text-xs border border-slate-300 shadow-xs hover:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 transition-all cursor-pointer">
-              <i class="fa-regular fa-calendar-days text-emerald-600 text-sm"></i>
+            <button id="btn-date-picker-toggle" type="button" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-emerald-50/60 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-bold text-xs border border-slate-300 dark:border-slate-700 shadow-xs hover:border-emerald-600 dark:hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-700/20 transition-all cursor-pointer">
+              <i class="fa-regular fa-calendar-days text-emerald-600 dark:text-emerald-400 text-sm"></i>
               <span id="selected-date-text">--/--/----</span>
-              <span id="selected-date-badge" class="hidden bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.5 rounded-full font-bold">Mới nhất</span>
-              <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform duration-200" id="date-picker-arrow"></i>
+              <span id="selected-date-badge" class="hidden bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] px-1.5 py-0.5 rounded-full font-bold">Mới nhất</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 dark:text-slate-400 transition-transform duration-200" id="date-picker-arrow"></i>
             </button>
 
             <!-- Backdrop nền mờ trên Mobile -->
-            <div id="date-picker-backdrop" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-40 sm:hidden"></div>
+            <div id="date-picker-backdrop" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-40 sm:hidden"></div>
 
             <!-- Popover Dạng Lưới Lịch Sử (Modal căn giữa trên Mobile & Dropdown trên Desktop) -->
-            <div id="date-picker-popover" class="hidden fixed inset-x-3.5 top-28 mx-auto w-auto max-w-[340px] sm:max-w-none sm:w-96 sm:absolute sm:inset-x-auto sm:left-0 sm:top-full sm:mt-2 bg-white rounded-2xl shadow-2xl sm:shadow-xl border border-slate-200 p-3.5 sm:p-4 z-50 transition-all">
+            <div id="date-picker-popover" class="hidden fixed inset-x-3.5 top-28 mx-auto w-auto max-w-[340px] sm:max-w-none sm:w-96 sm:absolute sm:inset-x-auto sm:left-0 sm:top-full sm:mt-2 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl sm:shadow-xl border border-slate-200 dark:border-slate-700 p-3.5 sm:p-4 z-50 transition-all">
               <!-- Header Popover -->
-              <div class="flex items-center justify-between pb-2.5 border-b border-slate-100 mb-3">
+              <div class="flex items-center justify-between pb-2.5 border-b border-slate-100 dark:border-slate-800 mb-3">
                 <div class="flex items-center gap-1.5">
-                  <i class="fa-solid fa-clock-rotate-left text-emerald-600 text-xs"></i>
-                  <span class="text-xs font-bold text-slate-800">Lịch Sử Giá Theo Ngày</span>
+                  <i class="fa-solid fa-clock-rotate-left text-emerald-600 dark:text-emerald-400 text-xs"></i>
+                  <span class="text-xs font-bold text-slate-800 dark:text-slate-100">Lịch Sử Giá Theo Ngày</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <button id="btn-quick-latest-day" type="button" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 hover:underline flex items-center gap-1 cursor-pointer">
+                  <button id="btn-quick-latest-day" type="button" class="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 hover:underline flex items-center gap-1 cursor-pointer">
                     <i class="fa-solid fa-angles-up text-[10px]"></i> Về mới nhất
                   </button>
-                  <button id="btn-close-date-popover" type="button" class="sm:hidden text-slate-400 hover:text-slate-600 text-xs p-1 cursor-pointer" title="Đóng">
+                  <button id="btn-close-date-popover" type="button" class="sm:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs p-1 cursor-pointer" title="Đóng">
                     <i class="fa-solid fa-xmark text-sm"></i>
                   </button>
                 </div>
@@ -399,7 +399,7 @@
           </div>
 
           <!-- Nút lùi ngày (Nằm bên phải) -->
-          <button id="btn-prev-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 border border-slate-200 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Lùi về ngày trước (ngày cũ hơn)">
+          <button id="btn-prev-day" type="button" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 border border-slate-200 dark:border-slate-700 shadow-xs transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" title="Lùi về ngày trước (ngày cũ hơn)">
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </button>
         </div>

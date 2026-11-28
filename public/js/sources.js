@@ -76,11 +76,11 @@ function renderDateGrid(daysKeys) {
             }
 
             const baseClass = isSelected
-              ? 'bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300'
-              : 'bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border-slate-200 hover:border-emerald-300 font-medium';
+              ? 'bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300 dark:ring-emerald-700'
+              : 'bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-emerald-800 dark:hover:text-emerald-300 border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-600 font-medium';
 
-            const subTextClass = isSelected ? 'text-emerald-100' : 'text-slate-400';
-            const countClass = isSelected ? 'text-emerald-100' : 'text-slate-500';
+            const subTextClass = isSelected ? 'text-emerald-100' : 'text-slate-400 dark:text-slate-400';
+            const countClass = isSelected ? 'text-emerald-100' : 'text-slate-500 dark:text-slate-400';
 
             return `
               <button type="button" 
@@ -92,7 +92,7 @@ function renderDateGrid(daysKeys) {
                 </div>
                 <div class="mt-1 flex items-center justify-between w-full text-[10px]">
                   <span class="${countClass}">${sourceCount} tin</span>
-                  ${isLatest ? `<span class="text-[9px] px-1 py-0.2 rounded font-bold ${isSelected ? 'bg-amber-300 text-amber-950' : 'bg-emerald-100 text-emerald-800'}">Mới</span>` : ''}
+                  ${isLatest ? `<span class="text-[9px] px-1 py-0.2 rounded font-bold ${isSelected ? 'bg-amber-300 text-amber-950' : 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-transparent dark:border-emerald-800'}">Mới</span>` : ''}
                 </div>
               </button>
             `;
@@ -251,10 +251,10 @@ function renderSourcesCards(container, sources) {
   }
 
   const regionColors = {
-    'Miền Tây': 'bg-blue-50 text-blue-700 border-blue-200',
-    'Tây Nguyên': 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    'Đông Nam Bộ': 'bg-amber-50 text-amber-700 border-amber-200',
-    'Chung': 'bg-slate-100 text-slate-700 border-slate-200',
+    'Miền Tây': 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-900/50',
+    'Tây Nguyên': 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-900/50',
+    'Đông Nam Bộ': 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-900/50',
+    'Chung': 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700',
   };
 
   const PRIORITY_CHANNEL_ID = 'UCX11-9EVu6AzLYorQNoLzRA';
@@ -273,12 +273,12 @@ function renderSourcesCards(container, sources) {
     const prices = src.prices || {};
 
     const priceChips = [
-      { label: '1. Sầu riêng Ri6', min: prices.ri6_b, max: prices.ri6_a, bg: 'bg-emerald-50 text-emerald-800 font-bold border-emerald-200' },
-      { label: '2. Sầu riêng Thái', min: prices.monthong_b, max: prices.monthong_a, bg: 'bg-amber-50 text-amber-900 font-bold border-amber-200' },
-      { label: '3. Musang King', min: prices.musang_king, max: prices.musang_king, bg: 'bg-purple-50 text-purple-900 font-bold border-purple-200' },
-      { label: '4. Black Thorn', min: prices.black_thorn, max: prices.black_thorn, bg: 'bg-rose-50 text-rose-900 font-bold border-rose-200' },
-      { label: '5. Chuồng Bò', min: prices.chuong_bo, max: prices.chuong_bo, bg: 'bg-cyan-50 text-cyan-900 font-medium border-cyan-200' },
-      { label: '6. Sáu Hữu', min: prices.sau_huu, max: prices.sau_huu, bg: 'bg-orange-50 text-orange-900 font-bold border-orange-200' },
+      { label: '1. Sầu riêng Ri6', min: prices.ri6_b, max: prices.ri6_a, bg: 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 font-bold border-emerald-200 dark:border-emerald-800/60' },
+      { label: '2. Sầu riêng Thái', min: prices.monthong_b, max: prices.monthong_a, bg: 'bg-amber-50 dark:bg-amber-950/50 text-amber-900 dark:text-amber-300 font-bold border-amber-200 dark:border-amber-800/60' },
+      { label: '3. Musang King', min: prices.musang_king, max: prices.musang_king, bg: 'bg-purple-50 dark:bg-purple-950/50 text-purple-900 dark:text-purple-300 font-bold border-purple-200 dark:border-purple-800/60' },
+      { label: '4. Black Thorn', min: prices.black_thorn, max: prices.black_thorn, bg: 'bg-rose-50 dark:bg-rose-950/50 text-rose-900 dark:text-rose-300 font-bold border-rose-200 dark:border-rose-800/60' },
+      { label: '5. Chuồng Bò', min: prices.chuong_bo, max: prices.chuong_bo, bg: 'bg-cyan-50 dark:bg-cyan-950/50 text-cyan-900 dark:text-cyan-300 font-medium border-cyan-200 dark:border-cyan-800/60' },
+      { label: '6. Sáu Hữu', min: prices.sau_huu, max: prices.sau_huu, bg: 'bg-orange-50 dark:bg-orange-950/50 text-orange-900 dark:text-orange-300 font-bold border-orange-200 dark:border-orange-800/60' },
     ].map(p => {
       const minV = p.min;
       const maxV = p.max;
@@ -293,8 +293,8 @@ function renderSourcesCards(container, sources) {
     }).filter(Boolean);
 
     const cardBorder = isPriority 
-      ? 'border-2 border-amber-400/90 shadow-md ring-2 ring-amber-100/80 bg-gradient-to-b from-amber-50/20 to-white' 
-      : 'border border-slate-200 shadow-sm bg-white';
+      ? 'border-2 border-amber-400/90 dark:border-amber-500/70 shadow-md ring-2 ring-amber-100/80 dark:ring-amber-900/30 bg-gradient-to-b from-amber-50/20 to-white dark:from-amber-950/20 dark:to-slate-900' 
+      : 'border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900';
 
     return `
       <div class="${cardBorder} rounded-2xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
@@ -316,18 +316,18 @@ function renderSourcesCards(container, sources) {
             </span>
           </div>
 
-          <h3 class="font-bold text-slate-900 text-sm sm:text-base leading-snug line-clamp-2 hover:text-emerald-700 transition-colors">
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-snug line-clamp-2 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
             ${src.title}
           </h3>
-          <div class="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5">
             <i class="fa-brands fa-youtube text-red-500"></i>
-            <span class="font-bold text-slate-700">${src.channel_name}</span>
+            <span class="font-bold text-slate-700 dark:text-slate-300">${src.channel_name}</span>
           </div>
 
           ${src.summary ? `
-            <div class="mt-3 p-3 bg-amber-50/60 rounded-xl border border-amber-100/80 text-xs text-slate-700 leading-relaxed">
-              <span class="font-bold text-amber-900 flex items-center gap-1 mb-1">
-                <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i> Tóm tắt bản tin xô tại vườn:
+            <div class="mt-3 p-3 bg-amber-50/60 dark:bg-amber-950/40 rounded-xl border border-amber-100/80 dark:border-amber-900/40 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+              <span class="font-bold text-amber-900 dark:text-amber-400 flex items-center gap-1 mb-1">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-600 dark:text-amber-400"></i> Tóm tắt bản tin xô tại vườn:
               </span>
               ${src.summary}
             </div>
@@ -337,7 +337,7 @@ function renderSourcesCards(container, sources) {
             <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Giá xô trích xuất từ video:</div>
             <div class="flex flex-wrap gap-1.5">
               ${priceChips.length > 0 ? priceChips.map(chip => `
-                <span class="text-xs px-2.5 py-1 rounded-lg font-medium border border-slate-200/60 ${chip.bg}">
+                <span class="text-xs px-2.5 py-1 rounded-lg font-medium border border-slate-200/60 dark:border-slate-700/60 ${chip.bg}">
                   ${chip.label}: <strong>${chip.val}</strong>
                 </span>
               `).join('') : '<span class="text-xs text-slate-400 italic">Không có giá cụ thể</span>'}
@@ -345,9 +345,9 @@ function renderSourcesCards(container, sources) {
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-end">
+        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-end">
           <a href="${src.video_url}" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-700 font-semibold text-xs transition-colors">
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-50 dark:bg-red-950/40 hover:bg-red-100 dark:hover:bg-red-900/50 text-red-700 dark:text-red-300 border border-transparent dark:border-red-900/40 font-semibold text-xs transition-colors">
             <i class="fa-brands fa-youtube text-red-600"></i> Xem video gốc
             <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
           </a>
