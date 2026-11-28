@@ -137,7 +137,7 @@ function generateSpeechScript() {
     script += `Chuồng bò, giá ${formatSpeechNumber(prices.chuong_bo)} đồng. `;
   }
 
-  script += `Giá áp dụng thương lái thu mua cắt xô tận vườn. Chúc quý nhà vườn và bà con một ngày giao dịch thành công.`;
+  script += `Lưu ý: Bảng giá mang tính chất tham khảo xu hướng thị trường, giá thực tế phụ thuộc tỷ lệ phân loại và thỏa thuận tại vườn. Chúc quý nhà vườn và bà con một ngày giao dịch thành công.`;
   return script;
 }
 

@@ -233,6 +233,7 @@ function copyCalculatorResult() {
   text += `👉 TỔNG SẢN LƯỢNG: ${formatNumber(totalWeight)} kg (~${tons} tấn)\n`;
   text += `💰 TỔNG THU VỀ: ${formatNumber(totalMoney)} VNĐ\n`;
   text += `(${numberToVietnameseWords(totalMoney)})\n\n`;
+  text += `* Lưu ý: Bảng tính mang tính tham khảo, giá thực tế phụ thuộc tỷ lệ phân loại và thỏa thuận tại vườn.\n`;
   text += `Tra cứu giá tại: https://vonguyendang.github.io/gia-sau-rieng/`;
 
   navigator.clipboard.writeText(text).then(() => {

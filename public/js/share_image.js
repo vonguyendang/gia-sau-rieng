@@ -146,7 +146,7 @@ async function generatePriceInfographic() {
   });
 
   // 4. Footer
-  const footerY = 910;
+  const footerY = 905;
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
   ctx.beginPath();
   ctx.moveTo(80, footerY);
@@ -154,13 +154,17 @@ async function generatePriceInfographic() {
   ctx.stroke();
 
   ctx.textAlign = 'center';
+  ctx.fillStyle = '#fde68a'; // Vàng nhạt cảnh báo
+  ctx.font = '500 17px "Be Vietnam Pro", sans-serif';
+  ctx.fillText('* Giá mang tính tham khảo xu hướng chung, giá thực tế phụ thuộc tỷ lệ thỏa thuận tại vườn', w / 2, footerY + 30);
+
   ctx.fillStyle = '#cbd5e1';
-  ctx.font = '500 20px "Be Vietnam Pro", sans-serif';
-  ctx.fillText('Tổng hợp tự động từ các nhà vườn và vựa thu mua uy tín', w / 2, footerY + 45);
+  ctx.font = '400 16px "Be Vietnam Pro", sans-serif';
+  ctx.fillText('Tổng hợp tự động bằng AI từ các nhà vườn và vựa thu mua uy tín', w / 2, footerY + 58);
 
   ctx.fillStyle = '#34d399';
-  ctx.font = 'bold 24px "Be Vietnam Pro", sans-serif';
-  ctx.fillText('🌱 Giá Sầu Riêng Xô Tại Vườn', w / 2, footerY + 85);
+  ctx.font = 'bold 22px "Be Vietnam Pro", sans-serif';
+  ctx.fillText('🌱 Giá Sầu Riêng Xô Tại Vườn', w / 2, footerY + 95);
 
   // Hiển thị Modal xem trước ảnh
   showImagePreviewModal(canvas, activeDay);
