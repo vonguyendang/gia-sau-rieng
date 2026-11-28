@@ -40,6 +40,7 @@ function setupEventListeners() {
       renderPriceCards();
       renderComparisonTable();
       initOrUpdateChart();
+      if (typeof initCalculator === 'function') initCalculator();
     });
   }
 
@@ -59,6 +60,7 @@ function setupEventListeners() {
       renderPriceCards();
       renderComparisonTable();
       initOrUpdateChart();
+      if (typeof initCalculator === 'function') initCalculator();
     });
   });
 
@@ -171,6 +173,36 @@ function setupEventListeners() {
       selectDay(e.target.value);
     });
   }
+
+  // Nút tạo ảnh bảng giá Zalo
+  const shareImgBtn = document.getElementById('btn-share-price-image');
+  if (shareImgBtn) {
+    shareImgBtn.addEventListener('click', () => {
+      if (typeof generatePriceInfographic === 'function') {
+        generatePriceInfographic();
+      }
+    });
+  }
+
+  // Nút thêm dòng máy tính bán vườn
+  const addCalcRowBtn = document.getElementById('btn-add-calc-row');
+  if (addCalcRowBtn) {
+    addCalcRowBtn.addEventListener('click', () => {
+      if (typeof addCalculatorRow === 'function') {
+        addCalculatorRow();
+      }
+    });
+  }
+
+  // Nút sao chép bản tính gửi Zalo
+  const copyCalcBtn = document.getElementById('btn-copy-calc-result');
+  if (copyCalcBtn) {
+    copyCalcBtn.addEventListener('click', () => {
+      if (typeof copyCalculatorResult === 'function') {
+        copyCalculatorResult();
+      }
+    });
+  }
 }
 
 async function loadData() {
@@ -197,6 +229,7 @@ async function loadData() {
     try { renderComparisonTable(); } catch (e) { console.error('Lỗi renderComparisonTable:', e); }
     try { initOrUpdateChart(); } catch (e) { console.error('Lỗi initOrUpdateChart:', e); }
     try { populateDateSelect(); } catch (e) { console.error('Lỗi populateDateSelect:', e); }
+    try { if (typeof initCalculator === 'function') initCalculator(); } catch (e) { console.error('Lỗi initCalculator:', e); }
   } catch (error) {
     console.error('Lỗi khi tải dữ liệu giá:', error);
     const container = document.getElementById('price-cards-container');

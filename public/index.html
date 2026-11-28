@@ -92,7 +92,7 @@
   <main class="flex-grow max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-6 w-full space-y-6 sm:space-y-8">
 
     <!-- SUBHEADER / STATUS NOTIFICATION -->
-    <div class="bg-white rounded-2xl p-3.5 sm:p-5 shadow-sm border border-slate-200/80 flex items-center justify-between gap-2.5 sm:gap-4">
+    <div class="bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center space-x-2.5">
         <span class="relative flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -102,6 +102,12 @@
           Thị trường giao dịch ngày: <strong id="current-day-label" class="text-emerald-800 font-bold">--/--/----</strong>
         </span>
       </div>
+
+      <!-- Nút tạo ảnh bảng giá Zalo -->
+      <button id="btn-share-price-image" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer">
+        <i class="fa-solid fa-camera text-amber-300"></i>
+        <span>Tạo Ảnh Bảng Giá Zalo</span>
+      </button>
     </div>
 
     <!-- KHU VỰC 1: CÁC THẺ GIÁ HÔM NAY (PRICE CARDS) -->
@@ -140,6 +146,53 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4" id="price-cards-container">
         <!-- Render tự động bởi app.js cho 6 giống: Black Thorn, Musang King, Sáu Hữu, Thái Monthong, Chuồng Bò, Ri6 -->
       </div>
+    </section>
+
+    <!-- KHU VỰC: MÁY TÍNH TIỀN BÁN VƯỜN TỨC THÌ -->
+    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-slate-100 gap-2">
+        <div>
+          <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-calculator text-emerald-600"></i>
+            Tính Tiền Bán Sầu Riêng Cắt Vườn Tức Thì
+          </h2>
+          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Nhập số lượng sầu riêng dự kiến cắt để xem tổng doanh thu và gửi báo giá cho thương lái</p>
+        </div>
+        <button id="btn-add-calc-row" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs border border-emerald-200 transition-all cursor-pointer self-start sm:self-auto">
+          <i class="fa-solid fa-plus text-xs"></i>
+          <span>Thêm giống khác</span>
+        </button>
+      </div>
+
+      <!-- Danh sách các dòng tính tiền -->
+      <div id="calculator-rows-container" class="space-y-3 mb-4">
+        <!-- Render động từ calculator.js -->
+      </div>
+
+      <!-- Khung tổng kết thành tiền -->
+      <div class="bg-gradient-to-br from-emerald-900 to-teal-950 text-white rounded-2xl p-4 sm:p-5 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <div class="text-xs text-emerald-200 font-medium flex items-center gap-2">
+            <span>Tổng sản lượng: <strong id="calc-total-weight" class="text-amber-300 font-bold">0 kg</strong></span>
+          </div>
+          <div class="text-2xl sm:text-3xl font-black text-amber-400 font-mono tracking-tight mt-0.5" id="calc-total-money">
+            0 VNĐ
+          </div>
+          <div class="text-xs text-emerald-200 font-semibold italic mt-0.5" id="calc-words-money">
+            (Không đồng)
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
+          <button id="btn-copy-calc-result" type="button" class="flex-1 md:flex-initial py-2.5 px-4 bg-amber-400 hover:bg-amber-300 active:scale-95 text-emerald-950 font-bold rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer">
+            <i class="fa-regular fa-copy"></i>
+            <span>Sao Chép Bảng Tính (Gửi Zalo)</span>
+          </button>
+        </div>
+      </div>
+      <p id="calc-copy-status" class="text-xs text-emerald-700 font-bold text-center mt-2.5 hidden">
+        ✓ Đã sao chép bảng tính! Bạn có thể mở Zalo và dán (Paste) ngay cho thương lái.
+      </p>
     </section>
 
     <!-- KHU VỰC 2: BIỂU ĐỒ BIẾN ĐỘNG GIÁ (CHART SECTION) -->
@@ -425,12 +478,14 @@
   </div>
 
   <!-- Application Modules (Kiến trúc mô-đun chia nhỏ để bảo trì và tải nhanh) -->
-  <script src="js/utils.js?v=20261115"></script>
-  <script src="js/cards.js?v=20261115"></script>
-  <script src="js/comparison.js?v=20261115"></script>
-  <script src="js/chart.js?v=20261115"></script>
-  <script src="js/sources.js?v=20261115"></script>
-  <script src="app.js?v=20261115"></script>
+  <script src="js/utils.js?v=20261128"></script>
+  <script src="js/cards.js?v=20261128"></script>
+  <script src="js/comparison.js?v=20261128"></script>
+  <script src="js/chart.js?v=20261128"></script>
+  <script src="js/sources.js?v=20261128"></script>
+  <script src="js/share_image.js?v=20261128"></script>
+  <script src="js/calculator.js?v=20261128"></script>
+  <script src="app.js?v=20261128"></script>
 </body>
 </html>
 

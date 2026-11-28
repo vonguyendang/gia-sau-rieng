@@ -194,6 +194,9 @@ function selectDay(dayKey, closePopover = false) {
 
   // Render danh sách nguồn tin của ngày đã chọn (tải động)
   renderSources(dayKey);
+
+  // Cập nhật giá máy tính theo ngày đang xem nếu có
+  if (typeof initCalculator === 'function') initCalculator();
 }
 
 function renderSources(selectedDay) {

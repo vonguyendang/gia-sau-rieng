@@ -47,5 +47,37 @@
     "region": "Miền Tây",
     "priority": 2,
     "enabled": true
+  },
+  {
+    "channel_id": "UCzfqlsxE_qx7YWT8Q7836IA",
+    "handle": "@sauriengmientay",
+    "name": "Sầu Riêng Miền Tây",
+    "region": "Miền Tây",
+    "priority": 2,
+    "enabled": true
+  },
+  {
+    "channel_id": "UCPYUL42YnHLrL2NqxIuqV7w",
+    "handle": "@vuanongnghiep",
+    "name": "Vua Nông Nghiệp",
+    "region": "Miền Đông",
+    "priority": 2,
+    "enabled": true
+  },
+  {
+    "channel_id": "UCj3uOQ0rJpowKnTDxxyxJ8g",
+    "handle": "@nongnghiep47",
+    "name": "Làm Nông Nghiệp 5.0",
+    "region": "Tây Nguyên",
+    "priority": 2,
+    "enabled": true
+  },
+  {
+    "channel_id": "UCjYjuelyBV5jigGYCpYSeGA",
+    "handle": "@sauriengdaklak",
+    "name": "Sầu Riêng Đắk Lắk",
+    "region": "Tây Nguyên",
+    "priority": 2,
+    "enabled": true
   }
 ]
