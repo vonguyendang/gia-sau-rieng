@@ -10,7 +10,7 @@ window.toggleForecastChartLines = function() {
   const labelEl = document.getElementById('text-toggle-forecast-line');
   const btnEl = document.getElementById('btn-toggle-forecast-line');
   if (labelEl) {
-    labelEl.textContent = `Nét đứt dự báo: ${showForecastLines ? 'BẬT' : 'TẮT'}`;
+    labelEl.textContent = `Dự báo: ${showForecastLines ? 'BẬT' : 'TẮT'}`;
   }
   if (btnEl) {
     if (showForecastLines) {
