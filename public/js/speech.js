@@ -134,30 +134,25 @@ function generateSpeechScript() {
   const d = parseInt(parts[2], 10);
   const m = parseInt(parts[1], 10);
 
-  // Kịch bản đọc gãy gọn, dứt khoát, trực diện vào giá, không lặp từ rườm rà
+  // Kịch bản đọc chuẩn giá xô tại vườn: đọc đúng khoảng dao động Min - Max
   let script = `Giá sầu riêng ngày ${d} tháng ${m}, khu vực ${regName}. `;
 
-  if (prices.ri6_a && prices.ri6_b) {
-    script += `Ri Sáu loại A: ${formatSpeechNumber(prices.ri6_a)}, loại B: ${formatSpeechNumber(prices.ri6_b)}. `;
-  } else if (prices.ri6_a) {
-    script += `Ri Sáu loại A: ${formatSpeechNumber(prices.ri6_a)}. `;
+  function formatRangeSpeech(label, minVal, maxVal) {
+    if (!minVal && !maxVal) return '';
+    const mn = minVal || maxVal;
+    const mx = maxVal || minVal;
+    if (mn === mx) {
+      return `${label}: ${formatSpeechNumber(mx)}. `;
+    }
+    return `${label} dao động trong khoảng ${formatSpeechNumber(mn)} đến ${formatSpeechNumber(mx)}. `;
   }
 
-  if (prices.monthong_a && prices.monthong_b) {
-    script += `Thái Mỏn Thong loại A: ${formatSpeechNumber(prices.monthong_a)}, loại B: ${formatSpeechNumber(prices.monthong_b)}. `;
-  } else if (prices.monthong_a) {
-    script += `Thái loại A: ${formatSpeechNumber(prices.monthong_a)}. `;
-  }
-
-  if (prices.musang_king) {
-    script += `Musang King: ${formatSpeechNumber(prices.musang_king)}. `;
-  }
-  if (prices.black_thorn) {
-    script += `Black Thorn: ${formatSpeechNumber(prices.black_thorn)}. `;
-  }
-  if (prices.chuong_bo) {
-    script += `Chuồng bò: ${formatSpeechNumber(prices.chuong_bo)}. `;
-  }
+  script += formatRangeSpeech('Ri Sáu xô', prices.ri6_b, prices.ri6_a);
+  script += formatRangeSpeech('Thái xô', prices.monthong_b, prices.monthong_a);
+  script += formatRangeSpeech('Musang King', prices.musang_king, prices.musang_king);
+  script += formatRangeSpeech('Black Thorn', prices.black_thorn, prices.black_thorn);
+  script += formatRangeSpeech('Chuồng bò', prices.chuong_bo, prices.chuong_bo);
+  script += formatRangeSpeech('Sáu Hữu', prices.sau_huu, prices.sau_huu);
 
   script += `Giá tham khảo cắt xô tại vườn. Chúc bà con giao dịch thuận lợi!`;
   return script;
