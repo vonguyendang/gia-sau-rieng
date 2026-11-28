@@ -54,9 +54,9 @@ function renderDateGrid(daysKeys) {
 
     html += `
       <div class="month-group">
-        <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center justify-between">
-          <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-emerald-600"></i> ${monthLabel}</span>
-          <span class="text-[10px] text-slate-400 font-semibold">(${daysInMonth.length} ngày)</span>
+        <div class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
+          <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-emerald-600 dark:text-emerald-400"></i> ${monthLabel}</span>
+          <span class="text-[10px] text-slate-400 dark:text-slate-400 font-semibold">(${daysInMonth.length} ngày)</span>
         </div>
         <div class="grid grid-cols-3 gap-2">
           ${daysInMonth.map(d => {
@@ -169,15 +169,15 @@ function selectDay(dayKey, closePopover = false) {
       const badgeSpan = chip.querySelector('.mt-1 > span:last-child');
 
       if (isSel) {
-        chip.className = 'date-grid-chip p-2 rounded-xl text-left border transition-all flex flex-col justify-between cursor-pointer bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300';
+        chip.className = 'date-grid-chip p-2 rounded-xl text-left border transition-all flex flex-col justify-between cursor-pointer bg-emerald-700 text-white font-bold border-emerald-700 shadow-sm ring-2 ring-emerald-300 dark:ring-emerald-700';
         if (subText) subText.className = 'text-[10px] text-emerald-100';
         if (countEl) countEl.className = 'text-emerald-100';
         if (badgeSpan && isLat) badgeSpan.className = 'text-[9px] px-1 py-0.2 rounded font-bold bg-amber-300 text-amber-950';
       } else {
-        chip.className = 'date-grid-chip p-2 rounded-xl text-left border transition-all flex flex-col justify-between cursor-pointer bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border-slate-200 hover:border-emerald-300 font-medium';
-        if (subText) subText.className = 'text-[10px] text-slate-400';
-        if (countEl) countEl.className = 'text-slate-500';
-        if (badgeSpan && isLat) badgeSpan.className = 'text-[9px] px-1 py-0.2 rounded font-bold bg-emerald-100 text-emerald-800';
+        chip.className = 'date-grid-chip p-2 rounded-xl text-left border transition-all flex flex-col justify-between cursor-pointer bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-emerald-800 dark:hover:text-emerald-300 border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-600 font-medium';
+        if (subText) subText.className = 'text-[10px] text-slate-400 dark:text-slate-400';
+        if (countEl) countEl.className = 'text-slate-500 dark:text-slate-400';
+        if (badgeSpan && isLat) badgeSpan.className = 'text-[9px] px-1 py-0.2 rounded font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-transparent dark:border-emerald-800';
       }
     });
   }
