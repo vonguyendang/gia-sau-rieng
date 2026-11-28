@@ -146,7 +146,7 @@ async function generatePriceInfographic() {
   });
 
   // 4. Footer
-  const footerY = 905;
+  const footerY = 895;
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
   ctx.beginPath();
   ctx.moveTo(80, footerY);
@@ -155,16 +155,31 @@ async function generatePriceInfographic() {
 
   ctx.textAlign = 'center';
   ctx.fillStyle = '#fde68a'; // Vàng nhạt cảnh báo
-  ctx.font = '500 17px "Be Vietnam Pro", sans-serif';
-  ctx.fillText('* Giá mang tính tham khảo xu hướng chung, giá thực tế phụ thuộc tỷ lệ thỏa thuận tại vườn', w / 2, footerY + 30);
+  ctx.font = '500 16px "Be Vietnam Pro", sans-serif';
+  ctx.fillText('* Giá mang tính tham khảo xu hướng chung, giá thực tế phụ thuộc tỷ lệ thỏa thuận tại vườn', w / 2, footerY + 28);
 
   ctx.fillStyle = '#cbd5e1';
-  ctx.font = '400 16px "Be Vietnam Pro", sans-serif';
-  ctx.fillText('Tổng hợp tự động bằng AI từ các nhà vườn và vựa thu mua uy tín', w / 2, footerY + 58);
+  ctx.font = '400 15px "Be Vietnam Pro", sans-serif';
+  ctx.fillText('Tổng hợp tự động bằng AI từ các nhà vườn và vựa thu mua uy tín', w / 2, footerY + 54);
 
-  ctx.fillStyle = '#34d399';
-  ctx.font = 'bold 22px "Be Vietnam Pro", sans-serif';
-  ctx.fillText('🌱 Giá Sầu Riêng Xô Tại Vườn', w / 2, footerY + 95);
+  // Badge nguồn website chính thức nổi bật
+  const badgeW = 420;
+  const badgeH = 46;
+  const badgeX = (w - badgeW) / 2;
+  const badgeY = footerY + 76;
+
+  ctx.fillStyle = 'rgba(6, 78, 59, 0.85)';
+  ctx.beginPath();
+  ctx.roundRect(badgeX, badgeY, badgeW, badgeH, 23);
+  ctx.fill();
+  ctx.strokeStyle = '#34d399';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#6ee7b7';
+  ctx.font = 'bold 20px "Be Vietnam Pro", sans-serif';
+  ctx.fillText('🌐 Nguồn: giasr.dangvo.io.vn', w / 2, badgeY + 30);
 
   // Hiển thị Modal xem trước ảnh
   showImagePreviewModal(canvas, activeDay);
