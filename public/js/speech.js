@@ -4,7 +4,7 @@
  * Chạy 100% offline ngay trên trình duyệt (0đ, không cần gọi API Cloud TTS bên thứ ba).
  */
 
-const AVAILABLE_SPEECH_RATES = [1.0, 1.25, 1.5, 1.75];
+const AVAILABLE_SPEECH_RATES = [1.0, 1.25, 1.5, 1.75, 2.0];
 let currentSpeechRate = parseFloat(localStorage.getItem('durian_speech_rate')) || 1.25;
 let isSpeaking = false;
 let currentUtterance = null;
@@ -81,7 +81,7 @@ function updateSpeedButtonUI() {
   const speedBtn = document.getElementById('btn-speech-speed');
   if (speedBtn) {
     speedBtn.textContent = `${currentSpeechRate}x`;
-    speedBtn.title = `Tốc độ đọc: ${currentSpeechRate}x (Bấm để đổi 1.0x, 1.25x, 1.5x, 1.75x)`;
+    speedBtn.title = `Tốc độ đọc: ${currentSpeechRate}x (Bấm để đổi 1.0x, 1.25x, 1.5x, 1.75x, 2.0x)`;
   }
 }
 
